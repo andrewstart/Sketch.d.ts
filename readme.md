@@ -6,7 +6,7 @@ TypeScript declaration files for Sketch.
 - no types for function arguments (help wanted)
 
 ## Usage
-Check [Sketch.d.ts example plugin repository](https://github.com/pravdomil/sketch.d.ts-example).
+Check [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-example).
 
 ## Autocomplete works
 <img src="autocomplete.png">
