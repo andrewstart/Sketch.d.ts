@@ -8,6 +8,9 @@ TypeScript declaration files for Sketch.
 ## Usage
 Check [Sketch.d.ts example plugin repository](https://github.com/pravdomil/sketch.d.ts-example).
 
+## Autocomplete works
+<img src="autocomplete.png">
+
 ## Thanks to
 - [skpm/sketch-headers](https://github.com/skpm/sketch-headers)
 - [NativeScript/ios-metadata-generator](https://github.com/NativeScript/ios-metadata-generator)
