@@ -6,9 +6,7 @@ TypeScript declaration files for Sketch.
 - no types for function arguments (help wanted)
 
 ## Usage
-```bash
-git clone https://github.com/pravdomil/sketch.d.ts-example.git
-```
+Check [Sketch.d.ts example plugin repository](https://github.com/pravdomil/sketch.d.ts-example).
 
 ## Thanks to
 - [skpm/sketch-headers](https://github.com/skpm/sketch-headers)
