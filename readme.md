@@ -3,7 +3,7 @@
 TypeScript declaration files for Sketch.
 
 ## Known issues
-- no types for function arguments (help wanted)
+- no types for function arguments and return types (help wanted)
 
 ## Usage
 Check [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-example).
