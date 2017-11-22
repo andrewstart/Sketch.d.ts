@@ -13,6 +13,7 @@ Check [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
 
 ## Thanks to
 - [skpm/sketch-headers](https://github.com/skpm/sketch-headers)
+- [abynim/Sketch-Headers](https://github.com/abynim/Sketch-Headers)
 - [NativeScript/ios-metadata-generator](https://github.com/NativeScript/ios-metadata-generator)
 - [nygard/class-dump](https://github.com/nygard/class-dump)
 - [logancollins/Mocha](https://github.com/logancollins/Mocha)
