@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es6",
+    "lib": ["es2016"],
+    "strict": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

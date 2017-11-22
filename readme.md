@@ -1,6 +1,6 @@
 # Sketch.d.ts
 
-TypeScript typings for Sketch app.
+TypeScript declaration files for Sketch.
 
 ## Thanks to
 - [skpm/sketch-headers](https://github.com/skpm/sketch-headers)
