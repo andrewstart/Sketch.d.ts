@@ -1,0 +1,14 @@
+{
+  "name": "sketch.d.ts",
+  "version": "0.0.1",
+  "description": "TypeScript declaration files for Sketch",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pravdomil/Sketch.d.ts.git"
+  },
+  "author": "pravdomil.com",
+  "bugs": {
+    "url": "https://github.com/pravdomil/Sketch.d.ts/issues"
+  },
+  "homepage": "https://github.com/pravdomil/Sketch.d.ts#readme"
+}
