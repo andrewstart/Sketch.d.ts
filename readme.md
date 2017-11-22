@@ -1,4 +1,4 @@
-# Sketch.d.ts
+# Sketch.d.ts 47.1
 
 TypeScript declaration files for Sketch.
 
