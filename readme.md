@@ -2,6 +2,14 @@
 
 TypeScript declaration files for Sketch.
 
+## Known issues
+- no types for function arguments (help wanted)
+
+## Usage
+```bash
+git clone https://github.com/pravdomil/sketch.d.ts-example.git
+```
+
 ## Thanks to
 - [skpm/sketch-headers](https://github.com/skpm/sketch-headers)
 - [NativeScript/ios-metadata-generator](https://github.com/NativeScript/ios-metadata-generator)
