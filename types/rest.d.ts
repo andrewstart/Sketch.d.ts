@@ -85,7 +85,7 @@ declare class MSTileRenderOperationDelegate {}
 declare class MSVectorCanvasDelegate {}
 declare class NSAffineTransform {}
 declare class NSArray {
-    [index: number]: any;
+    [index: number]: NSObject;
     count(): number;
 }
 declare class NSArrayController {}
