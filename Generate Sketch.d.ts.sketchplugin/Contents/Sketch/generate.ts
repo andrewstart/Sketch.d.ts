@@ -3,7 +3,7 @@ const extraSymbols = ["_MSArtboardGroup", "_MSAssetCollection", "_MSBaseGrid", "
 
 function generate(context: SketchContext) {
     try {
-        const output = String(context.scriptPath).replace(/\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*$/, "/types/index.d.ts");
+        const output = String(context.scriptPath).replace(/\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*$/, "/types/sketch.d.ts");
         generateDo(context, /^MS/, output);
         
     } catch (e) {
