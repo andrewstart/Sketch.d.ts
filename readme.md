@@ -8,6 +8,11 @@ TypeScript declaration files for Sketch.
 ## Usage
 Check [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-example).
 
+Or setup install manually:
+```
+npm i pravdomil/sketch.d.ts
+```
+
 ## Autocomplete works
 <img src="autocomplete.png">
 
