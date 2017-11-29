@@ -34,7 +34,7 @@ npm i pravdomil/sketch.d.ts
 ```
 
 ## Autocomplete works
-<img src="autocomplete.png">
+<img src="res/autocomplete.png">
 
 ## Thanks to
 - [skpm/sketch-headers](https://github.com/skpm/sketch-headers)
