@@ -3,7 +3,7 @@ const propertyGetters = true;
 const extraSymbols = ["_MSArtboardGroup", "_MSAssetCollection", "_MSBaseGrid", "_MSBitmapLayer", "_MSColor", "_MSCurvePoint", "_MSDocumentData", "_MSExportFormat", "_MSExportOptions", "_MSExportPreset", "_MSForeignSymbol", "_MSGradient", "_MSGradientStop", "_MSGraphicsContextSettings", "_MSImageCollection", "_MSImmutableArtboardGroup", "_MSImmutableAssetCollection", "_MSImmutableBaseGrid", "_MSImmutableBitmapLayer", "_MSImmutableColor", "_MSImmutableCurvePoint", "_MSImmutableDocumentData", "_MSImmutableExportFormat", "_MSImmutableExportOptions", "_MSImmutableExportPreset", "_MSImmutableForeignSymbol", "_MSImmutableGradient", "_MSImmutableGradientStop", "_MSImmutableGraphicsContextSettings", "_MSImmutableImageCollection", "_MSImmutableLayer", "_MSImmutableLayerGroup", "_MSImmutableLayoutGrid", "_MSImmutableOvalShape", "_MSImmutablePage", "_MSImmutablePolygonShape", "_MSImmutableRect", "_MSImmutableRectangleShape", "_MSImmutableRulerData", "_MSImmutableShapeGroup", "_MSImmutableShapePath", "_MSImmutableShapePathLayer", "_MSImmutableSharedObject", "_MSImmutableSharedObjectContainer", "_MSImmutableSharedStyle", "_MSImmutableSharedStyleContainer", "_MSImmutableSharedTextStyleContainer", "_MSImmutableSimpleGrid", "_MSImmutableSliceLayer", "_MSImmutableStarShape", "_MSImmutableStyle", "_MSImmutableStyleBasicFill", "_MSImmutableStyleBlur", "_MSImmutableStyleBorder", "_MSImmutableStyleBorderOptions", "_MSImmutableStyleColorControls", "_MSImmutableStyledLayer", "_MSImmutableStyleFill", "_MSImmutableStyleInnerShadow", "_MSImmutableStylePart", "_MSImmutableStyleReflection", "_MSImmutableStyleShadow", "_MSImmutableSymbol", "_MSImmutableSymbolContainer", "_MSImmutableSymbolInstance", "_MSImmutableSymbolMaster", "_MSImmutableTextLayer", "_MSImmutableTextStyle", "_MSImmutableTriangleShape", "_MSLayer", "_MSLayerGroup", "_MSLayoutGrid", "_MSOvalShape", "_MSPage", "_MSPolygonShape", "_MSRect", "_MSRectangleShape", "_MSRulerData", "_MSShapeGroup", "_MSShapePath", "_MSShapePathLayer", "_MSSharedObject", "_MSSharedObjectContainer", "_MSSharedStyle", "_MSSharedStyleContainer", "_MSSharedTextStyleContainer", "_MSSimpleGrid", "_MSSliceLayer", "_MSStarShape", "_MSStyle", "_MSStyleBasicFill", "_MSStyleBlur", "_MSStyleBorder", "_MSStyleBorderOptions", "_MSStyleColorControls", "_MSStyledLayer", "_MSStyleFill", "_MSStyleInnerShadow", "_MSStylePart", "_MSStyleReflection", "_MSStyleShadow", "_MSSymbol", "_MSSymbolContainer", "_MSSymbolInstance", "_MSSymbolMaster", "_MSTextLayer", "_MSTextStyle", "_MSTriangleShape"];
 function generate(context) {
     try {
-        const output = String(context.scriptPath).replace(/\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*$/, "/index.d.ts");
+        const output = String(context.scriptPath).replace(/\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*$/, "/types/index.d.ts");
         generateDo(context, /^MS/, output);
     }
     catch (e) {
@@ -14,7 +14,7 @@ function generate(context) {
 function generateDo(context, symbolMatch, outputFile) {
     const info = context.document.showMessage;
     let mutableNotFoundSymbolsCount = 0;
-    let mutableOutput = "/// <reference path=\"./rest.d.ts\" />\n\n";
+    let mutableOutput = "// Generated with Sketch " + MSApplicationMetadata.metadata().appVersion + "\n\n";
     const symbolNames = uniqueArray(array(Mocha.sharedRuntime().globalSymbolNames())
         .map(s => String(s))
         .filter(s => s.match(symbolMatch))
