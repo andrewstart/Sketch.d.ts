@@ -140,7 +140,9 @@ declare class NSMutableString {}
 declare class NSNib {}
 declare class NSNumber {}
 declare class NSNumberFormatter {}
-declare class NSObject {}
+declare class NSObject {
+    isKindOfClass<T extends NSObject>(arg: { new(): T }): this is T;
+}
 declare class NSOperation {}
 declare class NSOperationQueue {}
 declare class NSPanGestureRecognizer {}
