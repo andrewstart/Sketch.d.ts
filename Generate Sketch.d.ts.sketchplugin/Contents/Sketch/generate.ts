@@ -15,7 +15,7 @@ function generate(context: SketchContext) {
 function generateDo(context: SketchContext, symbolMatch: RegExp, outputFile: string) {
     const info = context.document.showMessage;
     let mutableNotFoundSymbolsCount = 0;
-    let mutableOutput = "/// <reference path=\"./rest.d.ts\" />\n\n";
+    let mutableOutput = "// Generated with Sketch " + MSApplicationMetadata.metadata().appVersion + "\n\n";
     
     const symbolNames = uniqueArray(array(Mocha.sharedRuntime().globalSymbolNames())
         .map(s => String(s))
