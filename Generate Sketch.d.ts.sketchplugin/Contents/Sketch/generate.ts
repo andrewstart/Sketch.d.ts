@@ -12,7 +12,7 @@ function generate(context: SketchContext) {
     }
 }
 
-function generateDo(context: any, symbolMatch: RegExp, outputFile: string) {
+function generateDo(context: SketchContext, symbolMatch: RegExp, outputFile: string) {
     const info = context.document.showMessage;
     let mutableNotFoundSymbolsCount = 0;
     let mutableOutput = "/// <reference path=\"./rest.d.ts\" />\n\n";
