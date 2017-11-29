@@ -1,5 +1,3 @@
-/// <reference path="./rest.d.ts" />
-
 declare class MSAboutLinkButton extends MSHoverButton {
 	/* typeEncoding=v16@0:8 */
 	resetCursorRects(): void;

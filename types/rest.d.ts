@@ -1,5 +1,3 @@
-/// <reference path="./mocha.d.ts"/>
-
 declare interface SketchContext {
     api(): any;
     command: MSPluginCommand;
