@@ -33,8 +33,6 @@
     "unified-signatures": false,
     "adjacent-overload-signatures": false,
     
-    "no-parameter-reassignment": true,
-    "no-object-mutation": [true, {"ignore-prefix": "mutable"}],
-    "no-let": [true, {"ignore-prefix": "mutable"}]
+    "no-parameter-reassignment": true
   }
 }
