@@ -62,7 +62,7 @@ function genClass(symbol: any, symbolName: string) {
     const declare = "declare class ";
     
     const ancestors = desc.ancestors();
-    const extend = ancestors.count() ? " extends " + ancestors[0].name() : "";
+    const extend = ancestors.count() ? " extends " + (ancestors[0] as any).name() : "";
 
     const protocols = desc.protocols();
     const implement = protocols.count() ? " /* implements " + array(protocols).map(p => p.name()).join(", ") + " */" : "";
