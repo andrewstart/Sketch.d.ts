@@ -141,6 +141,8 @@ declare class NSNib {}
 declare class NSNumber {}
 declare class NSNumberFormatter {}
 declare class NSObject {
+    class(): any;
+    className(): NSString;
     isKindOfClass<T extends NSObject>(arg: { new(): T }): this is T;
 }
 declare class NSOperation {}
