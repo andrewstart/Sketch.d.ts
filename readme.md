@@ -8,30 +8,7 @@ TypeScript declaration files for Sketch.
 - no types for function arguments and return types (help wanted)
 
 ## Usage
-You can clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-example).
-
-1. install sketch.d.ts
-```
-npm i pravdomil/sketch.d.ts
-```
-2. create tsconfig.json
-```json
-{
-  "compilerOptions": {
-    "module": "none",
-    "target": "es6",
-    "lib": ["es2016"],
-    "strict": true
-  },
-  "exclude": [
-    "node_modules"
-  ]
-}
-```
-3. create your first ts file
-```ts
-/// <reference types="sketch.d.ts"/>
-```
+Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-example).
 
 ## Sketch class inheritance diagram
 <details>
