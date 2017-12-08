@@ -199,3 +199,14 @@ declare class SnapItem {}
 declare class SVGImporter {}
 declare class WebView {}
 declare class _CHTransformStruct {}
+declare class SCKAvatar {}
+declare class SCKShareUploadOperation {}
+declare class NSProgress {}
+declare class NSPanel {}
+declare class BCSingleton {}
+declare class _MSImmutableOverrideValue {}
+declare class MSOverlayRenderingDelegate {}
+declare class _MSOverrideValue {}
+declare class MSRenderer {}
+declare class MSProfilingRendererDelegate {}
+declare class CATextLayer {}

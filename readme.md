@@ -1,4 +1,4 @@
-# Sketch.d.ts 47.1
+# Sketch.d.ts 48.1
 
 TypeScript declaration files for Sketch.
 
@@ -42,7 +42,6 @@ npm i pravdomil/sketch.d.ts
     MSDocumentAction
       MSAddAsLibraryAction
       MSAddExportFormatAction
-      MSAssignColorSpaceAction
       MSAutoExpandGroupsAction
       MSBackToInstanceAction
       MSBadgeMenuAction
@@ -104,6 +103,9 @@ npm i pravdomil/sketch.d.ts
       MSBooleanMenuAction
       MSCenterLayersInCanvasAction
       MSCenterSelectionInVisibleAreaAction
+      MSChangeColorSpaceAction
+        MSAssignColorSpaceAction
+        MSConvertColorSpaceAction
       MSChangeFontAction
       MSChangePageAction
         MSNextPageAction
@@ -118,6 +120,7 @@ npm i pravdomil/sketch.d.ts
         MSColorInspectorImageTabAction
         MSColorInspectorLinearGradientTabAction
         MSColorInspectorRadialGradientTabAction
+      MSComponentsPanelAction
       MSConstraintAction
         MSConstraintFixHeightAction
         MSConstraintFixWidthAction
@@ -126,7 +129,6 @@ npm i pravdomil/sketch.d.ts
         MSConstraintPinRightAction
         MSConstraintPinTopAction
       MSConstraintResetAction
-      MSConvertColorSpaceAction
       MSConvertSymbolOrDetachInstancesAction
       MSConvertToOutlinesAction
       MSCopyAction
@@ -185,7 +187,6 @@ npm i pravdomil/sketch.d.ts
       MSMaskWithShapeAction
       MSMoveUpHierarchyAction
       MSNewPageAction
-      MSNineSliceAction
       MSPasteAction
       MSPasteHereAction
       MSPasteOverSelectionAction
@@ -200,6 +201,7 @@ npm i pravdomil/sketch.d.ts
       MSReduceFileSizeAction
       MSReduceImageSizeAction
       MSRenameLayerAction
+      MSReplaceColorAction
       MSReplaceFontsAction
       MSReplaceImageAction
       MSResetSymbolSizeAction
@@ -217,6 +219,7 @@ npm i pravdomil/sketch.d.ts
         MSSharedSymbolAction
           MSInsertSymbolAction
           MSReplaceWithSymbolAction
+      MSShowReplaceColorSheetAction
       MSSmartRotateAction
       MSSplitAction
       MSSyncLibraryAction
@@ -233,12 +236,13 @@ npm i pravdomil/sketch.d.ts
       MSToggleBaseAction
         MSToggleGridAction
         MSToggleLayoutAction
-      MSToggleBorderAction
-      MSToggleFillAction
       MSToggleInterfaceAction
       MSToggleLayerInteractionAction
       MSTogglePixelGridAction
       MSToggleSliceInteractionAction
+      MSToggleStylePartAction
+        MSToggleBorderAction
+        MSToggleFillAction
       MSToggleViewPreferenceAction
         MSToggleAlignmentGuidesAction
         MSToggleArtboardShadowAction
@@ -274,7 +278,6 @@ npm i pravdomil/sketch.d.ts
       MSZoomToActualSizeAction
       MSZoomToSelectionAction
     MSFeedbackAction
-    MSNewFromTemplateAction
     MSOpenCloudPreferencesAction
     MSOpenPluginPreferencesAction
     MSOpenPreferencesAction
@@ -314,7 +317,6 @@ npm i pravdomil/sketch.d.ts
       MSGradientEventHandler
         MSAngularGradientEventHandler
         MSRadialGradientEventHandler
-      MSNineSliceEventHandler
       MSTransformEventHandler
         MSImageTransformEventHandler
       MSZoomBlurEventHandler
@@ -335,15 +337,18 @@ npm i pravdomil/sketch.d.ts
   MSApplicationMetadata
   MSArchiveHeader
   MSArchivedColor
-  MSArtboardCanvasRenderer
   MSArtboardOrderSorting
   MSArtboardPreset
   MSArtboardPresetStore
   MSArtboardPresetsCategory
   MSArtboardPresetsSection
+  MSArtboardShadow
   MSAssetLibrary
+    MSRemoteAssetLibrary
     MSUserAssetLibrary
   MSAssetLibraryController
+  MSAssetLibraryUpdater
+  MSAssetLibraryUpdatingInfo
   MSAssetMigrationSources
   MSAssetPreferenceItem
   MSAssetSyncSheetHeader
@@ -365,13 +370,16 @@ npm i pravdomil/sketch.d.ts
       MSJSONDictionaryUnarchiver
       MSJSONZippedUnarchiver
     MSKeyedUnarchiver
-  MSBasicColorSpaceConverter
   MSBezierBuilder
   MSBezierContour
   MSBezierFillet
     MSSmoothBezierFillet
   MSBezierInterpreter
   MSBezierIntersection
+  MSBezierJoin
+    MSBezierLineCurveJoin
+      MSBezierCurveCurveJoin
+    MSBezierLineLineJoin
   MSBezierSegment
   MSBitmapBackedRendering
   MSBitmapEditor
@@ -383,13 +391,15 @@ npm i pravdomil/sketch.d.ts
   MSCGContextWrapper
   MSCacheManager
   MSCloudController
-  MSCloudShareFile
   MSCloudShareUploadController
   MSCloudUser
   MSColorArchivingFactory
-  MSColorConverter
   MSColorCounter
+  MSColorReplacement
+  MSColorReplacementConverter
+  MSColorSpaceConverter
   MSCommand
+  MSComponentsPanelSection
   MSConstantBaselineInfo
   MSCoreImageQueue
   MSCrashLogManager
@@ -398,7 +408,6 @@ npm i pravdomil/sketch.d.ts
     MSCurvePointDisconnectedBehaviour
     MSCurvePointMirroredBehaviour
     MSCurvePointStraightBehaviour
-  MSDebugStressTestRendering
   MSDiff
   MSDocumentImporter
   MSDocumentReader
@@ -443,6 +452,9 @@ npm i pravdomil/sketch.d.ts
       MSResizeGestureRecognizer
     MSSelectVectorHandleGestureRecognizer
   MSGridConstructor
+  MSGridRendererCG
+    MSLayoutGridRendererCG
+    MSSimpleGridRendererCG
   MSHandleDrawing
   MSHighLevelExporter
     MSSelfContainedHighLevelExporter
@@ -481,6 +493,7 @@ npm i pravdomil/sketch.d.ts
   MSMainSplitViewController
   MSManageForeignSymbolItem
   MSManifestMaker
+    MSCloudManifestMaker
   MSMaskWithShape
   MSMenuBuilder
     MSLayerPickerMenuBuilder
@@ -542,7 +555,6 @@ npm i pravdomil/sketch.d.ts
             MSStyleBlur
             MSStyleBorderOptions
             MSStyleColorControls
-            MSStyleReflection
             MSStyleShadow
                 MSStyleInnerShadow
         MSTextStyle
@@ -555,17 +567,17 @@ npm i pravdomil/sketch.d.ts
   MSNormalEventContextualMenuBuilder
   MSNormalEventData
   MSNullRenderer
+    MSOptionalRenderer
+      MSLayerAnnotationsRenderer
   MSOpacityKeyboardShortcutRecognizer
-  MSOptionalRenderer
-    MSLayerAnnotationsRenderer
-  MSOverlayRenderer
   MSOverridePoint
-  MSOverrideValue
   MSPDFBookExporter
   MSPDFImporter
   MSPDFPage
   MSPDFState
   MSPDFTextState
+  MSPageOverlayRendererCG
+    MSPageOverlayRendererCGDebug
   MSPasteboardFileDataProvider
   MSPasteboardImageWriter
   MSPasteboardImagesReader
@@ -605,6 +617,7 @@ npm i pravdomil/sketch.d.ts
   MSPointSnappingTarget
   MSPreferencesPluginInfo
   MSPreviewImageCache
+  MSProfilingRenderer
   MSRange
   MSRenderMonitor
     MSAveragingRenderMonitor
@@ -613,6 +626,7 @@ npm i pravdomil/sketch.d.ts
   MSRenderingDriver
     MSRenderingDriverCG
       MSRenderingDriverCGDebug
+      MSRenderingDriverCGProfiling
   MSResizeArtboardToFitValidator
   MSRulerGuides
   MSSVGBlendMode
@@ -654,12 +668,13 @@ npm i pravdomil/sketch.d.ts
   MSStandardInspectorViewControllers
   MSSubtreeRoot
   MSSymbolCreator
-  MSSymbolInstanceOverrides
   MSSymbolMasterReference
+  MSSymbolMasterReferenceDescriptor
   MSSymbolPreviewGenerator
+  MSTextColorProvider
+  MSTextLayout
   MSTextStyleMenuPreview
   MSTilePlacer
-  MSTileRenderer
   MSTiledLayerPile
   MSToolbarConstructor
   MSTrailingLayerInfo
