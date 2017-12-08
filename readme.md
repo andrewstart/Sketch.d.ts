@@ -8,7 +8,7 @@ TypeScript declaration files for Sketch.
 - no types for function arguments and return types (help wanted)
 
 ## Usage
-Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-example).
+Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-example) and check [this plugin](https://github.com/pravdomil/SketchAlignToGrid/blob/master/Align%20to%20Grid.sketchplugin/Contents/Sketch/alignToGrid.ts).
 
 ## Sketch class inheritance diagram
 <details>
