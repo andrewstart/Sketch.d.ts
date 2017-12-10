@@ -1,4 +1,4 @@
-# Sketch.d.ts 48.1
+# Sketch.d.ts 48.1 [![Build Status](https://travis-ci.org/pravdomil/sketch.d.ts.svg?branch=master)](https://travis-ci.org/pravdomil/sketch.d.ts)
 
 TypeScript declaration files for Sketch.
 
