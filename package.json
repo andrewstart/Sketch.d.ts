@@ -11,7 +11,7 @@
     "url": "https://github.com/pravdomil/Sketch.d.ts/issues"
   },
   "scripts": {
-    "test": "tsc -p . --pretty --noEmit"
+    "test": "tsc -p . --pretty --noEmit && echo 'Test passed.'"
   },
   "devDependencies": {
     "typescript": "^2.6.2"
