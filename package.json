@@ -10,5 +10,8 @@
   "bugs": {
     "url": "https://github.com/pravdomil/Sketch.d.ts/issues"
   },
+  "scripts": {
+    "test": "tsc -p . --pretty --noEmit"
+  },
   "homepage": "https://github.com/pravdomil/Sketch.d.ts#readme"
 }
