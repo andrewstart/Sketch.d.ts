@@ -13,5 +13,8 @@
   "scripts": {
     "test": "tsc -p . --pretty --noEmit"
   },
+  "devDependencies": {
+    "typescript": "^2.6.2"
+  },
   "homepage": "https://github.com/pravdomil/Sketch.d.ts#readme"
 }
