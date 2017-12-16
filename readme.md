@@ -2,7 +2,7 @@
 
 TypeScript declaration files for Sketch.
 
-[More plugins from author](https://github.com/search?q=user%3Apravdomil+topic%3Asketch-plugin).
+[More plugins from author](https://pravdomil.com/#sketch).
 
 ## Known issues
 - no types for function arguments and return types (help wanted)
