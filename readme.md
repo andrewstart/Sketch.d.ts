@@ -686,9 +686,6 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
 
 </details>
 
-## Autocomplete works
-<img src="res/autocomplete.png">
-
 ## Thanks to
 - [skpm/sketch-headers](https://github.com/skpm/sketch-headers)
 - [abynim/Sketch-Headers](https://github.com/abynim/Sketch-Headers)
