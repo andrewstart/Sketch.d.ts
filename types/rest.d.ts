@@ -190,6 +190,7 @@ declare class NSWindow {}
 declare class NSWindowController {}
 declare class NSWorkspace {
     static sharedWorkspace(): NSWorkspace;
+    openURL(url: NSURL): boolean;
 }
 declare class NSXMLElement {}
 declare class PDFFunction {}
