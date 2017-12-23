@@ -180,7 +180,9 @@ declare class NSToolbarItem {}
 declare class NSTouchBar {}
 declare class NSTouchBarItem {}
 declare class NSUndoManager {}
-declare class NSURL {}
+declare class NSURL {
+    static URLWithString(url: string): NSURL;
+}
 declare class NSURLSession {}
 declare class NSView {}
 declare class NSViewController {}
