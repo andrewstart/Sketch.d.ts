@@ -188,6 +188,9 @@ declare class NSView {}
 declare class NSViewController {}
 declare class NSWindow {}
 declare class NSWindowController {}
+declare class NSWorkspace {
+    static sharedWorkspace(): NSWorkspace;
+}
 declare class NSXMLElement {}
 declare class PDFFunction {}
 declare class PDFParser {}
