@@ -2,6 +2,8 @@
 
 TypeScript declaration files for Sketch.
 
+![preview](resources/gif.gif)
+
 ## Known issues
 - no types for function arguments and return types (help wanted)
 
