@@ -87,6 +87,7 @@ declare class NSAffineTransform {}
 declare class NSArray {
     [index: number]: NSObject;
     count(): number;
+    objectAtIndex(index: number): NSObject;
 }
 declare class NSArrayController {}
 declare class NSATSTypesetter {}
