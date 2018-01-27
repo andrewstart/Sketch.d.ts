@@ -2,7 +2,6 @@
   "name": "Sketch.d.ts",
   "author": "pravdomil.com",
   "compatibleVersion": 40,
-  "bundleVersion": 1,
   "commands": [
     {
       "name": "Generate declarations",
