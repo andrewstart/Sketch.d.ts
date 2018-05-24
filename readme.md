@@ -701,7 +701,3 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
 
 ## Donate
 [Buy me a beer](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BCL2X3AFQBAP2&item_name=Sketch.d.ts%20Beer)
-
------
-
-[More plugins from author](https://pravdomil.com/#sketch).
