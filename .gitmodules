@@ -1,4 +1,0 @@
-[submodule "inheritance-diagram-generator"]
-	path = inheritance-diagram-generator
-	url = https://github.com/pravdomil/TypeScript-inheritance-diagram-generator.git
-  
