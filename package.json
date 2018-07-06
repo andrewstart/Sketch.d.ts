@@ -1,10 +1,17 @@
 {
   "name": "sketch.d.ts",
   "version": "0.0.1",
+  "productName": "Sketch.d.ts",
   "description": "TypeScript declaration files for Sketch",
+  "homepage": "https://github.com/pravdomil/Sketch.d.ts#readme",
+  "keywords": [
+    "sketch",
+    "sketch-plugin",
+    "typescript"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pravdomil/Sketch.d.ts.git"
+    "url": "https://github.com/pravdomil/sketch.d.ts.git"
   },
   "author": "pravdomil.com",
   "bugs": {
@@ -15,6 +22,5 @@
   },
   "devDependencies": {
     "typescript": "^2.6.2"
-  },
-  "homepage": "https://github.com/pravdomil/Sketch.d.ts#readme"
+  }
 }
