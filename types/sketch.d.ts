@@ -1,4 +1,4 @@
-// Generated with Sketch 51.3
+// Generated with Sketch 52
 
 declare class BCReadWriteLock extends NSObject {
 	/* typeEncoding=v16@0:8 */
@@ -22,8 +22,8 @@ declare class MSAboutLinkButtonCell extends MSHoverButtonCell {
 }
 
 declare class MSAboutWindowController extends NSWindowController {
-	/* typeEncoding=@"NSImageView", ivar=_backgroundImageView, attributes=(assign,nonatomic,weak) */
-	backgroundImageView(): NSImageView;
+	/* typeEncoding=@"MSThemeImageView", ivar=_backgroundImageView, attributes=(assign,nonatomic,weak) */
+	backgroundImageView(): MSThemeImageView;
 	/* typeEncoding=@"NSTextField", ivar=_buildNumberTextField, attributes=(assign,nonatomic,weak) */
 	buildNumberTextField(): NSTextField;
 	/* typeEncoding=@"NSTextField", ivar=_copyrightTextField, attributes=(assign,nonatomic,weak) */
@@ -202,17 +202,13 @@ declare class MSAbsoluteRect extends BCRect {
 	y(...args: any[]): any;
 }
 
-declare class MSAction extends NSResponder /* implements NSMenuDelegate, MSPopToolbarItemActionObject */ {
+declare class MSAction extends NSResponder /* implements NSMenuDelegate */ {
 	/* typeEncoding=@"NSAttributedString", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	badgeTitle(): NSAttributedString;
 	/* typeEncoding=@"MSActionController", ivar=_controller, attributes=(assign,nonatomic,weak) */
 	controller(): MSActionController;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -221,10 +217,10 @@ declare class MSAction extends NSResponder /* implements NSMenuDelegate, MSPopTo
 	hasSubMenu(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
 	/* typeEncoding=@"NSImage", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	image(): NSImage;
+	/* typeEncoding=@"NSImage", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	imageForToolbar(): NSImage;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	imageName(): NSString;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -239,14 +235,14 @@ declare class MSAction extends NSResponder /* implements NSMenuDelegate, MSPopTo
 	labelForToolbar(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	labelForToolbarCustomisationSheet(): NSString;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	mayShowInToolbar(): boolean;
+	/* typeEncoding=@"NSMenuItem", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	menuItemForToolbarItem(): NSMenuItem;
 	/* typeEncoding=:, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	preferredMenuAction(): any;
 	/* typeEncoding=S, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	shortcutCharacter(): number;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	showInToolbar(): boolean;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 	/* typeEncoding=@"NSToolbarItem", ivar=_toolbarItem, attributes=(retain,nonatomic) */
@@ -257,6 +253,11 @@ declare class MSAction extends NSResponder /* implements NSMenuDelegate, MSPopTo
 	validate(): boolean;
 	/* typeEncoding=q, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	validationStatus(): number;
+
+	/* typeEncoding=@16@0:8 */
+	static classNamesToImageNamesDictionary(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	static imageName(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -281,11 +282,11 @@ declare class MSAction extends NSResponder /* implements NSMenuDelegate, MSPopTo
 	/* typeEncoding=@16@0:8 */
 	image(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	imageForToolbar(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	imageForToolbarCustomisationSheet(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	imageName(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	interfaceQueryObject(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isActive(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -302,8 +303,12 @@ declare class MSAction extends NSResponder /* implements NSMenuDelegate, MSPopTo
 	labelForToolbarCustomisationSheet(...args: any[]): any;
 	/* typeEncoding=@20@0:8c16 */
 	makeToolbarItemForToolbar(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	mayShowInToolbar(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	menuDidClose(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	menuItemForToolbarItem(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	menuItems(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -320,22 +325,18 @@ declare class MSAction extends NSResponder /* implements NSMenuDelegate, MSPopTo
 	setToolbarItem(...args: any[]): any;
 	/* typeEncoding=S16@0:8 */
 	shortcutCharacter(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	submenuActionIDs(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	toolbarItem(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	toolbarItemShouldDrawWithArrow(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	validateMenuItem(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	validateToolbarItem(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	validateToolbarItem(): void;
 	/* typeEncoding=q16@0:8 */
 	validationStatus(...args: any[]): any;
 }
@@ -400,6 +401,25 @@ declare class MSActionController extends NSResponder {
 	willBeginActionWithID_context(...args: any[]): any;
 }
 
+declare class MSActionGroup extends MSDocumentAction {
+	/* typeEncoding=@16@0:8 */
+	actionNames(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	childActions(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@20@0:8c16 */
+	makeToolbarItemForToolbar(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	makeTouchBarItem(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	refreshTouchBarItem(): void;
+	/* typeEncoding=c16@0:8 */
+	supportsState(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	validateToolbarItem(): void;
+}
+
 declare class MSAdaptableColor extends NSColor {
 	/* typeEncoding=@24@0:8@16 */
 	initWithCoder(...args: any[]): any;
@@ -416,6 +436,8 @@ declare class MSAddAsLibraryAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v36@0:8@16c24^v28 */
 	document_didSave_contextInfo(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	saveAndAddLibrary(): void;
 	/* typeEncoding=c16@0:8 */
@@ -427,6 +449,8 @@ declare class MSAddBorderAction extends MSBaseStyleAction {
 	addBorder(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
@@ -452,6 +476,8 @@ declare class MSAddFillAction extends MSBaseStyleAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
 
@@ -463,13 +489,9 @@ declare class MSAddFlowAction extends MSFlowBaseAction {
 	/* typeEncoding=c16@0:8 */
 	hasDynamicTitle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	labelForToolbar(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -481,8 +503,8 @@ declare class MSAddFlowBackAction extends MSFlowBaseAction {
 	addFlowBack(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -492,8 +514,8 @@ declare class MSAddFlowBackAction extends MSFlowBaseAction {
 declare class MSAddFlowHomeAction extends MSFlowBaseAction {
 	/* typeEncoding=v24@0:8@16 */
 	addFlowHome(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -505,6 +527,8 @@ declare class MSAddInnerShadowAction extends MSBaseStyleAction {
 	addInnerShadow(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSAddRemoteLibraryAction extends MSAction {
@@ -512,6 +536,8 @@ declare class MSAddRemoteLibraryAction extends MSAction {
 	addAppcastURL(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	displayDuplicateAlertSheetForRemoteAssetLibrary(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	startDownloadingLibrary(...args: any[]): any;
 }
@@ -521,11 +547,15 @@ declare class MSAddShadowAction extends MSBaseStyleAction {
 	addShadow(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSAlignBottomAction extends MSTextVerticalAlignmentAction {
 	/* typeEncoding=v24@0:8@16 */
 	alignBottom(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	verticalAlignment(...args: any[]): any;
 }
@@ -533,6 +563,8 @@ declare class MSAlignBottomAction extends MSTextVerticalAlignmentAction {
 declare class MSAlignCenterAction extends MSBaseAlignAction {
 	/* typeEncoding=v24@0:8@16 */
 	alignCenter(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	textAlignment(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -542,6 +574,8 @@ declare class MSAlignCenterAction extends MSBaseAlignAction {
 declare class MSAlignJustifiedAction extends MSBaseAlignAction {
 	/* typeEncoding=v24@0:8@16 */
 	alignJustified(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	textAlignment(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -556,6 +590,8 @@ declare class MSAlignLayersBottomAction extends MSBaseAlignLayersAction {
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
 
@@ -566,6 +602,8 @@ declare class MSAlignLayersCenterAction extends MSBaseAlignLayersAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
@@ -578,6 +616,8 @@ declare class MSAlignLayersLeftAction extends MSBaseAlignLayersAction {
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
 
@@ -588,6 +628,8 @@ declare class MSAlignLayersMiddleAction extends MSBaseAlignLayersAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
@@ -600,6 +642,8 @@ declare class MSAlignLayersRightAction extends MSBaseAlignLayersAction {
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
 
@@ -610,6 +654,8 @@ declare class MSAlignLayersTopAction extends MSBaseAlignLayersAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
@@ -642,6 +688,8 @@ declare class MSAlignLayersUnion extends BCRect {
 declare class MSAlignLeftAction extends MSBaseAlignAction {
 	/* typeEncoding=v24@0:8@16 */
 	alignLeft(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	textAlignment(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -651,6 +699,8 @@ declare class MSAlignLeftAction extends MSBaseAlignAction {
 declare class MSAlignMiddleAction extends MSTextVerticalAlignmentAction {
 	/* typeEncoding=v24@0:8@16 */
 	alignMiddle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	verticalAlignment(...args: any[]): any;
 }
@@ -658,6 +708,8 @@ declare class MSAlignMiddleAction extends MSTextVerticalAlignmentAction {
 declare class MSAlignRightAction extends MSBaseAlignAction {
 	/* typeEncoding=v24@0:8@16 */
 	alignRight(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	textAlignment(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -667,11 +719,15 @@ declare class MSAlignRightAction extends MSBaseAlignAction {
 declare class MSAlignTopAction extends MSTextVerticalAlignmentAction {
 	/* typeEncoding=v24@0:8@16 */
 	alignTop(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
-declare class MSAlignmentActions extends MSTouchBarGroupAction {
+declare class MSAlignmentActions extends MSActionGroup {
 	/* typeEncoding=@16@0:8 */
 	actionNames(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	touchBarItemSizing(...args: any[]): any;
 }
@@ -684,68 +740,62 @@ declare class MSAlignmentBackgroundView extends NSView {
 declare class MSAlignmentEngine extends NSObject {
 	/* typeEncoding=@"MSAlignmentEngineResult", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	alignmentResult(): MSAlignmentEngineResult;
-	/* typeEncoding=Q, ivar=_allowedAxes, attributes=(assign,nonatomic) */
-	allowedAxes(): number;
-	/* typeEncoding=@"MSAlignmentEngineConstraint", ivar=_constraint, attributes=(copy,nonatomic) */
+	/* typeEncoding=@"MSAlignmentEngineConstraint", ivar=_constraint, attributes=(assign,nonatomic,readonly) */
 	constraint(): MSAlignmentEngineConstraint;
+	/* typeEncoding=@"_TtC17SketchControllers22MSAlignmentEngineCycle", ivar=_currentCycle, attributes=(assign,nonatomic,readonly) */
+	currentCycle(): _TtC17SketchControllers22MSAlignmentEngineCycle;
 	/* typeEncoding=@"<MSAlignmentEngineDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
 	delegate(): MSAlignmentEngineDelegate;
-	/* typeEncoding={CGPoint=dd}, ivar=_point, attributes=(assign,nonatomic,readonly) */
-	point(): CGPoint;
 	/* typeEncoding=d, ivar=_snapDistance, attributes=(assign,nonatomic) */
 	snapDistance(): number;
-	/* typeEncoding=@"MSAlignmentEngineWorkings", ivar=_xWorkings, attributes=(assign,nonatomic,readonly) */
-	xWorkings(): MSAlignmentEngineWorkings;
-	/* typeEncoding=@"MSAlignmentEngineWorkings", ivar=_yWorkings, attributes=(assign,nonatomic,readonly) */
-	yWorkings(): MSAlignmentEngineWorkings;
 
+	/* typeEncoding=@24@0:8@16 */
+	static enumeratorForPossibleSnapTargetLayersInGroup(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	static snapTargetsForCentersOfLayers(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
+	addOrthogonalTargetsThroughPoint(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	addTarget(...args: any[]): any;
+	/* typeEncoding=v48@0:8{MSLineSegment={CGPoint=dd}{CGPoint=dd}}16 */
+	addTargetWithLineSegment(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	addTargets(...args: any[]): any;
+	/* typeEncoding=v52@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16c48 */
+	addTargetsForRect_includeCenter(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	alignmentResult(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	allowedAxes(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16Q32 */
 	applyDelegateAlignment_snappedAxes(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	beginAlignmentForPoint(...args: any[]): any;
+	/* typeEncoding=@40@0:8{CGPoint=dd}16@32 */
+	beginCycleWithPoint_constraint(...args: any[]): any;
 	/* typeEncoding=c24@0:8Q16 */
 	canSnapOnAxis(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	constraint(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	currentCycle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	delegate(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	includePoint(...args: any[]): any;
+	/* typeEncoding={MSLineSegment={CGPoint=dd}{CGPoint=dd}}64@0:8{MSLineSegment={CGPoint=dd}{CGPoint=dd}}16{CGPoint=dd}48 */
+	extendGuide_toIncludePoint(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16d24 */
 	includeRulerGuideTargetsForPage_zoomScale(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	includeTarget(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	includeTargets(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	point(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithCycle(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16{CGPoint=dd}24 */
+	makeGuideFromAlignedTarget_point(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}32@0:8{CGPoint=dd}16 */
 	roundPoint(...args: any[]): any;
-	/* typeEncoding=v24@0:8Q16 */
-	setAllowedAxes(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setConstraint(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDelegate(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	setSnapDistance(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	snapDistance(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	xWorkings(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	yWorkings(...args: any[]): any;
 }
 
 declare class MSAlignmentEngineConstraint extends NSObject /* implements NSCopying */ {
@@ -755,12 +805,14 @@ declare class MSAlignmentEngineConstraint extends NSObject /* implements NSCopyi
 	sourcePoint(): CGPoint;
 
 	/* typeEncoding=@48@0:8{CGPoint=dd}16{CGPoint=dd}32 */
-	static constraintWithOrthogonalOrDiagonalLineFromPoint_toPoint(...args: any[]): any;
-	/* typeEncoding=@48@0:8{CGPoint=dd}16{CGPoint=dd}32 */
 	static constraintWithSourcePoint_toPoint(...args: any[]): any;
+	/* typeEncoding=@48@0:8{CGPoint=dd}16{CGPoint=dd}32 */
+	static orthogonalOrDiagonalConstraintFromPoint_toPoint(...args: any[]): any;
 
 	/* typeEncoding=@24@0:8^{_NSZone=}16 */
 	copyWithZone(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	description(...args: any[]): any;
 	/* typeEncoding=@56@0:8{CGPoint=dd}16{MSLine=ddd}32 */
 	initWithPoint_line(...args: any[]): any;
 	/* typeEncoding={MSLine=ddd}16@0:8 */
@@ -774,11 +826,9 @@ declare class MSAlignmentEngineResult extends NSObject /* implements NSCopying *
 	guides(): NSArray;
 	/* typeEncoding={CGPoint=dd}, ivar=_point, attributes=(assign,nonatomic,readonly) */
 	point(): CGPoint;
-	/* typeEncoding=Q, ivar=_snappedAxes, attributes=(assign,nonatomic,readonly) */
-	snappedAxes(): number;
 
-	/* typeEncoding=@40@0:8{CGPoint=dd}16Q32 */
-	static snappingResultWithPoint_axes(...args: any[]): any;
+	/* typeEncoding=@32@0:8{CGPoint=dd}16 */
+	static snappingResultWithPoint(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -790,19 +840,15 @@ declare class MSAlignmentEngineResult extends NSObject /* implements NSCopying *
 	drawAtZoomValue(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	guides(...args: any[]): any;
-	/* typeEncoding=@48@0:8{CGPoint=dd}16@32Q40 */
-	initWithPoint_guides_snappedAxes(...args: any[]): any;
+	/* typeEncoding=@40@0:8{CGPoint=dd}16@32 */
+	initWithPoint_guides(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	point(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	snappedAxes(...args: any[]): any;
 }
 
 declare class MSAlignmentEngineResultGuide extends NSObject /* implements NSCopying */ {
-	/* typeEncoding={CGPoint=dd}, ivar=_end, attributes=(assign,nonatomic,readonly) */
-	end(): CGPoint;
-	/* typeEncoding={CGPoint=dd}, ivar=_start, attributes=(assign,nonatomic,readonly) */
-	start(): CGPoint;
+	/* typeEncoding={MSLineSegment={CGPoint=dd}{CGPoint=dd}}, ivar=_lineSegment, attributes=(assign,nonatomic,readonly) */
+	lineSegment(): MSLineSegment;
 
 	/* typeEncoding=@16@0:8 */
 	bezierPath(...args: any[]): any;
@@ -810,60 +856,10 @@ declare class MSAlignmentEngineResultGuide extends NSObject /* implements NSCopy
 	copyWithZone(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	drawWithLineWidth(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	end(...args: any[]): any;
-	/* typeEncoding=@48@0:8{CGPoint=dd}16{CGPoint=dd}32 */
-	initWithStart_end(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	start(...args: any[]): any;
-}
-
-declare class MSAlignmentEngineWorkings extends NSObject {
-	/* typeEncoding=Q, ivar=_axis, attributes=(assign,nonatomic) */
-	axis(): number;
-	/* typeEncoding=d, ivar=_guideEnd, attributes=(assign,nonatomic,readonly) */
-	guideEnd(): number;
-	/* typeEncoding=d, ivar=_guideStart, attributes=(assign,nonatomic,readonly) */
-	guideStart(): number;
-	/* typeEncoding={CGPoint=dd}, ivar=_pointToSnap, attributes=(assign,nonatomic) */
-	pointToSnap(): CGPoint;
-	/* typeEncoding=d, ivar=_snapDistance, attributes=(assign,nonatomic) */
-	snapDistance(): number;
-	/* typeEncoding=d, ivar=_snapLocation, attributes=(assign,nonatomic,readonly) */
-	snapLocation(): number;
-	/* typeEncoding=c, ivar=_snapped, attributes=(assign,nonatomic,readonly) */
-	snapped(): boolean;
-
-	/* typeEncoding=Q16@0:8 */
-	axis(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	extendGuideToPoint(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	extendGuideToTarget(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	guideEnd(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	guideStart(...args: any[]): any;
-	/* typeEncoding=@32@0:8{CGPoint=dd}16 */
-	makeGuideForSnapToPoint(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	pointToSnap(...args: any[]): any;
-	/* typeEncoding=v24@0:8Q16 */
-	setAxis(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setPointToSnap(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setSnapDistance(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	snapDistance(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	snapLocation(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16@32 */
-	snapPoint_withConstraint(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	snapped(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	trySnapToTarget(...args: any[]): any;
+	/* typeEncoding=@48@0:8{MSLineSegment={CGPoint=dd}{CGPoint=dd}}16 */
+	initWithLineSegment(...args: any[]): any;
+	/* typeEncoding={MSLineSegment={CGPoint=dd}{CGPoint=dd}}16@0:8 */
+	lineSegment(...args: any[]): any;
 }
 
 declare class MSAltButton extends MSHoverButton {
@@ -1014,6 +1010,40 @@ declare class MSAngularGradientEventHandler extends MSGradientEventHandler {
 	replacePointAtIndex_withPoint(...args: any[]): any;
 }
 
+declare class MSAppearanceInspectorSection extends MSBaseInspectorSection {
+	/* typeEncoding=@"MSCollapsibleHeaderInspectorItem", ivar=_headerItem, attributes=(retain,nonatomic) */
+	headerItem(): MSCollapsibleHeaderInspectorItem;
+	/* typeEncoding=@"MSOpacityBlendingInspectorItem", ivar=_opacityItem, attributes=(retain,nonatomic) */
+	opacityItem(): MSOpacityBlendingInspectorItem;
+	/* typeEncoding=@"MSSharedStylesInspectorItem", ivar=_sharedStyleItem, attributes=(retain,nonatomic) */
+	sharedStyleItem(): MSSharedStylesInspectorItem;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v32@0:8@16@?24 */
+	beginRenameSharedObject_completionBlock(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	headerItem(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v28@0:8@16c24 */
+	item_wantsSectionToCollapse(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	opacityItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeaderItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOpacityItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSharedStyleItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	sharedStyleItem(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateItems(): void;
+}
+
 declare class MSApplicationMetadata extends NSObject {
 	/* typeEncoding=@16@0:8 */
 	static applicationKeys(...args: any[]): any;
@@ -1021,15 +1051,50 @@ declare class MSApplicationMetadata extends NSObject {
 	static metadata(...args: any[]): any;
 }
 
-declare class MSApplyFlipAction extends MSBaseFlipAction {
+declare class MSApplyHorizontalFlipAction extends MSBaseFlipAction {
 	/* typeEncoding=v24@0:8@16 */
-	applyFlip(...args: any[]): any;
+	applyHorizontalFlip(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	areAllLayersFlipped(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isActive(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
+}
+
+declare class MSApplyLandscapeOrientationAction extends MSApplyOrientationAction {
+	/* typeEncoding=v24@0:8@16 */
+	applyLandscapeOrientation(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	comparisonResultToTest(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+}
+
+declare class MSApplyOrientationAction extends MSDocumentAction {
+	/* typeEncoding=q16@0:8 */
+	comparisonResultToTest(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	doPerformAction(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isActive(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	layerHasOurOrientation(...args: any[]): any;
+}
+
+declare class MSApplyPortraitOrientationAction extends MSApplyOrientationAction {
+	/* typeEncoding=v24@0:8@16 */
+	applyPortraitOrientation(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	comparisonResultToTest(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSApplySharedLayerStyleAction extends MSApplySharedStyleAction {
@@ -1037,6 +1102,8 @@ declare class MSApplySharedLayerStyleAction extends MSApplySharedStyleAction {
 	applySharedLayerStyle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	filteredLayersForStyle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSApplySharedStyleAction extends MSDocumentAction {
@@ -1046,6 +1113,8 @@ declare class MSApplySharedStyleAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	filteredLayersForStyle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -1059,8 +1128,41 @@ declare class MSApplySharedTextStyleAction extends MSApplySharedStyleAction {
 	applySharedTextStyle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	filteredLayersForStyle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	validateMenuItem(...args: any[]): any;
+}
+
+declare class MSApplyVerticalFlipAction extends MSBaseFlipAction {
+	/* typeEncoding=v24@0:8@16 */
+	applyVerticalFlip(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	areAllLayersFlipped(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isActive(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+}
+
+declare class MSArbitraryRangePercentValueTransformer extends NSValueTransformer {
+	/* typeEncoding=c16@0:8 */
+	static allowsReverseTransformation(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	static hundredPercentValue(...args: any[]): any;
+	/* typeEncoding=#16@0:8 */
+	static transformedValueClass(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	static zeroPercentValue(...args: any[]): any;
+
+	/* typeEncoding=@24@0:8@16 */
+	reverseTransformedValue(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	transformedValue(...args: any[]): any;
 }
 
 declare class MSArchiveHeader extends NSObject /* implements MSCoding */ {
@@ -1113,12 +1215,83 @@ declare class MSArchivedColor extends NSObject /* implements NSCoding */ {
 	initWithCoder(...args: any[]): any;
 }
 
+declare class MSArtboardBackgroundColorInspectorItem extends MSInspectorItem /* implements MSColorInspectorDelegate, BCPopoverDelegate, MSStylePartPreviewButtonDelegate, MSStylePartPreviewButtonDisabledTarget */ {
+	/* typeEncoding=@"MSStylePartPreviewButton", ivar=_backgroundColorButton, attributes=(retain,nonatomic) */
+	backgroundColorButton(): MSStylePartPreviewButton;
+	/* typeEncoding=@"MSInspectorValueAdaptor", ivar=_colorAdaptor, attributes=(retain,nonatomic) */
+	colorAdaptor(): MSInspectorValueAdaptor;
+	/* typeEncoding=@"NSButton", ivar=_colorCheckbox, attributes=(retain,nonatomic) */
+	colorCheckbox(): NSButton;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"BCPopover", ivar=_popover, attributes=(retain,nonatomic) */
+	popover(): BCPopover;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	backgroundColorAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	backgroundColorButton(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	canHandleColorMagnifierAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasColorSpace(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	changeBackgroundColorTo(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorAdaptor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorCheckbox(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	colorInspector_didChangeToColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	colorMagnifierAction(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=v24@0:8@16 */
+	dismissViewController(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	documentColorSpace(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	popover(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setBackgroundColorButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setColorAdaptor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setColorCheckbox(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPopover(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	stylePartPreviewButtonDisabledAction(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	stylePartPreviewButtonPreviewColorSpace(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+	/* typeEncoding=v16@0:8 */
+	viewDidLoad(): void;
+	/* typeEncoding=v16@0:8 */
+	viewWillDisappear(): void;
+}
+
 declare class MSArtboardContentResizeInspectorItem extends MSInspectorItem {
 }
 
 declare class MSArtboardGroup extends _MSArtboardGroup /* implements MSArtboardGroup, MSRootLayer, MSLayerWithMutableBackgroundColor, MSColorConvertible */ {
 	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	CGTransformForFrame(): CGAffineTransform;
+	/* typeEncoding=@"MSColor", ivar=(null), attributes=(retain,nonatomic) */
+	backgroundColor(): MSColor;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	bounds(): CGRect;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -1145,20 +1318,14 @@ declare class MSArtboardGroup extends _MSArtboardGroup /* implements MSArtboardG
 	isFlippedVertical(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isLayerExportable(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isVisible(): boolean;
 	/* typeEncoding=@"MSLayoutGrid", ivar=(null), attributes=(copy,nonatomic) */
 	layout(): MSLayoutGrid;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	objectID(): NSString;
 	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	origin(): CGPoint;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathForBooleanOperations(): MSPath;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathInBounds(): MSPath;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathInFrame(): MSPath;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathInFrameWithTransforms(): MSPath;
 	/* typeEncoding=@"MSArtboardPreset", ivar=(null), attributes=(retain,nonatomic) */
 	preset(): MSArtboardPreset;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -1177,24 +1344,32 @@ declare class MSArtboardGroup extends _MSArtboardGroup /* implements MSArtboardG
 	/* typeEncoding=Q16@0:8 */
 	static traits(...args: any[]): any;
 
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	adjustAfterInsert(): void;
+	/* typeEncoding=@16@0:8 */
+	badgeImages(...args: any[]): any;
 	/* typeEncoding={CGSize=dd}16@0:8 */
 	calculateMinimumSize(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeContainedByGroup(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canBeHidden(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canBeTransformed(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	canChangeBooleanOperation(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
 	canCopyToLayer_beforeLayer(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canRotate(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	closestClippingLayer(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	constrainProportions(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	contentBounds(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	contextualMenuPreviewImage(...args: any[]): any;
+	contextualMenuPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	convertColorsUsing(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -1210,7 +1385,7 @@ declare class MSArtboardGroup extends _MSArtboardGroup /* implements MSArtboardG
 	/* typeEncoding=@16@0:8 */
 	immutableBackgroundColor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	inspectorViewControllerNames(...args: any[]): any;
+	inspectorSections(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isAutomaticScalingEnabled(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -1225,8 +1400,6 @@ declare class MSArtboardGroup extends _MSArtboardGroup /* implements MSArtboardG
 	layerDidEndResize(): void;
 	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16q48 */
 	layerDidResizeFromRect_corner(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	makeChildRectsIntegral(): void;
 	/* typeEncoding=v32@0:8{CGVector=dd}16 */
 	moveBySuggestedOffset(...args: any[]): any;
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
@@ -1262,9 +1435,11 @@ declare class MSArtboardGroup extends _MSArtboardGroup /* implements MSArtboardG
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	rulerBase(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	selectedPreviewImage(...args: any[]): any;
-	/* typeEncoding=@56@0:8{CGPoint=dd}16Q32d40^Q48 */
-	selectionHitTest_options_zoomValue_resultIndex(...args: any[]): any;
+	rulerCoordinateSpace(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedPreviewTemplateImage(...args: any[]): any;
+	/* typeEncoding=@48@0:8{CGPoint=dd}16Q32d40 */
+	selectionHitTest_options_zoomValue(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setIsLocked(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
@@ -1282,51 +1457,63 @@ declare class MSArtboardGroup extends _MSArtboardGroup /* implements MSArtboardG
 	/* typeEncoding=c48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	shouldResizeToFitRect(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	unselectedPreviewImage(...args: any[]): any;
+	unselectedPreviewTemplateImage(...args: any[]): any;
 }
 
-declare class MSArtboardInspectorSection extends MSLayerSection /* implements MSInspectorItemDelegate */ {
-	/* typeEncoding=@"MSArtboardContentResizeInspectorItem", ivar=_contentResizeItem, attributes=(retain,nonatomic) */
-	contentResizeItem(): MSArtboardContentResizeInspectorItem;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=@"NSArray", ivar=_items, attributes=(retain,nonatomic) */
-	items(): NSArray;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
+declare class MSArtboardInspectorSection extends MSBaseInspectorSection {
+	/* typeEncoding=c, ivar=_colorEnabled, attributes=(assign,nonatomic) */
+	colorEnabled(): boolean;
+	/* typeEncoding=@"MSArtboardBackgroundColorInspectorItem", ivar=_colorItem, attributes=(retain,nonatomic) */
+	colorItem(): MSArtboardBackgroundColorInspectorItem;
+	/* typeEncoding=@"MSIncludeBackgroundColorInExportInspectorItem", ivar=_includeInExportItem, attributes=(retain,nonatomic) */
+	includeInExportItem(): MSIncludeBackgroundColorInExportInspectorItem;
+	/* typeEncoding=@"MSIncludeBackgroundColorInInstancesInspectorItem", ivar=_includeInInstancesItem, attributes=(retain,nonatomic) */
+	includeInInstancesItem(): MSIncludeBackgroundColorInInstancesInspectorItem;
+	/* typeEncoding=@"NSArrayController", ivar=_layersController, attributes=(retain,nonatomic) */
+	layersController(): NSArrayController;
+	/* typeEncoding=@"MSPaddingInspectorItem", ivar=_paddingItem, attributes=(retain,nonatomic) */
+	paddingItem(): MSPaddingInspectorItem;
+	/* typeEncoding=@"MSArtboardContentResizeInspectorItem", ivar=_resizeItem, attributes=(retain,nonatomic) */
+	resizeItem(): MSArtboardContentResizeInspectorItem;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=v16@0:8 */
-	assignItemLayers(): void;
+	/* typeEncoding=c16@0:8 */
+	colorEnabled(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	contentResizeItem(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	documentForInspectorItem(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initWithLayer(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	itemDidResize(...args: any[]): any;
+	colorItem(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	items(...args: any[]): any;
+	includeInExportItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	includeInInstancesItem(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layersController(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16@24@32^v40 */
+	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	paddingItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	resizeItem(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setColorEnabled(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setContentResizeItem(...args: any[]): any;
+	setColorItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setItems(...args: any[]): any;
+	setIncludeInExportItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setIncludeInInstancesItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLayers(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLayersController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPaddingItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setResizeItem(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateItems(): void;
-	/* typeEncoding=v24@0:8@16 */
-	valuesPossiblyChanged(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	viewDidLoad(): void;
-	/* typeEncoding=@16@0:8 */
-	views(...args: any[]): any;
 }
 
 declare class MSArtboardOrderSorting extends NSObject {
@@ -1334,6 +1521,23 @@ declare class MSArtboardOrderSorting extends NSObject {
 	static sortArtboards_inOrder(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	static sortArtboardsInDefaultOrder(...args: any[]): any;
+}
+
+declare class MSArtboardPositionInspectorItem extends MSPositionInspectorItem {
+	/* typeEncoding=@"NSButton", ivar=_sizeToFitButton, attributes=(retain,nonatomic) */
+	sizeToFitButton(): NSButton;
+
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	setSizeToFitButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	sizeToFitButton(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
 }
 
 declare class MSArtboardPreset extends NSObject /* implements NSCopying */ {
@@ -1437,6 +1641,56 @@ declare class MSArtboardPreset extends NSObject /* implements NSCopying */ {
 	width(...args: any[]): any;
 }
 
+declare class MSArtboardPresetButton extends MSInspectorButton {
+	/* typeEncoding=@"NSString", ivar=_secondaryTitle, attributes=(retain,nonatomic) */
+	secondaryTitle(): NSString;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	attributedSecondaryTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	attributedTitle(...args: any[]): any;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	intrinsicContentSize(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	secondaryTitle(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSecondaryTitle(...args: any[]): any;
+}
+
+declare class MSArtboardPresetButtonCell extends MSInspectorButtonCell {
+	/* typeEncoding=@16@0:8 */
+	arrowImage(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	arrowRectForBounds(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawBezelWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawImage_withFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawMainTitleWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawSecondaryTitleWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawTitle_withFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	imageRectForBounds(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isHighlighted(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	mainTitleRectWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	secondaryTitleRectWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setHighlighted(...args: any[]): any;
+}
+
+declare class MSArtboardPresetClipView extends NSClipView {
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawRect(...args: any[]): any;
+}
+
 declare class MSArtboardPresetInspectorItem extends MSInspectorItem /* implements MSArtboardPresetsViewControllerDelegate, MSEditArtboardPresetViewControllerDelegate */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
@@ -1444,8 +1698,8 @@ declare class MSArtboardPresetInspectorItem extends MSInspectorItem /* implement
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=@"NSButton", ivar=_presetButton, attributes=(retain,nonatomic) */
-	presetButton(): NSButton;
+	/* typeEncoding=@"MSArtboardPresetButton", ivar=_presetButton, attributes=(retain,nonatomic) */
+	presetButton(): MSArtboardPresetButton;
 	/* typeEncoding=@"MSArtboardPresetStore", ivar=_presetStore, attributes=(assign,nonatomic,readonly) */
 	presetStore(): MSArtboardPresetStore;
 	/* typeEncoding=@"MSArtboardPresetsViewController", ivar=_presetsViewController, attributes=(retain,nonatomic) */
@@ -1453,8 +1707,8 @@ declare class MSArtboardPresetInspectorItem extends MSInspectorItem /* implement
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
-	/* typeEncoding=@24@0:8@16 */
-	static filterSelection(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -1474,6 +1728,8 @@ declare class MSArtboardPresetInspectorItem extends MSInspectorItem /* implement
 	dismissAllPresentedViewControllers(): void;
 	/* typeEncoding=v24@0:8@16 */
 	dismissViewController(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	displayImageForPreset(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	editArtboardPresetViewController_savePreset(...args: any[]): any;
 	/* typeEncoding=v48@0:8@16@24@32^v40 */
@@ -1502,6 +1758,8 @@ declare class MSArtboardPresetInspectorItem extends MSInspectorItem /* implement
 	showCustomPresetSheet(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showPresets(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16Q24 */
+	sizeStringForPreset_match(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	toggleOrientation(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -1539,6 +1797,8 @@ declare class MSArtboardPresetStore extends NSObject {
 	init(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	loadUserPresets(): void;
+	/* typeEncoding=@40@0:8@16{CGSize=dd}24 */
+	presetWithName_matchingSize(...args: any[]): any;
 	/* typeEncoding=@40@0:8{CGSize=dd}16@32 */
 	presetWithSize_preferredCategory(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16^@24 */
@@ -1565,8 +1825,6 @@ declare class MSArtboardPresetTableCellView extends NSTableCellView {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=v16@0:8 */
-	awakeFromNib(): void;
 	/* typeEncoding=@16@0:8 */
 	checkmark(...args: any[]): any;
 	/* typeEncoding=@32@0:8{CGPoint=dd}16 */
@@ -1602,6 +1860,11 @@ declare class MSArtboardPresetsCategory extends NSObject {
 	sections(...args: any[]): any;
 }
 
+declare class MSArtboardPresetsRowView extends NSTableRowView {
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawRect(...args: any[]): any;
+}
+
 declare class MSArtboardPresetsSection extends NSObject {
 	/* typeEncoding=@"NSDictionary", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	dictionaryRepresentation(): NSDictionary;
@@ -1633,6 +1896,11 @@ declare class MSArtboardPresetsSection extends NSObject {
 	presets(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setPresets(...args: any[]): any;
+}
+
+declare class MSArtboardPresetsSectionHeaderView extends NSTableCellView {
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawRect(...args: any[]): any;
 }
 
 declare class MSArtboardPresetsTableView extends NSTableView {
@@ -1776,6 +2044,8 @@ declare class MSArtboardPresetsViewController extends NSViewController /* implem
 	tableView_heightOfRow(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16q24 */
 	tableView_isGroupRow(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16q24 */
+	tableView_rowViewForRow(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16q24 */
 	tableView_shouldSelectRow(...args: any[]): any;
 	/* typeEncoding=@40@0:8@16@24q32 */
@@ -1793,87 +2063,35 @@ declare class MSArtboardPresetsViewController extends NSViewController /* implem
 declare class MSArtboardRendererCG extends MSGroupRendererCG {
 	/* typeEncoding=v36@0:8@16c24@28 */
 	renderSubLayersOfGroup_ignoreDrawingArea_context(...args: any[]): any;
-	/* typeEncoding=v40@0:8@16c24@28c36 */
-	renderSubLayersOfGroup_ignoreDrawingArea_context_isDrawingAsSymbolInstance(...args: any[]): any;
 }
 
-declare class MSArtboardResizeToFitInspectorItem extends MSInspectorItem {
-	/* typeEncoding=@"NSButton", ivar=_sizeToFitButton, attributes=(retain,nonatomic) */
-	sizeToFitButton(): NSButton;
+declare class MSArtboardSizeInspectorItem extends MSBaseSizeInspectorItem {
+	/* typeEncoding=Q, ivar=_orientation, attributes=(assign,nonatomic,readonly) */
+	orientation(): number;
+	/* typeEncoding=@"NSSegmentedControl", ivar=_orientationSegmentedControl, attributes=(retain,nonatomic) */
+	orientationSegmentedControl(): NSSegmentedControl;
 
 	/* typeEncoding=@24@0:8@16 */
 	static filterSelection(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=v24@0:8@16 */
-	setSizeToFitButton(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	orientation(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	sizeToFitButton(...args: any[]): any;
+	orientationSegmentedControl(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	refreshOrientationControl(): void;
+	/* typeEncoding=v24@0:8@16 */
+	selectOrientation(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOrientationSegmentedControl(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateDisplayedValues(): void;
-}
-
-declare class MSArtboardShadow extends NSObject {
-	/* typeEncoding=^{CGImage=}, ivar=_bottomEdge, attributes=(assign,nonatomic) */
-	bottomEdge(): any;
-	/* typeEncoding=^{CGImage=}, ivar=_bottomLeftCorner, attributes=(assign,nonatomic) */
-	bottomLeftCorner(): any;
-	/* typeEncoding=^{CGImage=}, ivar=_bottomRightCorner, attributes=(assign,nonatomic) */
-	bottomRightCorner(): any;
-	/* typeEncoding=^{CGImage=}, ivar=_leftEdge, attributes=(assign,nonatomic) */
-	leftEdge(): any;
-	/* typeEncoding=^{CGImage=}, ivar=_rightEdge, attributes=(assign,nonatomic) */
-	rightEdge(): any;
-	/* typeEncoding=^{CGImage=}, ivar=_topEdge, attributes=(assign,nonatomic) */
-	topEdge(): any;
-	/* typeEncoding=^{CGImage=}, ivar=_topLeftCorner, attributes=(assign,nonatomic) */
-	topLeftCorner(): any;
-	/* typeEncoding=^{CGImage=}, ivar=_topRightCorner, attributes=(assign,nonatomic) */
-	topRightCorner(): any;
-
-	/* typeEncoding=^{CGImage=}16@0:8 */
-	bottomEdge(...args: any[]): any;
-	/* typeEncoding=^{CGImage=}16@0:8 */
-	bottomLeftCorner(...args: any[]): any;
-	/* typeEncoding=^{CGImage=}16@0:8 */
-	bottomRightCorner(...args: any[]): any;
-	/* typeEncoding=^{CGImage=}40@0:8@16{CGPoint=dd}24 */
-	createCornerFromImage_at(...args: any[]): any;
-	/* typeEncoding=^{CGImage=}40@0:8@16d24Q32 */
-	createEdgeFromImage_at_axis(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
-	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
-	drawInRect_context(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initWithName(...args: any[]): any;
-	/* typeEncoding=^{CGImage=}16@0:8 */
-	leftEdge(...args: any[]): any;
-	/* typeEncoding=^{CGImage=}16@0:8 */
-	rightEdge(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGImage=}16 */
-	setBottomEdge(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGImage=}16 */
-	setBottomLeftCorner(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGImage=}16 */
-	setBottomRightCorner(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGImage=}16 */
-	setLeftEdge(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGImage=}16 */
-	setRightEdge(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGImage=}16 */
-	setTopEdge(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGImage=}16 */
-	setTopLeftCorner(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGImage=}16 */
-	setTopRightCorner(...args: any[]): any;
-	/* typeEncoding=^{CGImage=}16@0:8 */
-	topEdge(...args: any[]): any;
-	/* typeEncoding=^{CGImage=}16@0:8 */
-	topLeftCorner(...args: any[]): any;
-	/* typeEncoding=^{CGImage=}16@0:8 */
-	topRightCorner(...args: any[]): any;
+	updateUI(): void;
+	/* typeEncoding=v16@0:8 */
+	viewDidLoad(): void;
 }
 
 declare class MSAssetCollection extends _MSAssetCollection {
@@ -1895,7 +2113,7 @@ declare class MSAssetCollection extends _MSAssetCollection {
 	removeAssetAtIndex_ofType(...args: any[]): any;
 }
 
-declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* implements MSAssetPreferenceItemDelegate, MSDropableViewDelegate, QLPreviewPanelDataSource, QLPreviewPanelDelegate, NSTableViewDelegate, NSTableViewDataSource */ {
+declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* implements MSAssetPreferenceItemDelegate, MSDropableViewDelegate, QLPreviewPanelDataSource, QLPreviewPanelDelegate, NSTableViewDelegate, NSTableViewDataSource, NSTextFieldDelegate */ {
 	/* typeEncoding=@"MSAssetLibraryController", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	assetLibraryController(): MSAssetLibraryController;
 	/* typeEncoding=@"NSWindow", ivar=_chooseLibraryPanelWindow, attributes=(assign,nonatomic,weak) */
@@ -1908,12 +2126,18 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	description(): NSString;
 	/* typeEncoding=@"NSWindow", ivar=_duplicateLibraryAlertWindow, attributes=(assign,nonatomic,weak) */
 	duplicateLibraryAlertWindow(): NSWindow;
+	/* typeEncoding=@"NSSearchField", ivar=_filterTextField, attributes=(retain,nonatomic) */
+	filterTextField(): NSSearchField;
 	/* typeEncoding=c, ivar=_hasAssets, attributes=(assign,nonatomic) */
 	hasAssets(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
 	/* typeEncoding=@"NSArray", ivar=_items, attributes=(retain,nonatomic) */
 	items(): NSArray;
+	/* typeEncoding=@"NSArrayController", ivar=_librariesArrayController, attributes=(retain,nonatomic) */
+	librariesArrayController(): NSArrayController;
+	/* typeEncoding=@"NSPredicate", ivar=_librariesFilterPredicate, attributes=(copy,nonatomic) */
+	librariesFilterPredicate(): NSPredicate;
 	/* typeEncoding=@"NSWindow", ivar=_libraryInstallerAlertWindow, attributes=(assign,nonatomic,weak) */
 	libraryInstallerAlertWindow(): NSWindow;
 	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -1922,10 +2146,12 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	selection(): NSArray;
 	/* typeEncoding=c, ivar=_shouldEnableCogMenu, attributes=(assign,nonatomic) */
 	shouldEnableCogMenu(): boolean;
+	/* typeEncoding=@"NSButton", ivar=_spyglassFilterButton, attributes=(retain,nonatomic) */
+	spyglassFilterButton(): NSButton;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
-	/* typeEncoding=@"NSTableView", ivar=_tableView, attributes=(assign,nonatomic,weak) */
-	tableView(): NSTableView;
+	/* typeEncoding=@"MSAssetLibraryTableView", ivar=_tableView, attributes=(assign,nonatomic,weak) */
+	tableView(): MSAssetLibraryTableView;
 
 	/* typeEncoding=@16@0:8 */
 	static identifier(...args: any[]): any;
@@ -1938,6 +2164,8 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	_cxx_destruct(): void;
 	/* typeEncoding=c24@0:8@16 */
 	acceptsPreviewPanelControl(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	activateSearchField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	addLibrariesFromURLS(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -1956,16 +2184,22 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	chooseLibraryPanelWindow(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	contextMenu(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	controlTextDidChange(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	controlTextDidEndEditing(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	currentLibrary(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	dismissAlertSheet(): void;
-	/* typeEncoding=@48@0:8@16@24@32@?40 */
-	displayAlertSheetWithMessageText_informativeText_buttonTitle_completionHandler(...args: any[]): any;
+	/* typeEncoding=@56@0:8@16@24@32@40@?48 */
+	displayAlertSheetWithMessageText_informativeText_buttonTitle_cancelButton_completionHandler(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	displayDuplicateAlertSheetForRemoteAssetLibrary(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	displayInstallerAlertSheetForRemoteAssetLibrary(): void;
+	/* typeEncoding=c24@0:8@16 */
+	doesNewPredicateGiveDifferentResult(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	draggedTypesForView(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -1974,6 +2208,8 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	duplicateLibraryAlertWindow(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	endPreviewPanelControl(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	filterTextField(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasAssets(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -1984,6 +2220,10 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	items(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	learnMoreAboutLibraries(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	librariesArrayController(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	librariesFilterPredicate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	libraryControllerDidChange(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -1992,14 +2232,12 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	locateLibraryAction(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	menuForEvent(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	multipleLibrariesSelected(...args: any[]): any;
 	/* typeEncoding=q24@0:8@16 */
 	numberOfPreviewItemsInPreviewPanel(...args: any[]): any;
-	/* typeEncoding=q24@0:8@16 */
-	numberOfRowsInTableView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	openInSketchAction(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	pluraliseMenuItemTitle(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	preferenceItemHasUpdated(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
@@ -2013,6 +2251,8 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	/* typeEncoding=v24@0:8@16 */
 	revealInFinderAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	searchString(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	selectedLibraries(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	selection(...args: any[]): any;
@@ -2022,14 +2262,22 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	setContextMenu(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDuplicateLibraryAlertWindow(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFilterTextField(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setHasAssets(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setItems(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setLibrariesArrayController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLibrariesFilterPredicate(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setLibraryInstallerAlertWindow(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setShouldEnableCogMenu(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSpyglassFilterButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setTableView(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -2038,6 +2286,8 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	showContextMenu(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	sketchShareURLsFromLibraries(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	spyglassFilterButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	startDownloadForRemoteLibrary(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -2046,8 +2296,6 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	tableCellForLibrary(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	tableView(...args: any[]): any;
-	/* typeEncoding=@40@0:8@16@24q32 */
-	tableView_objectValueForTableColumn_row(...args: any[]): any;
 	/* typeEncoding=c40@0:8@16@24@32 */
 	tableView_shouldTypeSelectForEvent_withCurrentSearchString(...args: any[]): any;
 	/* typeEncoding=@40@0:8@16@24q32 */
@@ -2084,8 +2332,6 @@ declare class MSAssetLibrariesPreferencePane extends MSPreferencePane /* impleme
 	viewDidAppear(): void;
 	/* typeEncoding=v16@0:8 */
 	viewWillDisappear(): void;
-	/* typeEncoding=v24@0:8@16 */
-	visitLibrariesPageAction(...args: any[]): any;
 }
 
 declare class MSAssetLibrary extends NSObject /* implements QLPreviewItem, BCSortable, NSCoding, MSLibraryObject */ {
@@ -2964,23 +3210,11 @@ declare class MSAssetScrubberItemView extends NSScrubberItemView {
 	tailPadding(...args: any[]): any;
 }
 
-declare class MSAssetSyncHeaderCellView extends NSTableCellView {
-	/* typeEncoding=@"NSColor", ivar=_backgroundColor, attributes=(retain,nonatomic) */
-	backgroundColor(): NSColor;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=@16@0:8 */
-	backgroundColor(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	drawRect(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setBackgroundColor(...args: any[]): any;
-}
-
 declare class MSAssetSyncItemTableCellView extends NSTableCellView {
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	drawRect(...args: any[]): any;
+	/* typeEncoding=v24@0:8q16 */
+	setBackgroundStyle(...args: any[]): any;
 }
 
 declare class MSAssetSyncSheet extends CHSheetController /* implements NSTableViewDataSource, NSTableViewDelegate, NSSplitViewDelegate */ {
@@ -3154,6 +3388,8 @@ declare class MSAssignColorSpaceAction extends MSChangeColorSpaceAction {
 	assignDocumentColorSpace(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSAttributeConverter extends NSObject {
@@ -3262,8 +3498,6 @@ declare class MSAttributedString extends NSObject /* implements MSCoding, NSCopy
 	isEqual(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	propertiesAreEqual(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	resetComputedProperties(): void;
 	/* typeEncoding=@16@0:8 */
 	string(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -3318,6 +3552,8 @@ declare class MSAutoExpandGroupsAction extends MSDocumentAction {
 	autoExpandGroups(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	validateMenuItem(...args: any[]): any;
 }
@@ -3330,6 +3566,8 @@ declare class MSAutoSelectingArrayController extends NSArrayController {
 declare class MSAvailableOverride extends NSObject {
 	/* typeEncoding=@"MSImmutableLayer", ivar=_affectedLayer, attributes=(assign,nonatomic,readonly) */
 	affectedLayer(): MSImmutableLayer;
+	/* typeEncoding=@, ivar=_affectedLayerDefault, attributes=(assign,nonatomic,readonly) */
+	affectedLayerDefault(): any;
 	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	children(): NSArray;
 	/* typeEncoding=@, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -3340,10 +3578,8 @@ declare class MSAvailableOverride extends NSObject {
 	hasOverride(): boolean;
 	/* typeEncoding=@"MSOverrideValue", ivar=_internalOverrideValue, attributes=(assign,nonatomic,readonly) */
 	internalOverrideValue(): MSOverrideValue;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	isAffectedLayerOrParentHidden(): boolean;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	isAffectedLayerOrParentLocked(): boolean;
+	/* typeEncoding=c, ivar=_isEditable, attributes=(assign,nonatomic,readonly) */
+	isEditable(): boolean;
 	/* typeEncoding=@"MSImmutableSymbolMaster", ivar=_master, attributes=(assign,nonatomic,readonly) */
 	master(): MSImmutableSymbolMaster;
 	/* typeEncoding=@"MSOverridePoint", ivar=_overridePoint, attributes=(assign,nonatomic,readonly) */
@@ -3353,33 +3589,33 @@ declare class MSAvailableOverride extends NSObject {
 	/* typeEncoding=@"MSAvailableOverride", ivar=_parent, attributes=(assign,nonatomic,readonly,weak) */
 	parent(): MSAvailableOverride;
 
-	/* typeEncoding=@48@0:8@16@24@32@40 */
-	static availableOverrideWithOverridePoint_master_overrideValue_inParent(...args: any[]): any;
+	/* typeEncoding=@64@0:8@16@24@32@40@48@56 */
+	static availableOverrideWithOverridePoint_master_overrideValue_otherOverrides_inParent_document(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@?24 */
 	static enumerateOverrides_withBlock(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	static flattenAvailableOverrides(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
 	affectedLayer(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	children(...args: any[]): any;
+	affectedLayerDefault(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	createOverrideViewController(...args: any[]): any;
+	children(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	currentValue(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	defaultValue(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasOverride(...args: any[]): any;
-	/* typeEncoding=@56@0:8@16@24@32@40@48 */
-	initWithOverridePoint_master_affectedLayer_overrideValue_inParent(...args: any[]): any;
+	/* typeEncoding=@76@0:8@16@24@32@40@48@56@64c72 */
+	initWithOverridePoint_master_affectedLayer_overrideValue_otherOverrides_inParent_document_editable(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	internalOverrideValue(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	isAffectedLayerOrParentHidden(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isAffectedLayerOrParentLocked(...args: any[]): any;
+	isEditable(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	master(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -3418,6 +3654,15 @@ declare class MSAveragingRenderMonitor extends MSRenderMonitor {
 	updateTimer(...args: any[]): any;
 }
 
+declare class MSBackButtonCell extends NSButtonCell {
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawTitle_withFrame_inView(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	highlightsBy(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	showsStateBy(...args: any[]): any;
+}
+
 declare class MSBackButtonContentView extends NSView {
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	drawRect(...args: any[]): any;
@@ -3425,38 +3670,20 @@ declare class MSBackButtonContentView extends NSView {
 	isOpaque(...args: any[]): any;
 }
 
-declare class MSBackButtonWindowController extends NSWindowController {
-	/* typeEncoding=@"MSArtboardGroup", ivar=_artboard, attributes=(assign,nonatomic,weak) */
-	artboard(): MSArtboardGroup;
-	/* typeEncoding=@"NSView", ivar=_attachedView, attributes=(assign,nonatomic,weak) */
-	attachedView(): NSView;
+declare class MSBackButtonController extends NSViewController {
 	/* typeEncoding=@"MSDocument", ivar=_doc, attributes=(assign,nonatomic,weak) */
 	doc(): MSDocument;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=@16@0:8 */
-	artboard(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	attach(): void;
-	/* typeEncoding=v32@0:8@16@24 */
-	attachToView_forArtboard(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	attachedView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	attachedViewChanged(...args: any[]): any;
+	attachToView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	backButtonAction(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
 	/* typeEncoding=@16@0:8 */
 	doc(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	hide(): void;
-	/* typeEncoding=v24@0:8@16 */
-	setArtboard(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setAttachedView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDoc(...args: any[]): any;
 }
@@ -3466,8 +3693,38 @@ declare class MSBackToInstanceAction extends MSDocumentAction {
 	backToInstance(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
+}
+
+declare class MSBackgroundBlurInspectorItem extends MSBaseBlurInspectorItem {
+	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_saturationAdapter, attributes=(retain,nonatomic) */
+	saturationAdapter(): MSMathInspectorValueAdaptor;
+	/* typeEncoding=@"MSUpDownTextField", ivar=_saturationField, attributes=(retain,nonatomic) */
+	saturationField(): MSUpDownTextField;
+	/* typeEncoding=@"NSSlider", ivar=_saturationSlider, attributes=(retain,nonatomic) */
+	saturationSlider(): NSSlider;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	saturationAdapter(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	saturationField(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	saturationSlider(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSaturationAdapter(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSaturationField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSaturationSlider(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	viewDidLoad(): void;
 }
 
 declare class MSBackgroundBlurRendererCG extends NSObject /* implements MSBackgroundBlurRenderer */ {
@@ -3481,25 +3738,9 @@ declare class MSBackgroundBlurRendererCG extends NSObject /* implements MSBackgr
 	superclass(): any;
 
 	/* typeEncoding=v40@0:8@16@24@32 */
-	renderBackgroundBlurBehindShape_context_clippedToPath(...args: any[]): any;
-}
-
-declare class MSBackgroundColorView extends NSView {
-	/* typeEncoding=@"NSColor", ivar=_backgroundColor, attributes=(copy,nonatomic) */
-	backgroundColor(): NSColor;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=@16@0:8 */
-	backgroundColor(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	drawRect(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setBackgroundColor(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	updateLayer(): void;
-	/* typeEncoding=c16@0:8 */
-	wantsUpdateLayer(...args: any[]): any;
+	renderBackgroundBlurBehindLayer_context_clippedToPath(...args: any[]): any;
+	/* typeEncoding=v80@0:8@16^{CGContext=}24{CGRect={CGPoint=dd}{CGSize=dd}}32d64@72 */
+	renderDocumentContentUnderLayer_inContext_rect_scale_forRenderingContext(...args: any[]): any;
 }
 
 declare class MSBadgeController extends NSObject {
@@ -3564,6 +3805,13 @@ declare class MSBadgeMenuAction extends MSDocumentAction /* implements MSWindowB
 	numberOfBadges(...args: any[]): any;
 }
 
+declare class MSBarView extends MSGradientView {
+	/* typeEncoding={NSEdgeInsets=dddd}16@0:8 */
+	alignmentRectInsets(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	viewWillDraw(): void;
+}
+
 declare class MSBaseAlignAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
@@ -3593,6 +3841,8 @@ declare class MSBaseAlignLayersAction extends MSDocumentAction /* implements MSA
 	altButtonCanShowAltImage(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canAlignToArtboardInstead(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	performAction(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -3648,13 +3898,19 @@ declare class MSBaseArchiver extends NSObject {
 	shouldEncodeAsReference(...args: any[]): any;
 }
 
-declare class MSBaseBlurInspectorItem extends MSStylePartInspectorItem /* implements MSInspectorValueAdaptorDelegate */ {
+declare class MSBaseBlurInspectorItem extends MSStylePartInspectorItem /* implements MSInspectorMathValueAdaptorDelegate, MSInspectorValueAdaptorDelegate */ {
+	/* typeEncoding=@"NSMenuItem", ivar=_backgroundBlurMenuItem, attributes=(retain,nonatomic) */
+	backgroundBlurMenuItem(): NSMenuItem;
+	/* typeEncoding=@"NSPopUpButton", ivar=_blurPopUp, attributes=(retain,nonatomic) */
+	blurPopUp(): NSPopUpButton;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
+	/* typeEncoding=@"NSMenuItem", ivar=_multipleBlursMenuItem, attributes=(retain,nonatomic) */
+	multipleBlursMenuItem(): NSMenuItem;
 	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_radiusAdapter, attributes=(retain,nonatomic) */
 	radiusAdapter(): MSMathInspectorValueAdaptor;
 	/* typeEncoding=@"MSUpDownTextField", ivar=_radiusField, attributes=(retain,nonatomic) */
@@ -3666,10 +3922,24 @@ declare class MSBaseBlurInspectorItem extends MSStylePartInspectorItem /* implem
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	backgroundBlurMenuItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	blurPopUp(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	blurPopUpAction(...args: any[]): any;
+	/* typeEncoding=Q24@0:8q16 */
+	blurTypeFromPopUpMenuIndex(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	initWithNibName_bundle(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	inspectorValueAdaptorAllowFloat(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	menuNeedsUpdate(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	multipleBlursMenuItem(...args: any[]): any;
+	/* typeEncoding=q24@0:8Q16 */
+	popUpMenuIndexFromBlurType(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	radiusAdapter(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -3677,20 +3947,32 @@ declare class MSBaseBlurInspectorItem extends MSStylePartInspectorItem /* implem
 	/* typeEncoding=@16@0:8 */
 	radiusSlider(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setBackgroundBlurMenuItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setBlurPopUp(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setMultipleBlursMenuItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setRadiusAdapter(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setRadiusField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setRadiusSlider(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
 }
 
 declare class MSBaseBooleanAction extends MSDocumentAction {
+	/* typeEncoding=q16@0:8 */
+	booleanOperation(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	doPerformAction(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasShapePartsSelected(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	tooltip(...args: any[]): any;
+	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -3742,6 +4024,8 @@ declare class MSBaseInspectorSection extends NSViewController /* implements MSIn
 	layers(): MSLayerArray;
 	/* typeEncoding=c, ivar=_needsUpdate, attributes=(assign,nonatomic) */
 	needsUpdate(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	selectionContainsChildrenOfCompoundPath(): boolean;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 	/* typeEncoding=c, ivar=_throttleUpdate, attributes=(assign,nonatomic) */
@@ -3769,10 +4053,20 @@ declare class MSBaseInspectorSection extends NSViewController /* implements MSIn
 	items(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	layers(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	loadView(): void;
 	/* typeEncoding=c16@0:8 */
 	needsUpdate(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	scheduleUpdate(): void;
+	/* typeEncoding=v24@0:8@16 */
+	sectionWithIdentifierWillCollapse(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	selectionContainsChildrenOfCompoundPath(...args: any[]): any;
+	/* typeEncoding={NSEdgeInsets=dddd}16@0:8 */
+	separatorInset(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDelegate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -3806,10 +4100,6 @@ declare class MSBaseMoveAction extends MSDocumentAction {
 	optionKeyPressed(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	refreshTouchBarItem(): void;
-	/* typeEncoding=@16@0:8 */
-	tooltip(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	tooltipMoveDescription(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -3830,8 +4120,6 @@ declare class MSBaseShapeAction extends MSBaseInsertAction {
 
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	exitToNormalEventHandler(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -3872,7 +4160,83 @@ declare class MSBaseSharedObjectAction extends MSDocumentAction {
 	validationStatus(...args: any[]): any;
 }
 
+declare class MSBaseSizeInspectorItem extends MSInspectorItem /* implements MSInspectorMathValueAdaptorDelegate */ {
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	accessory(): number;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"MSSizeInspectorValueAdaptor", ivar=_heightAdapter, attributes=(retain,nonatomic) */
+	heightAdapter(): MSSizeInspectorValueAdaptor;
+	/* typeEncoding=@"MSInlineUpDownTextField", ivar=_heightField, attributes=(retain,nonatomic) */
+	heightField(): MSInlineUpDownTextField;
+	/* typeEncoding=@"NSButton", ivar=_interTextFieldButton, attributes=(retain,nonatomic) */
+	interTextFieldButton(): NSButton;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+	/* typeEncoding=@"MSSizeInspectorValueAdaptor", ivar=_widthAdapter, attributes=(retain,nonatomic) */
+	widthAdapter(): MSSizeInspectorValueAdaptor;
+	/* typeEncoding=@"MSInlineUpDownTextField", ivar=_widthField, attributes=(retain,nonatomic) */
+	widthField(): MSInlineUpDownTextField;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=Q16@0:8 */
+	accessory(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	allowFloatValues(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	heightAdapter(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	heightField(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	inspectorValueAdaptor_didEncounterError(...args: any[]): any;
+	/* typeEncoding=c48@0:8@16@24@32@40 */
+	inspectorValueAdaptor_validateValue_forModel_context(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	inspectorValueAdaptorAllowFloat(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	inspectorValueAdaptorDidChangeValue(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	interTextFieldButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	interTextFieldButtonAction(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeightAdapter(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeightField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setInterTextFieldButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLayers(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setWidthAdapter(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setWidthField(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	setupAccessoryButton(): void;
+	/* typeEncoding=v24@0:8d16 */
+	showSizeAlertForValue(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+	/* typeEncoding=v16@0:8 */
+	updateUI(): void;
+	/* typeEncoding=v16@0:8 */
+	viewDidLoad(): void;
+	/* typeEncoding=@16@0:8 */
+	widthAdapter(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	widthField(...args: any[]): any;
+}
+
 declare class MSBaseStyleAction extends MSDocumentAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -4095,19 +4459,13 @@ declare class MSBezierBuilder extends NSObject {
 declare class MSBezierContour extends NSObject {
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	bounds(): CGRect;
-	/* typeEncoding=c, ivar=_cachedBounds, attributes=(assign,nonatomic) */
-	cachedBounds(): boolean;
-	/* typeEncoding=c, ivar=_cachedClockwise, attributes=(assign,nonatomic) */
-	cachedClockwise(): boolean;
-	/* typeEncoding=c, ivar=_cachedIsRectangular, attributes=(assign,nonatomic) */
-	cachedIsRectangular(): boolean;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,getter=isClockwise) */
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly,getter=isClockwise) */
 	clockwise(): boolean;
 	/* typeEncoding=c, ivar=_closed, attributes=(assign,nonatomic,readonly,getter=isClosed) */
 	closed(): boolean;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isRectangular(): boolean;
-	/* typeEncoding=@"MSPath", ivar=_path, attributes=(retain,nonatomic) */
+	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	path(): MSPath;
 	/* typeEncoding=@"NSArray", ivar=_segments, attributes=(copy,nonatomic,readonly) */
 	segments(): NSArray;
@@ -4121,12 +4479,10 @@ declare class MSBezierContour extends NSObject {
 	_cxx_destruct(): void;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	bounds(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	calculateBounds(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	cachedBounds(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	cachedClockwise(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	cachedIsRectangular(...args: any[]): any;
+	calculateIsClockwise(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	closedContour(...args: any[]): any;
 	/* typeEncoding=@24@0:8d16 */
@@ -4169,20 +4525,8 @@ declare class MSBezierContour extends NSObject {
 	segmentsByCheckingForPointsInJoin(...args: any[]): any;
 	/* typeEncoding=@28@0:8@16c24 */
 	segmentsByDiscardingTinySegments_closed(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	setBounds(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setCachedBounds(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setCachedClockwise(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setCachedIsRectangular(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setClockwise(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setIsRectangular(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setPath(...args: any[]): any;
+	/* typeEncoding=@24@0:8d16 */
+	segmentsWithFlatness(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	simplifiedSegments(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16d24 */
@@ -4411,6 +4755,8 @@ declare class MSBezierSegment extends NSObject {
 	endPoint1(): CGPoint;
 	/* typeEncoding={CGPoint=dd}, ivar=_endPoint2, attributes=(assign,nonatomic,readonly) */
 	endPoint2(): CGPoint;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	flatness(): number;
 	/* typeEncoding=@"NSSet", ivar=_inflectionOffsets, attributes=(retain,nonatomic) */
 	inflectionOffsets(): NSSet;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -4475,6 +4821,8 @@ declare class MSBezierSegment extends NSObject {
 	endPoint1(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	endPoint2(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	flatness(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	inflectionOffsets(...args: any[]): any;
 	/* typeEncoding=@48@0:8{CGPoint=dd}16{CGPoint=dd}32 */
@@ -4497,6 +4845,8 @@ declare class MSBezierSegment extends NSObject {
 	lineSegment(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	looksLikeALine(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	normalizedSegment(...args: any[]): any;
 	/* typeEncoding=d32@0:8{CGPoint=dd}16 */
 	offsetForNormalToPoint(...args: any[]): any;
 	/* typeEncoding=@40@0:8{MSLine=ddd}16 */
@@ -4533,6 +4883,8 @@ declare class MSBezierSegment extends NSObject {
 	segmentWithInset(...args: any[]): any;
 	/* typeEncoding=@64@0:8{CGAffineTransform=dddddd}16 */
 	segmentWithTransform(...args: any[]): any;
+	/* typeEncoding=@24@0:8d16 */
+	segmentsWithFlatness(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDerivative(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -4678,6 +5030,8 @@ declare class MSBitmapEditEventHandler extends MSEventHandler {
 	selectionBezierForFlippingCoordinates(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	selectionDidChangeTo(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	selectionDidLiveUpdateTo(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	selectionRectInLayerCoordinates(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -4702,7 +5056,11 @@ declare class MSBitmapEditEventHandler extends MSEventHandler {
 	updateMeasurementLabel(): void;
 }
 
-declare class MSBitmapEditInspectorViewController extends NSViewController /* implements MSModeModePickerDelegate, BCPopoverDelegate, MSColorInspectorDelegate, MSInspectorChildController */ {
+declare class MSBitmapEditInspectorViewController extends NSViewController /* implements BCPopoverDelegate, MSColorInspectorDelegate, MSInspectorChildController */ {
+	/* typeEncoding=@"NSButton", ivar=_cropButton, attributes=(retain,nonatomic) */
+	cropButton(): NSButton;
+	/* typeEncoding=@"NSTextField", ivar=_cropLabel, attributes=(retain,nonatomic) */
+	cropLabel(): NSTextField;
 	/* typeEncoding=q, ivar=_currentMode, attributes=(assign,nonatomic) */
 	currentMode(): number;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -4711,23 +5069,39 @@ declare class MSBitmapEditInspectorViewController extends NSViewController /* im
 	description(): NSString;
 	/* typeEncoding=@"MSBitmapEditEventHandler", ivar=_eventHandler, attributes=(assign,nonatomic) */
 	eventHandler(): MSBitmapEditEventHandler;
-	/* typeEncoding=c, ivar=_hasSelection, attributes=(assign,nonatomic) */
+	/* typeEncoding=@"NSButton", ivar=_fillButton, attributes=(retain,nonatomic) */
+	fillButton(): NSButton;
+	/* typeEncoding=@"NSTextField", ivar=_fillLabel, attributes=(retain,nonatomic) */
+	fillLabel(): NSTextField;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	hasSelection(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
+	/* typeEncoding=@"NSTextField", ivar=_heightField, attributes=(retain,nonatomic) */
+	heightField(): NSTextField;
+	/* typeEncoding=@"NSButton", ivar=_invertButton, attributes=(retain,nonatomic) */
+	invertButton(): NSButton;
+	/* typeEncoding=@"NSTextField", ivar=_invertLabel, attributes=(retain,nonatomic) */
+	invertLabel(): NSTextField;
 	/* typeEncoding=@"NSButton", ivar=_magicWandButton, attributes=(retain,nonatomic) */
 	magicWandButton(): NSButton;
-	/* typeEncoding=@"MSModePickerView", ivar=_pickerView, attributes=(retain,nonatomic) */
-	pickerView(): MSModePickerView;
 	/* typeEncoding=@"BCPopover", ivar=_popover, attributes=(retain,nonatomic) */
 	popover(): BCPopover;
 	/* typeEncoding=@"NSButton", ivar=_rectSelectionButton, attributes=(retain,nonatomic) */
 	rectSelectionButton(): NSButton;
+	/* typeEncoding={CGSize=dd}, ivar=_selectionSize, attributes=(assign,nonatomic) */
+	selectionSize(): CGSize;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
+	/* typeEncoding=@"NSTextField", ivar=_widthField, attributes=(retain,nonatomic) */
+	widthField(): NSTextField;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	actionButtons(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	buttonLabels(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	colorInspector_didChangeToColor(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -4736,30 +5110,36 @@ declare class MSBitmapEditInspectorViewController extends NSViewController /* im
 	colorizeAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	cropAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cropButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cropLabel(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	currentMode(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	dismissViewController(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	eventHandler(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	fillButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	fillLabel(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	finishEditing(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasSelection(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	heightField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	invertAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	invertButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	invertLabel(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	magicWandAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	magicWandButton(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	pickerView(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16q24 */
-	pickerView_labelForMode(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	pickerViewChanged(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	pickerViewWillChange(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	popover(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -4771,27 +5151,47 @@ declare class MSBitmapEditInspectorViewController extends NSViewController /* im
 	/* typeEncoding=v16@0:8 */
 	refresh(): void;
 	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	selectionDidChangeTo(...args: any[]): any;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	selectionSize(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCropButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCropLabel(...args: any[]): any;
 	/* typeEncoding=v24@0:8q16 */
 	setCurrentMode(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setEventHandler(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setHasSelection(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFillButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFillLabel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeightField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setInvertButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setInvertLabel(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setMagicWandButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setPickerView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setPopover(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setRectSelectionButton(...args: any[]): any;
+	/* typeEncoding=v32@0:8{CGSize=dd}16 */
+	setSelectionSize(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setWidthField(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
 	/* typeEncoding=v16@0:8 */
 	viewWillDisappear(): void;
 	/* typeEncoding=@16@0:8 */
 	views(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	widthField(...args: any[]): any;
 }
 
 declare class MSBitmapEditor extends NSObject {
@@ -4850,9 +5250,9 @@ declare class MSBitmapLayer extends _MSBitmapLayer /* implements MSImageOwner */
 	/* typeEncoding=@16@0:8 */
 	NSImage(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
-	applyOverride_toPoint(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	canInsertIntoGroup(...args: any[]): any;
+	applyOverride_document(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	canChangeBooleanOperation(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canReduceImageSize(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16Q24 */
@@ -4868,9 +5268,11 @@ declare class MSBitmapLayer extends _MSBitmapLayer /* implements MSImageOwner */
 	/* typeEncoding=v16@0:8 */
 	initializeUnsetObjectPropertiesWithDefaults(): void;
 	/* typeEncoding=@16@0:8 */
-	inspectorViewControllerNames(...args: any[]): any;
+	inspectorSections(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isAtOriginalSize(...args: any[]): any;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	originalSize(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v16@0:8 */
@@ -4880,7 +5282,7 @@ declare class MSBitmapLayer extends _MSBitmapLayer /* implements MSImageOwner */
 	/* typeEncoding=v16@0:8 */
 	resizeToOriginalSize(): void;
 	/* typeEncoding=@16@0:8 */
-	selectedPreviewImage(...args: any[]): any;
+	selectedPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setReducedImage(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -4888,14 +5290,17 @@ declare class MSBitmapLayer extends _MSBitmapLayer /* implements MSImageOwner */
 	/* typeEncoding={CGSize=dd}16@0:8 */
 	targetSizeForReduction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	unselectedPreviewImage(...args: any[]): any;
+	unselectedPreviewTemplateImage(...args: any[]): any;
 }
 
-declare class MSBitmapLayerSection extends MSLayerSection {
-	/* typeEncoding=@16@0:8 */
-	bitmapLayers(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	viewDidLoad(): void;
+declare class MSBitmapLayerItem extends MSInspectorItem {
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+}
+
+declare class MSBitmapLayerSection extends MSSingleItemInspectorSection {
+	/* typeEncoding=#16@0:8 */
+	static itemClass(...args: any[]): any;
 }
 
 declare class MSBitmapMagicWandEditor extends MSBitmapEditor {
@@ -4968,11 +5373,9 @@ declare class MSBitmapMagicWandEditor extends MSBitmapEditor {
 	tolerance(...args: any[]): any;
 }
 
-declare class MSBitmapOverrideViewController extends MSOverrideViewController /* implements MSDataMenuProviderDelegate */ {
+declare class MSBitmapOverrideInspectorItem extends MSOverrideInspectorItem /* implements MSDataMenuProviderDelegate */ {
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	controlRect(): CGRect;
-	/* typeEncoding=@"NSPopUpButton", ivar=_dataPopUpButton, attributes=(retain,nonatomic) */
-	dataPopUpButton(): NSPopUpButton;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -4988,8 +5391,6 @@ declare class MSBitmapOverrideViewController extends MSOverrideViewController /*
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
 	NSImage(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	build(): void;
 	/* typeEncoding=v24@0:8@16 */
 	choosePatternImage(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
@@ -4998,16 +5399,14 @@ declare class MSBitmapOverrideViewController extends MSOverrideViewController /*
 	controlViewForEditingOverride(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	dataMenuProvider_didChooseData(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	dataMenuProviderRefreshMasterData(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	dataPopUpButton(...args: any[]): any;
+	dataOverrides(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	imageView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	imageViewAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	overrideImage(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setDataPopUpButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setImageView(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -5027,6 +5426,9 @@ declare class MSBitmapRectangleEditor extends MSBitmapEditor {
 	mouseEndPoint(): CGPoint;
 	/* typeEncoding=@"NSBezierPath", ivar=_selectionBeforeDrag, attributes=(retain,nonatomic) */
 	selectionBeforeDrag(): NSBezierPath;
+
+	/* typeEncoding=@40@0:8@16@24q32 */
+	static accumulateSelectionWithPrevious_draggingRect_dragMode(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -5081,6 +5483,23 @@ declare class MSBitmapRendererCG extends MSLayerRendererCG {
 	renderLayerUncached_ignoreDrawingArea_context(...args: any[]): any;
 }
 
+declare class MSBitmapResizeToOriginalItem extends MSInspectorItem {
+	/* typeEncoding=@"NSButton", ivar=_setToOriginalSizeButton, attributes=(retain,nonatomic) */
+	setToOriginalSizeButton(): NSButton;
+
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	setSetToOriginalSizeButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	setToOriginalSizeButton(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+}
+
 declare class MSBitmapShadowRendererCG extends NSObject /* implements MSShadowRenderer */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
@@ -5127,14 +5546,9 @@ declare class MSBlockAnimation extends CABasicAnimation /* implements CAAnimatio
 	initWithBlock(...args: any[]): any;
 }
 
-declare class MSBlueButtonCell extends NSButtonCell {
-	/* typeEncoding=@16@0:8 */
-	colorForTitle(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
-	drawTitle_withFrame_inView(...args: any[]): any;
-}
-
 declare class MSBlurInspectorViewController extends MSStylePartInspectorViewController /* implements MSStylePartInspectorItemDelegate, NSMenuDelegate */ {
+	/* typeEncoding=@"MSBackgroundBlurInspectorItem", ivar=_backgroundBlurItem, attributes=(retain,nonatomic) */
+	backgroundBlurItem(): MSBackgroundBlurInspectorItem;
 	/* typeEncoding=@"NSMenuItem", ivar=_backgroundBlurMenuItem, attributes=(retain,nonatomic) */
 	backgroundBlurMenuItem(): NSMenuItem;
 	/* typeEncoding=@"MSBlurNameInspectorItem", ivar=_blurNameItem, attributes=(retain,nonatomic) */
@@ -5149,6 +5563,10 @@ declare class MSBlurInspectorViewController extends MSStylePartInspectorViewCont
 	motionBlurItem(): MSMotionBlurInspectorItem;
 	/* typeEncoding=@"NSMenuItem", ivar=_multipleBlursMenuItem, attributes=(retain,nonatomic) */
 	multipleBlursMenuItem(): NSMenuItem;
+	/* typeEncoding=@"MSPaddingInspectorItem", ivar=_paddingItem, attributes=(retain,nonatomic) */
+	paddingItem(): MSPaddingInspectorItem;
+	/* typeEncoding=@"MSSeparatorlessView", ivar=_paddingView, attributes=(retain,nonatomic) */
+	paddingView(): MSSeparatorlessView;
 	/* typeEncoding=@"MSSimpleBlurInspectorItem", ivar=_simpleBlurItem, attributes=(retain,nonatomic) */
 	simpleBlurItem(): MSSimpleBlurInspectorItem;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
@@ -5158,6 +5576,8 @@ declare class MSBlurInspectorViewController extends MSStylePartInspectorViewCont
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	backgroundBlurItem(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	backgroundBlurMenuItem(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -5172,10 +5592,18 @@ declare class MSBlurInspectorViewController extends MSStylePartInspectorViewCont
 	motionBlurItem(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	multipleBlursMenuItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	paddingItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	paddingView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	prepareLayersForBackgroundBlur(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	reloadInspectorStack(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	sectionWithIdentifierWillCollapse(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setBackgroundBlurItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setBackgroundBlurMenuItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -5184,6 +5612,10 @@ declare class MSBlurInspectorViewController extends MSStylePartInspectorViewCont
 	setMotionBlurItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setMultipleBlursMenuItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPaddingItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPaddingView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setSimpleBlurItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -5205,61 +5637,29 @@ declare class MSBlurInspectorViewController extends MSStylePartInspectorViewCont
 }
 
 declare class MSBlurNameInspectorItem extends MSStylePartInspectorItem {
-	/* typeEncoding=@"NSMenuItem", ivar=_backgroundBlurMenuItem, attributes=(retain,nonatomic) */
-	backgroundBlurMenuItem(): NSMenuItem;
-	/* typeEncoding=@"NSPopUpButton", ivar=_blurPopUp, attributes=(retain,nonatomic) */
-	blurPopUp(): NSPopUpButton;
 	/* typeEncoding=@"NSButton", ivar=_enabledButton, attributes=(retain,nonatomic) */
 	enabledButton(): NSButton;
-	/* typeEncoding=@"NSMenuItem", ivar=_multipleBlursMenuItem, attributes=(retain,nonatomic) */
-	multipleBlursMenuItem(): NSMenuItem;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=@16@0:8 */
-	backgroundBlurMenuItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	blurEnabledAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	blurPopUp(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	blurPopUpAction(...args: any[]): any;
-	/* typeEncoding=Q24@0:8q16 */
-	blurTypeFromPopUpMenuIndex(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	enabledButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	menuNeedsUpdate(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	multipleBlursMenuItem(...args: any[]): any;
-	/* typeEncoding=q24@0:8Q16 */
-	popUpMenuIndexFromBlurType(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setBackgroundBlurMenuItem(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setBlurPopUp(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setEnabledButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setMultipleBlursMenuItem(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	updateDisplayedValues(): void;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
 }
 
-declare class MSBlurPopUpButtonCell extends NSPopUpButtonCell {
-	/* typeEncoding=@24@0:8@16 */
-	correctedTitle(...args: any[]): any;
-	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
-	drawBorderAndBackgroundWithFrame_inView(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
-	drawTitle_withFrame_inView(...args: any[]): any;
+declare class MSBooleanActionGroup extends MSActionGroup {
+	/* typeEncoding=@16@0:8 */
+	actionNames(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSBooleanMenuAction extends MSDocumentAction {
-	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -5322,43 +5722,21 @@ declare class MSBooleanOperationChainStep extends NSObject {
 	setPath(...args: any[]): any;
 }
 
-declare class MSBooleanOperations extends NSObject {
-	/* typeEncoding=v32@0:8q16@24 */
-	static applyBooleanOperation_toShape(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	static applyNameToChildren(...args: any[]): any;
-	/* typeEncoding=v32@0:8q16@24 */
-	static booleanOperation_onLayers(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	static convertLineToOutline(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	static convertLinesToOutlinesInShape(...args: any[]): any;
-	/* typeEncoding=v32@0:8q16@24 */
-	static doBooleanOperation_onLayers(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	static finishFinalShape(...args: any[]): any;
-	/* typeEncoding=@32@0:8q16@24 */
-	static historyMomentTitleForOperation_onLayers(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	static layersContainShapePaths(...args: any[]): any;
-	/* typeEncoding=v40@0:8@16@24q32 */
-	static mergeShapes_withShape_usingBooleanOp(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	static prepareLayers(...args: any[]): any;
-	/* typeEncoding=v32@0:8q16@24 */
-	static resetSubPathsBooleanOperationsTo_onLayers(...args: any[]): any;
+declare class MSBorderInspectorPositionLabelTransformer extends NSValueTransformer {
+	/* typeEncoding=#16@0:8 */
+	static transformedValueClass(...args: any[]): any;
+
+	/* typeEncoding=@24@0:8@16 */
+	transformedValue(...args: any[]): any;
 }
 
-declare class MSBooleanTouchBarGroupAction extends MSTouchBarGroupAction {
-	/* typeEncoding=@16@0:8 */
-	actionNames(...args: any[]): any;
-}
-
-declare class MSBorderInspectorViewController extends MSStylePartInspectorViewController {
-	/* typeEncoding=@"MSStylePartPreviewButton", ivar=_colorButton, attributes=(retain,nonatomic) */
-	colorButton(): MSStylePartPreviewButton;
-	/* typeEncoding=@"NSPopUpButton", ivar=_positionPopUp, attributes=(retain,nonatomic) */
-	positionPopUp(): NSPopUpButton;
+declare class MSBorderInspectorViewController extends MSColorStylePartInspectorViewController {
+	/* typeEncoding=@"NSTextField", ivar=_borderPositionLabel, attributes=(retain,nonatomic) */
+	borderPositionLabel(): NSTextField;
+	/* typeEncoding=@"NSTextField", ivar=_fillTypeLabel, attributes=(retain,nonatomic) */
+	fillTypeLabel(): NSTextField;
+	/* typeEncoding=@"NSSegmentedControl", ivar=_positionControl, attributes=(retain,nonatomic) */
+	positionControl(): NSSegmentedControl;
 	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_thicknessAdaptor, attributes=(retain,nonatomic) */
 	thicknessAdaptor(): MSMathInspectorValueAdaptor;
 	/* typeEncoding=@"MSUpDownTextField", ivar=_thicknessField, attributes=(retain,nonatomic) */
@@ -5366,30 +5744,30 @@ declare class MSBorderInspectorViewController extends MSStylePartInspectorViewCo
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	borderPositionLabel(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canDrawInnerOrOuterBorders(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	colorButton(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	dealloc(): void;
 	/* typeEncoding=v24@0:8@16 */
 	enableAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
+	fillTypeLabel(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16@24@32^v40 */
+	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	layers(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	lineShapes(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	positionPopUp(...args: any[]): any;
+	positionControl(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	positionPopUpToolTip(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	prepare(): void;
 	/* typeEncoding=v24@0:8@16 */
-	setColorButton(...args: any[]): any;
+	setBorderPositionLabel(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setPositionPopUp(...args: any[]): any;
+	setFillTypeLabel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPositionControl(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setStyleParts(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -5401,6 +5779,10 @@ declare class MSBorderInspectorViewController extends MSStylePartInspectorViewCo
 	/* typeEncoding=@16@0:8 */
 	thicknessField(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+	/* typeEncoding=v16@0:8 */
+	updateUI(): void;
+	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
 }
 
@@ -5411,10 +5793,6 @@ declare class MSBorderOptionsInspectorViewController extends MSStylePartInspecto
 	dashField1(): NSTextField;
 	/* typeEncoding=@"NSTextField", ivar=_dashField2, attributes=(retain,nonatomic) */
 	dashField2(): NSTextField;
-	/* typeEncoding=@"NSTextField", ivar=_dashField3, attributes=(retain,nonatomic) */
-	dashField3(): NSTextField;
-	/* typeEncoding=@"NSTextField", ivar=_dashField4, attributes=(retain,nonatomic) */
-	dashField4(): NSTextField;
 	/* typeEncoding=@"NSPopUpButton", ivar=_endDecorationButton, attributes=(retain,nonatomic) */
 	endDecorationButton(): NSPopUpButton;
 	/* typeEncoding=@"NSSet", ivar=_endMarkerTypes, attributes=(retain,nonatomic) */
@@ -5423,8 +5801,6 @@ declare class MSBorderOptionsInspectorViewController extends MSStylePartInspecto
 	filteredLayers(): NSArray;
 	/* typeEncoding=@"NSSegmentedControl", ivar=_joinSegmentedControl, attributes=(retain,nonatomic) */
 	joinSegmentedControl(): NSSegmentedControl;
-	/* typeEncoding=@"NSArray", ivar=_layers, attributes=(copy,nonatomic) */
-	layers(): NSArray;
 	/* typeEncoding=@"NSPopUpButton", ivar=_startDecorationButton, attributes=(retain,nonatomic) */
 	startDecorationButton(): NSPopUpButton;
 	/* typeEncoding=@"NSSet", ivar=_startMarkerTypes, attributes=(retain,nonatomic) */
@@ -5442,10 +5818,6 @@ declare class MSBorderOptionsInspectorViewController extends MSStylePartInspecto
 	dashField1(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	dashField2(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	dashField3(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	dashField4(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	dashFields(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -5468,8 +5840,6 @@ declare class MSBorderOptionsInspectorViewController extends MSStylePartInspecto
 	joinAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	joinSegmentedControl(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	layers(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	prepareDecorationButtons(): void;
 	/* typeEncoding=v16@0:8 */
@@ -5481,10 +5851,6 @@ declare class MSBorderOptionsInspectorViewController extends MSStylePartInspecto
 	/* typeEncoding=v24@0:8@16 */
 	setDashField2(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setDashField3(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setDashField4(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setEndDecorationButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setEndMarkerTypes(...args: any[]): any;
@@ -5493,11 +5859,11 @@ declare class MSBorderOptionsInspectorViewController extends MSStylePartInspecto
 	/* typeEncoding=v24@0:8@16 */
 	setJoinSegmentedControl(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLayers(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setStartDecorationButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setStartMarkerTypes(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setStyleParts(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	startDecorationAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -5508,9 +5874,33 @@ declare class MSBorderOptionsInspectorViewController extends MSStylePartInspecto
 	validateMenuItem(...args: any[]): any;
 }
 
+declare class MSBorderOptionsView extends NSView {
+}
+
 declare class MSBottomGradientView extends NSView {
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	drawRect(...args: any[]): any;
+}
+
+declare class MSBottomSeparatorConfigurableView extends MSSeparatorConfigurableView {
+	/* typeEncoding=c, ivar=_wantsBottomSeparator, attributes=(assign,nonatomic) */
+	wantsBottomSeparator(): boolean;
+
+	/* typeEncoding=v20@0:8c16 */
+	setWantsBottomSeparator(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	wantsBottomSeparator(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	wantsSeparatorBetweenSelfAndView(...args: any[]): any;
+}
+
+declare class MSButtonToolbarItem extends MSToolbarItem {
+	/* typeEncoding=@24@0:8@16 */
+	makeViewForAction(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setImage(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setToolTip(...args: any[]): any;
 }
 
 declare class MSCGContextPool extends BCObjectPool {
@@ -5635,8 +6025,12 @@ declare class MSCallToActionButtonCell extends MSHoverButtonCell {
 }
 
 declare class MSCallToActionButtonDividerView extends NSView {
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	drawRect(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	viewDidChangeEffectiveAppearance(): void;
 }
 
 declare class MSCanvasPreferencePane extends MSPreferencePane {
@@ -5670,11 +6064,65 @@ declare class MSCanvasPreferencePane extends MSPreferencePane {
 	setFlowColorWell(...args: any[]): any;
 }
 
+declare class MSCanvasUpdatingSheet extends CHSheetController {
+	/* typeEncoding=@"MSImmutableDocumentData", ivar=_oldDocumentState, attributes=(retain,nonatomic) */
+	oldDocumentState(): MSImmutableDocumentData;
+	/* typeEncoding=@"NSTimer", ivar=_operationTimer, attributes=(retain,nonatomic) */
+	operationTimer(): NSTimer;
+	/* typeEncoding=@"NSSet", ivar=_selectedLayerIDs, attributes=(copy,nonatomic) */
+	selectedLayerIDs(): NSSet;
+	/* typeEncoding=@"NSString", ivar=_selectedPageID, attributes=(copy,nonatomic) */
+	selectedPageID(): NSString;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	cancel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	confirm(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	doPerformOperation(): void;
+	/* typeEncoding=@16@0:8 */
+	doc(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	oldDocumentState(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	operationTimer(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	performOperation(): void;
+	/* typeEncoding=v16@0:8 */
+	restoreState(): void;
+	/* typeEncoding=v16@0:8 */
+	schedulePerformOperation(): void;
+	/* typeEncoding=@16@0:8 */
+	selectedLayerIDs(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedPageID(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOldDocumentState(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOperationTimer(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSelectedLayerIDs(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSelectedPageID(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	storeState(): void;
+	/* typeEncoding=v16@0:8 */
+	triggerPerformOperation(): void;
+	/* typeEncoding=v16@0:8 */
+	windowDidLoad(): void;
+}
+
 declare class MSCenterLayersInCanvasAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	centerLayersInCanvas(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -5684,6 +6132,8 @@ declare class MSCenterSelectionInVisibleAreaAction extends MSDocumentAction {
 	centerCanvasSelectionInVisibleArea(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -5698,6 +6148,8 @@ declare class MSCenteredPopUpButtonCell extends NSPopUpButtonCell {
 }
 
 declare class MSChangeColorSpaceAction extends MSDocumentAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	refreshColorSpaceDependentUI(): void;
 }
@@ -5718,6 +6170,8 @@ declare class MSChangeFlowAnimationFromBottomAnimationAction extends MSChangeFlo
 	animationType(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	changeFlowAnimationToFromBottomAnimation(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSChangeFlowAnimationFromLeftAnimationAction extends MSChangeFlowAnimationAction {
@@ -5725,6 +6179,8 @@ declare class MSChangeFlowAnimationFromLeftAnimationAction extends MSChangeFlowA
 	animationType(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	changeFlowAnimationToFromLeftAnimation(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSChangeFlowAnimationFromRightAnimationAction extends MSChangeFlowAnimationAction {
@@ -5732,6 +6188,8 @@ declare class MSChangeFlowAnimationFromRightAnimationAction extends MSChangeFlow
 	animationType(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	changeFlowAnimationToFromRightAnimation(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSChangeFlowAnimationFromTopAnimationAction extends MSChangeFlowAnimationAction {
@@ -5739,6 +6197,8 @@ declare class MSChangeFlowAnimationFromTopAnimationAction extends MSChangeFlowAn
 	animationType(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	changeFlowAnimationToFromTopAnimation(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSChangeFlowAnimationNoAnimationAction extends MSChangeFlowAnimationAction {
@@ -5746,6 +6206,8 @@ declare class MSChangeFlowAnimationNoAnimationAction extends MSChangeFlowAnimati
 	animationType(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	changeFlowAnimationToNoAnimation(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSChangeFontAction extends MSDocumentAction {
@@ -5753,6 +6215,8 @@ declare class MSChangeFontAction extends MSDocumentAction {
 	changeTextLayerFont(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -5814,6 +6278,8 @@ declare class MSClippingMaskAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isActive(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -5823,6 +6289,8 @@ declare class MSClippingMaskModeAction extends MSDocumentAction {
 	clippingMaskMode(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	shapesWithClippingMask(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -5863,6 +6331,10 @@ declare class MSClosePathChange extends MSShapeChange {
 }
 
 declare class MSCloudAction extends MSPopoverAction /* implements MSCloudShareUploadControllerDelegate */ {
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canCloseImmediately(): boolean;
+	/* typeEncoding=@?, ivar=_closeAlertUploadDidFinishHandler, attributes=(copy,nonatomic) */
+	closeAlertUploadDidFinishHandler(): any;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -5882,6 +6354,8 @@ declare class MSCloudAction extends MSPopoverAction /* implements MSCloudShareUp
 	/* typeEncoding=@"MSCloudShareUploadController", ivar=_upload, attributes=(retain,nonatomic) */
 	upload(): MSCloudShareUploadController;
 
+	/* typeEncoding=@16@0:8 */
+	static actionsToPrepareTermination(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	static addRemoteLibraryWithURL_parameters(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16Q24 */
@@ -5896,31 +6370,53 @@ declare class MSCloudAction extends MSPopoverAction /* implements MSCloudShareUp
 	static openCloudUploadURL_parameters(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
 	static popoverClass(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@?24 */
+	static prepareClosingActions_withHandler(...args: any[]): any;
+	/* typeEncoding=v24@0:8@?16 */
+	static prepareTerminationWithHandler(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	static shouldPrepareForTermination(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=v56@0:8@16Q24@32:40^v48 */
 	attemptRecoveryFromError_optionIndex_delegate_didRecoverSelector_contextInfo(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	canCloseImmediately(...args: any[]): any;
+	/* typeEncoding=@?16@0:8 */
+	closeAlertUploadDidFinishHandler(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	cloudShareController_didChangeProgress(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	cloudShareController_didUploadShare(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	cloudShareController_uploadDidFailWithError(...args: any[]): any;
+	/* typeEncoding=v36@0:8@16c24^v28 */
+	document_shouldClose_contextInfo(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	exportedDocument(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	image(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	mayShowInToolbar(...args: any[]): any;
+	/* typeEncoding=v44@0:8:16@24c32^v36 */
+	performCloseSelector_withDelegate_shouldClose_contextInfo(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	popoverShouldAnimateOnContentFrameDidChange(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	popoverViewController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@?16 */
+	prepareCloseWithHandler(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	progressImages(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	refreshOperation(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	refreshShareWithHandler(...args: any[]): any;
+	/* typeEncoding=v24@0:8@?16 */
+	setCloseAlertUploadDidFinishHandler(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setCloudPlatform(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -5929,10 +6425,8 @@ declare class MSCloudAction extends MSPopoverAction /* implements MSCloudShareUp
 	setRefreshOperation(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setUpload(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	startUploadUpdating(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	startUploadUpdating_ownedByOrganization(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	tooltip(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -5943,8 +6437,6 @@ declare class MSCloudAction extends MSPopoverAction /* implements MSCloudShareUp
 	validate(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	validateMenuItem(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	validateToolbarItem(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	willPresentError(...args: any[]): any;
 }
@@ -6084,19 +6576,49 @@ declare class MSCloudDocumentViewController extends MSCloudBaseViewController {
 	/* typeEncoding=v24@0:8@16 */
 	userDidChangeNotification(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
+	viewDidLayout(): void;
+	/* typeEncoding=v16@0:8 */
 	viewWillAppear(): void;
 }
 
 declare class MSCloudInitialViewController extends MSCloudBaseViewController {
+	/* typeEncoding=@"NSStackView", ivar=_actionStackView, attributes=(retain,nonatomic) */
+	actionStackView(): NSStackView;
+	/* typeEncoding=@"NSPopUpButton", ivar=_organizationButton, attributes=(retain,nonatomic) */
+	organizationButton(): NSPopUpButton;
+	/* typeEncoding=@"NSStackView", ivar=_organizationStackView, attributes=(retain,nonatomic) */
+	organizationStackView(): NSStackView;
+	/* typeEncoding=@"NSArray", ivar=_organizations, attributes=(retain,nonatomic) */
+	organizations(): NSArray;
 	/* typeEncoding=@"NSButton", ivar=_uploadButton, attributes=(retain,nonatomic) */
 	uploadButton(): NSButton;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	actionStackView(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	loadView(): void;
+	/* typeEncoding=@16@0:8 */
+	organizationButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	organizationStackView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	organizations(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	reloadOrganizations(): void;
+	/* typeEncoding=v24@0:8@16 */
+	setActionStackView(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOrganizationButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOrganizationStackView(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOrganizations(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setUploadButton(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateOrganizationButton(): void;
 	/* typeEncoding=v24@0:8@16 */
 	upload(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -6128,21 +6650,31 @@ declare class MSCloudLoginWindowController extends NSWindowController {
 	delegate(): MSCloudLoginWindowControllerDelegate;
 	/* typeEncoding=@"NSString", ivar=_email, attributes=(retain,nonatomic) */
 	email(): NSString;
+	/* typeEncoding=@"SCKAPIEnvironment", ivar=(null), attributes=(retain,nonatomic) */
+	environment(): SCKAPIEnvironment;
+	/* typeEncoding=@"NSPopUpButton", ivar=_environmentPopUpButton, attributes=(assign,nonatomic,weak) */
+	environmentPopUpButton(): NSPopUpButton;
 	/* typeEncoding=c, ivar=_isLoading, attributes=(assign,nonatomic) */
 	isLoading(): boolean;
 	/* typeEncoding=@"NSString", ivar=_password, attributes=(retain,nonatomic) */
 	password(): NSString;
-	/* typeEncoding=@"NSTextField", ivar=_titleLabel, attributes=(retain,nonatomic) */
+	/* typeEncoding=@"NSTextField", ivar=_titleLabel, attributes=(assign,nonatomic,weak) */
 	titleLabel(): NSTextField;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=v24@0:8@16 */
 	cancelButtonClicked(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	changeEnvironment(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	delegate(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	email(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	environment(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	environmentPopUpButton(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isLoading(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -6153,6 +6685,10 @@ declare class MSCloudLoginWindowController extends NSWindowController {
 	setDelegate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setEmail(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setEnvironment(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setEnvironmentPopUpButton(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setIsLoading(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -6164,12 +6700,18 @@ declare class MSCloudLoginWindowController extends NSWindowController {
 	/* typeEncoding=@16@0:8 */
 	titleLabel(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
+	updateEnvironmentMenuItems(): void;
+	/* typeEncoding=@24@0:8@16 */
+	willPresentError(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
 	windowDidLoad(): void;
 }
 
 declare class MSCloudManifestMaker extends MSManifestMaker {
 	/* typeEncoding=@?, ivar=_imageFileProviderBlock, attributes=(copy,nonatomic) */
 	imageFileProviderBlock(): any;
+	/* typeEncoding=@"NSString", ivar=_organizationID, attributes=(retain,nonatomic) */
+	organizationID(): NSString;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -6183,8 +6725,12 @@ declare class MSCloudManifestMaker extends MSManifestMaker {
 	imageFileProviderBlock(...args: any[]): any;
 	/* typeEncoding=@40@0:8@16@24@32 */
 	metadataForRootLayer_onPage_earlierSlugs(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	organizationID(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	setImageFileProviderBlock(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOrganizationID(...args: any[]): any;
 }
 
 declare class MSCloudPreferencePane extends MSPreferencePane {
@@ -6193,8 +6739,8 @@ declare class MSCloudPreferencePane extends MSPreferencePane {
 	/* typeEncoding=@"MSCloudPreferencesViewController", ivar=_currentViewController, attributes=(retain,nonatomic) */
 	currentViewController(): MSCloudPreferencesViewController;
 
-	/* typeEncoding=q24@0:8@16 */
-	static cloudLoginOverrideBehaviorWithUser(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	static cloudLoginOverrideBehavior(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	static cloudLoginSwitchPlatformBehavior(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -6208,8 +6754,6 @@ declare class MSCloudPreferencePane extends MSPreferencePane {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=v24@0:8@16 */
-	applicationDidBecomeActiveNotification(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	applicationDidOpenURL(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -6244,6 +6788,8 @@ declare class MSCloudPreferencePane extends MSPreferencePane {
 	userDidChangeNotification(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
+	/* typeEncoding=@24@0:8@16 */
+	willPresentError(...args: any[]): any;
 }
 
 declare class MSCloudPreferencesAccountViewController extends MSCloudPreferencesViewController {
@@ -6261,6 +6807,8 @@ declare class MSCloudPreferencesAccountViewController extends MSCloudPreferences
 	nameLabel(): NSTextField;
 	/* typeEncoding=@"NSProgressIndicator", ivar=_progressIndicator, attributes=(retain,nonatomic) */
 	progressIndicator(): NSProgressIndicator;
+	/* typeEncoding=@"SCKUser", ivar=_user, attributes=(retain,nonatomic) */
+	user(): SCKUser;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -6305,9 +6853,13 @@ declare class MSCloudPreferencesAccountViewController extends MSCloudPreferences
 	/* typeEncoding=v24@0:8@16 */
 	setProgressIndicator(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setUser(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	showAccountSettings(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateUserData(): void;
+	/* typeEncoding=@16@0:8 */
+	user(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	userDidChangeNotification(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -6490,6 +7042,8 @@ declare class MSCloudShareUploadController extends NSObject /* implements SCKSha
 	name(): NSString;
 	/* typeEncoding=@"SCKShareUploadOperation", ivar=_operation, attributes=(retain,nonatomic) */
 	operation(): SCKShareUploadOperation;
+	/* typeEncoding=@"SCKOrganization", ivar=_organization, attributes=(retain,nonatomic) */
+	organization(): SCKOrganization;
 	/* typeEncoding=@"NSProgress", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	progress(): NSProgress;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
@@ -6526,6 +7080,8 @@ declare class MSCloudShareUploadController extends NSObject /* implements SCKSha
 	/* typeEncoding=@16@0:8 */
 	operation(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	organization(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	progress(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDelegate(...args: any[]): any;
@@ -6540,6 +7096,8 @@ declare class MSCloudShareUploadController extends NSObject /* implements SCKSha
 	/* typeEncoding=v24@0:8@16 */
 	setOperation(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setOrganization(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setWebExporter(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@?24 */
 	shareUploadOperation_exportDocumentWithHandler(...args: any[]): any;
@@ -6551,6 +7109,40 @@ declare class MSCloudShareUploadController extends NSObject /* implements SCKSha
 	startUpload(): void;
 	/* typeEncoding=@16@0:8 */
 	webExporter(...args: any[]): any;
+}
+
+declare class MSCloudSharesController extends NSObject {
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canLoadAdditionalShares(): boolean;
+	/* typeEncoding=@"<MSCloudSharesControllerDelegate>", ivar=delegate, attributes=(assign,nonatomic,weak) */
+	delegate(): MSCloudSharesControllerDelegate;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isCurrentlyLoading(): boolean;
+	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	shares(): NSArray;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	shouldLoadInitialShares(): boolean;
+
+	/* typeEncoding=@? */
+	_cxx_destruct(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	canLoadAdditionalShares(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	delegate(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	init(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isCurrentlyLoading(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDelegate(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	shares(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shouldLoadInitialShares(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	startLoadingAdditionalShares(): void;
+	/* typeEncoding=v16@0:8 */
+	startLoadingShares(): void;
 }
 
 declare class MSCloudUploadArrowView extends NSView {
@@ -6646,6 +7238,8 @@ declare class MSCloudUploadViewController extends MSCloudBaseViewController {
 	/* typeEncoding=v16@0:8 */
 	updateProgress(): void;
 	/* typeEncoding=v16@0:8 */
+	viewDidLayout(): void;
+	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
 	/* typeEncoding=v16@0:8 */
 	viewWillAppear(): void;
@@ -6720,8 +7314,6 @@ declare class MSCloudViewController extends NSViewController {
 	addContentViewController(...args: any[]): any;
 	/* typeEncoding=v32@0:8d16@?24 */
 	animateAlpha_completionHandler(...args: any[]): any;
-	/* typeEncoding=v24@0:8@?16 */
-	animateFrameWithCompletionHandler(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	contentViewController(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -6758,8 +7350,6 @@ declare class MSCloudViewController extends NSViewController {
 	updateFrame(): void;
 	/* typeEncoding=v24@0:8@16 */
 	userDidChangeNotification(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	userDidUpdateNotification(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	viewDidAppear(): void;
 	/* typeEncoding=v16@0:8 */
@@ -6811,6 +7401,32 @@ declare class MSCollapseAllGroupsAction extends MSDocumentAction {
 	collapseAllGroups(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+}
+
+declare class MSCollapsibleHeaderInspectorItem extends MSHeaderInspectorItem {
+	/* typeEncoding=@"<MSCollapsibleHeaderInspectorItemTarget>", ivar=_collapseTarget, attributes=(assign,nonatomic,weak) */
+	collapseTarget(): MSCollapsibleHeaderInspectorItemTarget;
+	/* typeEncoding=c, ivar=_collapsed, attributes=(assign,nonatomic) */
+	collapsed(): boolean;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	collapseTarget(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	collapsed(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	init(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCollapseTarget(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setCollapsed(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDelegate(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	toggleCollapsed(...args: any[]): any;
 }
 
 declare class MSCollectionView extends NSCollectionView {
@@ -6932,6 +7548,20 @@ declare class MSColorComponentValueTextField extends MSUpDownTextField {
 	setCounterpart(...args: any[]): any;
 }
 
+declare class MSColorControlsBrightnessValueTransformer extends MSArbitraryRangePercentValueTransformer {
+	/* typeEncoding=d16@0:8 */
+	static hundredPercentValue(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	static zeroPercentValue(...args: any[]): any;
+}
+
+declare class MSColorControlsHueValueTransformer extends MSArbitraryRangePercentValueTransformer {
+	/* typeEncoding=d16@0:8 */
+	static hundredPercentValue(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	static zeroPercentValue(...args: any[]): any;
+}
+
 declare class MSColorControlsInspectorViewController extends MSStylePartInspectorViewController {
 	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_brightnessAdaptor, attributes=(retain,nonatomic) */
 	brightnessAdaptor(): MSMathInspectorValueAdaptor;
@@ -6949,6 +7579,9 @@ declare class MSColorControlsInspectorViewController extends MSStylePartInspecto
 	saturationAdaptor(): MSMathInspectorValueAdaptor;
 	/* typeEncoding=@"MSUpDownTextField", ivar=_saturationField, attributes=(retain,nonatomic) */
 	saturationField(): MSUpDownTextField;
+
+	/* typeEncoding=v40@0:8@16@24@32 */
+	static setupTextField_adaptor_valueTransformer(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -6988,6 +7621,15 @@ declare class MSColorControlsInspectorViewController extends MSStylePartInspecto
 	setSaturationField(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
+	/* typeEncoding=@16@0:8 */
+	views(...args: any[]): any;
+}
+
+declare class MSColorControlsSaturationValueTransformer extends MSArbitraryRangePercentValueTransformer {
+	/* typeEncoding=d16@0:8 */
+	static hundredPercentValue(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	static zeroPercentValue(...args: any[]): any;
 }
 
 declare class MSColorCounter extends NSObject {
@@ -7075,6 +7717,44 @@ declare class MSColorCounter extends NSObject {
 	totalCount(...args: any[]): any;
 }
 
+declare class MSColorHexField extends NSTextField {
+	/* typeEncoding=#16@0:8 */
+	static cellClass(...args: any[]): any;
+
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	intrinsicContentSize(...args: any[]): any;
+}
+
+declare class MSColorHexFieldCell extends MSInlineUpDownTextFieldCell {
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawInteriorWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawingRectForBounds(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	poundPrefixString(...args: any[]): any;
+}
+
+declare class MSColorHexStringTransformer extends NSValueTransformer {
+	/* typeEncoding=@"<MSColorHexStringTransformerDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
+	delegate(): MSColorHexStringTransformerDelegate;
+
+	/* typeEncoding=c16@0:8 */
+	static allowsReverseTransformation(...args: any[]): any;
+	/* typeEncoding=#16@0:8 */
+	static transformedValueClass(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	delegate(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	reverseTransformedValue(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDelegate(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	transformedValue(...args: any[]): any;
+}
+
 declare class MSColorInspector extends NSViewController /* implements MSColorInspectorSectionDelegate, MSModeModePickerDelegate, BCPopoverDelegate, NSTouchBarDelegate, BCHSBColorPickerDelegate, MSStylePartPreviewButtonDelegate */ {
 	/* typeEncoding=@"NSView", ivar=_borderBlendingOpacityView, attributes=(retain,nonatomic) */
 	borderBlendingOpacityView(): NSView;
@@ -7092,6 +7772,8 @@ declare class MSColorInspector extends NSViewController /* implements MSColorIns
 	delegate(): MSColorInspectorDelegate;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
+	/* typeEncoding=c, ivar=_displayingDiverseStyles, attributes=(assign,nonatomic) */
+	displayingDiverseStyles(): boolean;
 	/* typeEncoding=@"MSDocument", ivar=_document, attributes=(retain,nonatomic) */
 	document(): MSDocument;
 	/* typeEncoding=@"NSView", ivar=_emptyTopView, attributes=(retain,nonatomic) */
@@ -7134,8 +7816,6 @@ declare class MSColorInspector extends NSViewController /* implements MSColorIns
 	_cxx_destruct(): void;
 	/* typeEncoding=v24@0:8@16 */
 	adjustInspectorToColorPopoverIfNeeded(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	applyBackgroundArrowColor(): void;
 	/* typeEncoding=@16@0:8 */
 	borderBlendingOpacityView(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -7162,6 +7842,10 @@ declare class MSColorInspector extends NSViewController /* implements MSColorIns
 	colorSection(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	colorTabIndex(...args: any[]): any;
+	/* typeEncoding=q24@0:8@16 */
+	colorTypePickerModeForStyle(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	currentColorTypePickerMode(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	currentModePicker(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -7176,6 +7860,8 @@ declare class MSColorInspector extends NSViewController /* implements MSColorIns
 	didAddAsset(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	didRemoveAssetOfType(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	displayingDiverseStyles(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	document(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -7268,6 +7954,8 @@ declare class MSColorInspector extends NSViewController /* implements MSColorIns
 	setColorTabIndex(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDelegate(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDisplayingDiverseStyles(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDocument(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -7360,9 +8048,11 @@ declare class MSColorInspectorLinearGradientTabAction extends MSColorInspectorMo
 	touchBarImage(...args: any[]): any;
 }
 
-declare class MSColorInspectorModeBorderTouchBarGroupAction extends MSTouchBarGroupAction {
+declare class MSColorInspectorModeBorderTouchBarGroupAction extends MSActionGroup {
 	/* typeEncoding=@16@0:8 */
 	actionNames(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	supportsState(...args: any[]): any;
 }
@@ -7381,6 +8071,8 @@ declare class MSColorInspectorModePickerAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isTouchBarItemSelected(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	switchToColorTabAtIndex(...args: any[]): any;
 }
@@ -7412,6 +8104,8 @@ declare class MSColorInspectorSection extends NSViewController /* implements MSP
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
+	/* typeEncoding=v72@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16d48^{CGColor=}56^{CGColor=}64 */
+	static drawCheckerboardBackgroundInRect_size_foreColor_backgroundColor(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	static initialize(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -7777,6 +8471,9 @@ declare class MSColorInspectorSectionPattern extends MSColorInspectorSection {
 }
 
 declare class MSColorInspectorSeparatorView extends MSSectionBackgroundSeparatorView {
+	/* typeEncoding=@48@0:8{NSEdgeInsets=dddd}16 */
+	static separatorWithInsets(...args: any[]): any;
+
 	/* typeEncoding=@16@0:8 */
 	color(...args: any[]): any;
 }
@@ -7915,6 +8612,157 @@ declare class MSColorSpaceConverter extends NSObject /* implements MSColorConver
 	targetNSColorSpace(...args: any[]): any;
 }
 
+declare class MSColorStylePartInspectorViewController extends MSStylePartInspectorViewController /* implements NSPopoverDelegate, MSStylePartPreviewButtonDisabledTarget, MSColorInspectorDelegate, MSStylePartPreviewButtonDelegate */ {
+	/* typeEncoding=@"MSStylePartPreviewButton", ivar=_colorButton, attributes=(retain,nonatomic) */
+	colorButton(): MSStylePartPreviewButton;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"BCPopover", ivar=_popover, attributes=(retain,nonatomic) */
+	popover(): BCPopover;
+	/* typeEncoding=@"MSInspectorValueAdaptor", ivar=_stylePartAdaptor, attributes=(retain,nonatomic) */
+	stylePartAdaptor(): MSInspectorValueAdaptor;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
+	/* typeEncoding=@24@0:8Q16 */
+	static fillTypeStringForFillType(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	checkBoxAction(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	closePopover(): void;
+	/* typeEncoding=@16@0:8 */
+	colorButton(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	colorInspector_didChangeToColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	colorInspectorDidChange(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=v16@0:8 */
+	didGetAddedToInspector(): void;
+	/* typeEncoding=v24@0:8@16 */
+	dismissViewController(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16@24@32^v40 */
+	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	popover(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	prepare(): void;
+	/* typeEncoding=v16@0:8 */
+	prepareForReuse(): void;
+	/* typeEncoding=v24@0:8@16 */
+	previewCellAction(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	refreshAction(...args: any[]): any;
+	/* typeEncoding=v32@0:8q16@24 */
+	setBlendMode_forPreviewButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setColorButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPopover(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setStylePartAdaptor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	stylePartAdaptor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	stylePartPreviewButtonDisabledAction(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	stylePartPreviewButtonPreviewColorSpace(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateBlendMode(): void;
+	/* typeEncoding=v16@0:8 */
+	updateColorInActiveInspector(): void;
+}
+
+declare class MSColorView extends NSView {
+	/* typeEncoding=@"NSColor", ivar=_color, attributes=(copy,nonatomic) */
+	color(): NSColor;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	color(...args: any[]): any;
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawRect(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setColor(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateLayer(): void;
+	/* typeEncoding=c16@0:8 */
+	wantsUpdateLayer(...args: any[]): any;
+}
+
+declare class MSColorWell extends MSStylePartPreviewButton /* implements MSColorInspectorDelegate */ {
+	/* typeEncoding=c, ivar=_canDisplayPopover, attributes=(assign,nonatomic) */
+	canDisplayPopover(): boolean;
+	/* typeEncoding=:, ivar=_colorChangedAction, attributes=(assign,nonatomic) */
+	colorChangedAction(): any;
+	/* typeEncoding=@, ivar=_colorChangedTarget, attributes=(assign,nonatomic,weak) */
+	colorChangedTarget(): any;
+	/* typeEncoding=@"BCPopover", ivar=_colorPopover, attributes=(retain,nonatomic) */
+	colorPopover(): BCPopover;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=@"MSDocument", ivar=_document, attributes=(assign,nonatomic,weak) */
+	document(): MSDocument;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"NSColor", ivar=_initialColor, attributes=(assign,nonatomic,readonly) */
+	initialColor(): NSColor;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	awakeFromNib(): void;
+	/* typeEncoding=c16@0:8 */
+	canDisplayPopover(...args: any[]): any;
+	/* typeEncoding=:16@0:8 */
+	colorChangedAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorChangedTarget(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	colorInspector_didChangeToColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorPopover(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	dismissColorPicker(): void;
+	/* typeEncoding=@16@0:8 */
+	document(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	initialColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	mouseDown(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	prepareWithDocument_initialColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	presentColorPicker(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setCanDisplayPopover(...args: any[]): any;
+	/* typeEncoding=v24@0:8:16 */
+	setColorChangedAction(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setColorChangedTarget(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setColorPopover(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDocument(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	windowDidResignKey(...args: any[]): any;
+}
+
 declare class MSCommand extends NSObject {
 	/* typeEncoding=@24@0:8@?16 */
 	static runWithArguments(...args: any[]): any;
@@ -7932,9 +8780,7 @@ declare class MSCompoundSnapItem extends MSSnapItem {
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16Q24 */
-	alignmentRectInLayer_options(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	anchorsForSnapping(...args: any[]): any;
+	alignmentRectInCoordinateSpace_options(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	bottomAnchor(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
@@ -7947,6 +8793,8 @@ declare class MSCompoundSnapItem extends MSSnapItem {
 	centerYAnchor(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	concatAncestorsAndSelfTransforms(): void;
+	/* typeEncoding=v32@0:8Q16@?24 */
+	enumerateAnchorsForSnappingOnAxes_usingBlock(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	initWithLayers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -8063,6 +8911,8 @@ declare class MSConstraintFixHeightAction extends MSConstraintAction {
 	/* typeEncoding=v24@0:8@16 */
 	fixHeightAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	validationKeyPath(...args: any[]): any;
 }
 
@@ -8072,12 +8922,16 @@ declare class MSConstraintFixWidthAction extends MSConstraintAction {
 	/* typeEncoding=v24@0:8@16 */
 	fixWidthAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	validationKeyPath(...args: any[]): any;
 }
 
 declare class MSConstraintPinBottomAction extends MSConstraintAction {
 	/* typeEncoding=@16@0:8 */
 	actionKeyPath(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	pinBottomAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -8087,6 +8941,8 @@ declare class MSConstraintPinBottomAction extends MSConstraintAction {
 declare class MSConstraintPinLeftAction extends MSConstraintAction {
 	/* typeEncoding=@16@0:8 */
 	actionKeyPath(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	pinLeftAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -8096,6 +8952,8 @@ declare class MSConstraintPinLeftAction extends MSConstraintAction {
 declare class MSConstraintPinRightAction extends MSConstraintAction {
 	/* typeEncoding=@16@0:8 */
 	actionKeyPath(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	pinRightAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -8105,6 +8963,8 @@ declare class MSConstraintPinRightAction extends MSConstraintAction {
 declare class MSConstraintPinTopAction extends MSConstraintAction {
 	/* typeEncoding=@16@0:8 */
 	actionKeyPath(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	pinTopAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -8114,20 +8974,19 @@ declare class MSConstraintPinTopAction extends MSConstraintAction {
 declare class MSConstraintResetAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	resetConstraintAction(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
 
-declare class MSContentCALayer extends MSRenderingCALayer {
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-}
-
-declare class MSContentDrawView extends NSView /* implements MSEventHandlerManagerDelegate, MSTiledLayerPileHostView, MSOverlayRendererDelegate */ {
+declare class MSContentDrawView extends NSView /* implements MSOverlayRenderingDelegate, MSEventHandlerManagerDelegate, MSTiledRendererHostView */ {
 	/* typeEncoding=@"MSCacheManager", ivar=_cacheManager, attributes=(retain,nonatomic) */
 	cacheManager(): MSCacheManager;
+	/* typeEncoding=@"MSContentDrawViewParent", ivar=_contentDrawViewParent, attributes=(assign,nonatomic,weak) */
+	contentDrawViewParent(): MSContentDrawViewParent;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"MSRenderingDriver", ivar=_debugDriver, attributes=(retain,nonatomic) */
@@ -8138,6 +8997,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	description(): NSString;
 	/* typeEncoding=c, ivar=_didMouseDown, attributes=(assign,nonatomic) */
 	didMouseDown(): boolean;
+	/* typeEncoding=c, ivar=_didMouseDragged, attributes=(assign,nonatomic) */
+	didMouseDragged(): boolean;
 	/* typeEncoding=@"MSDocument", ivar=_document, attributes=(assign,nonatomic,weak) */
 	document(): MSDocument;
 	/* typeEncoding=@"MSRenderingDriver", ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -8166,10 +9027,6 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	needsUpdateCursor(): boolean;
 	/* typeEncoding=@"MSRenderingDriver", ivar=_normalDriver, attributes=(retain,nonatomic) */
 	normalDriver(): MSRenderingDriver;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=_overlayDirtyRect, attributes=(assign,nonatomic) */
-	overlayDirtyRect(): CGRect;
-	/* typeEncoding=@"MSOverlayView", ivar=_overlayView, attributes=(assign,nonatomic,weak) */
-	overlayView(): MSOverlayView;
 	/* typeEncoding=@"MSRenderMonitor", ivar=_pendingMonitor, attributes=(retain,nonatomic) */
 	pendingMonitor(): MSRenderMonitor;
 	/* typeEncoding=@"MSRenderMonitor", ivar=_performanceMonitor, attributes=(retain,nonatomic) */
@@ -8180,6 +9037,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	previouslyRenderedDoc(): MSImmutableDocumentData;
 	/* typeEncoding=c, ivar=_redrawPending, attributes=(assign,nonatomic) */
 	redrawPending(): boolean;
+	/* typeEncoding=c, ivar=_refreshAfterSettingsChangeScheduled, attributes=(assign,nonatomic) */
+	refreshAfterSettingsChangeScheduled(): boolean;
 	/* typeEncoding={CGPoint=dd}, ivar=_scalingCenterInViewCoordinates, attributes=(assign,nonatomic) */
 	scalingCenterInViewCoordinates(): CGPoint;
 	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic) */
@@ -8190,8 +9049,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	shouldHideOverlayControls(): boolean;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
-	/* typeEncoding=@"MSTiledLayerPile", ivar=_tiledLayerPile, attributes=(retain,nonatomic) */
-	tiledLayerPile(): MSTiledLayerPile;
+	/* typeEncoding=@"MSTiledRenderer", ivar=_tiledRenderer, attributes=(retain,nonatomic) */
+	tiledRenderer(): MSTiledRenderer;
 	/* typeEncoding=@"MSRulerView", ivar=_verticalRuler, attributes=(assign,nonatomic,weak) */
 	verticalRuler(): MSRulerView;
 	/* typeEncoding=@"MSViewPort", ivar=(null), attributes=(retain,nonatomic) */
@@ -8212,6 +9071,10 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	_scheduleToolbarItemValidation(): void;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	_viewSizeInPixels(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	acceptsFirstMouse(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -8231,7 +9094,7 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	/* typeEncoding=v24@0:8@16 */
 	animationDidFinishAtViewPort(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	beginReplacingTiledLayers(): void;
+	beginImporting(): void;
 	/* typeEncoding=@16@0:8 */
 	cacheManager(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -8262,6 +9125,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	completeMagnifyWithFactor(): void;
 	/* typeEncoding=@16@0:8 */
 	contentDrawView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	contentDrawViewParent(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16@32 */
 	convertPoint_toLayer(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}32@0:8{CGPoint=dd}16 */
@@ -8280,6 +9145,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	delegate(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	didMouseDown(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	didMouseDragged(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	didMoveThroughHistory(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -8299,7 +9166,7 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	/* typeEncoding=@16@0:8 */
 	driver(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	enableLayerBackedDrawing(): void;
+	endImporting(): void;
 	/* typeEncoding=v16@0:8 */
 	endZoomToolMode(): void;
 	/* typeEncoding=@16@0:8 */
@@ -8326,6 +9193,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	ignoreNextKeyDownEventUntilModifiersChange(): void;
 	/* typeEncoding=v16@0:8 */
 	initDrivers(): void;
+	/* typeEncoding=v16@0:8 */
+	initTiledRenderer(): void;
 	/* typeEncoding=@24@0:8@16 */
 	initWithCoder(...args: any[]): any;
 	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
@@ -8384,12 +9253,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	needsUpdateCursor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	normalDriver(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	overlayDirtyRect(...args: any[]): any;
 	/* typeEncoding=Q36@0:8@16d24c32 */
 	overlayOptionsForPage_zoom_fullScreen(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	overlayView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	pageDidChange(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -8400,8 +9265,6 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	performActionWithIdentifier(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	performDragOperation(...args: any[]): any;
-	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
-	performOverlayRefreshInViewRect_forPage(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	performanceMonitor(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -8419,55 +9282,43 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	/* typeEncoding=v16@0:8 */
 	queuePendingMonitor(): void;
 	/* typeEncoding=v16@0:8 */
-	redrawAllTiles(): void;
+	redrawContentImmediately(): void;
 	/* typeEncoding=c16@0:8 */
 	redrawPending(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	redrawTileContentIfOpportune(): void;
-	/* typeEncoding=v16@0:8 */
-	redrawTiles(): void;
-	/* typeEncoding=v16@0:8 */
-	refreshEverythingAfterSettingsChange(): void;
-	/* typeEncoding=v16@0:8 */
-	refreshOverlay(): void;
-	/* typeEncoding=v16@0:8 */
-	refreshOverlayAfterSettingsChange(): void;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	refreshOverlayInRect(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	refreshOverlayInViewRect(...args: any[]): any;
+	refreshAfterSettingsChange(): void;
+	/* typeEncoding=c16@0:8 */
+	refreshAfterSettingsChangeScheduled(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	refreshRulers(): void;
 	/* typeEncoding=v24@0:8Q16 */
 	refreshSidebarWithMask(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	reloadAllTiles(): void;
-	/* typeEncoding=v16@0:8 */
-	removeAllTiledLayers(): void;
-	/* typeEncoding=v16@0:8 */
 	removeFromSuperview(): void;
 	/* typeEncoding=v16@0:8 */
 	removeObserversForNotifications(): void;
-	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16^{CGContext=}48 */
-	renderOverlayInRect_context(...args: any[]): any;
+	/* typeEncoding=v64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16^{CGContext=}48Q56 */
+	renderOverlayInRect_context_pageOverlayRenderOptions(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	rendererColorSettings(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	resignFirstResponder(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	returnToDefaultHandlerIfNeededForResize(): void;
 	/* typeEncoding=v24@0:8d16 */
-	scaleTilesBy(...args: any[]): any;
+	scaleContentBy(...args: any[]): any;
 	/* typeEncoding=v40@0:8d16{CGPoint=dd}24 */
-	scaleTilesBy_withScalingCenterInViewCoordinates(...args: any[]): any;
+	scaleContentBy_withScalingCenterInViewCoordinates(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	scalingCenterInViewCoordinates(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	scheduleRedraw(): void;
+	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
+	scrollBy(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	scrollOrigin(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	scrollOriginRelativeContentRedrawRect(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	scrollTilesBy(...args: any[]): any;
 	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
 	scrollToScrollOrigin(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -8481,11 +9332,15 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	/* typeEncoding=v24@0:8@16 */
 	setCacheManager(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setContentDrawViewParent(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setDebugDriver(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDelegate(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setDidMouseDown(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDidMouseDragged(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDocument(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -8494,6 +9349,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	setFlowCollector(...args: any[]): any;
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	setFrame(...args: any[]): any;
+	/* typeEncoding=v32@0:8{CGSize=dd}16 */
+	setFrameSize(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	setHandToolState(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
@@ -8510,10 +9367,6 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	setNeedsUpdateCursor(): void;
 	/* typeEncoding=v24@0:8@16 */
 	setNormalDriver(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	setOverlayDirtyRect(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setOverlayView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setPendingMonitor(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -8524,6 +9377,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	setPreviouslyRenderedDoc(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setRedrawPending(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setRefreshAfterSettingsChangeScheduled(...args: any[]): any;
 	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
 	setScalingCenterInViewCoordinates(...args: any[]): any;
 	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
@@ -8533,7 +9388,7 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	/* typeEncoding=v20@0:8c16 */
 	setShouldHideOverlayControls(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setTiledLayerPile(...args: any[]): any;
+	setTiledRenderer(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setVerticalRuler(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -8550,14 +9405,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	switchToSymbolHandlerIfPasteboardContentsDetected(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	tag(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	tile(): void;
 	/* typeEncoding=@16@0:8 */
-	tiledLayerPile(...args: any[]): any;
-	/* typeEncoding=v56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24 */
-	tiledLayerPile_requiresRedrawInRect(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16Q24 */
-	tiledLayerPileDidRefreshTileContent_finishTime(...args: any[]): any;
+	tiledRenderer(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	trackMouse(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
@@ -8600,6 +9449,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 	willMoveThroughHistory(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	windowDidResize(...args: any[]): any;
+	/* typeEncoding=v40@0:8d16{CGPoint=dd}24 */
+	zoomBy_centeredOnViewPoint(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	zoomIn(): void;
 	/* typeEncoding=v16@0:8 */
@@ -8619,6 +9470,8 @@ declare class MSContentDrawView extends NSView /* implements MSEventHandlerManag
 declare class MSContentDrawViewController extends NSViewController /* implements MSContentDrawViewDelegate */ {
 	/* typeEncoding=@"MSContentDrawView", ivar=_contentDrawView, attributes=(retain,nonatomic) */
 	contentDrawView(): MSContentDrawView;
+	/* typeEncoding=@"MSContentDrawViewParent", ivar=_contentDrawViewParent, attributes=(retain,nonatomic) */
+	contentDrawViewParent(): MSContentDrawViewParent;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -8631,8 +9484,6 @@ declare class MSContentDrawViewController extends NSViewController /* implements
 	hash(): number;
 	/* typeEncoding=@"MSRulerView", ivar=_horizontalRuler, attributes=(retain,nonatomic) */
 	horizontalRuler(): MSRulerView;
-	/* typeEncoding=@"MSOverlayView", ivar=_overlayView, attributes=(retain,nonatomic) */
-	overlayView(): MSOverlayView;
 	/* typeEncoding=@"NSView", ivar=_rulerCornerView, attributes=(retain,nonatomic) */
 	rulerCornerView(): NSView;
 	/* typeEncoding=@"NSLayoutConstraint", ivar=_rulerHeightConstraint, attributes=(assign,nonatomic,weak) */
@@ -8656,6 +9507,8 @@ declare class MSContentDrawViewController extends NSViewController /* implements
 	changeToPage(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	contentDrawView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	contentDrawViewParent(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	currentArtboardDidChange(): void;
 	/* typeEncoding=@16@0:8 */
@@ -8664,8 +9517,6 @@ declare class MSContentDrawViewController extends NSViewController /* implements
 	flashController(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	horizontalRuler(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	overlayView(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	prepareForDealloc(): void;
 	/* typeEncoding=@16@0:8 */
@@ -8679,13 +9530,13 @@ declare class MSContentDrawViewController extends NSViewController /* implements
 	/* typeEncoding=v24@0:8@16 */
 	setContentDrawView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setContentDrawViewParent(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setDocument(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setFlashController(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setHorizontalRuler(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setOverlayView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setRulerCornerView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -8704,11 +9555,29 @@ declare class MSContentDrawViewController extends NSViewController /* implements
 	zoomValue(...args: any[]): any;
 }
 
+declare class MSContentDrawViewParent extends NSView {
+	/* typeEncoding=@"MSContentDrawView", ivar=_contentDrawView, attributes=(assign,nonatomic,weak) */
+	contentDrawView(): MSContentDrawView;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	contentDrawView(...args: any[]): any;
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawRect(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isOpaque(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setContentDrawView(...args: any[]): any;
+}
+
 declare class MSConvertColorSpaceAction extends MSChangeColorSpaceAction {
 	/* typeEncoding=v24@0:8@16 */
 	convertDocumentColorSpace(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSConvertFlowToHotspotAction extends MSFlowBaseAction {
@@ -8716,6 +9585,8 @@ declare class MSConvertFlowToHotspotAction extends MSFlowBaseAction {
 	convertFlowToHotspot(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -8746,8 +9617,12 @@ declare class MSConvertToOutlinesAction extends MSDocumentAction {
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	imageName(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isFirstLayerText(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -8773,6 +9648,8 @@ declare class MSCopyAction extends MSDocumentAction {
 	copy(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -8782,6 +9659,8 @@ declare class MSCopyCSSAttributesAction extends MSDocumentAction {
 	copyCSSAttributes(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -8791,6 +9670,10 @@ declare class MSCopySVGCodeAction extends MSDocumentAction {
 	copySVG(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	shouldIncludeBackgroundColorFromLayers(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -8800,6 +9683,8 @@ declare class MSCopyStyleAction extends MSDocumentAction {
 	copyStyle(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -8809,9 +9694,9 @@ declare class MSCoreImageQueue extends NSObject {
 	static applyEffect_fromSource_toImage(...args: any[]): any;
 	/* typeEncoding=d24@0:8^{CGImage=}16 */
 	static averageLuminanceOfImage(...args: any[]): any;
-	/* typeEncoding=@48@0:8^{CGImage=}16Q24@32@40 */
+	/* typeEncoding=@48@0:8^{CGImage=}16Q24@32^{CGColorSpace=}40 */
 	static cachedImage_withEffect_fromObject_colorSpace(...args: any[]): any;
-	/* typeEncoding=v96@0:8^{CGImage=}16Q24{CGRect={CGPoint=dd}{CGSize=dd}}32@64^{CGContext=}72@80Q88 */
+	/* typeEncoding=v96@0:8^{CGImage=}16Q24{CGRect={CGPoint=dd}{CGSize=dd}}32@64^{CGContext=}72^{CGColorSpace=}80Q88 */
 	static drawImage_withEffect_inRect_fromObject_context_colorSpace_options(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	static imageWithWhiteBackground(...args: any[]): any;
@@ -8825,7 +9710,7 @@ declare class MSCornerRadiusInspectorValueAdaptor extends MSMathInspectorValueAd
 	/* typeEncoding=@24@0:8@16 */
 	initWithModelsController(...args: any[]): any;
 	/* typeEncoding=@48@0:8@16@24^@32^@40 */
-	transformValueString_forModel_context_error(...args: any[]): any;
+	transformAdaptorValue_forModel_context_error(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	value(...args: any[]): any;
 }
@@ -8867,15 +9752,15 @@ declare class MSCrashLogManager extends NSObject /* implements MSActionObserver,
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
-	/* typeEncoding=@"NSMutableDictionary", ivar=_environment, attributes=(retain,nonatomic) */
-	environment(): NSMutableDictionary;
-	/* typeEncoding=@"NSURL", ivar=_environmentURL, attributes=(retain,nonatomic) */
+	/* typeEncoding=@"NSDictionary", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	environment(): NSDictionary;
+	/* typeEncoding=@"NSURL", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	environmentURL(): NSURL;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=@"NSMutableArray", ivar=_items, attributes=(retain,nonatomic) */
-	items(): NSMutableArray;
-	/* typeEncoding=@"NSURL", ivar=_logURL, attributes=(retain,nonatomic) */
+	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	items(): NSArray;
+	/* typeEncoding=@"NSURL", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	logURL(): NSURL;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
@@ -8901,6 +9786,8 @@ declare class MSCrashLogManager extends NSObject /* implements MSActionObserver,
 	/* typeEncoding=@16@0:8 */
 	environmentURL(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	init(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	items(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	log(...args: any[]): any;
@@ -8908,16 +9795,8 @@ declare class MSCrashLogManager extends NSObject /* implements MSActionObserver,
 	logText(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	logURL(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setEnvironment(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setEnvironmentURL(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	setEnvironmentValue_forKey(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setItems(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setLogURL(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	setup(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -8969,11 +9848,11 @@ declare class MSCreateSymbolAction extends MSDocumentAction {
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldUseImageForTouchBarItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -9055,12 +9934,16 @@ declare class MSCurveModeAsymmetricAction extends MSCurveModeAdjustAction {
 	/* typeEncoding=q16@0:8 */
 	curveMode(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
 
 declare class MSCurveModeDisconnectedAction extends MSCurveModeAdjustAction {
 	/* typeEncoding=q16@0:8 */
 	curveMode(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
@@ -9069,6 +9952,8 @@ declare class MSCurveModeMirroredAction extends MSCurveModeAdjustAction {
 	/* typeEncoding=q16@0:8 */
 	curveMode(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
 
@@ -9076,12 +9961,16 @@ declare class MSCurveModeStraightAction extends MSCurveModeAdjustAction {
 	/* typeEncoding=q16@0:8 */
 	curveMode(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
 
-declare class MSCurveModeTouchGroupAction extends MSTouchBarGroupAction {
+declare class MSCurveModeTouchGroupAction extends MSActionGroup {
 	/* typeEncoding=@16@0:8 */
 	actionNames(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	supportsState(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -9095,6 +9984,8 @@ declare class MSCurvePoint extends _MSCurvePoint /* implements MSCurvePoint, NSC
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isEffectivelyStraight(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isStraight(): boolean;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
@@ -9187,20 +10078,13 @@ declare class MSCustomShapeItem extends MSInspectorItem {
 	refreshAndResetAction(...args: any[]): any;
 }
 
-declare class MSCustomShapeSection extends MSLayerSection {
-	/* typeEncoding=@16@0:8 */
-	nibName(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	refreshAction(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	refreshAndResetAction(...args: any[]): any;
-}
-
 declare class MSCutAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	cut(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -9208,8 +10092,6 @@ declare class MSCutAction extends MSDocumentAction {
 declare class MSDataAction extends MSDocumentAction /* implements MSDataMenuProviderDelegate, NSMenuDelegate */ {
 	/* typeEncoding=@"MSDataMenuProvider", ivar=_data, attributes=(retain,nonatomic) */
 	data(): MSDataMenuProvider;
-	/* typeEncoding=@"NSMenu", ivar=_dataMenu, attributes=(retain,nonatomic) */
-	dataMenu(): NSMenu;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -9223,24 +10105,44 @@ declare class MSDataAction extends MSDocumentAction /* implements MSDataMenuProv
 	_cxx_destruct(): void;
 	/* typeEncoding=v40@0:8@16@24@32 */
 	applyDataTo_withDataMenu_withDataFrom(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@?32 */
+	applyDataWithSupplierIdentifer_toLayer_applierBlock(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@32 */
+	applyImageData_supplierIdentifier_toBitmapLayer(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@32 */
+	applyImageData_supplierIdentifier_toLayer(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@32 */
+	applyImageData_supplierIdentifier_toShapeGroup(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@32 */
+	applyTextData_supplierIdentifier_toTextLayer(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	availableOverrideOnSymbolInstance_property(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	data(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	dataMenu(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	dataIdentifierInLayers(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16Q24 */
 	dataMenuProvider_canChooseDataOfType(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	dataMenuProvider_didChooseData(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	dataMenuProviderApplyMasterDataToInstances(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	dataMenuProviderCanApplyMasterDataToInstances(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	dataMenuProviderCanRefreshData(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	dataMenuProviderDataIdentifier(...args: any[]): any;
 	/* typeEncoding=Q24@0:8@16 */
 	dataMenuProviderDataTypeForMenuBuilding(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	dataMenuProviderIsInspectorPopupMenu(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	dataMenuProviderRefreshData(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	dataMenuProviderRefreshMasterData(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	dataMenuProviderRemoveDataRecord(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	dataMenuProviderSelectedLayerDataSupplierIdentifier(...args: any[]): any;
+	dataMenuProviderSelectedLayersWithAppliedData(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	dataTypeForSelection(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -9249,30 +10151,44 @@ declare class MSDataAction extends MSDocumentAction /* implements MSDataMenuProv
 	firstOverridePointInOverridePoints_withProperty(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasSubMenu(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	imageReplaceableStyleFillOnLayer(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	initWithDocument(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	menu(...args: any[]): any;
+	label(...args: any[]): any;
 	/* typeEncoding=@24@0:8Q16 */
 	overridePropertyForDataType(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	overridesByDataIdentifierWithDataManager(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setData(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setDataMenu(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	supportedDataTypeForSelection(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	symbolInstancesWithValidDataOverridePointsWithDataManager(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16@24 */
-	validDataOverridePointsOnSymbolInstance_dataManager(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
+}
+
+declare class MSDataMenuAction extends MSDocumentAction {
+	/* typeEncoding=@"MSDataMenuProvider", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	dataMenuProvider(): MSDataMenuProvider;
+
+	/* typeEncoding=v32@0:8@16@24 */
+	addHeaderToMenu_withTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	dataMenuProvider(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasSubMenu(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isSelectable(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	mayShowInToolbar(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	menuNeedsUpdate(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 }
 
 declare class MSDataMenuProvider extends NSObject /* implements NSMenuDelegate */ {
@@ -9286,15 +10202,19 @@ declare class MSDataMenuProvider extends NSObject /* implements NSMenuDelegate *
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=@"MSDataSupplier", ivar=_lastDataSupplier, attributes=(assign,nonatomic,weak) */
-	lastDataSupplier(): MSDataSupplier;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=q32@0:8@16@24 */
+	addCheckMarkToMenuItems_dataIdentifier(...args: any[]): any;
 	/* typeEncoding=c40@0:8Q16@24@32 */
 	addDataSuppliersForType_toMenu_typeTitle(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	addImageToMenuItems(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	clearDataMenuItem(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	dataManager(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -9308,8 +10228,6 @@ declare class MSDataMenuProvider extends NSObject /* implements NSMenuDelegate *
 	/* typeEncoding=@24@0:8@16 */
 	initWithDataManager(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	lastDataSupplier(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	menu(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	menuItemAction(...args: any[]): any;
@@ -9317,22 +10235,30 @@ declare class MSDataMenuProvider extends NSObject /* implements NSMenuDelegate *
 	menuItemForDataSupplier_indentationLevel(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16q24 */
 	menuItemsForDataSuppliers_indentationLevel(...args: any[]): any;
+	/* typeEncoding=@32@0:8Q16q24 */
+	menuItemsForDataType_indentationLevel(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16q24 */
 	menuItemsForGroups_indentationLevel(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16q24 */
+	menuItemsForPluginDataSuppliers_indentationLevel(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	menuItemsInGroup_forDataSuppliers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	menuNeedsUpdate(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	overridesMenu(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	pluginKeysDictionaryFromDataSuppliers(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	pluginNameForIdentifier(...args: any[]): any;
+	/* typeEncoding=@24@0:8c16c20 */
+	refreshDataMenuItemsWithOverridesMenu_displayKeyboardShortcuts(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDelegate(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setLastDataSupplier(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	shadowImageFromImage(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	sortedMenuItems(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16@24 */
-	submenuInMenuItems_forGroup(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	updateMenu(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -9341,21 +10267,49 @@ declare class MSDataMenuProvider extends NSObject /* implements NSMenuDelegate *
 	validateMenuItem(...args: any[]): any;
 }
 
+declare class MSDataOverride extends NSObject {
+	/* typeEncoding=@"MSImmutableStyledLayer", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	affectedLayer(): MSImmutableStyledLayer;
+	/* typeEncoding=@"MSAvailableOverride", ivar=_availableOverride, attributes=(assign,nonatomic,readonly) */
+	availableOverride(): MSAvailableOverride;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	overrideIdentifier(): NSString;
+	/* typeEncoding=@"MSSymbolInstance", ivar=_symbolInstance, attributes=(assign,nonatomic,readonly) */
+	symbolInstance(): MSSymbolInstance;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	affectedLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	availableOverride(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	description(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithOverride_symbolInstance(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	overrideIdentifier(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	symbolInstance(...args: any[]): any;
+}
+
 declare class MSDataPreferenceItem extends NSObject {
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	canRevealInFinder(): boolean;
+	/* typeEncoding=@"MSDataTableCellView", ivar=_cellView, attributes=(assign,nonatomic,weak) */
+	cellView(): MSDataTableCellView;
 	/* typeEncoding=@"MSDataSupplier", ivar=_data, attributes=(assign,nonatomic,readonly) */
 	data(): MSDataSupplier;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
 	enabled(): boolean;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	isPluginEnabled(): boolean;
 	/* typeEncoding=@"MSLocalDataSupplier", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	localData(): MSLocalDataSupplier;
 	/* typeEncoding=@"NSString", ivar=_modificationDate, attributes=(assign,nonatomic,readonly) */
 	modificationDate(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	name(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	namePlusPluginName(): NSString;
 	/* typeEncoding=@"MSPluginBundle", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	pluginBundle(): MSPluginBundle;
 	/* typeEncoding=@"NSImage", ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -9364,11 +10318,21 @@ declare class MSDataPreferenceItem extends NSObject {
 	pluginData(): MSPluginDataSupplier;
 	/* typeEncoding=@"NSImage", ivar=_preview, attributes=(retain,nonatomic) */
 	preview(): NSImage;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	primaryTextFieldColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	secondaryTextFieldColor(): NSColor;
 	/* typeEncoding=@"NSString", ivar=_secondaryTitle, attributes=(retain,nonatomic) */
 	secondaryTitle(): NSString;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	valid(): boolean;
 
+	/* typeEncoding=@16@0:8 */
+	static keyPathsForValuesAffectingPrimaryTextFieldColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	static keyPathsForValuesAffectingSecondaryTextFieldColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	static keyPathsForValuesAffectingSecondaryTitle(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	static preferenceItemForLocalData(...args: any[]): any;
 
@@ -9377,19 +10341,23 @@ declare class MSDataPreferenceItem extends NSObject {
 	/* typeEncoding=c16@0:8 */
 	canRevealInFinder(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	cellView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	data(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	dataTypeString(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	enabled(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	initWithData(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isPluginEnabled(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	localData(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	modificationDate(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	name(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	namePlusPluginName(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	pluginBundle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -9399,7 +10367,13 @@ declare class MSDataPreferenceItem extends NSObject {
 	/* typeEncoding=@16@0:8 */
 	preview(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	primaryTextFieldColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	secondaryTextFieldColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	secondaryTitle(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCellView(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setEnabled(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -9410,7 +10384,7 @@ declare class MSDataPreferenceItem extends NSObject {
 	valid(...args: any[]): any;
 }
 
-declare class MSDataPreferencePane extends MSPreferencePane /* implements MSDropableViewDelegate, NSTableViewDelegate, NSTableViewDataSource */ {
+declare class MSDataPreferencePane extends MSPreferencePane /* implements MSDropableViewDelegate, NSTableViewDelegate, NSTableViewDataSource, NSTextFieldDelegate */ {
 	/* typeEncoding=@"NSWindow", ivar=_chooseDataPanelWindow, attributes=(assign,nonatomic,weak) */
 	chooseDataPanelWindow(): NSWindow;
 	/* typeEncoding=@"NSMenu", ivar=_contextMenu, attributes=(retain,nonatomic) */
@@ -9419,6 +10393,8 @@ declare class MSDataPreferencePane extends MSPreferencePane /* implements MSDrop
 	data(): NSArray;
 	/* typeEncoding=@"NSArrayController", ivar=_dataArrayController, attributes=(retain,nonatomic) */
 	dataArrayController(): NSArrayController;
+	/* typeEncoding=@"NSPredicate", ivar=_dataFilterPredicate, attributes=(copy,nonatomic) */
+	dataFilterPredicate(): NSPredicate;
 	/* typeEncoding=@"MSDataSupplierManager", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	dataSupplierManager(): MSDataSupplierManager;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -9427,12 +10403,18 @@ declare class MSDataPreferencePane extends MSPreferencePane /* implements MSDrop
 	description(): NSString;
 	/* typeEncoding=c, ivar=_enableShowInFinder, attributes=(assign,nonatomic) */
 	enableShowInFinder(): boolean;
+	/* typeEncoding=@"NSSearchField", ivar=_filterTextField, attributes=(retain,nonatomic) */
+	filterTextField(): NSSearchField;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
 	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	selectedData(): NSArray;
+	/* typeEncoding=@"NSArray", ivar=_selectedItemIdentifiers, attributes=(copy,nonatomic) */
+	selectedItemIdentifiers(): NSArray;
 	/* typeEncoding=c, ivar=_shouldEnableCogMenu, attributes=(assign,nonatomic) */
 	shouldEnableCogMenu(): boolean;
+	/* typeEncoding=@"NSButton", ivar=_spyglassFilterButton, attributes=(retain,nonatomic) */
+	spyglassFilterButton(): NSButton;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 	/* typeEncoding=@"MSDataTableView", ivar=_tableView, attributes=(assign,nonatomic,weak) */
@@ -9448,21 +10430,33 @@ declare class MSDataPreferencePane extends MSPreferencePane /* implements MSDrop
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=v24@0:8@16 */
+	activateSearchField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	addLocalDataFromURLs(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	alertMessageTextForRemovingDataSuppliers(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	awakeFromNib(): void;
 	/* typeEncoding=@16@0:8 */
 	chooseDataPanelWindow(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	contextMenu(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	controlTextDidChange(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	controlTextDidEndEditing(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	data(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	dataArrayController(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	dataFilterPredicate(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	dataSupplierForURL(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	dataSupplierManager(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	didSwitchToPane(): void;
 	/* typeEncoding=v16@0:8 */
 	dismissAlertSheet(): void;
 	/* typeEncoding=v32@0:8@16@24 */
@@ -9473,20 +10467,18 @@ declare class MSDataPreferencePane extends MSPreferencePane /* implements MSDrop
 	draggedURLsFromPasteboard(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	enableShowInFinder(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	filterTextField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	importLocalData(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	learnMore(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	menuForEvent(...args: any[]): any;
-	/* typeEncoding=q24@0:8@16 */
-	numberOfRowsInTableView(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	pluraliseMenuItemTitle(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	reloadData(): void;
 	/* typeEncoding=v24@0:8@16 */
-	removeLocalDataAction(...args: any[]): any;
+	removeDataAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	revealInFinder(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -9494,7 +10486,11 @@ declare class MSDataPreferencePane extends MSPreferencePane /* implements MSDrop
 	/* typeEncoding=v24@0:8@16 */
 	revealLocalDataItemInFinder(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	searchString(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	selectedData(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedItemIdentifiers(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	selectionDidChange(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -9505,20 +10501,34 @@ declare class MSDataPreferencePane extends MSPreferencePane /* implements MSDrop
 	setData(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDataArrayController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDataFilterPredicate(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setEnableShowInFinder(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFilterTextField(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	setSelectedIndexesFromSelectionIdentifierArray(): void;
+	/* typeEncoding=v24@0:8@16 */
+	setSelectedItemIdentifiers(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	setSelectionIdentifierArrayFromSelectionIndexes(): void;
 	/* typeEncoding=v20@0:8c16 */
 	setShouldEnableCogMenu(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSpyglassFilterButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setTableView(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldEnableCogMenu(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showContextMenu(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	showPlugin(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	spyglassFilterButton(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	tableView(...args: any[]): any;
-	/* typeEncoding=@40@0:8@16@24q32 */
-	tableView_objectValueForTableColumn_row(...args: any[]): any;
 	/* typeEncoding=@40@0:8@16@24q32 */
 	tableView_viewForTableColumn_row(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -9526,9 +10536,11 @@ declare class MSDataPreferencePane extends MSPreferencePane /* implements MSDrop
 	/* typeEncoding=c24@0:8@16 */
 	validateMenuItem(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
-	validateRemoveLocalDataMenuItem(...args: any[]): any;
+	validateRemoveDataMenuItem(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	validateRevealInFinderMenuItem(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	validateShowPluginMenuItem(...args: any[]): any;
 	/* typeEncoding=Q32@0:8@16@24 */
 	view_draggingEntered(...args: any[]): any;
 	/* typeEncoding=Q32@0:8@16@24 */
@@ -9596,17 +10608,23 @@ declare class MSDataPreview extends NSView {
 declare class MSDataSupplier extends NSObject /* implements NSCoding */ {
 	/* typeEncoding=@"NSString", ivar=_dataIdentifier, attributes=(assign,nonatomic,readonly) */
 	dataIdentifier(): NSString;
-	/* typeEncoding=@"NSString", ivar=_dataName, attributes=(assign,nonatomic,readonly) */
+	/* typeEncoding=@"NSString", ivar=_dataName, attributes=(copy,nonatomic) */
 	dataName(): NSString;
 	/* typeEncoding=Q, ivar=_dataType, attributes=(assign,nonatomic,readonly) */
 	dataType(): number;
+	/* typeEncoding=@"<MSDataSupplierDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
+	delegate(): MSDataSupplierDelegate;
 	/* typeEncoding=c, ivar=_enabled, attributes=(assign,nonatomic) */
 	enabled(): boolean;
+	/* typeEncoding=@"NSImage", ivar=_menuItemImage, attributes=(retain,nonatomic) */
+	menuItemImage(): NSImage;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	valid(): boolean;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=v40@0:8Q16@24@?32 */
+	applyDataAtIndex_datum_dataApplier(...args: any[]): any;
 	/* typeEncoding=v40@0:8Q16@24@?32 */
 	applyDataWithCount_data_dataApplier(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -9619,12 +10637,16 @@ declare class MSDataSupplier extends NSObject /* implements NSCoding */ {
 	dataNameWithoutGroup(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	dataType(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	delegate(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	enabled(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	encodeWithCoder(...args: any[]): any;
-	/* typeEncoding=v40@0:8Q16@24@?32 */
-	generateDataWithCount_dataSupplierManager_dataApplier(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@?32 */
+	generateDataForLayers_dataSupplierManager_dataApplier(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@?32 */
+	generateDataForOverrides_dataSupplierManager_dataApplier(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	hash(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -9641,8 +10663,18 @@ declare class MSDataSupplier extends NSObject /* implements NSCoding */ {
 	isEqual(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	isEqualToDataSupplier(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	menuItemImage(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	resetMenuItemImage(): void;
+	/* typeEncoding=v24@0:8@16 */
+	setDataName(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDelegate(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setEnabled(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setMenuItemImage(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	valid(...args: any[]): any;
 }
@@ -9654,7 +10686,7 @@ declare class MSDataSupplierFileSystemMonitor extends MSFolderMonitor {
 	initWithURL_contentsChangedBlock(...args: any[]): any;
 }
 
-declare class MSDataSupplierManager extends NSObject /* implements MSLocalDataSupplierDelegate, MSPluginDataSupplierDelegate */ {
+declare class MSDataSupplierManager extends NSObject /* implements MSDataSupplierDelegate */ {
 	/* typeEncoding=@"NSMutableArray", ivar=_builtinData, attributes=(retain,nonatomic) */
 	builtinData(): NSMutableArray;
 	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -9695,8 +10727,10 @@ declare class MSDataSupplierManager extends NSObject /* implements MSLocalDataSu
 	addLocalData(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	builtinData(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16@24 */
-	dataIdentifierFromUserInfoForKey_onLayer(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	dataSupplierDataChanged(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	dataSupplierMenuItemImage(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	dataSupplierWithIdentifier(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -9710,21 +10744,15 @@ declare class MSDataSupplierManager extends NSObject /* implements MSLocalDataSu
 	/* typeEncoding=@24@0:8@16 */
 	firstPluginDataSupplierWithIdentifier(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
-	hasBuiltinDataSupplierWithDataIdentifier(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	hasDataSupplierWithDataIdentifier(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
 	hasLocalDataSupplierWithDataIdentifier(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	hasLocalDataSupplierWithURL(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	hasPluginDataSupplierWithDataIdentifier(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	imageForImageLocalDataSupplier(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16{CGSize=dd}24 */
+	imageForTextLocalDataSupplier_forSize(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	initWithDelegate(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	isBuiltinDataSupplier(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	isPluginForDataSupplierEnabled(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	loadBuiltinData(): void;
 	/* typeEncoding=v20@0:8c16 */
@@ -9737,8 +10765,6 @@ declare class MSDataSupplierManager extends NSObject /* implements MSLocalDataSu
 	localData(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	localDataForDefaultsKey(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	localDataSupplierDataChanged(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	localDataSuppliers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -9755,14 +10781,12 @@ declare class MSDataSupplierManager extends NSObject /* implements MSLocalDataSu
 	removePluginDataSuppliersNotIdentifiedWithIdentifiers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	replyContexts(...args: any[]): any;
-	/* typeEncoding=v40@0:8@16Q24@?32 */
-	requestDataFromPluginDataSupplier_numberOfItems_applierBlock(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@?32 */
+	requestDataFromPluginDataSupplier_dataContext_applierBlock(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	resetSketchBuiltinData(): void;
 	/* typeEncoding=v24@0:8@16 */
 	setBuiltinData(...args: any[]): any;
-	/* typeEncoding=v40@0:8@16@24@32 */
-	setDataIdentifierToUserInfo_forKey_toLayer(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLocalData(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -9771,8 +10795,12 @@ declare class MSDataSupplierManager extends NSObject /* implements MSLocalDataSu
 	setPluginDataReplyContext_forDataKey(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setReplyContexts(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@32 */
+	supplyData_atIndex_forKey(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	supplyData_forKey(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	useableDataSupplierWithIdentifier(...args: any[]): any;
 }
 
 declare class MSDataTableCellView extends NSTableCellView {
@@ -9788,9 +10816,6 @@ declare class MSDataTableCellView extends NSTableCellView {
 	revealButton(): NSButton;
 	/* typeEncoding=@"NSTextField", ivar=_secondaryTextField, attributes=(assign,nonatomic,weak) */
 	secondaryTextField(): NSTextField;
-
-	/* typeEncoding=v16@0:8 */
-	static initialize(): void;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -9810,8 +10835,6 @@ declare class MSDataTableCellView extends NSTableCellView {
 	revealButton(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	secondaryTextField(...args: any[]): any;
-	/* typeEncoding=v24@0:8q16 */
-	setBackgroundStyle(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDataPreferencePane(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -9912,6 +10935,8 @@ declare class MSDefaultStyle extends MSDefaultArchive {
 declare class MSDefaultStyleAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setStyleAsDefault(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -9937,6 +10962,8 @@ declare class MSDeleteAction extends MSDocumentAction {
 	delete(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -9958,8 +10985,8 @@ declare class MSDiff extends NSObject {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	contentDirtyDiffRect(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
+	contentDirtyDiffRectForPage(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	description(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -9968,8 +10995,8 @@ declare class MSDiff extends NSObject {
 	init(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	initWithFirstObjectRoot_secondObjectRoot(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	overlayDirtyDiffRect(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
+	overlayDirtyDiffRectForPage(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	secondObjectRoot(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -9981,10 +11008,12 @@ declare class MSDiff extends NSObject {
 declare class MSDifferenceAction extends MSBaseBooleanAction {
 	/* typeEncoding=v24@0:8@16 */
 	booleanDifference(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	doPerformAction(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	booleanOperation(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	historyMomentTitle(...args: any[]): any;
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
@@ -10021,9 +11050,11 @@ declare class MSDistributeAction extends MSDocumentAction {
 	validate(...args: any[]): any;
 }
 
-declare class MSDistributeActions extends MSTouchBarGroupAction {
+declare class MSDistributeActions extends MSActionGroup {
 	/* typeEncoding=@16@0:8 */
 	actionNames(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	touchBarItemSizing(...args: any[]): any;
 }
@@ -10036,6 +11067,8 @@ declare class MSDistributeHorizontallyAction extends MSDistributeAction {
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
 
@@ -10047,12 +11080,9 @@ declare class MSDistributeVerticallyAction extends MSDistributeAction {
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	touchBarImage(...args: any[]): any;
-}
-
-declare class MSDoNotShowAgainButtonCell extends NSButtonCell {
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	attributedTitle(...args: any[]): any;
+	touchBarImage(...args: any[]): any;
 }
 
 declare class MSDocument extends NSDocument /* implements MSCloudExportableDocument, MSSidebarControllerDelegate, BCSideBarViewControllerDelegate, NSMenuDelegate, NSToolbarDelegate, NSWindowDelegate, MSEventHandlerManagerDelegate, MSDocumentDataDelegate, MSMenuBuilderDelegate */ {
@@ -10062,8 +11092,8 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	UIMetadata(): NSDictionary;
 	/* typeEncoding=@"MSActionController", ivar=_actionsController, attributes=(retain,nonatomic) */
 	actionsController(): MSActionController;
-	/* typeEncoding=@"MSBackButtonWindowController", ivar=_backButtonController, attributes=(retain,nonatomic) */
-	backButtonController(): MSBackButtonWindowController;
+	/* typeEncoding=@"MSBackButtonController", ivar=_backButtonController, attributes=(retain,nonatomic) */
+	backButtonController(): MSBackButtonController;
 	/* typeEncoding=@"MSBadgeController", ivar=_badgeController, attributes=(retain,nonatomic) */
 	badgeController(): MSBadgeController;
 	/* typeEncoding=c, ivar=_cacheFlushInProgress, attributes=(assign) */
@@ -10094,12 +11124,14 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	description(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
+	/* typeEncoding=@"NSColorSpace", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	documentColorSpace(): NSColorSpace;
 	/* typeEncoding=@"MSDocumentData", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	documentData(): MSDocumentData;
 	/* typeEncoding=@"MSDocumentData", ivar=_documentData, attributes=(retain,nonatomic) */
 	documentData(): MSDocumentData;
-	/* typeEncoding=@"MSImmutableDocumentData", ivar=_documentDataUsedForLayerList, attributes=(retain,nonatomic) */
-	documentDataUsedForLayerList(): MSImmutableDocumentData;
+	/* typeEncoding=@"MSImmutableDocumentData", ivar=_documentDataUsedForSupplementaryViews, attributes=(retain,nonatomic) */
+	documentDataUsedForSupplementaryViews(): MSImmutableDocumentData;
 	/* typeEncoding=@"NSWindow", ivar=_documentWindow, attributes=(retain,nonatomic) */
 	documentWindow(): NSWindow;
 	/* typeEncoding=@, ivar=_editingLibraryWarning, attributes=(retain,nonatomic) */
@@ -10112,6 +11144,8 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	hasOpenedImageFile(): boolean;
 	/* typeEncoding=c, ivar=_hasScheduledDocumentDidChange, attributes=(assign,nonatomic) */
 	hasScheduledDocumentDidChange(): boolean;
+	/* typeEncoding=c, ivar=_hasScheduledInspectorReload, attributes=(assign,nonatomic) */
+	hasScheduledInspectorReload(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
@@ -10126,8 +11160,6 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	inspectorPlaceholderView(): NSView;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isCurrent(): boolean;
-	/* typeEncoding=c, ivar=_layerListRefreshIsScheduled, attributes=(assign,nonatomic) */
-	layerListRefreshIsScheduled(): boolean;
 	/* typeEncoding=@"NSMutableSet", ivar=_layersWithHiddenSelectionHandles, attributes=(retain,nonatomic) */
 	layersWithHiddenSelectionHandles(): NSMutableSet;
 	/* typeEncoding=@"NSView", ivar=_messageView, attributes=(retain,nonatomic) */
@@ -10140,6 +11172,8 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	nextReadFromURLIsReload(): boolean;
 	/* typeEncoding=@"NSMutableDictionary", ivar=_originalViewportsForEditedSymbols, attributes=(retain,nonatomic) */
 	originalViewportsForEditedSymbols(): NSMutableDictionary;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
+	pageListCollapsed(): boolean;
 	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic) */
 	pageListHeight(): number;
 	/* typeEncoding=@"MSLayerArray", ivar=_previousSelectedLayers, attributes=(copy,nonatomic) */
@@ -10156,6 +11190,8 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	superclass(): any;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
+	/* typeEncoding=c, ivar=_supplementaryViewRefreshIsScheduled, attributes=(assign,nonatomic) */
+	supplementaryViewRefreshIsScheduled(): boolean;
 	/* typeEncoding=c, ivar=_temporarilyDisableSelectionHiding, attributes=(assign,nonatomic) */
 	temporarilyDisableSelectionHiding(): boolean;
 	/* typeEncoding=@"MSToolbarConstructor", ivar=_toolbarConstructor, attributes=(retain,nonatomic) */
@@ -10222,6 +11258,8 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	cacheManager(...args: any[]): any;
 	/* typeEncoding=c40@0:8@16@24Q32 */
 	canAsynchronouslyWriteToURL_ofType_forSaveOperation(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16:24^v32 */
+	canCloseDocumentWithDelegate_shouldCloseSelector_contextInfo(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	canRestoreViewportAfterArtboardEdit(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -10244,8 +11282,6 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	cloudShare(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	coalescedDetermineArtboardNotification(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	coalescedSelectionDidChangeNotification(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	colorSpace(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -10289,6 +11325,8 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	/* typeEncoding=v16@0:8 */
 	determineCurrentArtboard(): void;
 	/* typeEncoding=@16@0:8 */
+	documentColorSpace(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	documentData(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	documentData_didChangeToPage(...args: any[]): any;
@@ -10296,8 +11334,6 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	documentData_immediatelyShowSelectionForLayer(...args: any[]): any;
 	/* typeEncoding=@40@0:8@16@24@32 */
 	documentData_metadataForKey_object(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16@24 */
-	documentData_sharedObjectDidChange(...args: any[]): any;
 	/* typeEncoding=v48@0:8@16@24@32@40 */
 	documentData_storeMetadata_forKey_object(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
@@ -10305,7 +11341,7 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	/* typeEncoding=v24@0:8@16 */
 	documentDataImmediatelyShowSelectionForAllLayers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	documentDataUsedForLayerList(...args: any[]): any;
+	documentDataUsedForSupplementaryViews(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	documentDidChange(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -10339,9 +11375,13 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	/* typeEncoding=c16@0:8 */
 	hasArtboards(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	hasLayerSelectionChanged(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	hasOpenedImageFile(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasScheduledDocumentDidChange(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasScheduledInspectorReload(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMaker(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16Q24 */
@@ -10382,14 +11422,12 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	isSeparatorIdentifier(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isShowingMeasurements(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	layerListRefreshIsScheduled(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	layerHasHoverStateInCanvas(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	layerPositionPossiblyChanged(): void;
 	/* typeEncoding=v16@0:8 */
 	layerSelectionDidChange(): void;
-	/* typeEncoding=v16@0:8 */
-	layerSelectionMightHaveChanged(): void;
 	/* typeEncoding=@16@0:8 */
 	layerStyles(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -10436,6 +11474,8 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	openLibrariesForForeignObjects(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	originalViewportsForEditedSymbols(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	pageListCollapsed(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	pageListHeight(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -10470,8 +11510,10 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	readPDFFromURL_error(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16^@24 */
 	readSVGFromURL_error(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	refreshLayerListIfNecessary(): void;
+	/* typeEncoding=v24@0:8@16 */
+	refreshInspectorIfNecessary(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	refreshLayerListIfNecessary(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	refreshOverlay(): void;
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
@@ -10505,17 +11547,23 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	/* typeEncoding=v24@0:8@16 */
 	restoreViewportAfterArtboardEdit(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
+	returnToDefaultFirstResponder(): void;
+	/* typeEncoding=v16@0:8 */
 	returnToNormalHandler(): void;
 	/* typeEncoding=c40@0:8@16@24^@32 */
 	revertToContentsOfURL_ofType_error(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	saveArtboardOrSlice_toFile(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16Q24@32@40 */
+	saveDocumentToURL_saveMode_context_callback(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	saveExportRequest_toFile(...args: any[]): any;
 	/* typeEncoding=v48@0:8@16@24Q32@?40 */
 	saveToURL_ofType_forSaveOperation_completionHandler(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	scheduleLayerListRefresh(): void;
+	scheduleReloadInspector(): void;
+	/* typeEncoding=v16@0:8 */
+	scheduleSupplementaryViewRefresh(): void;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	scrollOrigin(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -10547,7 +11595,7 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	/* typeEncoding=v24@0:8@16 */
 	setDocumentData(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setDocumentDataUsedForLayerList(...args: any[]): any;
+	setDocumentDataUsedForSupplementaryViews(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDocumentWindow(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -10562,14 +11610,14 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	setHasOpenedImageFile(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setHasScheduledDocumentDidChange(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setHasScheduledInspectorReload(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setHistoryMaker(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setInspectorController(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setInspectorPlaceholderView(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setLayerListRefreshIsScheduled(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLayersWithHiddenSelectionHandles(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -10582,6 +11630,8 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	setNextReadFromURLIsReload(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setOriginalViewportsForEditedSymbols(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setPageListCollapsed(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	setPageListHeight(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -10594,6 +11644,8 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	setSidebarController(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setSplitViewController(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setSupplementaryViewRefreshIsScheduled(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setTemporarilyDisableSelectionHiding(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -10632,6 +11684,8 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	splitViewController(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16@24@32 */
 	storeViewport_andInstance_forArtboard(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	supplementaryViewRefreshIsScheduled(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	symbolReferenceForRecipe(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -10650,6 +11704,8 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	updateCountDownButton(): void;
 	/* typeEncoding=v16@0:8 */
 	updateFilterSettings(): void;
+	/* typeEncoding=v16@0:8 */
+	updateHistoryWithSelection(): void;
 	/* typeEncoding=v16@0:8 */
 	updateSelectionFollowingChangeToImmutableDocumentData(): void;
 	/* typeEncoding=c32@0:8@16^@24 */
@@ -10698,8 +11754,6 @@ declare class MSDocument extends NSDocument /* implements MSCloudExportableDocum
 	windowWillClose(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	windowWillEnterFullScreen(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16@24 */
-	windowWillReturnFieldEditor_toObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	wireDocumentDataToUI(): void;
 	/* typeEncoding=c56@0:8@16@24Q32@40^@48 */
@@ -10754,8 +11808,6 @@ declare class MSDocumentAction extends MSAction /* implements NSMenuDelegate, NS
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	initWithDocument(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	interfaceQueryObject(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isInNormalHandler(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -10838,6 +11890,8 @@ declare class MSDocumentData extends _MSDocumentData /* implements MSLayerContai
 	metadata(): NSDictionary;
 	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	pages(): NSArray;
+	/* typeEncoding=@"NSArray", ivar=_selectedOverrides, attributes=(retain,nonatomic) */
+	selectedOverrides(): NSArray;
 	/* typeEncoding=@"NSDictionary", ivar=_symbolMap, attributes=(assign,nonatomic,readonly) */
 	symbolMap(): NSDictionary;
 
@@ -10861,7 +11915,11 @@ declare class MSDocumentData extends _MSDocumentData /* implements MSLayerContai
 	/* typeEncoding=@16@0:8 */
 	allForeignObjects(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	allLayerStyles(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	allSymbols(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	allTextStyles(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	artboardWithID(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
@@ -10870,12 +11928,6 @@ declare class MSDocumentData extends _MSDocumentData /* implements MSLayerContai
 	autoExpandGroupsInLayerList(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	cache(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeContainedByDocument(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeContainedByGroup(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	canContainLayer(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	containedLayers(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -10932,8 +11984,8 @@ declare class MSDocumentData extends _MSDocumentData /* implements MSLayerContai
 	lastLayer(...args: any[]): any;
 	/* typeEncoding=@24@0:8Q16 */
 	layerAtIndex(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	layerSelectionMightHaveChanged(): void;
+	/* typeEncoding=@24@0:8@16 */
+	layerStyleWithID(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	layerTreeLayoutDidChange(): void;
 	/* typeEncoding=@24@0:8@16 */
@@ -10972,6 +12024,8 @@ declare class MSDocumentData extends _MSDocumentData /* implements MSLayerContai
 	refreshOverlayInRect(...args: any[]): any;
 	/* typeEncoding=v28@0:8@16c24 */
 	removePages_detachInstances(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	removeShareableObjectsFromInstanceOverrides(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	replaceExistingCreationMetadata(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -10980,6 +12034,8 @@ declare class MSDocumentData extends _MSDocumentData /* implements MSLayerContai
 	replaceInstancesOfColor_withColor_ignoreAlphaWhenMatching_replaceAlphaOfOriginalColor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	selectedLayers(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedOverrides(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setAutoExpandGroupsInLayerList(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -10994,12 +12050,14 @@ declare class MSDocumentData extends _MSDocumentData /* implements MSLayerContai
 	setFontList(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setMetadata(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSelectedOverrides(...args: any[]): any;
 	/* typeEncoding=@24@0:8Q16 */
 	sharedObjectContainerOfType(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{MSModelObject=#@@@c}16 */
-	sharedObjectDidChange(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16@24@32 */
 	storeMetadata_forKey_object(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	stylesReferencedInDocument(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	symbolMap(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -11016,6 +12074,8 @@ declare class MSDocumentData extends _MSDocumentData /* implements MSLayerContai
 	symbolsReferencedBySymbolMasters(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	temporarilyHideSelectionForLayers(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	textStyleWithID(...args: any[]): any;
 }
 
 declare class MSDocumentError extends NSError {
@@ -11188,17 +12248,9 @@ declare class MSDocumentTree extends NSObject {
 	storeParentsForLayersContainedInParent(...args: any[]): any;
 }
 
-declare class MSDocumentWindow extends NSWindow /* implements MSInterfaceTheme */ {
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
+declare class MSDocumentWindow extends NSWindow {
 	/* typeEncoding=@"NSEvent", ivar=_lastForwardedKeyEvent, attributes=(assign,nonatomic,weak) */
 	lastForwardedKeyEvent(): NSEvent;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
 	/* typeEncoding=@"BCWindowBadge", ivar=_titleBarBadge, attributes=(retain,nonatomic) */
 	titleBarBadge(): BCWindowBadge;
 
@@ -11212,10 +12264,14 @@ declare class MSDocumentWindow extends NSWindow /* implements MSInterfaceTheme *
 	lastForwardedKeyEvent(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	mouseDown(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	refreshAppearanceDependentViews(): void;
 	/* typeEncoding=c24@0:8:16 */
 	respondsToSelector(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	sendEvent(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setAppearance(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLastForwardedKeyEvent(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -11226,6 +12282,11 @@ declare class MSDocumentWindow extends NSWindow /* implements MSInterfaceTheme *
 	titleBarBadge(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBar(...args: any[]): any;
+}
+
+declare class MSDocumentWindowContentView extends NSView {
+	/* typeEncoding=v16@0:8 */
+	viewDidChangeEffectiveAppearance(): void;
 }
 
 declare class MSDocumentWriter extends NSObject /* implements MSDocumentPreviewGeneration */ {
@@ -11485,8 +12546,6 @@ declare class MSDragRectEventHandler extends MSEventHandler /* implements MSAlig
 	insertionRect(): CGRect;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	layerSelectionOptionsForInsertingFromExistingLayer(): number;
-	/* typeEncoding=@"NSArray", ivar=_snapTargets, attributes=(retain,nonatomic) */
-	snapTargets(): NSArray;
 	/* typeEncoding=@"MSAlignmentEngine", ivar=_snapper, attributes=(assign,nonatomic,readonly) */
 	snapper(): MSAlignmentEngine;
 	/* typeEncoding=@"MSAlignmentEngineResult", ivar=_snappingResult, attributes=(retain,nonatomic) */
@@ -11498,14 +12557,14 @@ declare class MSDragRectEventHandler extends MSEventHandler /* implements MSAlig
 	_cxx_destruct(): void;
 	/* typeEncoding=c40@0:8{CGPoint=dd}16Q32 */
 	absoluteMouseUp_flags(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	addSnapTargetsToEngine(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}40@0:8@16{CGPoint=dd}24 */
 	alignmentEngine_alignPoint(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}40@0:8@16{CGPoint=dd}24 */
 	alignmentEngine_roundPoint(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	allowsInsertLayerFromExistingLayer(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	cacheSnapTargets(): void;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
 	calculateInsertionRect(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -11520,8 +12579,6 @@ declare class MSDragRectEventHandler extends MSEventHandler /* implements MSAlig
 	drawRectPreview(): void;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	drawingRectForInsertionRect(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16@?24 */
-	enumeratePossibleSnapTargetLayersInGroup_usingBlock(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	handleDrag(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -11534,10 +12591,10 @@ declare class MSDragRectEventHandler extends MSEventHandler /* implements MSAlig
 	insertionCursor(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	insertionRect(...args: any[]): any;
+	/* typeEncoding=@40@0:8{CGPoint=dd}16Q32 */
+	itemAtPoint_modifierFlags(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	keyDown(...args: any[]): any;
-	/* typeEncoding=@40@0:8{CGPoint=dd}16Q32 */
-	layerAtPoint_modifierFlags(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	layerSelectionOptionsForInsertingFromExistingLayer(...args: any[]): any;
 	/* typeEncoding={CGVector=dd}32@0:8{CGVector=dd}16 */
@@ -11551,13 +12608,9 @@ declare class MSDragRectEventHandler extends MSEventHandler /* implements MSAlig
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	setInsertionRect(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setSnapTargets(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setSnappingResult(...args: any[]): any;
 	/* typeEncoding=@40@0:8{CGPoint=dd}16Q32 */
 	snapAndAlignPoint_modifierFlags(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	snapTargets(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	snapper(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -11707,18 +12760,15 @@ declare class MSDrawingInfo extends NSObject {
 	setIsDragging(...args: any[]): any;
 }
 
-declare class MSDropdownButtonCell extends MSSmallButtonCell {
-	/* typeEncoding=d, ivar=_imageRightEdgeInset, attributes=(assign,nonatomic) */
-	imageRightEdgeInset(): number;
-
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
-	drawTitle_withFrame_inView(...args: any[]): any;
+declare class MSDropdownButtonCell extends MSInspectorPushButtonCell {
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawBezelWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawImage_withFrame_inView(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	imageRectForBounds(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	imageRightEdgeInset(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setImageRightEdgeInset(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	titleRectForBounds(...args: any[]): any;
 }
 
 declare class MSDuplicateAction extends MSDocumentAction {
@@ -11726,6 +12776,8 @@ declare class MSDuplicateAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	duplicate(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -11760,14 +12812,16 @@ declare class MSEditAction extends MSDocumentAction {
 	imageName(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isSelectable(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldUseImageForTouchBarItem(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	validateToolbarItem(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	validateToolbarItem(): void;
 }
 
 declare class MSEditArtboardPresetViewController extends NSViewController /* implements NSTouchBarDelegate */ {
@@ -11823,6 +12877,8 @@ declare class MSEditColorSpaceAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	editDocumentColorSpace(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSEditColorSpaceSheetController extends CHSheetController {
@@ -11920,6 +12976,8 @@ declare class MSEditColorSpaceSheetController extends CHSheetController {
 }
 
 declare class MSEditShapeInspectorViewController extends NSViewController /* implements MSInspectorChildController */ {
+	/* typeEncoding=@"MSShapeButtonInspectorItem", ivar=_buttonItem, attributes=(retain,nonatomic) */
+	buttonItem(): MSShapeButtonInspectorItem;
 	/* typeEncoding=@"NSButton", ivar=_closePathButton, attributes=(retain,nonatomic) */
 	closePathButton(): NSButton;
 	/* typeEncoding=@"NSTextField", ivar=_cornerRadiusField, attributes=(retain,nonatomic) */
@@ -11932,12 +12990,6 @@ declare class MSEditShapeInspectorViewController extends NSViewController /* imp
 	curvePointXField(): MSUpDownTextField;
 	/* typeEncoding=@"MSUpDownTextField", ivar=_curvePointYField, attributes=(retain,nonatomic) */
 	curvePointYField(): MSUpDownTextField;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
 	/* typeEncoding=c, ivar=_isMakingRectSelection, attributes=(assign,nonatomic) */
 	isMakingRectSelection(): boolean;
 	/* typeEncoding=@"NSButton", ivar=_makeRectSelectionButton, attributes=(retain,nonatomic) */
@@ -11950,8 +13002,6 @@ declare class MSEditShapeInspectorViewController extends NSViewController /* imp
 	roundingPopUpButton(): NSPopUpButton;
 	/* typeEncoding=@"MSShapeEventHandler", ivar=_shapeEventHandler, attributes=(assign,nonatomic) */
 	shapeEventHandler(): MSShapeEventHandler;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
 	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_xAdapter, attributes=(retain,nonatomic) */
 	xAdapter(): MSMathInspectorValueAdaptor;
 	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_yAdapter, attributes=(retain,nonatomic) */
@@ -11959,10 +13009,10 @@ declare class MSEditShapeInspectorViewController extends NSViewController /* imp
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	buttonItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	changeTool(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	closePathAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	closePathButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -12007,6 +13057,8 @@ declare class MSEditShapeInspectorViewController extends NSViewController /* imp
 	refreshCornerRadiusButton(): void;
 	/* typeEncoding=v16@0:8 */
 	refreshCurveModeControls(): void;
+	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	refreshRoundingPopUpTitle(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -12015,6 +13067,8 @@ declare class MSEditShapeInspectorViewController extends NSViewController /* imp
 	roundingPopUpButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	selectionDidChangeTo(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setButtonItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setClosePathButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -12250,18 +13304,16 @@ declare class MSEventHandler extends NSResponder /* implements NSDraggingDestina
 	insertTab(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	inspectorLocation(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	inspectorShouldShowPositions(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	inspectorViewController(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	inspectorViewControllersForLayers_standardControllers(...args: any[]): any;
+	/* typeEncoding=@40@0:8{CGPoint=dd}16Q32 */
+	itemAtPoint_modifierFlags(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	keyDown(...args: any[]): any;
 	/* typeEncoding=v28@0:8S16Q20 */
 	keyUp_flags(...args: any[]): any;
-	/* typeEncoding=@40@0:8{CGPoint=dd}16Q32 */
-	layerAtPoint_modifierFlags(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	layerListSelectionDidChange(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -12367,6 +13419,8 @@ declare class MSEventHandler extends NSResponder /* implements NSDraggingDestina
 	/* typeEncoding=v24@0:8@16 */
 	selectAll(...args: any[]): any;
 	/* typeEncoding=v28@0:8@16c24 */
+	selectHitTestResult_extendSelection(...args: any[]): any;
+	/* typeEncoding=v28@0:8@16c24 */
 	selectLayer_extendSelection(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	selectToolbarItemWithIdentifier(...args: any[]): any;
@@ -12421,7 +13475,11 @@ declare class MSEventHandler extends NSResponder /* implements NSDraggingDestina
 	/* typeEncoding=c16@0:8 */
 	shouldShowFlowView(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	shouldShowResizingView(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	shouldShowSharedStyles(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	styleViewControllersForLayers_fromStyleInspectorSection(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	toolbarIdentifier(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
@@ -12454,6 +13512,8 @@ declare class MSEventHandler extends NSResponder /* implements NSDraggingDestina
 	willMoveThroughHistory(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	willResignFirstResponder(): void;
+	/* typeEncoding=v16@0:8 */
+	willStartExporting(): void;
 	/* typeEncoding=v32@0:8@16@24 */
 	writeLayers_toPasteboard(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -12578,69 +13638,18 @@ declare class MSExportAction extends MSDocumentAction {
 	export(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasArtboardsWitNoExportFormats(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	rectForExportingEntirePage(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	showInspectorPanelIfNecessary(): void;
 	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
-}
-
-declare class MSExportBackgroundColorInspectorItem extends MSInspectorItem /* implements MSColorInspectorDelegate, BCPopoverDelegate, MSStylePartPreviewButtonDelegate, MSStylePartPreviewButtonDisabledTarget */ {
-	/* typeEncoding=@"MSStylePartPreviewButton", ivar=_backgroundColorButton, attributes=(retain,nonatomic) */
-	backgroundColorButton(): MSStylePartPreviewButton;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=@"BCPopover", ivar=_popover, attributes=(retain,nonatomic) */
-	popover(): BCPopover;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
-
-	/* typeEncoding=@24@0:8@16 */
-	static filterSelection(...args: any[]): any;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=v24@0:8@16 */
-	backgroundColorAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	backgroundColorButton(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canHandleColorMagnifierAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	canvasColorSpace(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	changeBackgroundColorTo(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16@24 */
-	colorInspector_didChangeToColor(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	colorMagnifierAction(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
-	/* typeEncoding=v24@0:8@16 */
-	dismissViewController(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	documentColorSpace(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	popover(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setBackgroundColorButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setPopover(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	stylePartPreviewButtonDisabledAction(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	stylePartPreviewButtonPreviewColorSpace(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	updateDisplayedValues(): void;
-	/* typeEncoding=v16@0:8 */
-	viewWillDisappear(): void;
 }
 
 declare class MSExportFormat extends _MSExportFormat {
@@ -12680,87 +13689,80 @@ declare class MSExportFormat extends _MSExportFormat {
 	remove(): void;
 }
 
-declare class MSExportFormatNamingTextField extends NSTextField {
+declare class MSExportFormatNamingTextField extends MSTextFieldWithDropDownMenu {
 	/* typeEncoding=@"NSArray", ivar=_exportFormats, attributes=(copy,nonatomic) */
 	exportFormats(): NSArray;
 
 	/* typeEncoding=#16@0:8 */
 	static cellClass(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	static sharedFieldEditor(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=v24@0:8@16 */
 	applyNamingScheme(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	dropDownArrowHitTestRect(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	exportFormats(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	mouseDown(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	resetCursorRects(): void;
+	/* typeEncoding=@16@0:8 */
+	popupMenu(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setExportFormats(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	textDidChange(...args: any[]): any;
 }
 
-declare class MSExportFormatNamingTextFieldCell extends NSTextFieldCell {
+declare class MSExportFormatNamingTextFieldCell extends MSTextFieldWithDropDownMenuCell {
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isPrefixed(): boolean;
 	/* typeEncoding=d, ivar=_layerNamePlaceholderWidth, attributes=(assign,nonatomic) */
 	layerNamePlaceholderWidth(): number;
 	/* typeEncoding=q, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	namingScheme(): number;
-	/* typeEncoding=@"NSAttributedString", ivar=_prefixedLayerNamePlaceholder, attributes=(retain,nonatomic) */
-	prefixedLayerNamePlaceholder(): NSAttributedString;
-	/* typeEncoding=@"NSAttributedString", ivar=_suffixedLayerNamePlaceholder, attributes=(retain,nonatomic) */
-	suffixedLayerNamePlaceholder(): NSAttributedString;
 
+	/* typeEncoding=v24@0:8@16 */
+	controlTextDidChange(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
+	dealloc(): void;
 	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
 	drawInteriorWithFrame_inView(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}36@0:8@16@24c32 */
-	fittingFrameForFieldEditor_controlView_counterSelectionInset(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawingRectForBounds(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initTextCell(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithCoder(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isPrefixed(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	layerNamePlaceholderWidth(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	namingScheme(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	prefixedLayerNamePlaceholder(...args: any[]): any;
-	/* typeEncoding=v88@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48@56@64q72q80 */
-	selectWithFrame_inView_editor_delegate_start_length(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	setLayerNamePlaceholderWidth(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setPrefixedLayerNamePlaceholder(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setSuffixedLayerNamePlaceholder(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	setUpFieldEditorAttributes(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	suffixedLayerNamePlaceholder(...args: any[]): any;
-}
-
-declare class MSExportFormatPopUpButtonCell extends NSPopUpButtonCell {
-	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
-	drawTitleWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	setupExportFormatNamingTextFieldCell(): void;
 }
 
 declare class MSExportFormatViewController extends NSViewController {
+	/* typeEncoding=d, ivar=_designedFormatPopUpButtonWidth, attributes=(assign,nonatomic) */
+	designedFormatPopUpButtonWidth(): number;
+	/* typeEncoding=c, ivar=_drawOldFashioned, attributes=(assign,nonatomic) */
+	drawOldFashioned(): boolean;
+	/* typeEncoding=d, ivar=_expandedRemoveWidth, attributes=(assign,nonatomic) */
+	expandedRemoveWidth(): number;
 	/* typeEncoding=@"NSArray", ivar=_exportFormats, attributes=(retain,nonatomic) */
 	exportFormats(): NSArray;
 	/* typeEncoding=@"NSPopUpButton", ivar=_formatPopup, attributes=(retain,nonatomic) */
 	formatPopup(): NSPopUpButton;
+	/* typeEncoding=@"NSView", ivar=_removeButtonContainerView, attributes=(retain,nonatomic) */
+	removeButtonContainerView(): NSView;
+	/* typeEncoding=c, ivar=_removeButtonHidden, attributes=(assign,nonatomic,getter=isRemoveButtonHidden) */
+	removeButtonHidden(): boolean;
 	/* typeEncoding=@"NSButton", ivar=_removeSizeButton, attributes=(retain,nonatomic) */
 	removeSizeButton(): NSButton;
-	/* typeEncoding=@"NSTextField", ivar=_scaleField, attributes=(retain,nonatomic) */
-	scaleField(): NSTextField;
+	/* typeEncoding=@"MSTextFieldWithDropDownMenu", ivar=_scaleField, attributes=(retain,nonatomic) */
+	scaleField(): MSTextFieldWithDropDownMenu;
+	/* typeEncoding=@"NSMenu", ivar=_scalePopupMenu, attributes=(retain,nonatomic) */
+	scalePopupMenu(): NSMenu;
 	/* typeEncoding=@"NSView", ivar=_sizeView, attributes=(retain,nonatomic) */
 	sizeView(): NSView;
 	/* typeEncoding=@"MSExportFormatNamingTextField", ivar=_suffixTextField, attributes=(retain,nonatomic) */
@@ -12775,12 +13777,20 @@ declare class MSExportFormatViewController extends NSViewController {
 	_cxx_destruct(): void;
 	/* typeEncoding=v56@0:8d16@24q32{CGSize=dd}40 */
 	applyEditedScaleFieldValue_toExportFormat_scaleType_normalSize(...args: any[]): any;
-	/* typeEncoding=v24@0:8@?16 */
-	commitScaleFieldEditsWithCompletionBlock(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@?24 */
+	commitScaleStringEdit_withCompletionBlock(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	designedFormatPopUpButtonWidth(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	drawOldFashioned(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	expandedRemoveWidth(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	exportFormatCanBeScaled(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	exportFormats(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	exportSelection(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16q24@?32 */
 	findSizeOfLayer_forScaleType_completionBlock(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -12789,8 +13799,12 @@ declare class MSExportFormatViewController extends NSViewController {
 	formatPopup(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	formatPopupAction(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isRemoveButtonHidden(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	prepare(): void;
+	/* typeEncoding=@16@0:8 */
+	removeButtonContainerView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	removeExportFormat(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -12800,13 +13814,29 @@ declare class MSExportFormatViewController extends NSViewController {
 	/* typeEncoding=v24@0:8@16 */
 	scaleFieldAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	scaleMenuAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	scalePopupMenu(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setDesignedFormatPopUpButtonWidth(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDrawOldFashioned(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setExpandedRemoveWidth(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setExportFormats(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setFormatPopup(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setRemoveButtonContainerView(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setRemoveButtonHidden(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setRemoveSizeButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setScaleField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setScalePopupMenu(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setSizeView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -12818,40 +13848,51 @@ declare class MSExportFormatViewController extends NSViewController {
 	/* typeEncoding=@16@0:8 */
 	suffixTextField(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
+	updateRemoveButtonLayout(): void;
+	/* typeEncoding=v16@0:8 */
+	updateTextFieldProperties(): void;
+	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
 }
 
-declare class MSExportInspectorViewController extends MSStylePartInspectorViewController {
+declare class MSExportInitialHeaderItem extends MSHeaderInspectorItem {
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+}
+
+declare class MSExportInspectorViewController extends MSInspectorItem {
 	/* typeEncoding=@"NSButton", ivar=_addExportFormatButton, attributes=(retain,nonatomic) */
 	addExportFormatButton(): NSButton;
-	/* typeEncoding=@"NSView", ivar=_bigExportLabel, attributes=(retain,nonatomic) */
-	bigExportLabel(): NSView;
 	/* typeEncoding=@"NSView", ivar=_bottomLabelView, attributes=(retain,nonatomic) */
 	bottomLabelView(): NSView;
-	/* typeEncoding=@"NSButton", ivar=_exportButton, attributes=(retain,nonatomic) */
-	exportButton(): NSButton;
-	/* typeEncoding=@"NSView", ivar=_exportButtonView, attributes=(retain,nonatomic) */
-	exportButtonView(): NSView;
 	/* typeEncoding=@"NSTextField", ivar=_exportFormatLabelTextField, attributes=(retain,nonatomic) */
 	exportFormatLabelTextField(): NSTextField;
 	/* typeEncoding=@"NSButton", ivar=_exportPresetsMenuButton, attributes=(retain,nonatomic) */
 	exportPresetsMenuButton(): NSButton;
 	/* typeEncoding=@"NSArray", ivar=_formatViewControllers, attributes=(copy,nonatomic) */
 	formatViewControllers(): NSArray;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasExports(): boolean;
+	/* typeEncoding=@"MSHeaderInspectorItem", ivar=_headerItem, attributes=(retain,nonatomic) */
+	headerItem(): MSHeaderInspectorItem;
+	/* typeEncoding=@"NSTextField", ivar=_headerLabel, attributes=(retain,nonatomic) */
+	headerLabel(): NSTextField;
 	/* typeEncoding=@"NSButton", ivar=_knifeButton, attributes=(retain,nonatomic) */
 	knifeButton(): NSButton;
-	/* typeEncoding=@"MSLayerArray", ivar=_layers, attributes=(copy,nonatomic) */
-	layers(): MSLayerArray;
-	/* typeEncoding=@"NSView", ivar=_separatorView, attributes=(retain,nonatomic) */
-	separatorView(): NSView;
-	/* typeEncoding=@"NSView", ivar=_separatorView2, attributes=(retain,nonatomic) */
-	separatorView2(): NSView;
-	/* typeEncoding=@"NSButton", ivar=_shareButton, attributes=(retain,nonatomic) */
-	shareButton(): NSButton;
-	/* typeEncoding=@"MSShareButtonHandler", ivar=_shareButtonHandler, attributes=(retain,nonatomic) */
-	shareButtonHandler(): MSShareButtonHandler;
-	/* typeEncoding=@"NSView", ivar=_topFillerView, attributes=(retain,nonatomic) */
-	topFillerView(): NSView;
+	/* typeEncoding=@"NSView", ivar=_nameView, attributes=(retain,nonatomic) */
+	nameView(): NSView;
+	/* typeEncoding=@"NSLayoutConstraint", ivar=_textLabelRightConstraint, attributes=(retain,nonatomic) */
+	textLabelRightConstraint(): NSLayoutConstraint;
+	/* typeEncoding=d, ivar=_textLabelRightConstraintExpandedWidth, attributes=(assign,nonatomic) */
+	textLabelRightConstraintExpandedWidth(): number;
+	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	views(): NSArray;
+
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -12861,40 +13902,22 @@ declare class MSExportInspectorViewController extends MSStylePartInspectorViewCo
 	addExportFormatButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	addExportPreset(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	applyDisplayNameToExportButton(): void;
 	/* typeEncoding=v24@0:8@16 */
 	applyExportPreset(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	awakeFromNib(): void;
-	/* typeEncoding=@16@0:8 */
-	bigExportLabel(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	bottomLabelView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@?16 */
-	commitScaleFieldEditsWithCompletionBlock(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	createSliceAction(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
 	/* typeEncoding=@16@0:8 */
 	document(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	editExportPresets(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	exportButton(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	exportButtonDisplayName(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	exportButtonView(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	exportFormatLabelTextField(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	exportPresetAppliesToSelectedLayers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	exportPresetsMenuButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	exportSingleSlice(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	findExportFormatAmong_equalToFormat(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -12903,28 +13926,22 @@ declare class MSExportInspectorViewController extends MSStylePartInspectorViewCo
 	formatViewControllers(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasEnabledStyle(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasExports(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	headerItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	headerLabel(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	knifeButton(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	layers(...args: any[]): any;
-	/* typeEncoding=v48@0:8@16@24@32^v40 */
-	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
+	nameView(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	prepare(): void;
-	/* typeEncoding=@16@0:8 */
-	separatorView(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	separatorView2(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setAddExportFormatButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setBigExportLabel(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setBottomLabelView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setExportButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setExportButtonView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setExportFormatLabelTextField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -12932,33 +13949,29 @@ declare class MSExportInspectorViewController extends MSStylePartInspectorViewCo
 	/* typeEncoding=v24@0:8@16 */
 	setFormatViewControllers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setHeaderItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeaderLabel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setKnifeButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLayers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setSeparatorView2(...args: any[]): any;
+	setNameView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setSeparatorView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setShareButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setShareButtonHandler(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setTopFillerView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	shareAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	shareButton(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	shareButtonHandler(...args: any[]): any;
+	setTextLabelRightConstraint(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setTextLabelRightConstraintExpandedWidth(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showExportPresetMenu(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	topFillerView(...args: any[]): any;
+	textLabelRightConstraint(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	textLabelRightConstraintExpandedWidth(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	unApplyAllExportPresets(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	view(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	viewDidLoad(): void;
 	/* typeEncoding=@16@0:8 */
 	views(...args: any[]): any;
 }
@@ -13032,6 +14045,8 @@ declare class MSExportPDFBookAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	exportPDFBook(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -13237,6 +14252,26 @@ declare class MSExportPresetsPreferencePane extends MSPreferencePane /* implemen
 	viewDidLoad(): void;
 }
 
+declare class MSExportPreviewHeaderInspectorItem extends MSInspectorItem {
+	/* typeEncoding=c, ivar=_collapsed, attributes=(assign,nonatomic) */
+	collapsed(): boolean;
+	/* typeEncoding=c, ivar=_hideSeparator, attributes=(assign,nonatomic) */
+	hideSeparator(): boolean;
+
+	/* typeEncoding=c16@0:8 */
+	collapsed(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	configurableView(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hideSeparator(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setCollapsed(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setHideSeparator(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+}
+
 declare class MSExportPreviewImagesInspectorItem extends MSInspectorItem /* implements MSLayerChangeObserver */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
@@ -13251,8 +14286,8 @@ declare class MSExportPreviewImagesInspectorItem extends MSInspectorItem /* impl
 	/* typeEncoding=q, ivar=_throttleCount, attributes=(assign,nonatomic) */
 	throttleCount(): number;
 
-	/* typeEncoding=@24@0:8@16 */
-	static filterSelection(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@?24 */
 	static reloadPreviewsForLayers_withCompletion(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16d24 */
@@ -13287,53 +14322,95 @@ declare class MSExportPreviewImagesInspectorItem extends MSInspectorItem /* impl
 }
 
 declare class MSExportPreviewInspectorSection extends MSBaseInspectorSection /* implements MSInspectorItemDelegate */ {
-	/* typeEncoding=@"MSExportBackgroundColorInspectorItem", ivar=_backgroundColorItem, attributes=(retain,nonatomic) */
-	backgroundColorItem(): MSExportBackgroundColorInspectorItem;
+	/* typeEncoding=@"MSSliceBackgroundColorInspectorItem", ivar=_colorItem, attributes=(retain,nonatomic) */
+	colorItem(): MSSliceBackgroundColorInspectorItem;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
+	/* typeEncoding=@"MSExportSelectedInspectorItem", ivar=_exportSelectedItem, attributes=(retain,nonatomic) */
+	exportSelectedItem(): MSExportSelectedInspectorItem;
+	/* typeEncoding=@"NSArray", ivar=_footerItems, attributes=(retain,nonatomic) */
+	footerItems(): NSArray;
+	/* typeEncoding=@"MSExportInspectorViewController", ivar=_formatsItem, attributes=(retain,nonatomic) */
+	formatsItem(): MSExportInspectorViewController;
+	/* typeEncoding=@"MSSliceExportGroupContentsOnlyInspectorItem", ivar=_groupContentsItem, attributes=(retain,nonatomic) */
+	groupContentsItem(): MSSliceExportGroupContentsOnlyInspectorItem;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasContent(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
+	/* typeEncoding=@"MSExportPreviewHeaderInspectorItem", ivar=_headerItem, attributes=(retain,nonatomic) */
+	headerItem(): MSExportPreviewHeaderInspectorItem;
 	/* typeEncoding=@"MSExportPreviewImagesInspectorItem", ivar=_imagesItem, attributes=(retain,nonatomic) */
 	imagesItem(): MSExportPreviewImagesInspectorItem;
-	/* typeEncoding=@"MSIncludeBackgroundColorInExportInspectorItem", ivar=_includeInExportItem, attributes=(retain,nonatomic) */
-	includeInExportItem(): MSIncludeBackgroundColorInExportInspectorItem;
-	/* typeEncoding=@"MSIncludeBackgroundColorInInstancesInspectorItem", ivar=_includeInInstancesItem, attributes=(retain,nonatomic) */
-	includeInInstancesItem(): MSIncludeBackgroundColorInInstancesInspectorItem;
-	/* typeEncoding=@"MSExportPropertiesInspectorItem", ivar=_sliceProperties, attributes=(retain,nonatomic) */
-	sliceProperties(): MSExportPropertiesInspectorItem;
+	/* typeEncoding=@"MSExportInitialHeaderItem", ivar=_initialHeaderItem, attributes=(retain,nonatomic) */
+	initialHeaderItem(): MSExportInitialHeaderItem;
+	/* typeEncoding=@"MSHeader2InspectorItem", ivar=_sliceHeader, attributes=(retain,nonatomic) */
+	sliceHeader(): MSHeader2InspectorItem;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
+	/* typeEncoding=@"MSSliceTrimTransparencyInspectorItem", ivar=_trimTransparencyItem, attributes=(retain,nonatomic) */
+	trimTransparencyItem(): MSSliceTrimTransparencyInspectorItem;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	addExportFormat(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	backgroundColorItem(...args: any[]): any;
+	colorItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	exportSelectedItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	footerItems(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	footerViews(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	formatsItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	groupContentsItem(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasContent(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	headerItem(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	imagesItem(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	includeInExportItem(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	includeInInstancesItem(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	initialHeaderItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setBackgroundColorItem(...args: any[]): any;
+	setColorItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setExportSelectedItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFooterItems(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFormatsItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setGroupContentsItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeaderItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setImagesItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setIncludeInExportItem(...args: any[]): any;
+	setInitialHeaderItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setIncludeInInstancesItem(...args: any[]): any;
+	setSliceHeader(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setSliceProperties(...args: any[]): any;
+	setTrimTransparencyItem(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	sliceProperties(...args: any[]): any;
+	sliceHeader(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	trimTransparencyItem(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateItems(): void;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
+	/* typeEncoding=@16@0:8 */
+	views(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	wantsSeparatorAfterViews(...args: any[]): any;
 }
 
 declare class MSExportPreviewOperation extends NSOperation {
@@ -13457,39 +14534,6 @@ declare class MSExportPreviewViewModel extends NSObject {
 	setPreviewFrame(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setPreviewImage(...args: any[]): any;
-}
-
-declare class MSExportPropertiesInspectorItem extends MSInspectorItem /* implements MSLayerChangeObserver */ {
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=@"NSButton", ivar=_groupContentsOnlyButton, attributes=(retain,nonatomic) */
-	groupContentsOnlyButton(): NSButton;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
-
-	/* typeEncoding=@24@0:8@16 */
-	static filterSelection(...args: any[]): any;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
-	/* typeEncoding=v24@0:8@16 */
-	groupContentsOnlyAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	groupContentsOnlyButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	layerDidChange(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setGroupContentsOnlyButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setLayers(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	updateDisplayedValues(): void;
 }
 
 declare class MSExportRendererWithSVGSupport extends MSExporter {
@@ -13654,11 +14698,47 @@ declare class MSExportRequest extends NSObject /* implements NSCopying */ {
 	shouldTrim(...args: any[]): any;
 }
 
+declare class MSExportSelectedInspectorItem extends MSInspectorItem {
+	/* typeEncoding=@"NSButton", ivar=_exportButton, attributes=(retain,nonatomic) */
+	exportButton(): NSButton;
+	/* typeEncoding=@"NSButton", ivar=_shareButton, attributes=(retain,nonatomic) */
+	shareButton(): NSButton;
+	/* typeEncoding=@"MSShareButtonHandler", ivar=_shareButtonHandler, attributes=(retain,nonatomic) */
+	shareButtonHandler(): MSShareButtonHandler;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=@16@0:8 */
+	exportButton(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16@24@32^v40 */
+	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setExportButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setShareButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setShareButtonHandler(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	shareAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	shareButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	shareButtonHandler(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	viewDidLoad(): void;
+}
+
 declare class MSExportSelectionWithExportFormatsAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	exportSelection(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -13948,9 +15028,15 @@ declare class MSFeatureAvailability extends NSObject {
 	/* typeEncoding=c16@0:8 */
 	static cloudDocumentsEnabled(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	static cloudOAuthEnabled(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	static cloudOrganizationsEnabled(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	static dataSuppliersEnabled(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	static enableFeatureAvailability(): void;
+	/* typeEncoding=c16@0:8 */
+	static feature14414Enabled(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	static isComponentsPanelEnabled(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -13962,7 +15048,13 @@ declare class MSFeatureAvailability extends NSObject {
 	/* typeEncoding=v20@0:8c16 */
 	static setCloudDocumentsEnabled(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
+	static setCloudOAuthEnabled(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	static setCloudOrganizationsEnabled(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
 	static setDataSuppliersEnabled(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	static setFeature14414Enabled(...args: any[]): any;
 	/* typeEncoding=v28@0:8@16c24 */
 	static setFeature_enabled(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
@@ -13976,6 +15068,8 @@ declare class MSFeedbackAction extends MSAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	feedback(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSFileMonitor extends MSFolderMonitor {
@@ -13994,40 +15088,78 @@ declare class MSFillAndBorderColorScreenPicker extends NSObject {
 	static setPreferredStylePartName(...args: any[]): any;
 }
 
-declare class MSFillInspectorViewController extends MSStylePartInspectorViewController {
-	/* typeEncoding=@"NSPopUpButton", ivar=_blendingPopUpButton, attributes=(retain,nonatomic) */
-	blendingPopUpButton(): NSPopUpButton;
-	/* typeEncoding=@"MSStylePartPreviewButton", ivar=_colorButton, attributes=(retain,nonatomic) */
-	colorButton(): MSStylePartPreviewButton;
+declare class MSFillInspectorViewController extends MSColorStylePartInspectorViewController /* implements MSColorHexStringTransformerDelegate */ {
+	/* typeEncoding=@"NSTextField", ivar=_contextPopUpLabel, attributes=(retain,nonatomic) */
+	contextPopUpLabel(): NSTextField;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=@"NSPopUpButton", ivar=_fillPropertiesPopUp, attributes=(retain,nonatomic) */
+	fillPropertiesPopUp(): NSPopUpButton;
+	/* typeEncoding=@"NSTextField", ivar=_fillTypeLabel, attributes=(retain,nonatomic) */
+	fillTypeLabel(): NSTextField;
+	/* typeEncoding=@"NSArrayController", ivar=_fills, attributes=(retain,nonatomic) */
+	fills(): NSArrayController;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"NSTextField", ivar=_hexField, attributes=(retain,nonatomic) */
+	hexField(): NSTextField;
+	/* typeEncoding=@"MSColorHexStringTransformer", ivar=_hexTransformer, attributes=(retain,nonatomic) */
+	hexTransformer(): MSColorHexStringTransformer;
 	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_opacityAdaptor, attributes=(retain,nonatomic) */
 	opacityAdaptor(): MSMathInspectorValueAdaptor;
 	/* typeEncoding=@"MSUpDownTextField", ivar=_opacityField, attributes=(retain,nonatomic) */
 	opacityField(): MSUpDownTextField;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
-	blendingPopUpButton(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	colorButton(...args: any[]): any;
+	contextPopUpLabel(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	currentColorValueForTransformer(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	dealloc(): void;
+	/* typeEncoding=@16@0:8 */
+	fillPropertiesPopUp(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	fillTypeLabel(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	fills(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	hexField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	hexFieldAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	hexTransformer(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16@24@32^v40 */
+	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	opacityAdaptor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	opacityField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	opacityFieldAction(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	prepare(): void;
+	setContextPopUpLabel(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setBlendingPopUpButton(...args: any[]): any;
+	setFillPropertiesPopUp(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setColorButton(...args: any[]): any;
+	setFillTypeLabel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFills(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHexField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHexTransformer(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setOpacityAdaptor(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setOpacityField(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateFillPropertyPopUp(): void;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
 }
@@ -14070,11 +15202,20 @@ declare class MSFillRendererCG extends NSObject /* implements MSFillRenderer */ 
 	renderFill_path_layer_index_rect_hasInnerStroke_context(...args: any[]): any;
 }
 
+declare class MSFilterBarView extends MSBarView {
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawRect(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	viewWillDraw(): void;
+}
+
 declare class MSFindLayerAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	findLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -14228,6 +15369,8 @@ declare class MSFlattenAction extends MSDocumentAction {
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
@@ -14245,11 +15388,16 @@ declare class MSFlattenSelectionAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	flattenSelection(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
 
 declare class MSFlipHorizontalAction extends MSBaseFlipAction {
+	/* typeEncoding=@16@0:8 */
+	static flipHorizontalHistoryTitle(...args: any[]): any;
+
 	/* typeEncoding=c16@0:8 */
 	areAllSelectedLayersFlippedHorizontally(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -14259,7 +15407,11 @@ declare class MSFlipHorizontalAction extends MSBaseFlipAction {
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	isActive(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	isTouchBarItemSelected(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -14267,6 +15419,9 @@ declare class MSFlipHorizontalAction extends MSBaseFlipAction {
 }
 
 declare class MSFlipVerticalAction extends MSBaseFlipAction {
+	/* typeEncoding=@16@0:8 */
+	static flipVerticalHistoryTitle(...args: any[]): any;
+
 	/* typeEncoding=c16@0:8 */
 	areAllSelectedLayersFlippedVertically(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -14276,7 +15431,11 @@ declare class MSFlipVerticalAction extends MSBaseFlipAction {
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	isActive(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	isTouchBarItemSelected(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -14415,24 +15574,85 @@ declare class MSFlowEventHandler extends MSEventHandler /* implements MSFlowMenu
 	targetArtboard(...args: any[]): any;
 }
 
-declare class MSFlowInspectorView extends NSView {
-	/* typeEncoding={NSEdgeInsets=dddd}24@0:8@16 */
-	separatorInsetBetweenSelfAndView(...args: any[]): any;
-}
-
-declare class MSFlowInspectorViewController extends NSViewController /* implements MSLayerChangeObserver, MSInspectorSection, MSFlowMenuBuilderTarget */ {
-	/* typeEncoding=@"NSButton", ivar=_addFlowButton, attributes=(assign,nonatomic,weak) */
-	addFlowButton(): NSButton;
-	/* typeEncoding=@"NSButton", ivar=_convertToHotspotButton, attributes=(assign,nonatomic,weak) */
-	convertToHotspotButton(): NSButton;
+declare class MSFlowFixLayerInspectorItem extends MSInspectorItem /* implements MSLayerChangeObserver */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
-	/* typeEncoding=@"NSView", ivar=_fixLayerView, attributes=(retain,nonatomic) */
-	fixLayerView(): NSView;
 	/* typeEncoding=@"NSButton", ivar=_fixToViewportButton, attributes=(assign,nonatomic,weak) */
 	fixToViewportButton(): NSButton;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=@16@0:8 */
+	fixToViewportButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	layerDidChange(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFixToViewportButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLayers(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	validateFixLayersToViewportButton(): void;
+}
+
+declare class MSFlowHeaderInspectorItem extends MSCollapsibleHeaderInspectorItem /* implements MSInspectorFlowHandlerDelegate */ {
+	/* typeEncoding=@"NSButton", ivar=_addFlowButton, attributes=(assign,nonatomic,weak) */
+	addFlowButton(): NSButton;
+	/* typeEncoding=@"NSButton", ivar=_convertToHotspotButton, attributes=(assign,nonatomic,weak) */
+	convertToHotspotButton(): NSButton;
+	/* typeEncoding=@"MSInspectorFlowHandler", ivar=_flowHandler, attributes=(assign,nonatomic,weak) */
+	flowHandler(): MSInspectorFlowHandler;
+	/* typeEncoding=@"NSButton", ivar=_followFlowButton, attributes=(assign,nonatomic,weak) */
+	followFlowButton(): NSButton;
+	/* typeEncoding=@"NSButton", ivar=_removeFlowButton, attributes=(assign,nonatomic,weak) */
+	removeFlowButton(): NSButton;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	addFlowButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	convertFlowToHotspotAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	convertToHotspotButton(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	documentForFlowHandler(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	flowHandler(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	followFlowButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	init(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isInFlowEventHandler(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	layersForFlowHandler(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	removeFlowButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setAddFlowButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setConvertToHotspotButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFlowHandler(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFollowFlowButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setRemoveFlowButton(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+	/* typeEncoding=v24@0:8@16 */
+	validateHeaderButtonsForFlow(...args: any[]): any;
+}
+
+declare class MSFlowInspectorItem extends MSInspectorItem /* implements MSInspectorFlowHandlerDelegate */ {
 	/* typeEncoding=@"NSButton", ivar=_flowAnimationInstantButton, attributes=(assign,nonatomic,weak) */
 	flowAnimationInstantButton(): NSButton;
 	/* typeEncoding=@"NSButton", ivar=_flowAnimationSlideFromBottomButton, attributes=(assign,nonatomic,weak) */
@@ -14445,43 +15665,15 @@ declare class MSFlowInspectorViewController extends NSViewController /* implemen
 	flowAnimationSlideFromTopButton(): NSButton;
 	/* typeEncoding=@"NSPopUpButton", ivar=_flowDestinationButton, attributes=(assign,nonatomic,weak) */
 	flowDestinationButton(): NSPopUpButton;
-	/* typeEncoding=@"NSView", ivar=_flowHeaderView, attributes=(retain,nonatomic) */
-	flowHeaderView(): NSView;
-	/* typeEncoding=@"NSView", ivar=_flowView, attributes=(retain,nonatomic) */
-	flowView(): NSView;
-	/* typeEncoding=@"NSButton", ivar=_followFlowButton, attributes=(assign,nonatomic,weak) */
-	followFlowButton(): NSButton;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=@"NSArray", ivar=_layers, attributes=(copy,nonatomic) */
-	layers(): NSArray;
-	/* typeEncoding=@"NSButton", ivar=_removeFlowButton, attributes=(assign,nonatomic,weak) */
-	removeFlowButton(): NSButton;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
+	/* typeEncoding=@"MSInspectorFlowHandler", ivar=_flowHandler, attributes=(assign,nonatomic,weak) */
+	flowHandler(): MSInspectorFlowHandler;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=v24@0:8@16 */
-	addFlowAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	addFlowButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	changeFlowAnimationAction(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	convertFlowToHotspotAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	convertToHotspotButton(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
-	/* typeEncoding=@16@0:8 */
-	document(...args: any[]): any;
-	/* typeEncoding=v24@0:8@?16 */
-	enumerateLayersAndReload(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	fixLayerView(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	fixToViewportButton(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	documentForFlowHandler(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	flowAnimationButtons(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -14496,42 +15688,14 @@ declare class MSFlowInspectorViewController extends NSViewController /* implemen
 	flowAnimationSlideFromTopButton(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	flowAnimationTypes(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	flowBackAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	flowConnection(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	flowDestinationButton(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	flowHeaderView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	flowTargetAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	flowView(...args: any[]): any;
+	flowHandler(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	followFlowAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	followFlowButton(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isInFlowEventHandler(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	layerDidChange(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	layers(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	reload(): void;
-	/* typeEncoding=v24@0:8@16 */
-	removeFlowAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	removeFlowButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setAddFlowButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setConvertToHotspotButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setFixLayerView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setFixToViewportButton(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	layersForFlowHandler(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setFlowAnimationInstantButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -14545,29 +15709,55 @@ declare class MSFlowInspectorViewController extends NSViewController /* implemen
 	/* typeEncoding=v24@0:8@16 */
 	setFlowDestinationButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setFlowHeaderView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setFlowView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setFollowFlowButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setLayers(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setRemoveFlowButton(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	shouldShowFixedLayerView(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	shouldShowFullInspectorForFlow(...args: any[]): any;
+	setFlowHandler(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	validateFixLayersToViewportButton(): void;
+	updateDisplayedValues(): void;
 	/* typeEncoding=v24@0:8@16 */
 	validateFlowAnimationButtonForFlow(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	validateHeaderButtonsForFlow(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
+}
+
+declare class MSFlowInspectorSection extends MSBaseInspectorSection /* implements MSCollapsibleHeaderInspectorItemTarget */ {
+	/* typeEncoding=@"MSFlowFixLayerInspectorItem", ivar=_fixedLayerItem, attributes=(retain,nonatomic) */
+	fixedLayerItem(): MSFlowFixLayerInspectorItem;
+	/* typeEncoding=@"MSFlowInspectorItem", ivar=_flowItem, attributes=(retain,nonatomic) */
+	flowItem(): MSFlowInspectorItem;
+	/* typeEncoding=@"MSFlowHeaderInspectorItem", ivar=_headerItem, attributes=(retain,nonatomic) */
+	headerItem(): MSFlowHeaderInspectorItem;
+	/* typeEncoding=@"MSHeaderInspectorItem", ivar=_initialHeaderItem, attributes=(retain,nonatomic) */
+	initialHeaderItem(): MSHeaderInspectorItem;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	addFlowAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	views(...args: any[]): any;
+	fixedLayerItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	flowItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	headerItem(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	initialHeaderItem(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isInFlowEventHandler(...args: any[]): any;
+	/* typeEncoding=v28@0:8@16c24 */
+	item_wantsSectionToCollapse(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFixedLayerItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFlowItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeaderItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setInitialHeaderItem(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shouldShowFixedLayerView(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateItems(): void;
 }
 
 declare class MSFlowMenuBuilder extends NSObject {
@@ -14736,6 +15926,8 @@ declare class MSFollowFlowAction extends MSFlowBaseAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	followFlow(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -15181,6 +16373,30 @@ declare class MSFrequentColorTracker extends NSObject {
 	shouldIgnoreAlpha(...args: any[]): any;
 }
 
+declare class MSGPUArtboardShadow extends NSObject {
+	/* typeEncoding=@"<MSGPUTexture>", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	selectedTexture(): MSGPUTexture;
+	/* typeEncoding=@"<MSGPUTexture>", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	texture(): MSGPUTexture;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=d16@0:8 */
+	cornerSize(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	cornerSourceSize(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=@24@0:8@16 */
+	initWithRenderer(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	minimumArtboardSizeForDrawingShadow(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedTexture(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	texture(...args: any[]): any;
+}
+
 declare class MSGeneralPreferencePane extends MSPreferencePane {
 	/* typeEncoding=@"NSTextField", ivar=_defaultColorSpaceDescriptionLabel, attributes=(assign,nonatomic,weak) */
 	defaultColorSpaceDescriptionLabel(): NSTextField;
@@ -15215,8 +16431,16 @@ declare class MSGeneralPreferencePane extends MSPreferencePane {
 }
 
 declare class MSGeometryInspectorSection extends MSBaseInspectorSection {
+	/* typeEncoding=@"MSArtboardPositionInspectorItem", ivar=_artboardPositionItem, attributes=(retain,nonatomic) */
+	artboardPositionItem(): MSArtboardPositionInspectorItem;
 	/* typeEncoding=@"MSArtboardPresetInspectorItem", ivar=_artboardPresetsItem, attributes=(retain,nonatomic) */
 	artboardPresetsItem(): MSArtboardPresetInspectorItem;
+	/* typeEncoding=@"MSArtboardSizeInspectorItem", ivar=_artboardSizeItem, attributes=(retain,nonatomic) */
+	artboardSizeItem(): MSArtboardSizeInspectorItem;
+	/* typeEncoding=@"MSBitmapResizeToOriginalItem", ivar=_imageOriginalSizeItem, attributes=(retain,nonatomic) */
+	imageOriginalSizeItem(): MSBitmapResizeToOriginalItem;
+	/* typeEncoding=c, ivar=_insetSeparator, attributes=(assign,nonatomic) */
+	insetSeparator(): boolean;
 	/* typeEncoding=@"MSLineEndpointInspectorItem1", ivar=_lineEndItem1, attributes=(retain,nonatomic) */
 	lineEndItem1(): MSLineEndpointInspectorItem1;
 	/* typeEncoding=@"MSLineEndpointInspectorItem2", ivar=_lineEndItem2, attributes=(retain,nonatomic) */
@@ -15229,31 +16453,37 @@ declare class MSGeometryInspectorSection extends MSBaseInspectorSection {
 	paddingItem2(): MSPaddingInspectorItem;
 	/* typeEncoding=@"MSPositionInspectorItem", ivar=_positionItem, attributes=(retain,nonatomic) */
 	positionItem(): MSPositionInspectorItem;
-	/* typeEncoding=@"MSResizeInspectorItem", ivar=_resizeItem, attributes=(retain,nonatomic) */
-	resizeItem(): MSResizeInspectorItem;
-	/* typeEncoding=@"MSArtboardResizeToFitInspectorItem", ivar=_resizeToFitItem, attributes=(retain,nonatomic) */
-	resizeToFitItem(): MSArtboardResizeToFitInspectorItem;
-	/* typeEncoding=c, ivar=_shouldShowPositions, attributes=(assign,nonatomic) */
-	shouldShowPositions(): boolean;
 	/* typeEncoding=@"MSSizeInspectorItem", ivar=_sizeItem, attributes=(retain,nonatomic) */
 	sizeItem(): MSSizeInspectorItem;
-	/* typeEncoding=@"MSTransformInspectorItem", ivar=_transformItem, attributes=(retain,nonatomic) */
-	transformItem(): MSTransformInspectorItem;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
+	artboardPositionItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	artboardPresetsItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	artboardSizeItem(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasArtboardLayer(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	hasOnlyArtboardAndSliceLayers(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	hasOnlyArtboardLayers(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasOnlyImageLayers(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasOnlyLineShapeLayers(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	hasOnlySliceLayers(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	hasSliceLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	imageOriginalSizeItem(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	insetSeparator(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	lineEndItem1(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -15267,13 +16497,19 @@ declare class MSGeometryInspectorSection extends MSBaseInspectorSection {
 	/* typeEncoding=@16@0:8 */
 	positionItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	refreshBindingsOnShape(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	resizeItem(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	resizeToFitItem(...args: any[]): any;
+	refreshBindingsOnPath(...args: any[]): any;
+	/* typeEncoding={NSEdgeInsets=dddd}16@0:8 */
+	separatorInsets(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setArtboardPositionItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setArtboardPresetsItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setArtboardSizeItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setImageOriginalSizeItem(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setInsetSeparator(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLineEndItem1(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -15287,29 +16523,15 @@ declare class MSGeometryInspectorSection extends MSBaseInspectorSection {
 	/* typeEncoding=v24@0:8@16 */
 	setPositionItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setResizeItem(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setResizeToFitItem(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setShouldShowPositions(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setSizeItem(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setTransformItem(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	shouldShowPositions(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	sizeItem(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	transformItem(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateItems(): void;
 	/* typeEncoding=v16@0:8 */
 	valuesPossiblyChanged(): void;
 	/* typeEncoding=v24@0:8@16 */
 	valuesPossiblyChanged(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	wantsSeparatorAfterViews(...args: any[]): any;
 }
 
 declare class MSGestureRecognizer extends NSObject {
@@ -15613,8 +16835,6 @@ declare class MSGradientEventHandler extends MSPointsEventHandler /* implements 
 	absoluteMouseDragged_flags(...args: any[]): any;
 	/* typeEncoding=c40@0:8{CGPoint=dd}16Q32 */
 	absoluteMouseMoved_flags(...args: any[]): any;
-	/* typeEncoding=c40@0:8{CGPoint=dd}16Q32 */
-	absoluteMouseUp_flags(...args: any[]): any;
 	/* typeEncoding=q32@0:8{CGPoint=dd}16 */
 	addStopAtPosition(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -15635,8 +16855,6 @@ declare class MSGradientEventHandler extends MSPointsEventHandler /* implements 
 	drawHandleAtPoint_index_selected(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	drawHandleLines(): void;
-	/* typeEncoding=@16@0:8 */
-	findSelectedLayer(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	gradient(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -15822,7 +17040,7 @@ declare class MSGridConstructor extends NSObject {
 	options(): any;
 
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
-	alignmentRectOfLayer(...args: any[]): any;
+	distributionRectForLayer(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	duplicateLayers(...args: any[]): any;
 	/* typeEncoding=d24@0:8@16 */
@@ -15872,6 +17090,8 @@ declare class MSGridSettingsAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	gridSettings(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSGridSheet extends MSGridSheetBase {
@@ -15886,16 +17106,20 @@ declare class MSGridSheet extends MSGridSheetBase {
 }
 
 declare class MSGridSheetBase extends CHSheetController /* implements NSWindowDelegate */ {
-	/* typeEncoding=@"NSColorWell", ivar=_darkColorWell, attributes=(retain,nonatomic) */
-	darkColorWell(): NSColorWell;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,weak) */
+	darkColor(): NSColor;
+	/* typeEncoding=@"MSColorWell", ivar=_darkColorButton, attributes=(retain,nonatomic) */
+	darkColorButton(): MSColorWell;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=@"NSColorWell", ivar=_lightColorWell, attributes=(retain,nonatomic) */
-	lightColorWell(): NSColorWell;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,weak) */
+	lightColor(): NSColor;
+	/* typeEncoding=@"MSColorWell", ivar=_lightColorButton, attributes=(retain,nonatomic) */
+	lightColorButton(): MSColorWell;
 	/* typeEncoding=@"NSMapTable", ivar=_originalSettings, attributes=(retain,nonatomic) */
 	originalSettings(): NSMapTable;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
@@ -15920,25 +17144,39 @@ declare class MSGridSheetBase extends CHSheetController /* implements NSWindowDe
 	/* typeEncoding=v24@0:8@16 */
 	confirm(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	darkColorWell(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
+	darkColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	darkColorButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	darkColorUpdated(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	defaultObject(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	document(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	gridChanged(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	lightColorWell(...args: any[]): any;
+	lightColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	lightColorButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	lightColorUpdated(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	originalSettings(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	prepareColorPickers(): void;
 	/* typeEncoding=v24@0:8@16 */
 	refreshCanvas(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	refreshView(): void;
 	/* typeEncoding=v24@0:8@16 */
-	setDarkColorWell(...args: any[]): any;
+	setDarkColor(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLightColorWell(...args: any[]): any;
+	setDarkColorButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLightColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLightColorButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setOriginalSettings(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -15956,12 +17194,21 @@ declare class MSGroupAction extends MSDocumentAction {
 	group(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldUseImageForTouchBarItem(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
+}
+
+declare class MSGroupActionGroup extends MSActionGroup {
+	/* typeEncoding=@16@0:8 */
+	actionNames(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSGroupRendererCG extends MSLayerRendererCG {
@@ -16149,11 +17396,124 @@ declare class MSHangingGlyphView extends NSView {
 	textView(...args: any[]): any;
 }
 
+declare class MSHeader2InspectorItem extends MSInspectorItem {
+	/* typeEncoding=@"NSTextField", ivar=_label, attributes=(retain,nonatomic) */
+	label(): NSTextField;
+	/* typeEncoding=@"NSString", ivar=_labelText, attributes=(retain,nonatomic) */
+	labelText(): NSString;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	labelText(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLabel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLabelText(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+}
+
+declare class MSHeaderInspectorItem extends MSInspectorItem {
+	/* typeEncoding=:, ivar=_action, attributes=(assign,nonatomic) */
+	action(): any;
+	/* typeEncoding=@"NSImage", ivar=_alternateImage, attributes=(retain,nonatomic) */
+	alternateImage(): NSImage;
+	/* typeEncoding=c, ivar=_buttonDisabled, attributes=(assign,nonatomic) */
+	buttonDisabled(): boolean;
+	/* typeEncoding=q, ivar=_buttonState, attributes=(assign,nonatomic) */
+	buttonState(): number;
+	/* typeEncoding=@"NSString", ivar=_buttonToolTip, attributes=(retain,nonatomic) */
+	buttonToolTip(): NSString;
+	/* typeEncoding=@"NSButton", ivar=_headerButton, attributes=(retain,nonatomic) */
+	headerButton(): NSButton;
+	/* typeEncoding=@"NSImage", ivar=_image, attributes=(retain,nonatomic) */
+	image(): NSImage;
+	/* typeEncoding=@"NSTextField", ivar=_label, attributes=(retain,nonatomic) */
+	label(): NSTextField;
+	/* typeEncoding=@"NSString", ivar=_labelText, attributes=(retain,nonatomic) */
+	labelText(): NSString;
+	/* typeEncoding=@, ivar=_target, attributes=(assign,nonatomic,weak) */
+	target(): any;
+	/* typeEncoding=c, ivar=_wantsSeparator, attributes=(assign,nonatomic) */
+	wantsSeparator(): boolean;
+	/* typeEncoding=c, ivar=_wantsSeparatorInset, attributes=(assign,nonatomic) */
+	wantsSeparatorInset(): boolean;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=:16@0:8 */
+	action(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	alternateImage(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	buttonDisabled(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	buttonState(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	buttonToolTip(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	headerButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	image(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	labelText(...args: any[]): any;
+	/* typeEncoding=v24@0:8:16 */
+	setAction(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setAlternateImage(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setButtonDisabled(...args: any[]): any;
+	/* typeEncoding=v24@0:8q16 */
+	setButtonState(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16:24@32@40 */
+	setButtonTarget_action_image_alternate(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setButtonToolTip(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeaderButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setImage(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLabel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLabelText(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setTarget(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setWantsSeparator(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setWantsSeparatorInset(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	target(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+	/* typeEncoding=v16@0:8 */
+	viewDidLoad(): void;
+	/* typeEncoding=c16@0:8 */
+	wantsSeparator(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	wantsSeparatorInset(...args: any[]): any;
+}
+
+declare class MSHeaderView extends NSView {
+	/* typeEncoding=@16@0:8 */
+	backgroundColor(...args: any[]): any;
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawRect(...args: any[]): any;
+}
+
 declare class MSHideAllGridsAndLayoutsAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	hideAllGridsAndLayouts(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -16178,7 +17538,7 @@ declare class MSHighLevelExporter extends NSObject {
 	driver(): MSRenderingDriver;
 
 	/* typeEncoding=@24@0:8@16 */
-	static exporterWithDelgate(...args: any[]): any;
+	static exporterWithDelegate(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -16186,8 +17546,8 @@ declare class MSHighLevelExporter extends NSObject {
 	delegate(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	driver(...args: any[]): any;
-	/* typeEncoding=c32@0:8@16@24 */
-	export_layer(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	export(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	exportLayers(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -16204,6 +17564,8 @@ declare class MSHighLevelExporter extends NSObject {
 	initWithDelegate_driver(...args: any[]): any;
 	/* typeEncoding=c40@0:8@16^@24^@32 */
 	outputFileWithName_URL_existing(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	prepareExportRequest_layer(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
 	rectToExportForPage(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -16287,6 +17649,8 @@ declare class MSHistoryMaker extends NSObject {
 	deferMakingHistoryCounter(): number;
 	/* typeEncoding=@"MSDocument", ivar=_document, attributes=(assign,nonatomic,readonly,weak) */
 	document(): MSDocument;
+	/* typeEncoding=c, ivar=_fontsDidChange, attributes=(assign,nonatomic) */
+	fontsDidChange(): boolean;
 	/* typeEncoding=@"MSHistory", ivar=_history, attributes=(assign,nonatomic,readonly) */
 	history(): MSHistory;
 	/* typeEncoding=c, ivar=_historyIsCoalescing, attributes=(assign,nonatomic) */
@@ -16314,6 +17678,8 @@ declare class MSHistoryMaker extends NSObject {
 	document(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	finishCoalescingHistory(): void;
+	/* typeEncoding=c16@0:8 */
+	fontsDidChange(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	history(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -16326,6 +17692,8 @@ declare class MSHistoryMaker extends NSObject {
 	init(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	initWithDocument(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	installedFontsChanged(): void;
 	/* typeEncoding=c16@0:8 */
 	isMakingHistory(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -16343,6 +17711,8 @@ declare class MSHistoryMaker extends NSObject {
 	/* typeEncoding=v24@0:8q16 */
 	setDeferMakingHistoryCounter(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
+	setFontsDidChange(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
 	setHistoryIsCoalescing(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setHistoryMomentTitle(...args: any[]): any;
@@ -16352,24 +17722,53 @@ declare class MSHistoryMaker extends NSObject {
 	setIsMovingThroughHistory(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	startCoalescingHistory(): void;
+	/* typeEncoding=v24@0:8@16 */
+	updateCurrentMomentWithSelection(...args: any[]): any;
 }
 
-declare class MSHotspotLayer extends _MSHotspotLayer {
+declare class MSHitTestResult extends NSObject {
+	/* typeEncoding=@"MSLayer", ivar=_layer, attributes=(retain,nonatomic) */
+	layer(): MSLayer;
+	/* typeEncoding=@"MSOverrideRepresentation", ivar=_overrideRepresentation, attributes=(retain,nonatomic) */
+	overrideRepresentation(): MSOverrideRepresentation;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	layer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	overrideRepresentation(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLayer(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOverrideRepresentation(...args: any[]): any;
+}
+
+declare class MSHotspotLayer extends _MSHotspotLayer /* implements MSLayerPreviewability */ {
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	badgeType(): number;
+
 	/* typeEncoding=@24@0:8@16 */
 	static hotspotLayerFromLayer(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	static keyPathsForValuesAffectingPreviewImages(...args: any[]): any;
+	static keyPathsForValuesAffectingPreviewTemplateImages(...args: any[]): any;
 
 	/* typeEncoding=v32@0:8@16@24 */
-	applyOverride_toPoint(...args: any[]): any;
+	applyOverride_document(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canBeTransformed(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	canChangeBooleanOperation(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	canRotate(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
-	filterType(...args: any[]): any;
+	filterTypeMask(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	initializeUnsetObjectPropertiesWithDefaults(): void;
+	/* typeEncoding=@16@0:8 */
+	interfaceImageIdentifier(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isActive(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -16379,16 +17778,16 @@ declare class MSHotspotLayer extends _MSHotspotLayer {
 	/* typeEncoding=v16@0:8 */
 	resetFlow(): void;
 	/* typeEncoding=@16@0:8 */
-	selectedPreviewImage(...args: any[]): any;
+	selectedPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setFlow(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldDrawSelectionStroke(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	unselectedPreviewImage(...args: any[]): any;
+	unselectedPreviewTemplateImage(...args: any[]): any;
 }
 
-declare class MSHotspotOverrideViewController extends MSOverrideViewController /* implements MSFlowMenuBuilderTarget */ {
+declare class MSHotspotOverrideInspectorItem extends MSOverrideInspectorItem /* implements MSFlowMenuBuilderTarget */ {
 	/* typeEncoding=@"NSPopUpButton", ivar=_popup, attributes=(retain,nonatomic) */
 	popup(): NSPopUpButton;
 
@@ -16451,6 +17850,8 @@ declare class MSIgnoreClippingMaskAction extends MSDocumentAction {
 	ignoreClippingMask(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isActive(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -16579,40 +17980,46 @@ declare class MSImageOriginalSizeAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	imageOriginalSize(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
 
 declare class MSImageOverrideView extends NSImageView {
-	/* typeEncoding=@"NSImage", ivar=_normalImage, attributes=(retain,nonatomic) */
-	normalImage(): NSImage;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	displaysPlaceholder(): boolean;
 	/* typeEncoding=@"NSImage", ivar=_placeholderImage, attributes=(retain,nonatomic) */
 	placeholderImage(): NSImage;
+
+	/* typeEncoding=#16@0:8 */
+	static cellClass(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=c16@0:8 */
 	displaysPlaceholder(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	drawRect(...args: any[]): any;
 	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	initWithFrame(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	keyDown(...args: any[]): any;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	intrinsicContentSize(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	menuForEvent(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	normalImage(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	placeholderImage(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	removeOverrideImage(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setImage(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setNormalImage(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setPlaceholderImage(...args: any[]): any;
+}
+
+declare class MSImageOverrideViewCell extends NSImageCell {
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawFocusRingMaskWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	focusRingMaskBoundsForFrame_inView(...args: any[]): any;
 }
 
 declare class MSImageSizeReducer extends NSObject {
@@ -16722,6 +18129,8 @@ declare class MSImmutableArtboardGroup extends _MSImmutableArtboardGroup /* impl
 	isFlowHome(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isLayerExportable(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isVisible(): boolean;
 	/* typeEncoding=@"MSImmutableLayoutGrid", ivar=(null), attributes=(copy,nonatomic,readonly) */
 	layout(): MSImmutableLayoutGrid;
 	/* typeEncoding=@"MSImmutableLayoutGrid", ivar=(null), attributes=(copy,nonatomic,readonly) */
@@ -16730,14 +18139,6 @@ declare class MSImmutableArtboardGroup extends _MSImmutableArtboardGroup /* impl
 	objectID(): NSString;
 	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	origin(): CGPoint;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathForBooleanOperations(): MSPath;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathInBounds(): MSPath;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathInFrame(): MSPath;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathInFrameWithTransforms(): MSPath;
 	/* typeEncoding=@"MSArtboardPreset", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	preset(): MSArtboardPreset;
 	/* typeEncoding=@"MSArtboardPreset", ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -16786,8 +18187,6 @@ declare class MSImmutableArtboardGroup extends _MSImmutableArtboardGroup /* impl
 	immutableBackgroundColor(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	influenceRectClipsToBounds(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
-	influenceRectForAncestors_document(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	migratePropertiesFromV100OrEarlierWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -16806,8 +18205,8 @@ declare class MSImmutableArtboardGroup extends _MSImmutableArtboardGroup /* impl
 	rectInFixedViewportWithRect_fromFixingLayer(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	rulerBase(...args: any[]): any;
-	/* typeEncoding=c28@0:8@16c24 */
-	shouldDrawBackgroundInContext_isDrawingAsSymbolInstance(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	shouldDrawBackgroundInContext(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	svgStyle(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -16873,14 +18272,18 @@ declare class MSImmutableBitmapLayer extends _MSImmutableBitmapLayer {
 	appendBaseTranslation_exporter(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canSkipAdvancedClipForStrokes(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	defaultValueForOverridePoint_relatedOverrides_document(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	imageElementWithAttributes_exporter(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	migratePropertiesFromV56OrEarlierWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	migratePropertiesFromV75OrEarlierWithUnarchiver(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	overridePointsWithParent_overrides_document(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	overridePointsWithParent(...args: any[]): any;
+	overridePreviewImageInDocument(...args: any[]): any;
 	/* typeEncoding=#24@0:8@16 */
 	overrideViewControllerClassForOverridePoint(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -16998,12 +18401,16 @@ declare class MSImmutableCurvePoint extends _MSImmutableCurvePoint /* implements
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isEffectivelyStraight(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isRounded(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isStraight(): boolean;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
+	/* typeEncoding=c16@0:8 */
+	isEffectivelyStraight(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isRounded(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -17021,6 +18428,8 @@ declare class MSImmutableDocumentData extends _MSImmutableDocumentData /* implem
 	metadata(): NSDictionary;
 	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	pages(): NSArray;
+	/* typeEncoding=@"NSArray", ivar=_selectedOverrides, attributes=(assign,nonatomic,readonly) */
+	selectedOverrides(): NSArray;
 	/* typeEncoding=@"NSDictionary", ivar=_symbolsIndexedByID, attributes=(retain,nonatomic) */
 	symbolsIndexedByID(): NSDictionary;
 	/* typeEncoding=@"NSSet", ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -17036,19 +18445,17 @@ declare class MSImmutableDocumentData extends _MSImmutableDocumentData /* implem
 	/* typeEncoding=@16@0:8 */
 	allArtboards(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	allLayerStyles(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	allSymbols(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	allTextStyles(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	arrangeMigratedSymbolsInGrid(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	artboardWithID(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16^@24 */
 	artboardWithID_page(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeContainedByDocument(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeContainedByGroup(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	canContainLayer(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	colorFinderQueue(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -17091,6 +18498,8 @@ declare class MSImmutableDocumentData extends _MSImmutableDocumentData /* implem
 	lastLayer(...args: any[]): any;
 	/* typeEncoding=@24@0:8Q16 */
 	layerAtIndex(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	layerStyleWithID(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	localSymbols(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -17124,7 +18533,11 @@ declare class MSImmutableDocumentData extends _MSImmutableDocumentData /* implem
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	prepareForRender(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	regenerateObjectIDOnSymbolMaster(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedOverrides(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setMetadata(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -17141,6 +18554,8 @@ declare class MSImmutableDocumentData extends _MSImmutableDocumentData /* implem
 	symbolsChangedSincePreviousDocument(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	symbolsIndexedByID(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	textStyleWithID(...args: any[]): any;
 	/* typeEncoding=v28@0:8@16c24 */
 	trackColors_excludeForeignSymbols(...args: any[]): any;
 	/* typeEncoding=v36@0:8@16@24c32 */
@@ -17192,6 +18607,8 @@ declare class MSImmutableFlowConnection extends _MSImmutableFlowConnection {
 	flowTypeForTransitionFromParentLayer_toArtboard(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isBackAction(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	isValidFlowConnectionInDocumentData(...args: any[]): any;
 }
 
 declare class MSImmutableForeignLayerStyle extends _MSImmutableForeignLayerStyle {
@@ -17276,28 +18693,36 @@ declare class MSImmutableGraphicsContextSettings extends _MSImmutableGraphicsCon
 	shouldChangeGraphicsContext(...args: any[]): any;
 }
 
-declare class MSImmutableHotspotLayer extends _MSImmutableHotspotLayer {
+declare class MSImmutableHotspotLayer extends _MSImmutableHotspotLayer /* implements MSImmutableLayerPreviewability */ {
 	/* typeEncoding=@16@0:8 */
 	static defaultName(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	static traits(...args: any[]): any;
+	/* typeEncoding=Q24@0:8@16 */
+	static traitsForPropertyName(...args: any[]): any;
 
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
 	/* typeEncoding=v68@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48c56@60 */
 	drawPreviewInRect_documentData_selected_bezier(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	flowDestination(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	interfaceImageIdentifier(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isLayerExportable(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	overridePointsWithParent(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	overridePointsWithParent_overrides_document(...args: any[]): any;
 	/* typeEncoding=#24@0:8@16 */
 	overrideViewControllerClassForOverridePoint(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=c32@0:8@16@24 */
-	previewImagesRequireRefreshWithDocumentData_cache(...args: any[]): any;
+	previewImagesRequireRefreshWithDocumentData_forOwner(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
-	refreshPreviewImagesWithDocumentData_cache(...args: any[]): any;
+	refreshPreviewImagesWithDocumentData_forOwner(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shouldBeIncludedInParentPath(...args: any[]): any;
 }
 
 declare class MSImmutableImageCollection extends _MSImmutableImageCollection {
@@ -17313,13 +18738,17 @@ declare class MSImmutableImageCollection extends _MSImmutableImageCollection {
 	treeAsDictionary(...args: any[]): any;
 }
 
-declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSLayerContainment, MSFlowContainmentCheck, MSLayer, MSLayerTraits */ {
+declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSInterfaceImageOwner, MSImmutableLayerPreviewability, MSLayerContainment, MSFlowContainmentCheck, MSLayer, MSLayerTraits */ {
 	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	CGTransformForFrame(): CGAffineTransform;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	bounds(): CGRect;
+	/* typeEncoding=@, ivar=(null), attributes=(assign,nonatomic,readonly,weak) */
+	cacheOwner(): any;
 	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	center(): CGPoint;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	dataSupplierIdentifier(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -17328,6 +18757,8 @@ declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSLayerCo
 	fontNames(): NSSet;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	frameForTransforms(): CGRect;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasCalculatedInfluenceRectForBounds(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	hasEnabledBackgroundBlur(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -17338,28 +18769,28 @@ declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSLayerCo
 	influenceRectEdgePaddingsThatCascadeToContainedLayers(): BCEdgePaddings;
 	/* typeEncoding={BCEdgePaddings=dddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	influenceRectEdgePaddingsThatDoNotCascade(): BCEdgePaddings;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=_influenceRectForFrame, attributes=(assign,nonatomic,readonly) */
+	influenceRectForFrame(): CGRect;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	interfaceImageIdentifier(): NSString;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isFlippedHorizontal(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isFlippedVertical(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isLayerExportable(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isVisible(): boolean;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	objectID(): NSString;
 	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	origin(): CGPoint;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathForBooleanOperations(): MSPath;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathInBounds(): MSPath;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathInFrame(): MSPath;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathInFrameWithTransforms(): MSPath;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	rect(): CGRect;
 	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	rotation(): number;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	shouldBeIncludedInParentPath(): boolean;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 	/* typeEncoding=Q, ivar=_traits, attributes=(assign,nonatomic,readonly) */
@@ -17368,8 +18799,6 @@ declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSLayerCo
 	transform(): NSAffineTransform;
 	/* typeEncoding=@"NSSet", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	unavailableFontNames(): NSSet;
-	/* typeEncoding=@"MSImmutableStyle", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	usedStyle(): MSImmutableStyle;
 
 	/* typeEncoding=@16@0:8 */
 	static defaultName(...args: any[]): any;
@@ -17401,29 +18830,27 @@ declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSLayerCo
 	/* typeEncoding=v24@0:8@16 */
 	addPathDefinitionToDocument(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16@24@32 */
-	addPreviewWithBezier_documentData_cache(...args: any[]): any;
+	addPreviewWithBezier_documentData_forOwner(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	addSVGAttributes_exporter(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	addTransformAttributes_exporter(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	appendBaseTranslation_exporter(...args: any[]): any;
+	/* typeEncoding=Q24@0:8@16 */
+	badgeTypeInDocumentData(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	bezierBoundsInAbsoluteCoordinatesWithAncestors(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	bounds(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
 	calculateInfluenceRectForBoundsInDocument_visitedSymbols(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	calculatePathInBounds(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeContainedByDocument(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeContainedByGroup(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	calculatePathInBoundsInDocument_asSubpath(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canBreakMaskChain(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	canContainLayer(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	canOverridePoint(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -17450,10 +18877,14 @@ declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSLayerCo
 	containsNoOrOneLayers(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	containsOneLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	dataSupplierIdentifier(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	decodePropertiesWithUnarchiver(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	defaultValueForOverridePoint_relatedOverrides_document(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	defaultValueForOverridePoint(...args: any[]): any;
+	descendantsToLayerWithID(...args: any[]): any;
 	/* typeEncoding=v68@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48c56@60 */
 	drawPreviewInRect_documentData_selected_bezier(...args: any[]): any;
 	/* typeEncoding=v48@0:8Q16@?24@?32@?40 */
@@ -17464,6 +18895,8 @@ declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSLayerCo
 	enumerateLayersWithOptions_block(...args: any[]): any;
 	/* typeEncoding=c40@0:8Q16#24@?32 */
 	enumerateLayersWithOptions_classFilter_block(...args: any[]): any;
+	/* typeEncoding=@24@0:8Q16 */
+	enumeratorWithOptions(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	firstFlowWithSymbolsFromDocument(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
@@ -17475,9 +18908,13 @@ declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSLayerCo
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	frameForTransforms(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	hasCalculatedInfluenceRectForBounds(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	hasClippingMask(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasEnabledBackgroundBlur(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	hasSharedStyleInDocumentData(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasTransforms(...args: any[]): any;
 	/* typeEncoding=Q24@0:8@16 */
@@ -17494,12 +18931,20 @@ declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSLayerCo
 	influenceRectForBoundsInDocument_visitedSymbols(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@?16 */
 	influenceRectForBoundsOrCalculateInBlock(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	influenceRectForFrame(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
 	influenceRectForFrameInDocument(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
 	influenceRectForFrameInDocument_visitedSymbols(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	initWithMinimalSetup(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	interfaceImageIdentifier(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isLayerExportable(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isLine(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -17516,36 +18961,40 @@ declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSLayerCo
 	origin(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
 	overlayRectForAncestors_document(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	overridePointsWithParent_overrides_document(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	overridePointsWithParent(...args: any[]): any;
+	overridePreviewImageInDocument(...args: any[]): any;
 	/* typeEncoding=#24@0:8@16 */
 	overrideViewControllerClassForOverridePoint(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	pathForBooleanOperations(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	pathInFrame(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	pathInFrameWithTransforms(...args: any[]): any;
 	/* typeEncoding=@28@0:8@16c24 */
-	previewBorderColorForDocumentData_selected(...args: any[]): any;
+	pathInBoundsInDocument_asSubpath(...args: any[]): any;
 	/* typeEncoding=@28@0:8@16c24 */
-	previewFillColorForDocumentData_selected(...args: any[]): any;
+	pathInFrameInDocument_asSubpath(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	pathInFrameWithTransformsInDocument_asSubpath(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	prepareForRenderInDocument_withWorkerQueue(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	prepareSymbolCachesInDocument_withWorkerQueue(...args: any[]): any;
 	/* typeEncoding=@36@0:8@16@24c32 */
 	previewImageWithBezier_documentData_selected(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
-	previewImagesRequireRefreshWithDocumentData_cache(...args: any[]): any;
+	previewImagesRequireRefreshWithDocumentData_forOwner(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	rect(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
 	rectByTransformingRect_andPaddingWithAncestors(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
-	refreshPreviewImagesWithDocumentData_cache(...args: any[]): any;
+	refreshPreviewImagesWithDocumentData_forOwner(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
 	relativeRectWithExporter(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	renderBitmapEffects(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	requiresPathDefinition(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shouldBeIncludedInParentPath(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	shouldIncludeInSVGExport(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -17568,8 +19017,6 @@ declare class MSImmutableLayer extends _MSImmutableLayer /* implements MSLayerCo
 	transparencyLayerUseRectCondition(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	unavailableFontNames(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	usedStyle(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	writeSVGToElement_withExporter(...args: any[]): any;
 }
@@ -17646,12 +19093,12 @@ declare class MSImmutableLayerGroup extends _MSImmutableLayerGroup /* implements
 	addContentToElement_attributes_exporter(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	allowsBlur(...args: any[]): any;
+	/* typeEncoding=q24@0:8@16 */
+	booleanOperationForLayer(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
 	calculateInfluenceRectForBoundsInDocument_visitedSymbols(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	calculatePathInBounds(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	canContainLayer(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	calculatePathInBoundsInDocument_asSubpath(...args: any[]): any;
 	/* typeEncoding=c64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16{CGSize=dd}48 */
 	childRectShouldResizeOnlyHorizontally_inParentOfSize(...args: any[]): any;
 	/* typeEncoding=c64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16{CGSize=dd}48 */
@@ -17670,8 +19117,6 @@ declare class MSImmutableLayerGroup extends _MSImmutableLayerGroup /* implements
 	containsNoOrOneLayers(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	containsOneLayer(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	decodePropertiesWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	enumerateLayers(...args: any[]): any;
 	/* typeEncoding=c32@0:8Q16@?24 */
@@ -17699,6 +19144,8 @@ declare class MSImmutableLayerGroup extends _MSImmutableLayerGroup /* implements
 	/* typeEncoding=c24@0:8@16 */
 	layersAreEqualForDiffToLayersOfLayerGroup(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	migratePropertiesFromV109OrEarlierWithUnarchiver(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	migratePropertiesFromV78OrEarlierWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	migratePropertiesFromV90OrEarlierWithUnarchiver(...args: any[]): any;
@@ -17706,10 +19153,16 @@ declare class MSImmutableLayerGroup extends _MSImmutableLayerGroup /* implements
 	mirrorExportScale(...args: any[]): any;
 	/* typeEncoding={CGSize=dd}16@0:8 */
 	mirrorViewPortSize(...args: any[]): any;
+	/* typeEncoding=@24@0:8@?16 */
+	pathCombiningChildrenByApplyingBlock(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	prepareSymbolCachesInDocument_withWorkerQueue(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	rectByApplyingEdgePaddingsToRect(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	requiresPathDefinition(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shadowsFollowRotation(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	subObjectsForTreeDiff(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -17807,6 +19260,11 @@ declare class MSImmutableOvalShape extends _MSImmutableOvalShape {
 }
 
 declare class MSImmutableOverrideValue extends _MSImmutableOverrideValue {
+	/* typeEncoding=@"NSString", ivar=_attributeName, attributes=(assign,nonatomic,readonly) */
+	attributeName(): NSString;
+	/* typeEncoding=@"NSString", ivar=_path, attributes=(assign,nonatomic,readonly) */
+	path(): NSString;
+
 	/* typeEncoding=@24@0:8@16 */
 	static dictionaryFromOverrideValues(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -17814,10 +19272,22 @@ declare class MSImmutableOverrideValue extends _MSImmutableOverrideValue {
 	/* typeEncoding=@32@0:8@16@24 */
 	static overrideValuesFromDictionary_withPrefix(...args: any[]): any;
 
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	attributeName(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	calculateAttributeNameAndPath(): void;
+	/* typeEncoding=v24@0:8@16 */
+	decodePropertiesWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	description(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	initWithName_value(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	path(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	performInitWithMutableModelObject(...args: any[]): any;
 }
 
 declare class MSImmutablePage extends _MSImmutablePage /* implements MSWebExportableRootLayer, MSImmutableRootLayer */ {
@@ -17953,6 +19423,8 @@ declare class MSImmutableRect extends _MSImmutableRect /* implements MSRect */ {
 
 	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	initWithRect(...args: any[]): any;
+	/* typeEncoding=@52@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16c48 */
+	initWithRect_constrainProportions(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	isEqual(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
@@ -17978,16 +19450,46 @@ declare class MSImmutableRectangleShape extends _MSImmutableRectangleShape {
 declare class MSImmutableRulerData extends _MSImmutableRulerData {
 }
 
-declare class MSImmutableShapeGroup extends _MSImmutableShapeGroup /* implements MSShapeGroup */ {
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	decoratedBezierPathInBounds(): MSPath;
+declare class MSImmutableShapeGroup extends _MSImmutableShapeGroup /* implements MSImmutableLayerPreviewability, MSShapeGroup, MSImmutablePathLayer */ {
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	CGTransformForFrame(): CGAffineTransform;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	bounds(): CGRect;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	hasMarkers(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasTransforms(): boolean;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding={BCEdgePaddings=dddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	influenceRectEdgePaddingsThatCascadeToContainedLayers(): BCEdgePaddings;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedHorizontal(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedVertical(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isLayerExportable(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isPartOfClippingMask(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isVisible(): boolean;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	objectID(): NSString;
+	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	origin(): CGPoint;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rect(): CGRect;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rotation(): number;
+	/* typeEncoding=@"MSImmutableStyle", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	style(): MSImmutableStyle;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
 
-	/* typeEncoding=v16@0:8 */
-	static initialize(): void;
 	/* typeEncoding=Q16@0:8 */
 	static traits(...args: any[]): any;
 
@@ -17999,64 +19501,52 @@ declare class MSImmutableShapeGroup extends _MSImmutableShapeGroup /* implements
 	addGroupContentToElement_attributes_exporter(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	addMaskToElement_exporter(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	addPathDefinitionToDocument(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	addSVGAttributes_exporter(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	allowsBlur(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	appendBaseTranslation_exporter(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	applyPropertiesToBezier(...args: any[]): any;
+	/* typeEncoding=q24@0:8@16 */
+	booleanOperationForLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
 	calculateInfluenceRectForBoundsInDocument_visitedSymbols(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	calculatePathInBounds(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	canOverridePoint(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	calculateInfluenceRectForBoundsInDocumentPre108(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canSkipAdvancedClipForStrokes(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	decoratedBezierPathInBounds(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	defaultName(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	defaultValueForOverridePoint(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	encodePropertiesWithCoder(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasMarkers(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	imageFillForOverrides(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	includeChildrenInCalculatingStyleSize(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initDowngradedShapeWithPath(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	interfaceImageIdentifier(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isLine(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isPartOfClippingMask(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	migratePropertiesFromV103OrEarlierWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	migratePropertiesFromV106OrEarlierWithUnarchiver(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	migratePropertiesFromV110OrEarlierWithUnarchiver(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	migratePropertiesFromV51OrEarlierWithUnarchiver(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=@24@0:8@16 */
-	overridePointsWithParent(...args: any[]): any;
-	/* typeEncoding=#24@0:8@16 */
-	overrideViewControllerClassForOverridePoint(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16@24 */
-	pathWithExporter_border(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
-	previewImagesRequireRefreshWithDocumentData_cache(...args: any[]): any;
+	previewImagesRequireRefreshWithDocumentData_forOwner(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
-	refreshPreviewImagesWithDocumentData_cache(...args: any[]): any;
+	refreshPreviewImagesWithDocumentData_forOwner(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	requiresPathDefinition(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16@24d32 */
 	simplifyPathElement_exporter_inset(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	svgPathAttribute(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	svgStyle(...args: any[]): any;
 }
@@ -18064,20 +19554,54 @@ declare class MSImmutableShapeGroup extends _MSImmutableShapeGroup /* implements
 declare class MSImmutableShapePath extends _MSImmutableShapePath {
 }
 
-declare class MSImmutableShapePathLayer extends _MSImmutableShapePathLayer {
-	/* typeEncoding=@"MSImmutableStyle", ivar=_decoded52Style, attributes=(assign,nonatomic,readonly) */
-	decoded52Style(): MSImmutableStyle;
+declare class MSImmutableShapePathLayer extends _MSImmutableShapePathLayer /* implements MSImmutableLayerPreviewability, MSImmutablePathLayer */ {
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	CGTransformForFrame(): CGAffineTransform;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	bounds(): CGRect;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasMarkers(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasTransforms(): boolean;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding={BCEdgePaddings=dddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	influenceRectEdgePaddingsThatCascadeToContainedLayers(): BCEdgePaddings;
 	/* typeEncoding=c, ivar=_isEditing, attributes=(assign,nonatomic,readonly) */
 	isEditing(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedHorizontal(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedVertical(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isLayerExportable(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isPolygon(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isPolyline(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isRectangle(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isVisible(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	numberOfCurvePoints(): number;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	objectID(): NSString;
+	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	origin(): CGPoint;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rect(): CGRect;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rotation(): number;
 	/* typeEncoding=@"MSImmutableStyle", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	style(): MSImmutableStyle;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+	/* typeEncoding=@"MSImmutableStyle", ivar=_usedStyle, attributes=(assign,nonatomic,readonly) */
 	usedStyle(): MSImmutableStyle;
 
 	/* typeEncoding=@16@0:8 */
@@ -18089,16 +19613,30 @@ declare class MSImmutableShapePathLayer extends _MSImmutableShapePathLayer {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	addContentToElement_attributes_exporter(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	addDecorationToParent_exporter(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	addGroupContentToElement_attributes_exporter(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	addMaskToElement_exporter(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	addSVGAttributes_exporter(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	appendBaseTranslation_exporter(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	calculatePathInBounds(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	decodePropertiesWithUnarchiver(...args: any[]): any;
+	cacheOwner(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
+	calculateInfluenceRectForBoundsInDocument_visitedSymbols(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	calculatePathInBoundsInDocument_asSubpath(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	decoded52Style(...args: any[]): any;
+	interfaceImageIdentifier(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isEditing(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	isLayerExportable(...args: any[]): any;
+	isLine(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isPolygon(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -18106,19 +19644,25 @@ declare class MSImmutableShapePathLayer extends _MSImmutableShapePathLayer {
 	/* typeEncoding=c16@0:8 */
 	isRectangle(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	migrateByTakingStyleFrom(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	migratePropertiesFromShapeGroup(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	migratePropertiesFromV99OrEarlierWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	numberOfCurvePoints(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
-	previewImagesRequireRefreshWithDocumentData_cache(...args: any[]): any;
+	previewImagesRequireRefreshWithDocumentData_forOwner(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
-	refreshPreviewImagesWithDocumentData_cache(...args: any[]): any;
+	refreshPreviewImagesWithDocumentData_forOwner(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
 	relativeRectWithExporter(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	resetDowngradedProperties(): void;
+	/* typeEncoding=c24@0:8@16 */
+	requiresPathDefinition(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16@24d32 */
 	simplifyPathElement_exporter_inset(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	svgStyle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	usedStyle(...args: any[]): any;
 }
@@ -18145,7 +19689,7 @@ declare class MSImmutableSharedTextStyleContainer extends _MSImmutableSharedText
 declare class MSImmutableSimpleGrid extends _MSImmutableSimpleGrid {
 }
 
-declare class MSImmutableSliceLayer extends _MSImmutableSliceLayer /* implements MSLayerWithBackgroundColor */ {
+declare class MSImmutableSliceLayer extends _MSImmutableSliceLayer /* implements MSImmutableLayerPreviewability, MSLayerWithBackgroundColor */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -18164,18 +19708,24 @@ declare class MSImmutableSliceLayer extends _MSImmutableSliceLayer /* implements
 
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
 	absoluteInfluenceRectForAncestorGroups_document(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	configureBackgroundOfRequest(...args: any[]): any;
 	/* typeEncoding=v68@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48c56@60 */
 	drawPreviewInRect_documentData_selected_bezier(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	immutableBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	interfaceImageIdentifier(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isLayerExportable(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
-	previewImagesRequireRefreshWithDocumentData_cache(...args: any[]): any;
+	previewImagesRequireRefreshWithDocumentData_forOwner(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
-	refreshPreviewImagesWithDocumentData_cache(...args: any[]): any;
+	refreshPreviewImagesWithDocumentData_forOwner(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shouldBeIncludedInParentPath(...args: any[]): any;
 }
 
 declare class MSImmutableStarShape extends _MSImmutableStarShape {
@@ -18219,14 +19769,24 @@ declare class MSImmutableStyle extends _MSImmutableStyle {
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	hasMoreThanOneEnabledFill(): boolean;
 	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	outerPaddingForBiggestShadowSpread(): number;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	outerPaddingForBiggestStroke(): number;
 	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	renderableFills(): NSArray;
+	/* typeEncoding=q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	shadowStrokeType(): number;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	shadowType(): number;
 	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	thickestInnerStroke(): number;
 	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	thickestStroke(): number;
 
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
+	_boundsForShadow_path(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	_shadowWithGreatestSpread(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	addBlurFilter_exporter(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16@24Q32 */
@@ -18237,12 +19797,16 @@ declare class MSImmutableStyle extends _MSImmutableStyle {
 	addShadowFilters_includeSource_attributes_exporter(...args: any[]): any;
 	/* typeEncoding=v48@0:8@16@24@32d40 */
 	applyLayerInfluenceRectBounds_document_toFilter_withRadius(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	applyPropertiesToBezier(...args: any[]): any;
 	/* typeEncoding=@32@0:8q16@24 */
 	borderAtElementPosition_exporter(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	borderWithGreatestInset(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
 	boundingBoxForBiggestShadowSpreadForLayer(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
+	boundsForPath(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canCombineLastFillWithFirstBorder(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -18293,16 +19857,24 @@ declare class MSImmutableStyle extends _MSImmutableStyle {
 	migratePropertiesFromV103OrEarlierWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	migratePropertiesFromV104OrEarlierWithUnarchiver(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	migrateToRegularStyleByClearingSharedObjectID(): void;
 	/* typeEncoding=Q24@0:8@16 */
 	numberOfElementsWithExporter(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
+	outerPaddingForBiggestShadowSpread(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
 	outerPaddingForBiggestStroke(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	renderBitmapEffects(...args: any[]): any;
+	/* typeEncoding=@104@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGAffineTransform=dddddd}56 */
+	renderBitmapEffects_bounds_parentCoordinateTransform(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	renderableFills(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	requiresPathDefinition(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	shadowStrokeType(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	shadowType(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	thickestInnerStroke(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
@@ -18322,8 +19894,10 @@ declare class MSImmutableStyleBlur extends _MSImmutableStyleBlur {
 	addFilterWithExporter(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	cropRadius(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	renderBitmapEffects(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	migratePropertiesFromV106OrEarlierWithUnarchiver(...args: any[]): any;
+	/* typeEncoding=@104@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGAffineTransform=dddddd}56 */
+	renderBitmapEffects_bounds_parentCoordinateTransform(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldUseCoreImageForEffect(...args: any[]): any;
 }
@@ -18461,19 +20035,49 @@ declare class MSImmutableStyleShadow extends _MSImmutableStyleShadow /* implemen
 	addSVGFilterWithParent_exporter_index(...args: any[]): any;
 	/* typeEncoding=@48@0:8d16@24@32@40 */
 	addSpread_withInput_output_filter(...args: any[]): any;
-	/* typeEncoding=d32@0:8q16d24 */
-	shadowInsetForStrokeType_lineWidth(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	updateColorCounter(...args: any[]): any;
 }
 
-declare class MSImmutableStyledLayer extends _MSImmutableStyledLayer {
+declare class MSImmutableStyledLayer extends _MSImmutableStyledLayer /* implements MSImmutableLayerPreviewability, MSStyledLayer */ {
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	CGTransformForFrame(): CGAffineTransform;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	allowsBlur(): boolean;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	bounds(): CGRect;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasTransforms(): boolean;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding={BCEdgePaddings=dddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	influenceRectEdgePaddingsThatCascadeToContainedLayers(): BCEdgePaddings;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedHorizontal(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedVertical(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isLayerExportable(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isVisible(): boolean;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	objectID(): NSString;
+	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	origin(): CGPoint;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rect(): CGRect;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rotation(): number;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	shadowsFollowRotation(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	shouldRasterize(): boolean;
-	/* typeEncoding=@"MSImmutableStyle", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	usedStyle(): MSImmutableStyle;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
 
 	/* typeEncoding=@56@0:8@16Q24d32{CGSize=dd}40 */
 	static adjustPath_forDecotationType_strokeWidth_scale(...args: any[]): any;
@@ -18493,6 +20097,8 @@ declare class MSImmutableStyledLayer extends _MSImmutableStyledLayer {
 	static filledSquareDecoration(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	static filledSquareRoundedDecoration(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	static initialize(): void;
 	/* typeEncoding=@56@0:8@16{CGPoint=dd}24d40d48 */
 	static intersectionPolygonForDecoration_atPoint_scale_strokeWidth(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -18516,32 +20122,58 @@ declare class MSImmutableStyledLayer extends _MSImmutableStyledLayer {
 	/* typeEncoding=@68@0:8@16{CGPoint=dd}24d40{CGSize=dd}48c64 */
 	static transformedPath_atPoint_rotation_scale_flipped(...args: any[]): any;
 
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
+	absoluteInfluenceRectForAncestorGroups_document(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	addGradientsToDocument(...args: any[]): any;
 	/* typeEncoding=@40@0:8@16@24@32 */
 	addGroupContentToElement_attributes_exporter(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	addPathDefinitionToDocument(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	allowsBlur(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	applyPropertiesToBezier(...args: any[]): any;
 	/* typeEncoding=@24@0:8^@16 */
 	bezierPathForEndDecorationOnPath(...args: any[]): any;
 	/* typeEncoding=@24@0:8^@16 */
 	bezierPathForStartDecorationOnPath(...args: any[]): any;
-	/* typeEncoding=@40@0:8@16^{CGContext=}24^@32 */
-	fillPathWithDecorations_context_strokePath(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	canOverridePoint(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	decoratedPathInBoundsInDocument_asSubpath(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	defaultValueForOverridePoint_relatedOverrides_document(...args: any[]): any;
+	/* typeEncoding=@24@0:8^@16 */
+	fillPathWithDecorations(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	fillStyleForDecoratedPath(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasMarkers(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	hasSharedStyleInDocumentData(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	imageFillForOverridePoint_applyingStyleOverridesFrom_inDocument(...args: any[]): any;
+	/* typeEncoding={BCEdgePaddings=dddd}16@0:8 */
+	influenceRectEdgePaddingsThatCascadeToContainedLayers(...args: any[]): any;
+	/* typeEncoding={BCEdgePaddings=dddd}16@0:8 */
+	influenceRectEdgePaddingsThatDoNotCascade(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	overridePointsWithParent_overrides_document(...args: any[]): any;
+	/* typeEncoding=#24@0:8@16 */
+	overrideViewControllerClassForOverridePoint(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	pathWithExporter_border(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@?24 */
 	prepareDrawingInContext_inBlock(...args: any[]): any;
-	/* typeEncoding=@28@0:8@16c24 */
-	previewBorderColorForDocumentData_selected(...args: any[]): any;
-	/* typeEncoding=@28@0:8@16c24 */
-	previewFillColorForDocumentData_selected(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	renderBitmapEffects(...args: any[]): any;
 	/* typeEncoding=Q24@0:8Q16 */
 	roundDecorationTypeIfNecessary(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shadowsFollowRotation(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shouldBeIncludedInParentPath(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldRasterize(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -18550,12 +20182,12 @@ declare class MSImmutableStyledLayer extends _MSImmutableStyledLayer {
 	shouldSkipDrawingInContext(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	strokeStyleForDecoratedPath(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	svgPathAttribute(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	trackColors(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	trackColorsForBasicFill_tracker(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	usedStyle(...args: any[]): any;
 }
 
 declare class MSImmutableSymbol extends _MSImmutableSymbol {
@@ -18570,10 +20202,10 @@ declare class MSImmutableSymbolContainer extends _MSImmutableSymbolContainer {
 }
 
 declare class MSImmutableSymbolInstance extends _MSImmutableSymbolInstance /* implements MSFlowContainmentCheck */ {
+	/* typeEncoding=@"MSImmutableSymbolMaster", ivar=_cachedModifiedSymbolMaster, attributes=(assign,weak) */
+	cachedModifiedSymbolMaster(): MSImmutableSymbolMaster;
 	/* typeEncoding=Q, ivar=_masterRefreshCounter, attributes=(assign,nonatomic,readonly) */
 	masterRefreshCounter(): number;
-	/* typeEncoding=@"<NSCopying>", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	modifiedMasterCacheKey(): NSCopying;
 	/* typeEncoding=@"NSDictionary", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	overrides(): NSDictionary;
 
@@ -18581,17 +20213,21 @@ declare class MSImmutableSymbolInstance extends _MSImmutableSymbolInstance /* im
 	static defaultName(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	static traits(...args: any[]): any;
+	/* typeEncoding=Q24@0:8@16 */
+	static traitsForPropertyName(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@24@0:8@16 */
 	availableOverridesWithDocument(...args: any[]): any;
-	/* typeEncoding=@40@0:8@16@24@32 */
-	cachedModifiedSymbolForMaster_document_cache(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	cachedModifiedSymbolForMaster_inContext(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cachedModifiedSymbolMaster(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	calculateAvailableOverridesWithDocument(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	calculatePathInBoundsInDocument_asSubpath(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	decodePropertiesWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -18620,12 +20256,20 @@ declare class MSImmutableSymbolInstance extends _MSImmutableSymbolInstance /* im
 	migratePropertiesFromV96OrEarlierWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	modifiedMasterCacheKey(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	modifiedMasterInDocument(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	objectDidInit(): void;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	overrideInOverrides_withPath_andPropertyName(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	overrideMatchingPoint_inDocument(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	overridePointsInDocument(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	overridePointsWithParent_overrides_document(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	overridePointsWithParent(...args: any[]): any;
+	overridePreviewImageInDocument(...args: any[]): any;
 	/* typeEncoding=#24@0:8@16 */
 	overrideViewControllerClassForOverridePoint(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -18638,10 +20282,18 @@ declare class MSImmutableSymbolInstance extends _MSImmutableSymbolInstance /* im
 	paddedInfluenceRect_withPaddingsFromMasterInDocument_visitedSymbols(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	prepareModifiedMasterInDocument(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	prepareSymbolCachesInDocument_withWorkerQueue(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	scale(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16@24 */
-	uncachedModifiedSymbolForMaster_document(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCachedModifiedSymbolMaster(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shadowsFollowRotation(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	shouldCreateModifiedMasterForMaster(...args: any[]): any;
 	/* typeEncoding=@48@0:8@16@24@32@40 */
 	updateOverridesDictionary_withObjectIDMapping_afterChangingSymbolMasterWithID_currentID(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
@@ -18653,9 +20305,13 @@ declare class MSImmutableSymbolInstance extends _MSImmutableSymbolInstance /* im
 declare class MSImmutableSymbolMaster extends _MSImmutableSymbolMaster {
 	/* typeEncoding=q, ivar=_changeIdentifier, attributes=(assign,nonatomic,readonly) */
 	changeIdentifier(): number;
+	/* typeEncoding=@"BCCache", ivar=_modifiedMasterCache, attributes=(assign,nonatomic,readonly) */
+	modifiedMasterCache(): BCCache;
 
 	/* typeEncoding=Q16@0:8 */
 	static traits(...args: any[]): any;
+	/* typeEncoding=Q24@0:8@16 */
+	static traitsForPropertyName(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -18679,22 +20335,24 @@ declare class MSImmutableSymbolMaster extends _MSImmutableSymbolMaster {
 	encodePropertiesWithCoder(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	influenceRectClipsToBounds(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
+	influenceRectForAncestors_document(...args: any[]): any;
 	/* typeEncoding={BCEdgePaddings=dddd}32@0:8@16@24 */
 	influenceRectPaddingForInstancesInDocument_visitedSymbols(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	mergeNestedOverridesTo_withParent(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	modifiedMasterByApplyingInstance_inDocument(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	modifiedMasterCache(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	objectDidInit(): void;
-	/* typeEncoding=@24@0:8@16 */
-	overridePointsWithParent(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	overridePointsWithParent_overrides_document(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@?24 */
 	preserveFlexibleWidthTextLayersInMutableMaster_inBlock(...args: any[]): any;
-	/* typeEncoding=c28@0:8@16c24 */
-	shouldDrawBackgroundInContext_isDrawingAsSymbolInstance(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	svgStyle(...args: any[]): any;
 }
@@ -18734,8 +20392,6 @@ declare class MSImmutableTextLayer extends _MSImmutableTextLayer /* implements M
 	textAlignment(): number;
 	/* typeEncoding=@"MSTextLayout", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	textLayout(): MSTextLayout;
-	/* typeEncoding=@"NSValue", ivar=_transientGlyphBoundsValue, attributes=(retain) */
-	transientGlyphBoundsValue(): NSValue;
 
 	/* typeEncoding=@16@0:8 */
 	static defaultName(...args: any[]): any;
@@ -18766,14 +20422,18 @@ declare class MSImmutableTextLayer extends _MSImmutableTextLayer /* implements M
 	bezierPathFromGlyphsInBoundsWithParentGroup_layoutManager(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16@24 */
 	calculateInfluenceRectForBoundsInDocument_visitedSymbols(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	calculatePathInBounds(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	calculatePathInBoundsInDocument_asSubpath(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	canOverridePoint(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	capHeightBounds(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	createTextStorage(...args: any[]): any;
 	/* typeEncoding=d24@0:8@16 */
 	defaultLineHeight(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	defaultValueForOverridePoint_relatedOverrides_document(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	drawingPointForText(...args: any[]): any;
 	/* typeEncoding=@56@0:8@16{CGPoint=dd}24@40@48 */
@@ -18806,18 +20466,20 @@ declare class MSImmutableTextLayer extends _MSImmutableTextLayer /* implements M
 	migratePropertiesFromV97OrEarlierWithUnarchiver(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}40@0:8@16@24@32 */
 	originForCharacterAttributes_exporter_layoutManager(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	overridePointsWithParent_overrides_document(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	overridePointsWithParent(...args: any[]): any;
+	overridePreviewImageInDocument(...args: any[]): any;
 	/* typeEncoding=#24@0:8@16 */
 	overrideViewControllerClassForOverridePoint(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithUnarchiver(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setTransientGlyphBoundsValue(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	shapeToUseForTextOnPathWithParentGroup(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shouldBeIncludedInParentPath(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldRenderInTransparencyLayer(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -18844,8 +20506,6 @@ declare class MSImmutableTextLayer extends _MSImmutableTextLayer /* implements M
 	totalHeightOfFont(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	trackColors(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	transientGlyphBoundsValue(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	updateColorCounter(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -18884,13 +20544,13 @@ declare class MSImmutableTriangleShape extends _MSImmutableTriangleShape {
 }
 
 declare class MSIncludeBackgroundColorInExportInspectorItem extends MSInspectorItem {
-	/* typeEncoding=@24@0:8@16 */
-	static filterSelection(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
 }
 
 declare class MSIncludeBackgroundColorInInstancesInspectorItem extends MSInspectorItem {
-	/* typeEncoding=@24@0:8@16 */
-	static filterSelection(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
 }
 
 declare class MSIncompatiblePluginsDisabledAction extends MSDocumentAction /* implements MSWindowBadgeAction */ {
@@ -18919,13 +20579,168 @@ declare class MSIncompatiblePluginsDisabledAction extends MSDocumentAction /* im
 	numberOfBadges(...args: any[]): any;
 }
 
+declare class MSInlineBlendModeButtonCell extends MSInspectorToggleImageButtonCell {
+	/* typeEncoding=v16@0:8 */
+	setNextState(): void;
+}
+
+declare class MSInlineIntegratedStepper extends MSIntegratedStepper {
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawRect(...args: any[]): any;
+	/* typeEncoding=v24@0:8Q16 */
+	drawStepper(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	resetCursorRects(): void;
+}
+
+declare class MSInlineTextLabelForUpDownField extends MSTextLabelForUpDownField {
+	/* typeEncoding=@"NSImage", ivar=_image, attributes=(retain,nonatomic) */
+	image(): NSImage;
+
+	/* typeEncoding=#16@0:8 */
+	static cellClass(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	static labelWithImage(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding={NSEdgeInsets=dddd}16@0:8 */
+	alignmentRectInsets(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	image(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setImage(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	userClickedWithMouseDownEvent_mouseUpEvent(...args: any[]): any;
+}
+
+declare class MSInlineTextLabelImageCell extends NSTextFieldCell {
+	/* typeEncoding=@"NSValue", ivar=_customFittingSize, attributes=(retain,nonatomic) */
+	customFittingSize(): NSValue;
+
+	/* typeEncoding=@16@0:8 */
+	static inlineTextLabelFont(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	cellSize(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	customFittingSize(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	font(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCustomFittingSize(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	textColor(...args: any[]): any;
+}
+
+declare class MSInlineUpDownController extends MSUpDownController {
+	/* typeEncoding=#16@0:8 */
+	static stepperClass(...args: any[]): any;
+
+	/* typeEncoding=v20@0:8c16 */
+	hideStepper(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	initWithTextField_createStepper(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	mouseMoved(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	stepperRect(...args: any[]): any;
+}
+
+declare class MSInlineUpDownMiniTextField extends MSInlineUpDownTextField {
+	/* typeEncoding=d16@0:8 */
+	incrementValue(...args: any[]): any;
+}
+
+declare class MSInlineUpDownNanoTextField extends MSInlineUpDownTextField {
+	/* typeEncoding=d16@0:8 */
+	incrementValue(...args: any[]): any;
+}
+
+declare class MSInlineUpDownTextField extends MSUpDownTextField {
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inlineFieldWidth(): number;
+	/* typeEncoding=@"NSImage", ivar=_inlineImage, attributes=(retain,nonatomic) */
+	inlineImage(): NSImage;
+	/* typeEncoding=@"NSString", ivar=_inlineLabel, attributes=(retain,nonatomic) */
+	inlineLabel(): NSString;
+	/* typeEncoding=@"NSTextField", ivar=_inlineLabelField, attributes=(retain,nonatomic) */
+	inlineLabelField(): NSTextField;
+	/* typeEncoding=@"NSString", ivar=_inlineToolTip, attributes=(retain,nonatomic) */
+	inlineToolTip(): NSString;
+	/* typeEncoding=@"MSUpDownController", ivar=(null), attributes=(retain,dynamic,nonatomic) */
+	upDownController(): MSUpDownController;
+
+	/* typeEncoding=#16@0:8 */
+	static cellClass(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	awakeFromNib(): void;
+	/* typeEncoding=d16@0:8 */
+	inlineFieldWidth(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inlineImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inlineLabel(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inlineLabelField(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inlineToolTip(...args: any[]): any;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	intrinsicContentSize(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	resetCursorRects(): void;
+	/* typeEncoding=v24@0:8@16 */
+	setInlineImage(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setInlineLabel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setInlineLabelField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setInlineToolTip(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateCursor(): void;
+	/* typeEncoding=v16@0:8 */
+	updateUpDownLabel(): void;
+}
+
+declare class MSInlineUpDownTextFieldCell extends NSTextFieldCell {
+	/* typeEncoding=c, ivar=_drawOldFashioned, attributes=(assign,nonatomic) */
+	drawOldFashioned(): boolean;
+
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawFocusRingMaskWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	drawOldFashioned(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawingRectForBounds(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	drawsBackground(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	focusRingMaskBoundsForFrame_inView(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDrawOldFashioned(...args: any[]): any;
+}
+
 declare class MSInsertArrowAction extends MSInsertLineAction {
 	/* typeEncoding=#16@0:8 */
 	eventHandlerClass(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
+	label(...args: any[]): any;
 	/* typeEncoding=@48@0:8{CGPoint=dd}16{CGPoint=dd}32 */
 	lineShapeFrom_to(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 }
 
 declare class MSInsertArrowEventHandler extends MSInsertLineEventHandler {
@@ -18934,16 +20749,18 @@ declare class MSInsertArrowEventHandler extends MSInsertLineEventHandler {
 declare class MSInsertArtboardAction extends MSBaseInsertAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	insertArtboard(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isTouchBarItemSelected(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	performAction(...args: any[]): any;
 	/* typeEncoding=:16@0:8 */
 	preferredMenuAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -18992,8 +20809,6 @@ declare class MSInsertArtboardEventHandler extends MSInsertLayerEventHandler {
 	rectForArtboardWithPreset(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldAddInsertFromSelectionItem(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	shouldApplyDefaultStyle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	title(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -19039,6 +20854,8 @@ declare class MSInsertArtboardInspectorViewController extends NSViewController /
 	/* typeEncoding={CGSize=dd}16@0:8 */
 	proposedArtboardSize(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	selectionDidChangeTo(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setEventHandler(...args: any[]): any;
@@ -19059,14 +20876,14 @@ declare class MSInsertArtboardInspectorViewController extends NSViewController /
 declare class MSInsertHotspotAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	insertHotspot(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=:16@0:8 */
 	preferredMenuAction(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 }
 
 declare class MSInsertHotspotEventHandler extends MSInsertLayerEventHandler {
@@ -19094,6 +20911,8 @@ declare class MSInsertImageAction extends MSBaseInsertAction {
 	/* typeEncoding=:16@0:8 */
 	preferredMenuAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
 
@@ -19104,13 +20923,13 @@ declare class MSInsertLayerEventHandler extends MSDragRectEventHandler {
 	insertedLayer(): MSLayer;
 	/* typeEncoding=@"MSLayer", ivar=_prototypeLayer, attributes=(retain,nonatomic) */
 	prototypeLayer(): MSLayer;
-	/* typeEncoding=c, ivar=_shouldApplyDefaultStyle, attributes=(assign,nonatomic) */
-	shouldApplyDefaultStyle(): boolean;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=c16@0:8 */
 	allowsSwitchToInsertAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	applicableActionItemIdentifier(...args: any[]): any;
 	/* typeEncoding=@?16@0:8 */
 	completionBlock(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -19118,17 +20937,19 @@ declare class MSInsertLayerEventHandler extends MSDragRectEventHandler {
 	/* typeEncoding=v16@0:8 */
 	drawRectPreview(): void;
 	/* typeEncoding=v16@0:8 */
+	handlerGotFocus(): void;
+	/* typeEncoding=v16@0:8 */
 	handlerWillLoseFocus(): void;
 	/* typeEncoding=@16@0:8 */
 	imageName(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initWithManager(...args: any[]): any;
 	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	insertAsNewLayer(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	insertNewLayerInCurrentGroup(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	insertedLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	pathForPrototypeLayer(...args: any[]): any;
 	/* typeEncoding=@60@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48c56 */
 	performActionWithRect_fromLayer_constrainProportions(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -19139,12 +20960,10 @@ declare class MSInsertLayerEventHandler extends MSDragRectEventHandler {
 	setCompletionBlock(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setInsertedLayer(...args: any[]): any;
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	setInsertionRect(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setPrototypeLayer(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setShouldApplyDefaultStyle(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	shouldApplyDefaultStyle(...args: any[]): any;
 }
 
 declare class MSInsertLineAction extends MSBaseInsertAction {
@@ -19152,50 +20971,76 @@ declare class MSInsertLineAction extends MSBaseInsertAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
 	eventHandlerClass(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	insertLine(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isSelectable(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@48@0:8{CGPoint=dd}16{CGPoint=dd}32 */
 	lineShapeFrom_to(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	tooltip(...args: any[]): any;
 }
 
-declare class MSInsertLineEventHandler extends MSEventHandler {
-	/* typeEncoding=@"MSShapeGroup", ivar=_lineShape, attributes=(retain,nonatomic) */
-	lineShape(): MSShapeGroup;
+declare class MSInsertLineEventHandler extends MSEventHandler /* implements MSAlignmentEngineDelegate */ {
+	/* typeEncoding=@"MSAlignmentEngine", ivar=_alignmentEngine, attributes=(assign,nonatomic,readonly) */
+	alignmentEngine(): MSAlignmentEngine;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"MSShapePathLayer", ivar=_lineShape, attributes=(retain,nonatomic) */
+	lineShape(): MSShapePathLayer;
 	/* typeEncoding=@?, ivar=_lineShapeCreator, attributes=(copy,nonatomic) */
 	lineShapeCreator(): any;
+	/* typeEncoding=@"MSAlignmentEngineResult", ivar=_snapGuides, attributes=(retain,nonatomic) */
+	snapGuides(): MSAlignmentEngineResult;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=c48@0:8{CGPoint=dd}16Q32Q40 */
-	absoluteMouseDown_clickCount_flags(...args: any[]): any;
 	/* typeEncoding=c40@0:8{CGPoint=dd}16Q32 */
-	absoluteMouseDragged_flags(...args: any[]): any;
-	/* typeEncoding=c40@0:8{CGPoint=dd}16Q32 */
-	absoluteMouseUp_flags(...args: any[]): any;
+	absoluteMouseMoved_flags(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	addSnapTargetsToAlignmentEngine(...args: any[]): any;
+	/* typeEncoding=@36@0:8{CGPoint=dd}16c32 */
+	alignEndPoint_snap(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	alignmentEngine(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}40@0:8@16{CGPoint=dd}24 */
+	alignmentEngine_alignPoint(...args: any[]): any;
 	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	createShapeAtMouse(...args: any[]): any;
+	createShapeAtLocation(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	currentGroup(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawInRect_context(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	handleDrag(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	handlerGotFocus(): void;
+	/* typeEncoding=@24@0:8@16 */
+	initWithManager(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	lineShape(...args: any[]): any;
 	/* typeEncoding=@?16@0:8 */
 	lineShapeCreator(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	lineThickness(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}32@0:8{CGPoint=dd}16 */
-	roundMouse(...args: any[]): any;
+	/* typeEncoding=v40@0:8{CGPoint=dd}16@32 */
+	prepareAlignmentEngineForPoint_constraint(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLineShape(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	setLineShapeCreator(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSnapGuides(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	snapGuides(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	style(...args: any[]): any;
 }
@@ -19242,46 +21087,6 @@ declare class MSInsertMenuAction extends MSDocumentAction {
 	tooltip(...args: any[]): any;
 }
 
-declare class MSInsertShapeEventHandler extends MSDragRectEventHandler {
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=_initialPrototypeRect, attributes=(assign,nonatomic) */
-	initialPrototypeRect(): CGRect;
-	/* typeEncoding=@"MSShapePathLayer", ivar=_prototypeLayer, attributes=(retain,nonatomic) */
-	prototypeLayer(): MSShapePathLayer;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=c16@0:8 */
-	allowsSwitchToInsertAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	applicableActionItemIdentifier(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	drawRectPreview(): void;
-	/* typeEncoding=v16@0:8 */
-	handlerGotFocus(): void;
-	/* typeEncoding=v16@0:8 */
-	handlerWillLoseFocus(): void;
-	/* typeEncoding=@24@0:8@16 */
-	initWithManager(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	initialPrototypeRect(...args: any[]): any;
-	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	insertShapeAsNewLayer(...args: any[]): any;
-	/* typeEncoding=@56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24 */
-	insertShapeAsSubPathOfShape_inRect(...args: any[]): any;
-	/* typeEncoding=@60@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48c56 */
-	performActionWithRect_fromLayer_constrainProportions(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	prototypeLayer(...args: any[]): any;
-	/* typeEncoding=v56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24 */
-	resizeLayer_toRect(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	setInitialPrototypeRect(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	setInsertionRect(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setPrototypeLayer(...args: any[]): any;
-}
-
 declare class MSInsertSharedTextAction extends MSSharedObjectAction /* implements NSMenuDelegate */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
@@ -19299,7 +21104,7 @@ declare class MSInsertSharedTextAction extends MSSharedObjectAction /* implement
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
+	imageForToolbar(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	initWithDocument(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -19316,6 +21121,8 @@ declare class MSInsertSharedTextAction extends MSSharedObjectAction /* implement
 	showSharedObjectsSheet(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	sortedObjectMenuItemsForMenu(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -19325,8 +21132,12 @@ declare class MSInsertSliceAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	insertSlice(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=:16@0:8 */
 	preferredMenuAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 }
 
 declare class MSInsertSliceEventHandler extends MSInsertLayerEventHandler {
@@ -19357,9 +21168,9 @@ declare class MSInsertSymbolAction extends MSSharedSymbolAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 }
 
 declare class MSInsertSymbolEventHandler extends MSEventHandler {
@@ -19516,6 +21327,8 @@ declare class MSInsertVectorAction extends MSDocumentAction {
 	isActive(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isSelectable(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=:16@0:8 */
 	preferredMenuAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -19524,13 +21337,71 @@ declare class MSInsertVectorAction extends MSDocumentAction {
 	touchBarImage(...args: any[]): any;
 }
 
+declare class MSInsetSeparatorInspectorItem extends MSSeparatorInspectorItem {
+	/* typeEncoding=v16@0:8 */
+	loadView(): void;
+}
+
+declare class MSInsetSeparatorView extends NSView {
+	/* typeEncoding={NSEdgeInsets=dddd}24@0:8@16 */
+	separatorInsetBetweenSelfAndView(...args: any[]): any;
+}
+
+declare class MSInspectorAltButtonCell extends MSAltButtonCell {
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawImage_withFrame_inView(...args: any[]): any;
+}
+
+declare class MSInspectorBackgroundView extends MSThemedColorView {
+	/* typeEncoding=@16@0:8 */
+	color(...args: any[]): any;
+}
+
+declare class MSInspectorButton extends NSButton {
+	/* typeEncoding={NSEdgeInsets=dddd}16@0:8 */
+	alignmentRectInsets(...args: any[]): any;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	intrinsicContentSize(...args: any[]): any;
+}
+
+declare class MSInspectorButtonCell extends NSButtonCell {
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawBezelWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawImage_withFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawingRectForBounds(...args: any[]): any;
+}
+
+declare class MSInspectorCheckmarkCell extends MSInspectorButtonCell {
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	checkmarkSize(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawBezelWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawImage_withFrame_inView(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	imageRectForBounds(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	mixedImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	onImage(...args: any[]): any;
+}
+
+declare class MSInspectorControlView extends NSView {
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawRect(...args: any[]): any;
+}
+
 declare class MSInspectorController extends NSViewController /* implements NSTouchBarDelegate */ {
 	/* typeEncoding=c, ivar=_alignmentBarHidden, attributes=(assign,nonatomic) */
 	alignmentBarHidden(): boolean;
+	/* typeEncoding=@"NSView", ivar=_alignmentContainerView, attributes=(retain,nonatomic) */
+	alignmentContainerView(): NSView;
 	/* typeEncoding=@"NSView", ivar=_alignmentView, attributes=(retain,nonatomic) */
 	alignmentView(): NSView;
-	/* typeEncoding=@"MSExportInspectorViewController", ivar=_bottomExporter, attributes=(retain,nonatomic) */
-	bottomExporter(): MSExportInspectorViewController;
 	/* typeEncoding=@"NSView", ivar=_contentContainerView, attributes=(retain,nonatomic) */
 	contentContainerView(): NSView;
 	/* typeEncoding=@"NSViewController<MSInspectorChildController>", ivar=_currentController, attributes=(retain,nonatomic) */
@@ -19541,12 +21412,6 @@ declare class MSInspectorController extends NSViewController /* implements NSTou
 	description(): NSString;
 	/* typeEncoding=@"MSDocument", ivar=_document, attributes=(assign,nonatomic,weak) */
 	document(): MSDocument;
-	/* typeEncoding=@"NSView", ivar=_exportPanelContainerView, attributes=(retain,nonatomic) */
-	exportPanelContainerView(): NSView;
-	/* typeEncoding=@"NSLayoutConstraint", ivar=_exportPanelHeightConstraint, attributes=(retain,nonatomic) */
-	exportPanelHeightConstraint(): NSLayoutConstraint;
-	/* typeEncoding=c, ivar=_exportPanelHidden, attributes=(assign,nonatomic) */
-	exportPanelHidden(): boolean;
 	/* typeEncoding=@"MSPersistentAssetCollection", ivar=_globalAssets, attributes=(retain,nonatomic) */
 	globalAssets(): MSPersistentAssetCollection;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
@@ -19567,13 +21432,13 @@ declare class MSInspectorController extends NSViewController /* implements NSTou
 	/* typeEncoding=c16@0:8 */
 	alignmentBarHidden(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	alignmentContainerView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	alignmentView(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	awakeFromNib(): void;
 	/* typeEncoding=v32@0:8@16@?24 */
 	beginRenameSharedObject_completionBlock(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	bottomExporter(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	changeColor(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -19592,12 +21457,6 @@ declare class MSInspectorController extends NSViewController /* implements NSTou
 	dealloc(): void;
 	/* typeEncoding=@16@0:8 */
 	document(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	exportPanelContainerView(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	exportPanelHeightConstraint(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	exportPanelHidden(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	findFirstTextFieldInView(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -19617,23 +21476,19 @@ declare class MSInspectorController extends NSViewController /* implements NSTou
 	/* typeEncoding=v16@0:8 */
 	layerPositionPossiblyChanged(): void;
 	/* typeEncoding=v16@0:8 */
-	layerWithSharedStyleDidChange(): void;
-	/* typeEncoding=v16@0:8 */
 	layoutContentView(): void;
-	/* typeEncoding=v16@0:8 */
-	layoutExportPanel(): void;
 	/* typeEncoding=@16@0:8 */
 	makeTouchBar(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	normalInspector(...args: any[]): any;
 	/* typeEncoding=v32@0:8Q16Q24 */
 	openPopoverForStylePart_atIndex(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	prepareForDisplay(): void;
 	/* typeEncoding=v24@0:8@16 */
 	recursivelyDismissAllPresentedViewControllersOfViewController(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	refreshCurrentController(): void;
+	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	reload(): void;
 	/* typeEncoding=v16@0:8 */
@@ -19647,21 +21502,15 @@ declare class MSInspectorController extends NSViewController /* implements NSTou
 	/* typeEncoding=v20@0:8c16 */
 	setAlignmentBarHidden(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setAlignmentView(...args: any[]): any;
+	setAlignmentContainerView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setBottomExporter(...args: any[]): any;
+	setAlignmentView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setContentContainerView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setCurrentController(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDocument(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setExportPanelContainerView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setExportPanelHeightConstraint(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setExportPanelHidden(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setGlobalAssets(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -19686,6 +21535,70 @@ declare class MSInspectorController extends NSViewController /* implements NSTou
 	viewWillDisappear(): void;
 }
 
+declare class MSInspectorFlowHandler extends NSObject /* implements MSFlowMenuBuilderTarget */ {
+	/* typeEncoding=@"<MSInspectorFlowHandlerDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
+	delegate(): MSInspectorFlowHandlerDelegate;
+
+	/* typeEncoding=@24@0:8@16 */
+	static flowConnectionForLayers(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	static shouldShowFullInspectorForFlow(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	static shouldShowFullInspectorForLayers(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	delegate(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	document(...args: any[]): any;
+	/* typeEncoding=v24@0:8@?16 */
+	enumerateLayersAndReload(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	flowBackAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	flowConnection(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	flowTargetAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layers(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	reload(): void;
+	/* typeEncoding=v24@0:8@16 */
+	removeFlowAction(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDelegate(...args: any[]): any;
+}
+
+declare class MSInspectorFooterViewsSection extends NSObject /* implements MSInspectorSection */ {
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+	/* typeEncoding=@"NSArray", ivar=_views, attributes=(retain,nonatomic) */
+	views(): NSArray;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	setViews(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	views(...args: any[]): any;
+}
+
+declare class MSInspectorHighlightBackgroundButtonCell extends MSInspectorButtonCell {
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawBezelWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawImage_withFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawingRectForBounds(...args: any[]): any;
+}
+
 declare class MSInspectorItem extends NSViewController /* implements MSInspectorValueAdaptorDelegate, MSUpDownTextFieldDelegate */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
@@ -19707,11 +21620,15 @@ declare class MSInspectorItem extends NSViewController /* implements MSInspector
 	layers(): MSLayerArray;
 	/* typeEncoding=@"NSArrayController", ivar=_layersController, attributes=(retain,nonatomic) */
 	layersController(): NSArrayController;
+	/* typeEncoding=@"NSMapTable", ivar=_managedControls, attributes=(retain,nonatomic) */
+	managedControls(): NSMapTable;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	static canHandleSomeLayersOfSelection(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -19721,6 +21638,10 @@ declare class MSInspectorItem extends NSViewController /* implements MSInspector
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=v32@0:8@16@24 */
+	cacheUserInterfaceElement_withKey(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	cachedUserInterfaceElementForKey(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	delegate(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -19733,8 +21654,14 @@ declare class MSInspectorItem extends NSViewController /* implements MSInspector
 	layers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	layersController(...args: any[]): any;
+	/* typeEncoding=v56@0:8@16@24@32@40@48 */
+	manageTextField_adaptor_identifier_inlineToolTip_touchBarItems(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	managedControls(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	refreshAction(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	sectionWithIdentifierWillCollapse(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	selectionDidChangeTo(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -19743,10 +21670,17 @@ declare class MSInspectorItem extends NSViewController /* implements MSInspector
 	setLayers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLayersController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setManagedControls(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateDisplayedValues(): void;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
+}
+
+declare class MSInspectorLeftAlignedPopUp extends NSPopUpButton {
+	/* typeEncoding={NSEdgeInsets=dddd}16@0:8 */
+	alignmentRectInsets(...args: any[]): any;
 }
 
 declare class MSInspectorNextResponderFixer extends NSObject {
@@ -19756,6 +21690,8 @@ declare class MSInspectorNextResponderFixer extends NSObject {
 	static compareVerticalPositionOfView_withView(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	static findNextKeyViewFor_inView(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	static findNextKeyViewFor_inView_alreadyProcessed(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	static firstKeyViewForInView(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -19775,9 +21711,215 @@ declare class MSInspectorNumberFormatter extends NSNumberFormatter {
 	static standardIntegerFormatter(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	static standardPercentFormatter(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	static standardPercentFormatterWithoutPercentSign(...args: any[]): any;
 
 	/* typeEncoding=@24@0:8@16 */
 	stringForObjectValue(...args: any[]): any;
+}
+
+declare class MSInspectorOnStatePushButton extends MSInspectorPushButton {
+	/* typeEncoding=@16@0:8 */
+	buttonOnColorName(...args: any[]): any;
+}
+
+declare class MSInspectorPopUpButton extends NSPopUpButton {
+	/* typeEncoding=#16@0:8 */
+	static cellClass(...args: any[]): any;
+
+	/* typeEncoding={NSEdgeInsets=dddd}16@0:8 */
+	alignmentRectInsets(...args: any[]): any;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	intrinsicContentSize(...args: any[]): any;
+}
+
+declare class MSInspectorPopUpButtonCell extends NSPopUpButtonCell {
+	/* typeEncoding=@16@0:8 */
+	attributedTitle(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawBezelWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	imageRectForBounds(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorArrowImage(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	inspectorPopUpArrowRectForBounds(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isBordered(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	titleRectForBounds(...args: any[]): any;
+}
+
+declare class MSInspectorPreviewPopupButtonCell extends MSInspectorPopUpButtonCell {
+	/* typeEncoding=@"NSImage", ivar=_previewImage, attributes=(retain,nonatomic) */
+	previewImage(): NSImage;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawImageWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	imageRectForBounds(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	previewImage(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPreviewImage(...args: any[]): any;
+}
+
+declare class MSInspectorPushButton extends MSInspectorButton {
+	/* typeEncoding=@"NSString", ivar=_buttonOnColorName, attributes=(copy,nonatomic) */
+	buttonOnColorName(): NSString;
+
+	/* typeEncoding=#16@0:8 */
+	static cellClass(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding={NSEdgeInsets=dddd}16@0:8 */
+	alignmentRectInsets(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	buttonOnColorName(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setButtonOnColorName(...args: any[]): any;
+}
+
+declare class MSInspectorPushButtonCell extends NSButtonCell {
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	buttonHighlightedColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	buttonOnColor(): NSColor;
+
+	/* typeEncoding=@16@0:8 */
+	buttonHighlightedColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	buttonOnColor(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawBezelWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawTitle_withFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	imageRectForBounds(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	namedButtonColor(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	titleRectForBounds(...args: any[]): any;
+}
+
+declare class MSInspectorSectionHeaderButtonCell extends MSInspectorToggleButtonCell {
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	imageRectForBounds(...args: any[]): any;
+}
+
+declare class MSInspectorSectionHeaderLabel extends NSTextField {
+}
+
+declare class MSInspectorSectionHeaderLabelCell extends NSTextFieldCell {
+	/* typeEncoding=@16@0:8 */
+	textColor(...args: any[]): any;
+}
+
+declare class MSInspectorSectionHeaderToggleImageButtonCell extends MSInspectorToggleImageButtonCell {
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	imageRectForBounds(...args: any[]): any;
+}
+
+declare class MSInspectorSegmentedCell extends NSSegmentedCell {
+	/* typeEncoding=@"NSImage", ivar=_alternateImage0, attributes=(retain,nonatomic) */
+	alternateImage0(): NSImage;
+	/* typeEncoding=@"NSImage", ivar=_alternateImage1, attributes=(retain,nonatomic) */
+	alternateImage1(): NSImage;
+	/* typeEncoding=@"NSImage", ivar=_alternateImage2, attributes=(retain,nonatomic) */
+	alternateImage2(): NSImage;
+	/* typeEncoding=@"NSImage", ivar=_alternateImage3, attributes=(retain,nonatomic) */
+	alternateImage3(): NSImage;
+	/* typeEncoding=@"NSMutableDictionary", ivar=_alternateImages, attributes=(retain,nonatomic) */
+	alternateImages(): NSMutableDictionary;
+	/* typeEncoding=c, ivar=_drawHighlighted, attributes=(assign,nonatomic) */
+	drawHighlighted(): boolean;
+	/* typeEncoding={CGPoint=dd}, ivar=_highlightLocation, attributes=(assign,nonatomic) */
+	highlightLocation(): CGPoint;
+	/* typeEncoding=@"NSMutableDictionary", ivar=_images, attributes=(retain,nonatomic) */
+	images(): NSMutableDictionary;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	alternateImage0(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	alternateImage1(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	alternateImage2(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	alternateImage3(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	alternateImages(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	drawHighlighted(...args: any[]): any;
+	/* typeEncoding=v64@0:8q16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawSegment_inFrame_withView(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawingRectForBounds(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}16@0:8 */
+	highlightLocation(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	images(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setAlternateImage0(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setAlternateImage1(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setAlternateImage2(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setAlternateImage3(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16Q24 */
+	setAlternateImage_forSegment(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setAlternateImages(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDrawHighlighted(...args: any[]): any;
+	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
+	setHighlightLocation(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setHighlighted(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setImages(...args: any[]): any;
+}
+
+declare class MSInspectorSegmentedControl extends NSSegmentedControl {
+	/* typeEncoding={NSEdgeInsets=dddd}16@0:8 */
+	alignmentRectInsets(...args: any[]): any;
+}
+
+declare class MSInspectorSliderCell extends NSSliderCell {
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}20@0:8c16 */
+	barRectFlipped(...args: any[]): any;
+	/* typeEncoding=v52@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16c48 */
+	drawBarInside_flipped(...args: any[]): any;
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawKnob(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	drawTickMarks(): void;
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawTickmarkKnob(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}20@0:8c16 */
+	knobRectFlipped(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8q16 */
+	rectOfTickMarkAtIndex(...args: any[]): any;
+}
+
+declare class MSInspectorSmallCheckmarkCell extends MSInspectorCheckmarkCell {
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	checkmarkSize(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	mixedImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	onImage(...args: any[]): any;
 }
 
 declare class MSInspectorStackView extends NSView {
@@ -19816,27 +21958,172 @@ declare class MSInspectorStackView extends NSView {
 	subViewFrameDidChange(...args: any[]): any;
 }
 
+declare class MSInspectorStrutButtonCell extends MSInspectorToggleImageButtonCell {
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawImage_withFrame_inView(...args: any[]): any;
+}
+
+declare class MSInspectorStylePopUpCell extends MSInspectorPopUpButtonCell {
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawTitleWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorArrowImage(...args: any[]): any;
+}
+
+declare class MSInspectorTableViewManager extends NSObject /* implements NSTableViewDataSource, NSTableViewDelegate */ {
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"<MSInspectorTableViewManagerDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
+	delegate(): MSInspectorTableViewManagerDelegate;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	delegate(...args: any[]): any;
+	/* typeEncoding=@24@0:8Q16 */
+	itemIndexPathForRowIndex(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	manageTableView(...args: any[]): any;
+	/* typeEncoding=q24@0:8@16 */
+	numberOfRowsInTableView(...args: any[]): any;
+	/* typeEncoding=@24@0:8Q16 */
+	sectionForRow(...args: any[]): any;
+	/* typeEncoding=@32@0:8^Q16Q24 */
+	sectionItemIndex_forRowIndex(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	sections(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDelegate(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24q32 */
+	tableView_didAddRowView_forRow(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24q32 */
+	tableView_didRemoveRowView_forRow(...args: any[]): any;
+	/* typeEncoding=d32@0:8@16q24 */
+	tableView_heightOfRow(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24q32 */
+	tableView_viewForTableColumn_row(...args: any[]): any;
+	/* typeEncoding=c24@0:8Q16 */
+	wantsSeparatorForRow(...args: any[]): any;
+}
+
+declare class MSInspectorTemplatePreviewPopupButtonCell extends MSInspectorPreviewPopupButtonCell {
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawImageWithFrame_inView(...args: any[]): any;
+}
+
+declare class MSInspectorTextField extends NSTextField {
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	intrinsicContentSize(...args: any[]): any;
+}
+
+declare class MSInspectorTextfieldManager extends NSObject /* implements MSInspectorValueAdaptorChangeObserver */ {
+	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_adaptor, attributes=(retain,nonatomic) */
+	adaptor(): MSMathInspectorValueAdaptor;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=c, ivar=_hideSelectionOnEdit, attributes=(assign,nonatomic) */
+	hideSelectionOnEdit(): boolean;
+	/* typeEncoding=@"MSInspectorItem", ivar=_item, attributes=(assign,nonatomic,weak) */
+	item(): MSInspectorItem;
+	/* typeEncoding=c, ivar=_resetPointsOnEdit, attributes=(assign,nonatomic) */
+	resetPointsOnEdit(): boolean;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+	/* typeEncoding=@"MSUpDownTextField", ivar=_textField, attributes=(retain,nonatomic) */
+	textField(): MSUpDownTextField;
+	/* typeEncoding=@"NSArray", ivar=_touchBarItems, attributes=(retain,nonatomic) */
+	touchBarItems(): NSArray;
+
+	/* typeEncoding=@64@0:8@16@24@32@40@48@56 */
+	static managerWithItem_textField_adaptor_identifier_inlineToolTip_touchBarItems(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	adaptor(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	handleValueDidChange(): void;
+	/* typeEncoding=c16@0:8 */
+	hideSelectionOnEdit(...args: any[]): any;
+	/* typeEncoding=@64@0:8@16@24@32@40@48@56 */
+	initWithItem_textField_adaptor_identifier_inlineToolTip_touchBarItems(...args: any[]): any;
+	/* typeEncoding=@72@0:8@16@24@32@40@48@56c64c68 */
+	initWithItem_textField_adaptor_identifier_inlineToolTip_touchBarItems_hideSelectionOnEdit_resetPointsOnEdit(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	inspectorValueAdaptorDidChangeValue(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	item(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	resetPointsOnEdit(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setAdaptor(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setHideSelectionOnEdit(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setItem(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setResetPointsOnEdit(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setTextField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setTouchBarItems(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	textField(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	touchBarItems(...args: any[]): any;
+}
+
+declare class MSInspectorToggleBackgroundButtonCell extends MSInspectorButtonCell {
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawImage_withFrame_inView(...args: any[]): any;
+}
+
+declare class MSInspectorToggleButtonCell extends MSInspectorButtonCell {
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawImage_withFrame_inView(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawInteriorWithFrame_inView(...args: any[]): any;
+}
+
+declare class MSInspectorToggleImageButtonCell extends MSInspectorButtonCell {
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawImage_withFrame_inView(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawInteriorWithFrame_inView(...args: any[]): any;
+}
+
+declare class MSInspectorTweakedTextRectPopUpButtonCell extends MSInspectorPopUpButtonCell {
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawBezelWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	inspectorPopUpArrowRectForBounds(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	titleRectForBounds(...args: any[]): any;
+}
+
 declare class MSInspectorValueAdaptor extends NSObject {
-	/* typeEncoding=@"NSNumberFormatter", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	actualNumberFormatter(): NSNumberFormatter;
-	/* typeEncoding=c, ivar=_adjustIndividually, attributes=(assign,nonatomic) */
-	adjustIndividually(): boolean;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	allowsFloat(): boolean;
-	/* typeEncoding=c, ivar=_clampsValues, attributes=(assign,nonatomic) */
-	clampsValues(): boolean;
+	/* typeEncoding=@"NSHashTable", ivar=_changeObservers, attributes=(retain,nonatomic) */
+	changeObservers(): NSHashTable;
 	/* typeEncoding=@"<MSInspectorValueAdaptorDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
 	delegate(): MSInspectorValueAdaptorDelegate;
 	/* typeEncoding=@"NSArray", ivar=_keyPathsToWatch, attributes=(retain,nonatomic) */
 	keyPathsToWatch(): NSArray;
 	/* typeEncoding=@"NSArrayController", ivar=_modelsController, attributes=(retain,nonatomic) */
 	modelsController(): NSArrayController;
-	/* typeEncoding=@"NSNumberFormatter", ivar=_numberFormatter, attributes=(retain,nonatomic) */
-	numberFormatter(): NSNumberFormatter;
 	/* typeEncoding=c, ivar=_showsDefaultAlerts, attributes=(assign,nonatomic) */
 	showsDefaultAlerts(): boolean;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(retain,nonatomic) */
-	value(): NSString;
+	/* typeEncoding=@, ivar=(null), attributes=(retain,nonatomic) */
+	value(): any;
 	/* typeEncoding=@?, ivar=_valueGetter, attributes=(copy,nonatomic) */
 	valueGetter(): any;
 	/* typeEncoding=@?, ivar=_valueSetter, attributes=(copy,nonatomic) */
@@ -19846,18 +22133,10 @@ declare class MSInspectorValueAdaptor extends NSObject {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	addChangeObserver(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	actualNumberFormatter(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	adjustIndividually(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	allowsFloat(...args: any[]): any;
-	/* typeEncoding=@48@0:8@16@24@32^@40 */
-	checkAndAdjustValues_contexts_withNumberFormatter_error(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	clampsValues(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	currentAdjustOptions(...args: any[]): any;
+	changeObservers(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	dealloc(): void;
 	/* typeEncoding=@16@0:8 */
@@ -19874,24 +22153,20 @@ declare class MSInspectorValueAdaptor extends NSObject {
 	keyPathsToWatch(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	modelsController(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	numberFormatter(...args: any[]): any;
 	/* typeEncoding=v48@0:8@16@24@32^v40 */
 	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	presentError(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setAdjustIndividually(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setClampsValues(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	removeChangeObserver(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setChangeObservers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDelegate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setKeyPathsToWatch(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setModelsController(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setNumberFormatter(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setShowsDefaultAlerts(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -19905,9 +22180,9 @@ declare class MSInspectorValueAdaptor extends NSObject {
 	/* typeEncoding=c16@0:8 */
 	showsDefaultAlerts(...args: any[]): any;
 	/* typeEncoding=@48@0:8@16@24^@32^@40 */
-	transformValueString_forModel_context_error(...args: any[]): any;
+	transformAdaptorValue_forModel_context_error(...args: any[]): any;
 	/* typeEncoding=@40@0:8@16^@24^@32 */
-	transformedValuesFromString_contexts_error(...args: any[]): any;
+	transformedValuesFromAdaptorValue_contexts_error(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	value(...args: any[]): any;
 	/* typeEncoding=@?16@0:8 */
@@ -19918,6 +22193,38 @@ declare class MSInspectorValueAdaptor extends NSObject {
 	valuesDidChange(): void;
 	/* typeEncoding=@16@0:8 */
 	view(...args: any[]): any;
+}
+
+declare class MSInspectorVerticallyCentredPopupButtonCell extends MSInspectorPopUpButtonCell {
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=_textClipRect, attributes=(assign,nonatomic) */
+	textClipRect(): CGRect;
+
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawTitle_withFrame_inView(...args: any[]): any;
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	setTextClipRect(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	textClipRect(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	titleRectForBounds(...args: any[]): any;
+}
+
+declare class MSInstanceOverridesHeaderItem extends MSInspectorItem {
+	/* typeEncoding=@"NSButton", ivar=_trash, attributes=(retain,nonatomic) */
+	trash(): NSButton;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setTrash(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	trash(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateTrashIcon(): void;
+	/* typeEncoding=v16@0:8 */
+	viewWillAppear(): void;
 }
 
 declare class MSIntegerSlider extends NSSlider {
@@ -19986,20 +22293,15 @@ declare class MSInterceptingView extends NSView {
 	mouseDown(...args: any[]): any;
 }
 
-declare class MSInterfaceColorFactory extends NSObject {
-	/* typeEncoding=@24@0:8@16 */
-	static colorNamed(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	static initialize(): void;
-}
-
 declare class MSIntersectAction extends MSBaseBooleanAction {
 	/* typeEncoding=v24@0:8@16 */
 	booleanIntersect(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	doPerformAction(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	booleanOperation(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	historyMomentTitle(...args: any[]): any;
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
@@ -20311,6 +22613,8 @@ declare class MSJoinAction extends MSDocumentAction {
 	join(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	joinPath_withPath(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -20444,21 +22748,25 @@ declare class MSKeyedUnarchiver extends MSBaseUnarchiver {
 	unarchiveHelper(...args: any[]): any;
 }
 
-declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewNode, MSLayerContainment, MSLayer, NSCopying, MSRectDelegate */ {
+declare class MSLayer extends _MSLayer /* implements MSInterfaceImageOwner, MSLayerPreviewability, MSHoverableItem, MSSnappable, MSLayerListLayerExtensions, MSLayerContainment, MSLayerCoordinateSpace, MSLayer, NSCopying, MSRectDelegate */ {
 	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	CGTransformForFrame(): CGAffineTransform;
+	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic) */
+	absoluteCenter(): CGPoint;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
+	absoluteIsFlippedHorizontal(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
+	absoluteIsFlippedVertical(): boolean;
 	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic) */
 	absolutePosition(): CGPoint;
 	/* typeEncoding=@"MSAbsoluteRect", ivar=_absoluteRect, attributes=(retain,nonatomic) */
 	absoluteRect(): MSAbsoluteRect;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic) */
+	absoluteRotation(): number;
 	/* typeEncoding=@"MSImmutableLayerAncestry", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	ancestry(): MSImmutableLayerAncestry;
-	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	anchorsForSnapping(): NSArray;
-	/* typeEncoding=@"NSDictionary", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	badgeMap(): NSDictionary;
-	/* typeEncoding=@"NSMenu", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	badgeMenu(): NSMenu;
+	/* typeEncoding=@"MSLayerBadgeImages", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	badgeImages(): MSLayerBadgeImages;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	badgeType(): number;
 	/* typeEncoding=@"MSLayoutPosition", ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -20467,6 +22775,12 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	bottomAnchor(): MSLayoutPosition;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	bounds(): CGRect;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	bounds(): CGRect;
+	/* typeEncoding=@, ivar=(null), attributes=(assign,nonatomic,readonly,weak) */
+	cacheOwner(): any;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canChangeBooleanOperation(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	canFixBottom(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -20489,8 +22803,12 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	changeObservers(): NSHashTable;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
 	constrainProportions(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	containedByHiddenAncestorNode(): boolean;
 	/* typeEncoding=@"MSLayer", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	coordinateSpace(): MSLayer;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(retain,nonatomic) */
+	dataSupplierIdentifier(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -20508,7 +22826,9 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	expandableInLayerList(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	filterType(): number;
+	filterTypeMask(): number;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasBadgedIcon(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
 	hasFixedBottom(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
@@ -20524,8 +22844,6 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
 	hasFixedWidth(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	hasHighlight(): boolean;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	hasTransforms(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
@@ -20533,12 +22851,22 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	hash(): number;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=@"MSLayoutAnchor", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	heightAnchor(): MSLayoutAnchor;
+	/* typeEncoding=@"MSLayoutDimension", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	heightAnchor(): MSLayoutDimension;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hiddenOnCanvas(): boolean;
+	/* typeEncoding=@"MSLayer", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hoveredLayer(): MSLayer;
 	/* typeEncoding={BCEdgePaddings=dddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	influenceRectEdgePaddingsThatCascadeToContainedLayers(): BCEdgePaddings;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	interfaceImageIdentifier(): NSString;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isActive(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isEditableInLayerList(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isExpanded(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isExpanded(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -20547,16 +22875,20 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	isFlippedHorizontal(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isFlippedVertical(): boolean;
-	/* typeEncoding=c, ivar=_isHighlighted, attributes=(assign,nonatomic) */
-	isHighlighted(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isLayerExportable(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isSelected(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isSharedStyleOutOfSync(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isVisible(): boolean;
+	/* typeEncoding=q, ivar=(null), attributes=(assign,nonatomic) */
+	layerListExpandedType(): number;
 	/* typeEncoding=@"MSLayoutPosition", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	leftAnchor(): MSLayoutPosition;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	lockedOnCanvas(): boolean;
 	/* typeEncoding=@"MSLayoutPosition", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	midXHeightAnchor(): MSLayoutPosition;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -20567,18 +22899,18 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	objectID(): NSString;
 	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic) */
 	origin(): CGPoint;
-	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	overridePoints(): NSArray;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathForBooleanOperations(): MSPath;
+	/* typeEncoding=@"MSArtboardGroup", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	parentArtboard(): MSArtboardGroup;
+	/* typeEncoding=@"<MSLayerCoordinateSpace>", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	parentCoordinateSpace(): MSLayerCoordinateSpace;
 	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	pathInBounds(): MSPath;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	/* typeEncoding=@"MSPath", ivar=(null), attributes=(copy,nonatomic,readonly) */
 	pathInFrame(): MSPath;
 	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	pathInFrameWithTransforms(): MSPath;
-	/* typeEncoding=@"NSDictionary", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	previewImages(): NSDictionary;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	previewShouldIndicateSharedStyle(): boolean;
 	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic) */
 	proportions(): number;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic) */
@@ -20589,8 +22921,8 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	rightAnchor(): MSLayoutPosition;
 	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	rotation(): number;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	selectedBadgeMenuItem(): number;
+	/* typeEncoding=@"<MSLayerCoordinateSpace>", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rulerCoordinateSpace(): MSLayerCoordinateSpace;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	selectedInLayerList(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -20601,8 +22933,6 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	sharedStyle(): MSSharedStyle;
 	/* typeEncoding=@"<MSSnappable>", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	snapItemForDrawing(): MSSnappable;
-	/* typeEncoding=@"MSStyledLayer", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	styledLayer(): MSStyledLayer;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
@@ -20611,12 +22941,20 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	superclass(): any;
 	/* typeEncoding=@"MSLayoutPosition", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	topAnchor(): MSLayoutPosition;
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	transformForConvertingFromParentCoordinateSpace(): CGAffineTransform;
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	transformForConvertingToParentCoordinateSpace(): CGAffineTransform;
 	/* typeEncoding={_CHTransformStruct=dccc}, ivar=(null), attributes=(assign,nonatomic) */
 	transformStruct(): _CHTransformStruct;
+	/* typeEncoding=@"<MSLayerCoordinateSpace>", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	unitCoordinateSpace(): MSLayerCoordinateSpace;
+	/* typeEncoding=@"MSStyle", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	usedStyle(): MSStyle;
 	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	userVisibleRotation(): number;
-	/* typeEncoding=@"MSLayoutAnchor", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	widthAnchor(): MSLayoutAnchor;
+	/* typeEncoding=@"MSLayoutDimension", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	widthAnchor(): MSLayoutDimension;
 
 	/* typeEncoding=v40@0:8@16d24@32 */
 	static alignLayers_toValue_forKey(...args: any[]): any;
@@ -20629,13 +22967,13 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	/* typeEncoding=@16@0:8 */
 	static keyPathsForValuesAffectingBadgeMap(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	static keyPathsForValuesAffectingHasHighlight(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	static keyPathsForValuesAffectingNodeName(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	static keyPathsForValuesAffectingPreviewImages(...args: any[]): any;
+	static keyPathsForValuesAffectingPreviewTemplateImages(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	static keyPathsForValuesAffectingUserVisibleRotation(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	static layerWithPath(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16q24 */
 	static makeLayerNamesUnique_withOptions(...args: any[]): any;
 	/* typeEncoding=d24@0:8d16 */
@@ -20655,20 +22993,30 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	CSSAttributes(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	CSSRotationString(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}16@0:8 */
+	absoluteCenter(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	absoluteInfluenceRect(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	absoluteIsFlippedHorizontal(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	absoluteIsFlippedVertical(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	absolutePosition(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	absoluteRect(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	absoluteRotation(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	addChangeObserver(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	addMastersForInstancesToDocument(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	adjustAfterInsert(): void;
 	/* typeEncoding=q44@0:8{CGPoint=dd}16d32c40 */
 	adjustmentHandleAtPoint_zoomScale_resizing(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16Q24 */
-	alignmentRectInLayer_options(...args: any[]): any;
+	alignmentRectInCoordinateSpace_options(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	allSymbolInstancesInChildren(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -20679,12 +23027,12 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	ancestorsAndSelfTransforms(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	ancestry(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	anchorsForSnapping(...args: any[]): any;
+	/* typeEncoding=@24@0:8Q16 */
+	anchorsForSnappingOnAxes(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
-	applyOverride_toPoint(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	applyOverrides(...args: any[]): any;
+	applyOverride_document(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	applyOverrides_document(...args: any[]): any;
 	/* typeEncoding=v32@0:8d16@24 */
 	applyRotation_explicitRotationCenter(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
@@ -20692,17 +23040,13 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	/* typeEncoding=v32@0:8d16@24 */
 	applyUserVisibleRotation_explicitRotationCenter(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	badgeMap(...args: any[]): any;
+	badgeImages(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	badgeMenu(...args: any[]): any;
+	badgeMenuConfigurator(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	badgeType(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	baselineAnchor(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	bezierPathForHover(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	booleanOperationCanBeReset(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	bottomAnchor(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
@@ -20711,30 +23055,30 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	boundsOfParentLayer(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	boundsRect(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	boundsRectForAlignment(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	cachedOrEmptyImageWithName(...args: any[]): any;
+	cachedImageForKey(...args: any[]): any;
 	/* typeEncoding={CGSize=dd}16@0:8 */
 	calculateMinimumSize(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	calculateProportions(): void;
 	/* typeEncoding=c16@0:8 */
-	canBeContainedByDocument(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeContainedByGroup(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
 	canBeHidden(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeHovered(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	canBeHoveredOnPage(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canBeTransformed(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	canChangeBooleanOperation(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	canContainLayer(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canConvertToOutlines(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
 	canCopyToLayer_beforeLayer(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	canCutSegments(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canFixBottom(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -20747,8 +23091,6 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	canFixTop(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canFixWidth(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	canInsertIntoGroup(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canLockProportions(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
@@ -20761,8 +23103,6 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	canSmartRotate(...args: any[]): any;
 	/* typeEncoding=c32@0:8Q16@24 */
 	canSnap_toLayer(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canSplitPaths(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	candidatesForMasking(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
@@ -20779,6 +23119,8 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	changeValueForKeysInBlock(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	children(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	childrenForLayerList(...args: any[]): any;
 	/* typeEncoding=@20@0:8c16 */
 	childrenIncludingSelf(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -20791,6 +23133,8 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	configureBackgroundOfRequest(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	constrainProportions(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	containedByHiddenAncestorNode(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	containedLayers(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -20805,24 +23149,36 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	containsOneLayer(...args: any[]): any;
 	/* typeEncoding=c48@0:8{CGPoint=dd}16Q32d40 */
 	containsPoint_options_zoomValue(...args: any[]): any;
+	/* typeEncoding=c48@0:8{CGPoint=dd}16Q32d40 */
+	containsPointAsPath_options_zoomValue(...args: any[]): any;
 	/* typeEncoding=c20@0:8c16 */
 	containsSelectedItemIncludingSelf(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	contextualMenuPreviewImage(...args: any[]): any;
+	contextualMenuPreviewTemplateImage(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16@32 */
+	convertPoint_fromCoordinateSpace(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16@32 */
 	convertPoint_fromLayer(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16@32 */
+	convertPoint_toCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16@32 */
 	convertPoint_toLayer(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}32@0:8{CGPoint=dd}16 */
-	convertPointFromRuler(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}32@0:8{CGPoint=dd}16 */
-	convertPointToRuler(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
-	convertRect_toLayer(...args: any[]): any;
+	convertRect_fromCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	convertRect_toCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGVector=dd}40@0:8{CGVector=dd}16@32 */
+	convertVector_fromCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGVector=dd}40@0:8{CGVector=dd}16@32 */
+	convertVector_toCoordinateSpace(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	coordinateSpace(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	cornerRectType(...args: any[]): any;
+	/* typeEncoding=v24@0:8Q16 */
+	cutBezierSegmentAtIndex(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	dataSupplierIdentifier(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	displayName(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -20833,22 +23189,28 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	drawHoverWithZoom_color_cache(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	duplicate(...args: any[]): any;
+	/* typeEncoding=v32@0:8Q16@?24 */
+	enumerateAnchorsForSnappingOnAxes_usingBlock(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	enumerateLayers(...args: any[]): any;
 	/* typeEncoding=c32@0:8Q16@?24 */
 	enumerateLayersWithOptions_block(...args: any[]): any;
 	/* typeEncoding=c40@0:8Q16#24@?32 */
 	enumerateLayersWithOptions_classFilter_block(...args: any[]): any;
+	/* typeEncoding=@24@0:8Q16 */
+	enumeratorWithOptions(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	expandableInLayerList(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
-	filterType(...args: any[]): any;
+	filterTypeMask(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	firstLayer(...args: any[]): any;
 	/* typeEncoding=v32@0:8Q16@?24 */
 	followMaskChainForLayerAtIndex_usingBlock(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	foreignSharedStyles(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	frameForAlignmentRect(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	frameForTransforms(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
@@ -20857,6 +23219,8 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	handleDoubleClick(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
 	handlerClass(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasBadgedIcon(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasClippingMask(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -20878,13 +23242,21 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	/* typeEncoding=c16@0:8 */
 	hasFixedWidth(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	hasHighlight(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
 	hasTransforms(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	heightAnchor(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hiddenOnCanvas(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hitTestAsPath(...args: any[]): any;
+	/* typeEncoding=c48@0:8{CGPoint=dd}16@32d40 */
+	hitTestPoint_inPath_zoomValue(...args: any[]): any;
 	/* typeEncoding=c56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16Q48 */
 	hitTestRect_options(...args: any[]): any;
+	/* typeEncoding=@24@0:8d16 */
+	hitTestablePathInBoundsForZoomValue(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	hoveredLayer(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	hudDescription(...args: any[]): any;
 	/* typeEncoding=Q24@0:8@16 */
@@ -20894,17 +23266,17 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	initWithFrame(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	inspectorViewControllerNames(...args: any[]): any;
+	inspectorSections(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	inspectorViewControllers(...args: any[]): any;
+	interfaceImageIdentifier(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isActive(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isEditableInLayerList(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isExpanded(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isExportableViaDragAndDrop(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isHighlighted(...args: any[]): any;
 	/* typeEncoding=c48@0:8Q16{CGPoint=dd}24d40 */
 	isLayerAtIndex_maskedAtPoint_zoomValue(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -20939,8 +23311,6 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	layerDidResizeFromInspector(...args: any[]): any;
 	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16q48 */
 	layerDidResizeFromRect_corner(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	layerSuitableForInsertingIntoGroup(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	layerWillStartResize(): void;
 	/* typeEncoding=@24@0:8@16 */
@@ -20955,6 +23325,8 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	limitsSelectionToBounds(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	localSharedStyles(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	lockedOnCanvas(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16q24 */
 	makeNameUniqueInRoot_withOptions(...args: any[]): any;
 	/* typeEncoding=v24@0:8q16 */
@@ -20963,6 +23335,8 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	makeOriginIntegral(): void;
 	/* typeEncoding=v16@0:8 */
 	makeRectIntegral(): void;
+	/* typeEncoding=@24@0:8Q16 */
+	maskIconWithState(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	midXHeightAnchor(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}40@0:8d16Q24q32 */
@@ -20987,12 +23361,12 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	objectDidInit(): void;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	origin(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	overridePoints(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	overridePointsWithParent(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	overridePointsWithParent_overrides_document(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	parentArtboard(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	parentCoordinateSpace(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	parentForInsertingLayers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -21002,17 +23376,25 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	/* typeEncoding=@16@0:8 */
 	parentRootForAbsoluteRect(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	parentShape(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	parentSymbol(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	pathForBooleanOperations(...args: any[]): any;
+	pathForHoverInBounds(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	pathInBounds(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	pathInFrame(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	pathInFrameWithTransforms(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
-	/* typeEncoding=@16@0:8 */
-	previewImages(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	possiblyFixRectangleBorderBeforeCut(): void;
+	/* typeEncoding=@24@0:8Q16 */
+	previewIconWithState(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	previewShouldIndicateSharedStyle(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	proportions(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
@@ -21049,6 +23431,10 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	rightAnchor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	rootForNameUniquing(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	rotationDirection(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	rulerCoordinateSpace(...args: any[]): any;
 	/* typeEncoding=v24@0:8c16c20 */
 	select_byExpandingSelection(...args: any[]): any;
 	/* typeEncoding=v28@0:8c16c20c24 */
@@ -21059,26 +23445,36 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	select_byExtendingSelection_showSelection(...args: any[]): any;
 	/* typeEncoding=@24@0:8Q16 */
 	selectableLayersWithOptions(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	selectedBadgeMenuItem(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	selectedInLayerList(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	selectedPreviewImage(...args: any[]): any;
+	selectedPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=Q24@0:8d16 */
 	selectionCornerMaskWithZoomValue(...args: any[]): any;
-	/* typeEncoding=@56@0:8{CGPoint=dd}16Q32d40^Q48 */
-	selectionHitTest_options_zoomValue_resultIndex(...args: any[]): any;
+	/* typeEncoding=@48@0:8{CGPoint=dd}16Q32d40 */
+	selectionHitTest_options_zoomValue(...args: any[]): any;
+	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
+	setAbsoluteCenter(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setAbsoluteIsFlippedHorizontal(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setAbsoluteIsFlippedVertical(...args: any[]): any;
 	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
 	setAbsolutePosition(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setAbsoluteRect(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setAbsoluteRotation(...args: any[]): any;
+	/* typeEncoding=v24@0:8q16 */
+	setBooleanOperation(...args: any[]): any;
 	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
 	setCenter(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setChangeObservers(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setConstrainProportions(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDataSupplierIdentifier(...args: any[]): any;
 	/* typeEncoding=v28@0:8c16Q20 */
 	setFixed_forEdge(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
@@ -21097,8 +23493,6 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	setHasFixedWidth(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	setHeightRespectingProportions(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setIsHighlighted(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setIsVisible(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -21129,12 +23523,16 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	sharedMaster(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	sharedStyle(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	sharedStylesReferencedInDocument(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldDrawSelection(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldDrawSelectionStroke(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldFlattenAfterRotate(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	shouldHitTestOnFill(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldRefreshOverlayForFlows(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
@@ -21142,7 +23540,7 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	/* typeEncoding=@16@0:8 */
 	snapItemForDrawing(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	styledLayer(...args: any[]): any;
+	styleForBooleanOperation(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	supportsInnerOuterBorders(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -21156,11 +23554,13 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	/* typeEncoding=@16@0:8 */
 	transform(...args: any[]): any;
 	/* typeEncoding={CGAffineTransform=dddddd}24@0:8@16 */
-	transformForConvertingFromLayer(...args: any[]): any;
+	transformForConvertingFromCoordinateSpace(...args: any[]): any;
 	/* typeEncoding={CGAffineTransform=dddddd}16@0:8 */
-	transformForConvertingFromParent(...args: any[]): any;
+	transformForConvertingFromParentCoordinateSpace(...args: any[]): any;
 	/* typeEncoding={CGAffineTransform=dddddd}24@0:8@16 */
-	transformForConvertingToLayer(...args: any[]): any;
+	transformForConvertingToCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGAffineTransform=dddddd}16@0:8 */
+	transformForConvertingToParentCoordinateSpace(...args: any[]): any;
 	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	transformForRect(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
@@ -21168,9 +23568,15 @@ declare class MSLayer extends _MSLayer /* implements MSSnappable, BCOutlineViewN
 	/* typeEncoding={_CHTransformStruct=dccc}16@0:8 */
 	transformStruct(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	unselectedPreviewImage(...args: any[]): any;
+	unitCoordinateSpace(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	unselectedPreviewTemplateImage(...args: any[]): any;
+	/* typeEncoding=v24@0:8@?16 */
+	updateLayerListPreviewIfRequiredWithCompletionHandler(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateSharedStyleToMatchSelf(): void;
+	/* typeEncoding=@16@0:8 */
+	usedStyle(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	userVisibleRotation(...args: any[]): any;
 	/* typeEncoding=c32@0:8^@16^@24 */
@@ -21203,12 +23609,6 @@ declare class MSLayerArray extends NSObject /* implements MSLayerContainment, NS
 	_cxx_destruct(): void;
 	/* typeEncoding=@24@0:8Q16 */
 	addStylePartsOfType(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeContainedByDocument(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeContainedByGroup(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	canContainLayer(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	commonArtboard(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -21243,6 +23643,8 @@ declare class MSLayerArray extends NSObject /* implements MSLayerContainment, NS
 	filter(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	firstLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	flowConnection(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	hash(...args: any[]): any;
 	/* typeEncoding=Q24@0:8@16 */
@@ -21261,8 +23663,6 @@ declare class MSLayerArray extends NSObject /* implements MSLayerContainment, NS
 	layerToInsertAfter(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	layers(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	layersSuitableForInsertingIntoGroup(...args: any[]): any;
 	/* typeEncoding=@24@0:8@?16 */
 	map(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -21277,6 +23677,50 @@ declare class MSLayerArray extends NSObject /* implements MSLayerContainment, NS
 	uniqueParents(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	updateFlowDestinationsWithMapping(...args: any[]): any;
+}
+
+declare class MSLayerBadgeImages extends NSObject {
+	/* typeEncoding=@"NSImage", ivar=_pressedHideImage, attributes=(assign,nonatomic,readonly) */
+	pressedHideImage(): NSImage;
+	/* typeEncoding=@"NSImage", ivar=_pressedLockImage, attributes=(assign,nonatomic,readonly) */
+	pressedLockImage(): NSImage;
+	/* typeEncoding=@"NSImage", ivar=_selectedActiveHideImage, attributes=(assign,nonatomic,readonly) */
+	selectedActiveHideImage(): NSImage;
+	/* typeEncoding=@"NSImage", ivar=_selectedActiveLockImage, attributes=(assign,nonatomic,readonly) */
+	selectedActiveLockImage(): NSImage;
+	/* typeEncoding=@"NSImage", ivar=_selectedInactiveHideImage, attributes=(assign,nonatomic,readonly) */
+	selectedInactiveHideImage(): NSImage;
+	/* typeEncoding=@"NSImage", ivar=_selectedInactiveLockImage, attributes=(assign,nonatomic,readonly) */
+	selectedInactiveLockImage(): NSImage;
+	/* typeEncoding=@"NSImage", ivar=_unselectedHideImage, attributes=(assign,nonatomic,readonly) */
+	unselectedHideImage(): NSImage;
+	/* typeEncoding=@"NSImage", ivar=_unselectedLockImage, attributes=(assign,nonatomic,readonly) */
+	unselectedLockImage(): NSImage;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@24@0:8c16c20 */
+	hideImageWhenNodeIsSelected_active(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithTheme(...args: any[]): any;
+	/* typeEncoding=@24@0:8c16c20 */
+	lockImageWhenNodeIsSelected_active(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	pressedHideImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	pressedLockImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedActiveHideImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedActiveLockImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedInactiveHideImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedInactiveLockImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	unselectedHideImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	unselectedLockImage(...args: any[]): any;
 }
 
 declare class MSLayerBuilder extends NSObject {
@@ -21308,6 +23752,17 @@ declare class MSLayerCachedImage extends NSObject {
 	setRect(...args: any[]): any;
 }
 
+declare class MSLayerEnumerator extends NSEnumerator {
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@32@0:8@16Q24 */
+	initWithLayer_options(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	nextObject(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	skipDescendants(): void;
+}
+
 declare class MSLayerFlattener extends NSObject {
 	/* typeEncoding=@64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48@56 */
 	bitmapFromRect_fromLayers_withImage(...args: any[]): any;
@@ -21329,9 +23784,11 @@ declare class MSLayerFlattener extends NSObject {
 	trimmedRectFromLayers_immutablePage_immutableDoc_includeArtboardBackground(...args: any[]): any;
 }
 
-declare class MSLayerFocusActions extends MSTouchBarGroupAction {
+declare class MSLayerFocusActions extends MSActionGroup {
 	/* typeEncoding=@16@0:8 */
 	actionNames(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	supportsState(...args: any[]): any;
 }
@@ -21351,12 +23808,16 @@ declare class MSLayerGroup extends _MSLayerGroup /* implements MSLayerGroup */ {
 	/* typeEncoding=c16@0:8 */
 	static groupBoundsShouldBeIntegral(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	static groupFromLayers(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16@24 */
-	static moveLayers_intoGroup(...args: any[]): any;
+	static groupWithLayer(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	static groupWithLayers(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	static keyPathsForValuesAffectingPreviewTemplateImages(...args: any[]): any;
 
 	/* typeEncoding=@16@0:8 */
 	CSSAttributeString(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	applyTransformsToLayers(...args: any[]): any;
 	/* typeEncoding={CGSize=dd}16@0:8 */
 	calculateMinimumSize(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -21385,8 +23846,6 @@ declare class MSLayerGroup extends _MSLayerGroup /* implements MSLayerGroup */ {
 	disableAutomaticScalingCounter(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	disableAutomaticScalingInBlock(...args: any[]): any;
-	/* typeEncoding=v40@0:8d16@24@32 */
-	drawHoverWithZoom_color_cache(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	enumerateLayers(...args: any[]): any;
 	/* typeEncoding=v40@0:8Q16@?24@?32 */
@@ -21406,7 +23865,7 @@ declare class MSLayerGroup extends _MSLayerGroup /* implements MSLayerGroup */ {
 	/* typeEncoding=v32@0:8@16@24 */
 	insertLayer_afterLayerOrAtEnd(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	inspectorViewControllerNames(...args: any[]): any;
+	inspectorSections(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isAutomaticScalingEnabled(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -21427,14 +23886,14 @@ declare class MSLayerGroup extends _MSLayerGroup /* implements MSLayerGroup */ {
 	moveInLayerTreeInBlock(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	moveLayersToParent(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	moveTransformsToChildren(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	multiplyBy(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	objectDidInit(): void;
 	/* typeEncoding=@16@0:8 */
 	parentGroupRecursive(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	pathForHoverInBounds(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=q16@0:8 */
@@ -21452,21 +23911,19 @@ declare class MSLayerGroup extends _MSLayerGroup /* implements MSLayerGroup */ {
 	/* typeEncoding=c24@0:8q16 */
 	resizeToFitChildrenWithOption(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	selectedPreviewImage(...args: any[]): any;
+	selectedPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	setDisableAutomaticScalingCounter(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setIsHighlighted(...args: any[]): any;
 	/* typeEncoding=v24@0:8q16 */
 	setPreCalculatedHasSelectedLayer(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setStyle(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	setUpNewGroup(): void;
 	/* typeEncoding=c16@0:8 */
 	shouldRefreshOverlayForFlows(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldStripShadowsAndInnerShadow(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	styleForBooleanOperation(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	translateChildrenFrameToLayers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -21476,14 +23933,20 @@ declare class MSLayerGroup extends _MSLayerGroup /* implements MSLayerGroup */ {
 	/* typeEncoding=v16@0:8 */
 	ungroupSingleChildDescendentGroups(): void;
 	/* typeEncoding=@16@0:8 */
-	unselectedPreviewImage(...args: any[]): any;
+	unselectedPreviewTemplateImage(...args: any[]): any;
 }
 
-declare class MSLayerGroupSection extends MSLayerSection {
-	/* typeEncoding=@16@0:8 */
-	groups(...args: any[]): any;
+declare class MSLayerGroupItem extends MSInspectorItem {
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+
 	/* typeEncoding=@16@0:8 */
 	views(...args: any[]): any;
+}
+
+declare class MSLayerGroupSection extends MSSingleItemInspectorSection {
+	/* typeEncoding=#16@0:8 */
+	static itemClass(...args: any[]): any;
 }
 
 declare class MSLayerHeightFocusAction extends MSDocumentAction {
@@ -21496,6 +23959,71 @@ declare class MSLayerHeightFocusAction extends MSDocumentAction {
 declare class MSLayerInserting extends NSObject {
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGSize=dd}16@32@40 */
 	static rectForCenteringLayerWithSize_inView_selection(...args: any[]): any;
+}
+
+declare class MSLayerListBadgeConfigurator extends NSObject /* implements MSInterfaceImageOwner, NSMenuDelegate, BCOutlineViewPopupConfigurator */ {
+	/* typeEncoding=@, ivar=(null), attributes=(assign,nonatomic,readonly,weak) */
+	cacheOwner(): any;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	interfaceImageIdentifier(): NSString;
+	/* typeEncoding=c, ivar=_isOpen, attributes=(assign,nonatomic) */
+	isOpen(): boolean;
+	/* typeEncoding=@"MSLayer", ivar=_layer, attributes=(assign,nonatomic,weak) */
+	layer(): MSLayer;
+	/* typeEncoding=@"NSPopUpButton", ivar=_popup, attributes=(assign,nonatomic,weak) */
+	popup(): NSPopUpButton;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
+	/* typeEncoding=@24@0:8@16 */
+	static configuratorWithLayer(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	static onBooleanOperation(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@24@0:8q16 */
+	badgeMenuItemWithTag(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
+	/* typeEncoding=@32@0:8q16Q24 */
+	imageForOperation_withState(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	interfaceImageIdentifier(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isOpen(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layer(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	menu_willHighlightItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	menuDidClose(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	menuNeedsUpdate(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	onBooleanOperation(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	popup(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setIsOpen(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLayer(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPopup(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	templateMenu(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	updateImagesOnMenu_withSelectedItem(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16Q24 */
+	updatePopup_forState(...args: any[]): any;
 }
 
 declare class MSLayerListController extends MSSidebarListController /* implements BCOutlineViewDataSource, BCOutlineViewDelegate */ {
@@ -21523,23 +24051,37 @@ declare class MSLayerListController extends MSSidebarListController /* implement
 	/* typeEncoding=v32@0:8@16@24 */
 	dataController_hoverNodeDidChangeTo(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
+	dataController_isAncestorOfNodeHiddenOnCanvas(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
 	dataController_isNodeExpandable(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
 	dataController_isNodeExpanded(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
+	dataController_isNodeHiddenOnCanvas(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
+	dataController_isNodeHighlighted(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
+	dataController_isNodeLockedOnCanvas(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
 	dataController_isNodeSelected(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	dataController_menuItemsForSelectedObjects(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
+	dataController_nodeHasSharedStyle(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
-	dataController_refreshPreviewsOnNodes(...args: any[]): any;
+	dataController_refreshPreviewsOnNode(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16@24Q32 */
 	dataController_updateNode_expandedState(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	itemForNode(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	layerForNode(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	layersRequiringPreviewRefresh(...args: any[]): any;
 	/* typeEncoding=q24@0:8Q16 */
 	mapExpandedStateToLayerListStatus(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	multipleNodesSelectedForDataController(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	numberOfLayersRequiringPreviewRefresh(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
@@ -21716,10 +24258,6 @@ declare class MSLayerPaster extends NSObject {
 	insertPasteboardDataOnPage_withHint_viewPort(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	insertedSymbolMasters(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16@24 */
-	layersFromLayersWithPathsWrapped_forParent(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	layersFromPasteboardSuitedForParent(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	objectIDMap(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
@@ -21730,12 +24268,10 @@ declare class MSLayerPaster extends NSObject {
 	pasteSymbol_fromInstanceReferenceToDocument(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	pasteboardLayers(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	pathsExtractedFromLayers(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	prepareToInsertLayers_intoDocument(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
-	propertiesAreEqualBetweenSymbol_andSymbol(...args: any[]): any;
+	propertiesAreEqualBetweenPasteboardSymbol_andSymbol(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
 	rectByMaintainingOriginalPositionInRoot(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -21744,6 +24280,8 @@ declare class MSLayerPaster extends NSObject {
 	rightmostArtboardOnPage_intersectingRect(...args: any[]): any;
 	/* typeEncoding=v40@0:8{CGPoint=dd}16@32 */
 	setCombinedOrigin_forLayers(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	symbolMatching_inDocument(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}40@0:8@16@24^c32 */
 	targetRectForPasteboardDataInViewPort_root_canMoveViewport(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -21785,30 +24323,6 @@ declare class MSLayerRendererCG extends NSObject /* implements MSLayerRenderer *
 	shouldDrawLayer_context(...args: any[]): any;
 }
 
-declare class MSLayerSection extends NSViewController /* implements MSInspectorSection */ {
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=@"NSArray", ivar=_layers, attributes=(copy,nonatomic) */
-	layers(): NSArray;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=@24@0:8@16 */
-	initWithLayer(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	layers(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setLayers(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	views(...args: any[]): any;
-}
-
 declare class MSLayerSelectionDrawing extends NSObject {
 	/* typeEncoding=v32@0:8@16d24 */
 	static drawSelectionForLayer_zoomValue(...args: any[]): any;
@@ -21834,6 +24348,11 @@ declare class MSLayerSelector extends NSObject {
 	shouldUseArtboardSelectionModeForRect_page_extendSelection_options(...args: any[]): any;
 	/* typeEncoding=v68@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48c56Q60 */
 	updateSelectionWithRect_page_extendSelection_options(...args: any[]): any;
+}
+
+declare class MSLayerStyleOverrideInspectorItem extends MSStyleOverrideInspectorItem {
+	/* typeEncoding=@16@0:8 */
+	menuObjectProvider(...args: any[]): any;
 }
 
 declare class MSLayerWidthFocusAction extends MSDocumentAction {
@@ -21888,6 +24407,9 @@ declare class MSLayoutAnchor extends NSObject {
 	item(...args: any[]): any;
 }
 
+declare class MSLayoutDimension extends MSLayoutAnchor {
+}
+
 declare class MSLayoutGrid extends _MSLayoutGrid {
 	/* typeEncoding=v16@0:8 */
 	determineAppropriateColumnWidth(): void;
@@ -21911,39 +24433,11 @@ declare class MSLayoutGrid extends _MSLayoutGrid {
 	verticalGuidesForRulerData_inRect(...args: any[]): any;
 }
 
-declare class MSLayoutGridRendererCG extends MSGridRendererCG {
-	/* typeEncoding=^{CGColor=}, ivar=_rowColumnColor, attributes=(assign,nonatomic) */
-	rowColumnColor(): any;
-	/* typeEncoding=Q, ivar=_style, attributes=(assign,nonatomic) */
-	style(): number;
-
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
-	/* typeEncoding=@32@0:8^{CGColor=}16^{CGColor=}24 */
-	initWithLightColor_darkColor(...args: any[]): any;
-	/* typeEncoding=@40@0:8^{CGColor=}16^{CGColor=}24Q32 */
-	initWithLightColor_darkColor_style(...args: any[]): any;
-	/* typeEncoding=v80@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGPoint=dd}56@72 */
-	renderGrid_in_origin_context(...args: any[]): any;
-	/* typeEncoding=v48@0:8@16d24@?32^{CGContext=}40 */
-	renderHorizontal_height_operation_context(...args: any[]): any;
-	/* typeEncoding=v48@0:8@16d24@?32^{CGContext=}40 */
-	renderVertical_height_operation_context(...args: any[]): any;
-	/* typeEncoding=^{CGColor=}16@0:8 */
-	rowColumnColor(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGColor=}16 */
-	setRowColumnColor(...args: any[]): any;
-	/* typeEncoding=v24@0:8Q16 */
-	setStyle(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	style(...args: any[]): any;
-}
-
 declare class MSLayoutPosition extends MSLayoutAnchor {
 	/* typeEncoding=Q, ivar=_snapTag, attributes=(assign,nonatomic) */
 	snapTag(): number;
 
-	/* typeEncoding=@48@0:8{_BCLine=dQ}16@32Q40 */
+	/* typeEncoding=@48@0:8{?=dQ}16@32Q40 */
 	static positionAnchorWithLine_inLayer_attribute(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}56@0:8{CGPoint=dd}16@32Q40d48 */
 	static snapPoint_toLines_onAxis_margin(...args: any[]): any;
@@ -21969,17 +24463,17 @@ declare class MSLayoutPosition extends MSLayoutAnchor {
 declare class MSLayoutRelationship extends NSObject {
 	/* typeEncoding=@"MSLayoutAnchor", ivar=_firstAnchor, attributes=(assign,nonatomic,readonly) */
 	firstAnchor(): MSLayoutAnchor;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	/* typeEncoding=Q, ivar=_firstAttribute, attributes=(assign,nonatomic,readonly) */
 	firstAttribute(): number;
-	/* typeEncoding=@, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	/* typeEncoding=@, ivar=_firstItem, attributes=(assign,nonatomic,readonly) */
 	firstItem(): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	rect(): CGRect;
 	/* typeEncoding=@"MSLayoutAnchor", ivar=_secondAnchor, attributes=(assign,nonatomic,readonly) */
 	secondAnchor(): MSLayoutAnchor;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	/* typeEncoding=Q, ivar=_secondAttribute, attributes=(assign,nonatomic,readonly) */
 	secondAttribute(): number;
-	/* typeEncoding=@, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	/* typeEncoding=@, ivar=_secondItem, attributes=(assign,nonatomic,readonly) */
 	secondItem(): any;
 
 	/* typeEncoding=@32@0:8@16Q24 */
@@ -22001,6 +24495,10 @@ declare class MSLayoutRelationship extends NSObject {
 	hash(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	initWithAnchor_anchor(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16Q24@32 */
+	initWithFirstItem_attribute_secondAnchor(...args: any[]): any;
+	/* typeEncoding=@48@0:8@16Q24@32Q40 */
+	initWithItem_attribute_item_attribute(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	isEqual(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
@@ -22016,6 +24514,8 @@ declare class MSLayoutRelationship extends NSObject {
 declare class MSLayoutSettingsAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	layoutSettings(...args: any[]): any;
 }
@@ -22374,15 +24874,7 @@ declare class MSLicenseSheetAction extends MSDocumentAction /* implements MSWind
 	validate(...args: any[]): any;
 }
 
-declare class MSLineEndpointInspectorItem extends MSTwoTextFieldInspectorItem /* implements MSInspectorValueAdaptorDelegate */ {
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
+declare class MSLineEndpointInspectorItem extends MSTwoTextFieldInspectorItem {
 	/* typeEncoding=@"MSCoordinateInspectorValueAdaptor", ivar=_xAdaptor, attributes=(retain,nonatomic) */
 	xAdaptor(): MSCoordinateInspectorValueAdaptor;
 	/* typeEncoding=@"MSCoordinateInspectorValueAdaptor", ivar=_yAdaptor, attributes=(retain,nonatomic) */
@@ -22392,8 +24884,6 @@ declare class MSLineEndpointInspectorItem extends MSTwoTextFieldInspectorItem /*
 	_cxx_destruct(): void;
 	/* typeEncoding=@56@0:8@16@24@32@40@48 */
 	initWithTitle_field1Label_field2Label_xPath_yPath(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	inspectorValueAdaptorAllowFloat(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setXAdaptor(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -22416,20 +24906,60 @@ declare class MSLineEndpointInspectorItem2 extends MSLineEndpointInspectorItem {
 	init(...args: any[]): any;
 }
 
-declare class MSLineTransformInspectorItem extends MSBaseTransformInspectorItem {
+declare class MSLineTransformInspectorItem extends MSInspectorItem /* implements MSInspectorMathValueAdaptorDelegate */ {
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=@"NSButton", ivar=_flipHorizontalButton, attributes=(retain,nonatomic) */
+	flipHorizontalButton(): NSButton;
+	/* typeEncoding=@"NSButton", ivar=_flipVerticalButton, attributes=(retain,nonatomic) */
+	flipVerticalButton(): NSButton;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
 	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_lengthAdapter, attributes=(retain,nonatomic) */
 	lengthAdapter(): MSMathInspectorValueAdaptor;
+	/* typeEncoding=@"MSInlineUpDownTextField", ivar=_lengthField, attributes=(retain,nonatomic) */
+	lengthField(): MSInlineUpDownTextField;
+	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_rotationAdaptor, attributes=(retain,nonatomic) */
+	rotationAdaptor(): MSMathInspectorValueAdaptor;
+	/* typeEncoding=@"MSInlineUpDownTextField", ivar=_rotationField, attributes=(retain,nonatomic) */
+	rotationField(): MSInlineUpDownTextField;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
+	flipHorizontalButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	flipVerticalButton(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
-	initWithTitle_textFieldLabel(...args: any[]): any;
+	initWithNibName_bundle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	lengthAdapter(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	lengthField(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	rotationAdaptor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	rotationField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFlipHorizontalButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFlipVerticalButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLengthAdapter(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLengthField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setRotationAdaptor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setRotationField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	updateButtonState(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
 }
@@ -22519,10 +25049,8 @@ declare class MSLoadedImageData extends NSObject {
 declare class MSLocalDataSupplier extends MSDataSupplier {
 	/* typeEncoding=@"NSArray", ivar=_data, attributes=(retain,nonatomic) */
 	data(): NSArray;
-	/* typeEncoding=@"NSURL", ivar=_dataSource, attributes=(assign,nonatomic,readonly) */
+	/* typeEncoding=@"NSURL", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	dataSource(): NSURL;
-	/* typeEncoding=@"<MSLocalDataSupplierDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
-	delegate(): MSLocalDataSupplierDelegate;
 	/* typeEncoding=@"MSFolderMonitor", ivar=_folderMonitor, attributes=(retain,nonatomic) */
 	folderMonitor(): MSFolderMonitor;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -22537,26 +25065,26 @@ declare class MSLocalDataSupplier extends MSDataSupplier {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=@32@0:8Q16@24 */
-	arrayWithCount_fromArray(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	data(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	dataSource(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	delegate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	encodeWithCoder(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	folderMonitor(...args: any[]): any;
-	/* typeEncoding=v40@0:8Q16@24@?32 */
-	generateDataWithCount_dataSupplierManager_dataApplier(...args: any[]): any;
+	/* typeEncoding=v32@0:8Q16@?24 */
+	generateDataForCount_dataApplier(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@?32 */
+	generateDataForLayers_dataSupplierManager_dataApplier(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@?32 */
+	generateDataForOverrides_dataSupplierManager_dataApplier(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	imageFileURLForDataItem(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	initWithCoder(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initWithFileSystemURL(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	initWithFileSystemURL_isBuiltin(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isBuiltin(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -22570,9 +25098,11 @@ declare class MSLocalDataSupplier extends MSDataSupplier {
 	/* typeEncoding=v24@0:8@16 */
 	setData(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setDelegate(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setFolderMonitor(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16Q24 */
+	shuffleArray_truncateToLength(...args: any[]): any;
+	/* typeEncoding=@32@0:8Q16@24 */
+	shuffledArrayWithCount_fromArray(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	valid(...args: any[]): any;
 }
@@ -22591,21 +25121,33 @@ declare class MSLockLayerAction extends MSDocumentAction {
 }
 
 declare class MSLogAction extends MSAction /* implements MSPluginLogAction */ {
-	/* typeEncoding=@"NSDictionary", ivar=_value, attributes=(retain,nonatomic) */
-	value(): NSDictionary;
+	/* typeEncoding=@"NSMutableArray", ivar=_logs, attributes=(retain,nonatomic) */
+	logs(): NSMutableArray;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
+	URLForLogFile(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	clearLog(): void;
+	/* typeEncoding=@16@0:8 */
 	contextForActionObservers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	init(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	log(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setValue(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	value(...args: any[]): any;
+	logString(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	logs(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLogs(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	writeToLogFile(...args: any[]): any;
 }
 
 declare class MSMagnifierAction extends MSDocumentAction {
@@ -22721,9 +25263,11 @@ declare class MSMakeGridAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	makeGrid(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -22817,6 +25361,8 @@ declare class MSMakeGridSheet extends CHSheetController {
 }
 
 declare class MSMakeLowercaseAction extends MSTextTransformAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	makeLowercase(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -22824,6 +25370,8 @@ declare class MSMakeLowercaseAction extends MSTextTransformAction {
 }
 
 declare class MSMakeUppercaseAction extends MSTextTransformAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	makeUppercase(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -22899,8 +25447,6 @@ declare class MSManageForeignSymbolsView extends NSViewController /* implements 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=v16@0:8 */
-	awakeFromNib(): void;
-	/* typeEncoding=v16@0:8 */
 	buildSymbolList(): void;
 	/* typeEncoding=c16@0:8 */
 	cogEnabled(...args: any[]): any;
@@ -22938,6 +25484,8 @@ declare class MSManageForeignSymbolsView extends NSViewController /* implements 
 	validateMenuItem(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	viewDidAppear(): void;
+	/* typeEncoding=v16@0:8 */
+	viewDidLoad(): void;
 }
 
 declare class MSManageLayerStyleView extends MSManageSharedObjectBaseViewController {
@@ -23015,6 +25563,8 @@ declare class MSManageSharedObjectBaseViewController extends NSViewController /*
 	tableView_objectValueForTableColumn_row(...args: any[]): any;
 	/* typeEncoding=v48@0:8@16@24@32q40 */
 	tableView_setObjectValue_forTableColumn_row(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	viewDidAppear(): void;
 }
 
 declare class MSManageSharedObjectSheet extends CHSheetController {
@@ -23152,8 +25702,8 @@ declare class MSMaskWithShapeAction extends MSDocumentAction {
 	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	maskWithShape(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -23161,13 +25711,39 @@ declare class MSMaskWithShapeAction extends MSDocumentAction {
 }
 
 declare class MSMathInspectorValueAdaptor extends MSInspectorValueAdaptor /* implements MSIncrementDecrementDelegate */ {
+	/* typeEncoding=c, ivar=_adjustIndividually, attributes=(assign,nonatomic) */
+	adjustIndividually(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	allowsFloat(): boolean;
+	/* typeEncoding=c, ivar=_clampsValues, attributes=(assign,nonatomic) */
+	clampsValues(): boolean;
+	/* typeEncoding=@"<MSInspectorMathValueAdaptorDelegate>", ivar=(null), attributes=(assign,dynamic,nonatomic,weak) */
+	delegate(): MSInspectorMathValueAdaptorDelegate;
+	/* typeEncoding=@"NSNumberFormatter", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	effectiveNumberFormatter(): NSNumberFormatter;
 	/* typeEncoding=c, ivar=_forcePrefixMath, attributes=(assign,nonatomic) */
 	forcePrefixMath(): boolean;
+	/* typeEncoding=c, ivar=_isIncrementing, attributes=(assign,nonatomic) */
+	isIncrementing(): boolean;
+	/* typeEncoding=@"NSNumberFormatter", ivar=_numberFormatter, attributes=(retain,nonatomic) */
+	numberFormatter(): NSNumberFormatter;
 	/* typeEncoding=Q, ivar=_operation, attributes=(assign,nonatomic) */
 	operation(): number;
 
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=c16@0:8 */
+	adjustIndividually(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	allowsFloat(...args: any[]): any;
+	/* typeEncoding=@48@0:8@16@24@32^@40 */
+	checkAndAdjustValues_contexts_withNumberFormatter_error(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	clampsValues(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	currentAdjustOptions(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	effectiveNumberFormatter(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	errorWithUnparsableString(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -23176,18 +25752,40 @@ declare class MSMathInspectorValueAdaptor extends MSInspectorValueAdaptor /* imp
 	forceRelativeMathForBlock(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	incrementBy(...args: any[]): any;
+	/* typeEncoding=@48@0:8@16@?24@?32@40 */
+	initWithModelsController_floatValueGetter_floatValueSetter_modelKeyPathsToWatch(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	initWithModelsController_modelKeyPath_valueTransformer(...args: any[]): any;
+	/* typeEncoding=@48@0:8@16@?24@?32@40 */
+	initWithModelsController_valueGetter_valueSetter_modelKeyPathsToWatch(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isIncrementing(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	numberFormatter(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	operation(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
+	setAdjustIndividually(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setClampsValues(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
 	setForcePrefixMath(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setIsIncrementing(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setNumberFormatter(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	setOperation(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setValue(...args: any[]): any;
 	/* typeEncoding=@48@0:8@16@24^@32^@40 */
-	transformValueString_forModel_context_error(...args: any[]): any;
+	transformAdaptorValue_forModel_context_error(...args: any[]): any;
 	/* typeEncoding=@40@0:8@16^@24^@32 */
-	transformedValuesFromString_contexts_error(...args: any[]): any;
+	transformedValuesFromAdaptorValue_contexts_error(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16^@24 */
 	trimValueString_getMathPrefix(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	value(...args: any[]): any;
 	/* typeEncoding=@48@0:8@16@24@32^@40 */
 	valueFromPrefixStrippedString_forModel_originalString_error(...args: any[]): any;
 }
@@ -23270,6 +25868,24 @@ declare class MSMeasurementDrawing extends MSSmartGuideDrawing {
 	textAttributesForZoomScale(...args: any[]): any;
 }
 
+declare class MSMemoryBuffer extends NSObject {
+	/* typeEncoding=^v, ivar=_bytes, attributes=(assign,nonatomic,readonly) */
+	bytes(): any;
+	/* typeEncoding=Q, ivar=_size, attributes=(assign,nonatomic,readonly) */
+	size(): number;
+
+	/* typeEncoding=^v16@0:8 */
+	bytes(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=@24@0:8Q16 */
+	initWithSize(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	size(...args: any[]): any;
+	/* typeEncoding=v24@0:8Q16 */
+	zerofill(...args: any[]): any;
+}
+
 declare class MSMenuBuilder extends NSObject {
 	/* typeEncoding=:, ivar=_action, attributes=(assign,nonatomic) */
 	action(): any;
@@ -23293,6 +25909,174 @@ declare class MSMenuBuilder extends NSObject {
 	setTarget(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	target(...args: any[]): any;
+}
+
+declare class MSMenuItemHelper extends NSObject {
+	/* typeEncoding=c, ivar=_isSeparator, attributes=(assign,nonatomic) */
+	isSeparator(): boolean;
+	/* typeEncoding=q, ivar=_tag, attributes=(assign,nonatomic) */
+	tag(): number;
+	/* typeEncoding=@"NSString", ivar=_title, attributes=(retain,nonatomic) */
+	title(): NSString;
+
+	/* typeEncoding=@24@0:8@16 */
+	static itemWithTitle(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16q24 */
+	static itemWithTitle_tag(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	static separator(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=c16@0:8 */
+	isSeparator(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	menuItem(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setIsSeparator(...args: any[]): any;
+	/* typeEncoding=v24@0:8q16 */
+	setTag(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setTitle(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	tag(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	title(...args: any[]): any;
+}
+
+declare class MSMetalRenderer extends NSObject /* implements MSGPURenderer */ {
+	/* typeEncoding=@"<MTLCommandBuffer>", ivar=_currentCommands, attributes=(retain,nonatomic) */
+	currentCommands(): MTLCommandBuffer;
+	/* typeEncoding=@"<CAMetalDrawable>", ivar=_currentDrawable, attributes=(retain,nonatomic) */
+	currentDrawable(): CAMetalDrawable;
+	/* typeEncoding=@"<MTLRenderPipelineState>", ivar=_drawColorQuadState, attributes=(retain,nonatomic) */
+	drawColorQuadState(): MTLRenderPipelineState;
+	/* typeEncoding=@?, ivar=_drawCompletionHandler, attributes=(copy,nonatomic) */
+	drawCompletionHandler(): any;
+	/* typeEncoding=@"<MTLRenderPipelineState>", ivar=_drawTextureNearestState, attributes=(retain,nonatomic) */
+	drawTextureNearestState(): MTLRenderPipelineState;
+	/* typeEncoding=@"<MTLRenderPipelineState>", ivar=_drawTextureState, attributes=(retain,nonatomic) */
+	drawTextureState(): MTLRenderPipelineState;
+	/* typeEncoding=c, ivar=_hasScissor, attributes=(assign,nonatomic) */
+	hasScissor(): boolean;
+	/* typeEncoding=@"<MTLCommandQueue>", ivar=_metalCommandQueue, attributes=(retain,nonatomic) */
+	metalCommandQueue(): MTLCommandQueue;
+	/* typeEncoding=@"CAMetalLayer", ivar=_metalLayer, attributes=(retain,nonatomic) */
+	metalLayer(): CAMetalLayer;
+	/* typeEncoding=@"<MTLLibrary>", ivar=_metalLibrary, attributes=(retain,nonatomic) */
+	metalLibrary(): MTLLibrary;
+	/* typeEncoding={?=QQQQ}, ivar=_scissorRect, attributes=(assign,nonatomic) */
+	scissorRect(): any;
+	/* typeEncoding={_opaque_pthread_mutex_t=q[56c]}, ivar=_textureLock, attributes=(assign,nonatomic,readonly) */
+	textureLock(): _opaque_pthread_mutex_t;
+
+	/* typeEncoding=@24@0:8@?16 */
+	static createWithCompletionHandler(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v32@0:8@16@24 */
+	_setupScissorRect_forTargetTexture(...args: any[]): any;
+	/* typeEncoding=c56@0:8@16{CGSize=dd}24d40^{CGColorSpace=}48 */
+	beginFrameWithClearColor_drawableSize_backingScaleFactor_colorSpace(...args: any[]): any;
+	/* typeEncoding=@32@0:8Q16Q24 */
+	createTextureWithWidth_height(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	currentCommands(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	currentDrawable(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=v64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16{?=ffff}48 */
+	drawColorQuadInRect_color(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	drawColorQuadState(...args: any[]): any;
+	/* typeEncoding=v24@0:8r^{?=^{?}II}16 */
+	drawColorTriangleMesh(...args: any[]): any;
+	/* typeEncoding=@?16@0:8 */
+	drawCompletionHandler(...args: any[]): any;
+	/* typeEncoding=v60@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16c48@52 */
+	drawShadowForArtboardInRect_selected_shadow(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	drawTextureNearestState(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	drawTextureState(...args: any[]): any;
+	/* typeEncoding=v60@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48c56 */
+	drawTexturedQuadInDestinationRect_sourceTexture_bilinearFilter(...args: any[]): any;
+	/* typeEncoding=v92@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48{CGRect={CGPoint=dd}{CGSize=dd}}56c88 */
+	drawTexturedQuadInDestinationRect_sourceTexture_sourceRect_bilinearFilter(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	endFrame(): void;
+	/* typeEncoding=c16@0:8 */
+	hasScissor(...args: any[]): any;
+	/* typeEncoding=@32@0:8@?16@24 */
+	initWithCompletionHandler_device(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layer(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	lockTextures(): void;
+	/* typeEncoding=@16@0:8 */
+	metalCommandQueue(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	metalLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	metalLibrary(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	requiresSynchronousRendering(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	resetScissorRect(): void;
+	/* typeEncoding=v24@0:8@?16 */
+	scheduleDrawBlock(...args: any[]): any;
+	/* typeEncoding={?=QQQQ}16@0:8 */
+	scissorRect(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCurrentCommands(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCurrentDrawable(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDrawColorQuadState(...args: any[]): any;
+	/* typeEncoding=v24@0:8@?16 */
+	setDrawCompletionHandler(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDrawTextureNearestState(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDrawTextureState(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setHasScissor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setMetalCommandQueue(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setMetalLayer(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setMetalLibrary(...args: any[]): any;
+	/* typeEncoding=v48@0:8{?=QQQQ}16 */
+	setScissorRect(...args: any[]): any;
+	/* typeEncoding=v32@0:8i16i20i24i28 */
+	setScissorRectWithX_y_width_height(...args: any[]): any;
+	/* typeEncoding={_opaque_pthread_mutex_t=q[56c]}16@0:8 */
+	textureLock(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	unlockTextures(): void;
+}
+
+declare class MSMetalTexture extends NSObject /* implements MSGPUTexture */ {
+	/* typeEncoding=@"<MTLTexture>", ivar=_metalTexture, attributes=(retain,nonatomic) */
+	metalTexture(): MTLTexture;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=Q16@0:8 */
+	height(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithMetalTexture(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	metalTexture(...args: any[]): any;
+	/* typeEncoding=v48@0:8{?=iiii}16Q32r^v40 */
+	replaceRegion_bytesPerRow_pixels(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setMetalTexture(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	width(...args: any[]): any;
 }
 
 declare class MSMiniToolbarTextFieldCell extends NSTextFieldCell {
@@ -23460,8 +26244,6 @@ declare class MSMirrorPopUpButtonCell extends NSPopUpButtonCell {
 
 	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
 	drawImageWithFrame_inView(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
-	drawTitle_withFrame_inView(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldDrawImage(...args: any[]): any;
 }
@@ -23495,8 +26277,8 @@ declare class MSMirrorWindowController extends NSWindowController /* implements 
 	backButton(): NSButton;
 	/* typeEncoding=@"NSToolbarItem", ivar=_backToolbarItem, attributes=(assign,nonatomic,weak) */
 	backToolbarItem(): NSToolbarItem;
-	/* typeEncoding=@"MSBackgroundColorView", ivar=_backgroundView, attributes=(assign,nonatomic,weak) */
-	backgroundView(): MSBackgroundColorView;
+	/* typeEncoding=@"MSColorView", ivar=_backgroundView, attributes=(assign,nonatomic,weak) */
+	backgroundView(): MSColorView;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	currentArtboardID(): NSString;
 	/* typeEncoding=@"MSImmutableDocumentData", ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -23627,8 +26409,6 @@ declare class MSMirrorWindowController extends NSWindowController /* implements 
 	setStartpointButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setWebView(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	shouldInterceptResponderActions(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showContextualMenuWithEvent(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -23683,6 +26463,33 @@ declare class MSMirrorWindowController extends NSWindowController /* implements 
 	windowWillClose(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24 */
 	windowWillUseStandardFrame_defaultFrame(...args: any[]): any;
+}
+
+declare class MSMissingFontItem extends MSInspectorItem {
+	/* typeEncoding=@"NSButton", ivar=_missingFontFamilyButton, attributes=(retain,nonatomic) */
+	missingFontFamilyButton(): NSButton;
+	/* typeEncoding=@"NSTextField", ivar=_missingFontsLabel, attributes=(retain,nonatomic) */
+	missingFontsLabel(): NSTextField;
+
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=c16@0:8 */
+	hasMoreThanOneMissingFont(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	missingFontFamilyButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	missingFontTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	missingFontsLabel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setMissingFontFamilyButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setMissingFontsLabel(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
 }
 
 declare class MSMissingFontsDialog extends NSWindowController /* implements NSTableViewDataSource */ {
@@ -23991,14 +26798,12 @@ declare class MSModelObjectCommon extends NSObject /* implements MSModelObjectCo
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
-	/* typeEncoding=v16@0:8 */
-	static clearInstanceCount(): void;
 	/* typeEncoding=@16@0:8 */
 	static defaultName(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	static generateObjectID(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	static printInstanceCount(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	static traits(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -24029,7 +26834,7 @@ declare class MSModelObjectCommon extends NSObject /* implements MSModelObjectCo
 	/* typeEncoding=@24@0:8@?16 */
 	initWithBlock(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	initWithNoSetup(...args: any[]): any;
+	initWithMinimalSetup(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	initializeUnsetObjectPropertiesWithDefaults(): void;
 	/* typeEncoding=c24@0:8@16 */
@@ -24046,10 +26851,6 @@ declare class MSModelObjectCommon extends NSObject /* implements MSModelObjectCo
 	primitiveObjectID(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	propertiesAreEqual(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	recordAllocation(): void;
-	/* typeEncoding=v16@0:8 */
-	recordDeallocation(): void;
 	/* typeEncoding=@16@0:8 */
 	recursivelyGenerateObjectID(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -24058,28 +26859,12 @@ declare class MSModelObjectCommon extends NSObject /* implements MSModelObjectCo
 	setObjectID(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	simpleTreeStructure(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	traits(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	treeAsDictionary(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	treeStructure(...args: any[]): any;
-}
-
-declare class MSModelObjectInstanceInfo extends NSObject {
-	/* typeEncoding=Q, ivar=_current, attributes=(assign,nonatomic) */
-	current(): number;
-	/* typeEncoding=Q, ivar=_total, attributes=(assign,nonatomic) */
-	total(): number;
-
-	/* typeEncoding=Q16@0:8 */
-	current(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	description(...args: any[]): any;
-	/* typeEncoding=v24@0:8Q16 */
-	setCurrent(...args: any[]): any;
-	/* typeEncoding=v24@0:8Q16 */
-	setTotal(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	total(...args: any[]): any;
 }
 
 declare class MSModelResources extends BCSingleton {
@@ -24254,19 +27039,28 @@ declare class MSMouseTracker extends NSObject {
 	view(...args: any[]): any;
 }
 
+declare class MSMoveActionGroup extends MSActionGroup {
+	/* typeEncoding=@16@0:8 */
+	actionNames(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+}
+
 declare class MSMoveBackwardAction extends MSBaseMoveBackwardAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	moveBackward(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	tooltipMoveDescription(...args: any[]): any;
+	tooltip(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	validateToolbarItem(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	validateToolbarItem(): void;
 }
 
 declare class MSMoveForwardAction extends MSBaseMoveForwardAction {
@@ -24274,14 +27068,16 @@ declare class MSMoveForwardAction extends MSBaseMoveForwardAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	moveForward(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	tooltipMoveDescription(...args: any[]): any;
+	tooltip(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	validateToolbarItem(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	validateToolbarItem(): void;
 }
 
 declare class MSMoveToBackAction extends MSBaseMoveBackwardAction {
@@ -24289,10 +27085,12 @@ declare class MSMoveToBackAction extends MSBaseMoveBackwardAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	moveToBack(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	tooltipMoveDescription(...args: any[]): any;
+	tooltip(...args: any[]): any;
 }
 
 declare class MSMoveToFrontAction extends MSBaseMoveForwardAction {
@@ -24300,10 +27098,12 @@ declare class MSMoveToFrontAction extends MSBaseMoveForwardAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	moveToFront(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	tooltipMoveDescription(...args: any[]): any;
+	tooltip(...args: any[]): any;
 }
 
 declare class MSMoveToTopAction extends MSDocumentAction {
@@ -24322,17 +27122,17 @@ declare class MSMoveUpHierarchyAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	moveUpHierarchy(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
 
-declare class MSMultipleBorderInspectorViewController extends MSMultipleStylePartInspectorViewController /* implements BCPopoverDelegate */ {
+declare class MSMultipleBorderInspectorViewController extends MSMultipleColorStylePartInspectorViewController /* implements BCPopoverDelegate */ {
 	/* typeEncoding=@"NSButton", ivar=_addStylePartButton, attributes=(retain,nonatomic) */
 	addStylePartButton(): NSButton;
-	/* typeEncoding=@"NSButton", ivar=_advancedOptionsButton, attributes=(retain,nonatomic) */
-	advancedOptionsButton(): NSButton;
 	/* typeEncoding=@"MSBorderOptionsInspectorViewController", ivar=_borderOptionsController, attributes=(assign,nonatomic,readonly) */
 	borderOptionsController(): MSBorderOptionsInspectorViewController;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -24341,8 +27141,6 @@ declare class MSMultipleBorderInspectorViewController extends MSMultipleStylePar
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=@"BCPopover", ivar=_popover, attributes=(retain,nonatomic) */
-	popover(): BCPopover;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 	/* typeEncoding=@"MSTextLabelForUpDownField", ivar=_thicknessLabel, attributes=(retain,nonatomic) */
@@ -24352,32 +27150,22 @@ declare class MSMultipleBorderInspectorViewController extends MSMultipleStylePar
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
 	addStylePartButton(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	advancedOptionsButton(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	advancedOptionsApplicable(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	borderOptionsController(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	dealloc(): void;
-	/* typeEncoding=v24@0:8@16 */
-	dismissViewController(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	init(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16Q24 */
 	inspectorForStyleParts_atIndex(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	loadViewControllers(): void;
-	/* typeEncoding=@16@0:8 */
-	popover(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	prepare(): void;
 	/* typeEncoding=v24@0:8@16 */
 	setAddStylePartButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setAdvancedOptionsButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setLayers(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setPopover(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setThicknessLabel(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -24396,7 +27184,19 @@ declare class MSMultipleBorderInspectorViewController extends MSMultipleStylePar
 	views(...args: any[]): any;
 }
 
-declare class MSMultipleFillInspectorViewController extends MSMultipleStylePartInspectorViewController /* implements BCPopoverDelegate */ {
+declare class MSMultipleColorStylePartInspectorViewController extends MSMultipleStylePartInspectorViewController {
+	/* typeEncoding=v16@0:8 */
+	closeAnyColorPopover(): void;
+	/* typeEncoding=v24@0:8Q16 */
+	openPopoverAtIndex(...args: any[]): any;
+}
+
+declare class MSMultipleColorsPlaceholder extends NSObject {
+	/* typeEncoding=@16@0:8 */
+	static placeholderColor(...args: any[]): any;
+}
+
+declare class MSMultipleFillInspectorViewController extends MSMultipleColorStylePartInspectorViewController /* implements MSInspectorSection, BCPopoverDelegate */ {
 	/* typeEncoding=@"NSButton", ivar=_addStylePartButton, attributes=(retain,nonatomic) */
 	addStylePartButton(): NSButton;
 	/* typeEncoding=@"NSButton", ivar=_advancedOptionsButton, attributes=(retain,nonatomic) */
@@ -24448,6 +27248,8 @@ declare class MSMultipleFillInspectorViewController extends MSMultipleStylePartI
 	showAdvancedOptionsAction(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	stylePartType(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	traitsForAvancedOptions(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	viewWillDisappear(): void;
 	/* typeEncoding=@16@0:8 */
@@ -24465,11 +27267,13 @@ declare class MSMultipleInnerShadowInspectorViewController extends MSMultipleSha
 	stylePartType(...args: any[]): any;
 }
 
-declare class MSMultipleShadowInspectorViewController extends MSMultipleStylePartInspectorViewController {
+declare class MSMultipleShadowInspectorViewController extends MSMultipleColorStylePartInspectorViewController {
 	/* typeEncoding=@"NSButton", ivar=_addStylePartButton, attributes=(retain,nonatomic) */
 	addStylePartButton(): NSButton;
 	/* typeEncoding=@"MSTextLabelForUpDownField", ivar=_blurRadiusField, attributes=(retain,nonatomic) */
 	blurRadiusField(): MSTextLabelForUpDownField;
+	/* typeEncoding=@"NSLayoutConstraint", ivar=_buttonsTrailingConstraint, attributes=(retain,nonatomic) */
+	buttonsTrailingConstraint(): NSLayoutConstraint;
 	/* typeEncoding=@"MSTextLabelForUpDownField", ivar=_spreadField, attributes=(retain,nonatomic) */
 	spreadField(): MSTextLabelForUpDownField;
 	/* typeEncoding=@"MSTextLabelForUpDownField", ivar=_xOffsetField, attributes=(retain,nonatomic) */
@@ -24483,6 +27287,8 @@ declare class MSMultipleShadowInspectorViewController extends MSMultipleStylePar
 	addStylePartButton(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	blurRadiusField(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	buttonsTrailingConstraint(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16Q24 */
 	inspectorForStyleParts_atIndex(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -24493,6 +27299,8 @@ declare class MSMultipleShadowInspectorViewController extends MSMultipleStylePar
 	setAddStylePartButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setBlurRadiusField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setButtonsTrailingConstraint(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setSpreadField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -24505,8 +27313,6 @@ declare class MSMultipleShadowInspectorViewController extends MSMultipleStylePar
 	spreadField(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	stylePartType(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	validateSpecialButtons(): void;
 	/* typeEncoding=@16@0:8 */
 	views(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -24524,6 +27330,8 @@ declare class MSMultipleStylePartInspectorViewController extends NSViewControlle
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
+	/* typeEncoding=@"NSButton", ivar=_headerButton, attributes=(retain,nonatomic) */
+	headerButton(): NSButton;
 	/* typeEncoding=@"NSArray", ivar=_layers, attributes=(copy,nonatomic) */
 	layers(): NSArray;
 	/* typeEncoding=@"NSTextField", ivar=_nameField, attributes=(retain,nonatomic) */
@@ -24545,6 +27353,8 @@ declare class MSMultipleStylePartInspectorViewController extends NSViewControlle
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	addNewStylePart(): void;
 	/* typeEncoding=v24@0:8@16 */
 	addStylePartAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -24552,7 +27362,7 @@ declare class MSMultipleStylePartInspectorViewController extends NSViewControlle
 	/* typeEncoding=v16@0:8 */
 	awakeFromNib(): void;
 	/* typeEncoding=v16@0:8 */
-	closeAnyColorPopover(): void;
+	closePopovers(): void;
 	/* typeEncoding=v40@0:8@16Q24Q32 */
 	containerBackground_dragDidReorderChildAtIndex_toIndex(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -24570,6 +27380,8 @@ declare class MSMultipleStylePartInspectorViewController extends NSViewControlle
 	/* typeEncoding=c16@0:8 */
 	hasPopOver(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	headerButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	init(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16Q24 */
 	inspectorForStyleParts_atIndex(...args: any[]): any;
@@ -24585,8 +27397,6 @@ declare class MSMultipleStylePartInspectorViewController extends NSViewControlle
 	nameFieldShadow(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	nameView(...args: any[]): any;
-	/* typeEncoding=v24@0:8Q16 */
-	openPopoverAtIndex(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	prepare(): void;
 	/* typeEncoding=v16@0:8 */
@@ -24603,6 +27413,8 @@ declare class MSMultipleStylePartInspectorViewController extends NSViewControlle
 	rotatedStyleParts(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDelegate(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeaderButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLayers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -24634,6 +27446,8 @@ declare class MSMultipleStylePartInspectorViewController extends NSViewControlle
 	/* typeEncoding=Q24@0:8@16 */
 	tagFromSender(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+	/* typeEncoding=v16@0:8 */
 	validateAdvancedOptionsButton(): void;
 	/* typeEncoding=v16@0:8 */
 	validateRemoveDisabledStylesButton(): void;
@@ -24641,6 +27455,72 @@ declare class MSMultipleStylePartInspectorViewController extends NSViewControlle
 	validateSpecialButtons(): void;
 	/* typeEncoding=@32@0:8q16Q24 */
 	viewForStyleAtOffset_index(...args: any[]): any;
+}
+
+declare class MSMultipleStylePartsPlaceholder extends MSStylePart {
+}
+
+declare class MSNamedInterfaceImageOwner extends NSObject /* implements MSInterfaceImageOwner */ {
+	/* typeEncoding=@, ivar=(null), attributes=(assign,nonatomic,readonly,weak) */
+	cacheOwner(): any;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	interfaceImageIdentifier(): NSString;
+	/* typeEncoding=@"NSImage", ivar=_namedImage, attributes=(retain,nonatomic) */
+	namedImage(): NSImage;
+	/* typeEncoding=@, ivar=_owner, attributes=(assign,nonatomic,weak) */
+	owner(): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithImage_cacheOwner(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	interfaceImageIdentifier(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	namedImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	owner(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setNamedImage(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOwner(...args: any[]): any;
+}
+
+declare class MSNestedInspectorSection extends MSBaseInspectorSection /* implements MSInspectorSectionDelegate */ {
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
+	/* typeEncoding=@24@0:8@16 */
+	documentForInspectorSection(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	isSectionWithIdentifierCollapsed(...args: any[]): any;
+	/* typeEncoding=c28@0:8@16c24 */
+	isSectionWithIdentifierCollapsed_default(...args: any[]): any;
+	/* typeEncoding=v36@0:8c16@20@28 */
+	persistentlyCollapse_sectionWithIdentifier_reloadTarget(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	reloadItemsForSection(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	sectionDidResize(...args: any[]): any;
+}
+
+declare class MSNestedScrollView extends NSScrollView {
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=v24@0:8@16 */
+	scrollWheel(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDocumentView(): void;
+	/* typeEncoding=v16@0:8 */
+	viewDidMoveToWindow(): void;
 }
 
 declare class MSNetworkHelper extends NSObject {
@@ -24670,6 +27550,8 @@ declare class MSNewPageAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	menuItemsForMenu(...args: any[]): any;
 	/* typeEncoding=:16@0:8 */
@@ -24773,6 +27655,8 @@ declare class MSNewsletterSignup extends NSObject {
 declare class MSNextPageAction extends MSChangePageAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	nextPage(...args: any[]): any;
 }
@@ -24986,14 +27870,14 @@ declare class MSNormalEventHandler extends MSNormalBaseEventHandler /* implement
 	dragGestureRecognizer(): MSDragToMoveOrCopyGestureRecognizer;
 	/* typeEncoding={CGVector=dd}, ivar=_duplicateOffset, attributes=(assign,nonatomic) */
 	duplicateOffset(): CGVector;
-	/* typeEncoding=@"NSString", ivar=_duplicatedObjectID, attributes=(retain,nonatomic) */
-	duplicatedObjectID(): NSString;
+	/* typeEncoding=@"NSSet", ivar=_duplicatedObjectIDs, attributes=(copy,nonatomic) */
+	duplicatedObjectIDs(): NSSet;
 	/* typeEncoding=@"MSNormalEventData", ivar=_eventData, attributes=(retain,nonatomic) */
 	eventData(): MSNormalEventData;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=@"MSLayer", ivar=_highlightedLayer, attributes=(retain,nonatomic) */
-	highlightedLayer(): MSLayer;
+	/* typeEncoding=@"NSObject<MSHoverableItem>", ivar=_highlightedItem, attributes=(retain,nonatomic) */
+	highlightedItem(): NSObject;
 	/* typeEncoding=@"MSLayerMeasurementRenderer", ivar=_measurementRenderer, attributes=(assign,nonatomic,readonly) */
 	measurementRenderer(): MSLayerMeasurementRenderer;
 	/* typeEncoding=@"MSNormalEventContextualMenuBuilder", ivar=_menuBuilder, attributes=(retain,nonatomic) */
@@ -25023,8 +27907,6 @@ declare class MSNormalEventHandler extends MSNormalBaseEventHandler /* implement
 	artboardsInReadingOrder(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	beginDuplicateDragging(): void;
-	/* typeEncoding=c24@0:8@16 */
-	canHighlightLayer(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	cancelOperation(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -25054,7 +27936,7 @@ declare class MSNormalEventHandler extends MSNormalBaseEventHandler /* implement
 	/* typeEncoding=v16@0:8 */
 	drawMultipleSelection(): void;
 	/* typeEncoding=v24@0:8@16 */
-	drawPathsInShapeGroup(...args: any[]): any;
+	drawOutlineForShapeChild(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	drawSelectedShapePathLayers(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -25062,7 +27944,7 @@ declare class MSNormalEventHandler extends MSNormalBaseEventHandler /* implement
 	/* typeEncoding={CGVector=dd}16@0:8 */
 	duplicateOffset(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	duplicatedObjectID(...args: any[]): any;
+	duplicatedObjectIDs(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	endDuplicateDragging(...args: any[]): any;
 	/* typeEncoding=v56@0:8{CGPoint=dd}16Q32Q40@48 */
@@ -25088,7 +27970,7 @@ declare class MSNormalEventHandler extends MSNormalBaseEventHandler /* implement
 	/* typeEncoding=v16@0:8 */
 	handlerWillLoseFocus(): void;
 	/* typeEncoding=@16@0:8 */
-	highlightedLayer(...args: any[]): any;
+	highlightedItem(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	ignoreNextKeyDownEventUntilModifiersChange(): void;
 	/* typeEncoding=@24@0:8@16 */
@@ -25121,8 +28003,6 @@ declare class MSNormalEventHandler extends MSNormalBaseEventHandler /* implement
 	layerDoubleClicked(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	layerDragged(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	layerSnapper(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	layersAreNotIntersectingTheirArtboards(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -25174,11 +28054,11 @@ declare class MSNormalEventHandler extends MSNormalBaseEventHandler /* implement
 	/* typeEncoding=v32@0:8{CGVector=dd}16 */
 	setDuplicateOffset(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setDuplicatedObjectID(...args: any[]): any;
+	setDuplicatedObjectIDs(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setEventData(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setHighlightedLayer(...args: any[]): any;
+	setHighlightedItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setMenuBuilder(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -25195,27 +28075,37 @@ declare class MSNormalEventHandler extends MSNormalBaseEventHandler /* implement
 	zoomValueWillChangeTo(...args: any[]): any;
 }
 
-declare class MSNormalInspector extends NSViewController /* implements MSInspectorSectionDelegate, MSStylePartInspectorDelegate, MSInspectorChildController */ {
+declare class MSNormalInspector extends NSViewController /* implements MSStackViewScrollViewDelegate, MSStylePartInspectorDelegate, MSInspectorChildController */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
 	/* typeEncoding=@"MSEventHandler", ivar=_eventHandler, attributes=(retain,nonatomic) */
 	eventHandler(): MSEventHandler;
+	/* typeEncoding=@"NSStackView", ivar=_footerView, attributes=(retain,nonatomic) */
+	footerView(): NSStackView;
+	/* typeEncoding=c, ivar=_hasScheduledNextResponderFixing, attributes=(assign,nonatomic) */
+	hasScheduledNextResponderFixing(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
 	/* typeEncoding=@"MSLayerArray", ivar=_layers, attributes=(copy,nonatomic) */
 	layers(): MSLayerArray;
 	/* typeEncoding=@"NSScrollView", ivar=_scrollView, attributes=(retain,nonatomic) */
 	scrollView(): NSScrollView;
+	/* typeEncoding=@"NSLayoutConstraint", ivar=_scrollViewBottomConstraint, attributes=(retain,nonatomic) */
+	scrollViewBottomConstraint(): NSLayoutConstraint;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	sharedStyleInspectorVisible(): boolean;
 	/* typeEncoding=@"MSInspectorStackView", ivar=_stackView, attributes=(retain,nonatomic) */
 	stackView(): MSInspectorStackView;
 	/* typeEncoding=@"MSStandardInspectorViewControllers", ivar=_standardInspectors, attributes=(assign,nonatomic,readonly) */
 	standardInspectors(): MSStandardInspectorViewControllers;
+	/* typeEncoding=@"NSMutableDictionary", ivar=_storedPreferences, attributes=(assign,nonatomic,readonly) */
+	storedPreferences(): NSMutableDictionary;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
+	/* typeEncoding=c, ivar=_throttleNextResponderFixing, attributes=(assign,nonatomic) */
+	throttleNextResponderFixing(): boolean;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -25235,26 +28125,48 @@ declare class MSNormalInspector extends NSViewController /* implements MSInspect
 	documentForInspectorSection(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	eventHandler(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	fixNextResponder(): void;
+	/* typeEncoding=@16@0:8 */
+	footerView(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasScheduledNextResponderFixing(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	init(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	isSectionWithIdentifierCollapsed(...args: any[]): any;
+	/* typeEncoding=c28@0:8@16c24 */
+	isSectionWithIdentifierCollapsed_default(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	layerPositionPossiblyChanged(): void;
-	/* typeEncoding=v16@0:8 */
-	layerWithSharedStyleDidChange(): void;
 	/* typeEncoding=@16@0:8 */
 	layers(...args: any[]): any;
 	/* typeEncoding=v32@0:8Q16Q24 */
 	openPopoverForStylePart_atIndex(...args: any[]): any;
+	/* typeEncoding=v36@0:8c16@20@28 */
+	persistentlyCollapse_sectionWithIdentifier_reloadTarget(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	prepareForDisplay(): void;
 	/* typeEncoding=v16@0:8 */
 	prepareViewControllers(): void;
 	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	reloadInspectorStack(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	reloadItemsForSection(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	reloadSharedObjectsSection(): void;
+	/* typeEncoding=v24@0:8@16 */
+	reloadWithFooterViewControllers(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	scheduleNextResponderFixing(): void;
 	/* typeEncoding=@16@0:8 */
 	scrollView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	scrollViewBottomConstraint(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	sectionCollapseStateKeyWithIdentifer(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	sectionDidResize(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -25262,23 +28174,37 @@ declare class MSNormalInspector extends NSViewController /* implements MSInspect
 	/* typeEncoding=v24@0:8@16 */
 	setEventHandler(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setFooterView(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setHasScheduledNextResponderFixing(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setLayers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setScrollView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setScrollViewBottomConstraint(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setStackView(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setThrottleNextResponderFixing(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	sharedStyleInspectorVisible(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showBorderOptionsAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showFillOptionsAction(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	stackScrollViewDidScroll(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	stackView(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	standardInspectors(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	views(...args: any[]): any;
+	storedPreferences(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	throttleNextResponderFixing(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
 }
 
 declare class MSNormalMultipleResizeEventHandler extends MSNormalBaseEventHandler {
@@ -25380,96 +28306,64 @@ declare class MSNormalMultipleResizeEventHandler extends MSNormalBaseEventHandle
 declare class MSNormalResizeEventHandler extends MSNormalBaseEventHandler {
 	/* typeEncoding=@"MSNormalEventData", ivar=_eventData, attributes=(retain,nonatomic) */
 	eventData(): MSNormalEventData;
-	/* typeEncoding=c, ivar=_layerRectWasIntegral, attributes=(assign,nonatomic) */
-	layerRectWasIntegral(): boolean;
-	/* typeEncoding=@"MSSnapper", ivar=_layerSnapper, attributes=(retain,nonatomic) */
-	layerSnapper(): MSSnapper;
-	/* typeEncoding=@"MSSavedLayerFrames", ivar=_originalFrames, attributes=(retain,nonatomic) */
-	originalFrames(): MSSavedLayerFrames;
-	/* typeEncoding=@"MSResizeGestureRecognizer", ivar=_resizeGestureRecognizer, attributes=(assign,nonatomic,readonly) */
-	resizeGestureRecognizer(): MSResizeGestureRecognizer;
-	/* typeEncoding=q, ivar=_resizingCorner, attributes=(assign,nonatomic) */
-	resizingCorner(): number;
-	/* typeEncoding=@"MSLayer", ivar=_resizingLayer, attributes=(retain,nonatomic) */
-	resizingLayer(): MSLayer;
+	/* typeEncoding=@"MSDragGestureRecognizer", ivar=_resizeGestureRecognizer, attributes=(assign,nonatomic,readonly) */
+	resizeGestureRecognizer(): MSDragGestureRecognizer;
+	/* typeEncoding=@"_TtC17SketchControllers15MSResizeSession", ivar=_resizeSession, attributes=(assign,nonatomic,readonly) */
+	resizeSession(): _TtC17SketchControllers15MSResizeSession;
+	/* typeEncoding=@"MSSnappingSession", ivar=_snappingSession, attributes=(retain,nonatomic) */
+	snappingSession(): MSSnappingSession;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=v16@0:8 */
-	calculateMidPoint(): void;
-	/* typeEncoding=v16@0:8 */
-	calculateOppositePoint(): void;
-	/* typeEncoding=v16@0:8 */
-	displayResizeCursor(): void;
 	/* typeEncoding=@16@0:8 */
 	eventData(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	finishResizing(): void;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	flipResizingLayerIfNecessary(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	initWithManager(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	layerRectWasIntegral(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	layerSnapper(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	makeLayerIntegral(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}52@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16c48 */
-	makeRect_conformToProportions(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}32@0:8{CGPoint=dd}16 */
-	mouseAfterAccountingForRotation(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
 	mouseDraggedOutsideViewShouldMoveScrollOrigin(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}40@0:8{CGPoint=dd}16@32 */
-	newRectForResize_gestureRecognizer(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	oppositeCorner(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	originalFrames(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	placeRectInOppositeCorner(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}32@0:8{CGPoint=dd}16 */
-	pointInLocalCoordinates(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	prepareForResize(): void;
 	/* typeEncoding=@16@0:8 */
 	resizeGestureRecognizer(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	resizeLayer(...args: any[]): any;
-	/* typeEncoding=q16@0:8 */
-	resizingCorner(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	resizingLayer(...args: any[]): any;
+	resizeSession(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setEventData(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setLayerRectWasIntegral(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLayerSnapper(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setOriginalFrames(...args: any[]): any;
-	/* typeEncoding=v24@0:8q16 */
-	setResizingCorner(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setResizingLayer(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}52@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16c48 */
-	snapRect_constrainProportions(...args: any[]): any;
+	setSnappingSession(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	snappingSession(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	updateCursor(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	updateResize(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	validSnapEdgesForResizingCorner(...args: any[]): any;
 }
 
-declare class MSNormalResizeLineEventHandler extends MSNormalBaseEventHandler {
+declare class MSNormalResizeLineEventHandler extends MSNormalBaseEventHandler /* implements MSAlignmentEngineDelegate */ {
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
 	/* typeEncoding=@"MSNormalEventData", ivar=_eventData, attributes=(retain,nonatomic) */
 	eventData(): MSNormalEventData;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"MSShapePathLayer", ivar=_layer, attributes=(retain,nonatomic) */
+	layer(): MSShapePathLayer;
 	/* typeEncoding=@"MSSnapper", ivar=_layerSnapper, attributes=(retain,nonatomic) */
 	layerSnapper(): MSSnapper;
-	/* typeEncoding=@"MSShapeGroup", ivar=_lineShape, attributes=(retain,nonatomic) */
-	lineShape(): MSShapeGroup;
 	/* typeEncoding=q, ivar=_pointIndex, attributes=(assign,nonatomic) */
 	pointIndex(): number;
+	/* typeEncoding=@"MSAlignmentEngineResult", ivar=_snapGuides, attributes=(retain,nonatomic) */
+	snapGuides(): MSAlignmentEngineResult;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -25479,30 +28373,38 @@ declare class MSNormalResizeLineEventHandler extends MSNormalBaseEventHandler {
 	absoluteMouseDragged_flags(...args: any[]): any;
 	/* typeEncoding=c40@0:8{CGPoint=dd}16Q32 */
 	absoluteMouseUp_flags(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}48@0:8{CGPoint=dd}16{CGPoint=dd}32 */
-	alignPoint_withShiftTo(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	addSnapTargetsToEngine(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}40@0:8@16{CGPoint=dd}24 */
+	alignmentEngine_alignPoint(...args: any[]): any;
 	/* typeEncoding=@24@0:8d16 */
 	cursorForRadians(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	displayResizeCursor(): void;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawInRect_context(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	eventData(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	layerSnapper(...args: any[]): any;
+	layer(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	lineShape(...args: any[]): any;
+	layerSnapper(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	pointIndex(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}32@0:8{CGPoint=dd}16 */
-	roundMouse(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	prepareForSnapping(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setEventData(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLayerSnapper(...args: any[]): any;
+	setLayer(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLineShape(...args: any[]): any;
+	setLayerSnapper(...args: any[]): any;
 	/* typeEncoding=v24@0:8q16 */
 	setPointIndex(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSnapGuides(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	snapGuides(...args: any[]): any;
 }
 
 declare class MSNullRenderer extends NSObject /* implements MSAllRenderers */ {
@@ -25516,9 +28418,7 @@ declare class MSNullRenderer extends NSObject /* implements MSAllRenderers */ {
 	superclass(): any;
 
 	/* typeEncoding=v40@0:8@16@24@32 */
-	renderBackgroundBlurBehindShape_context_clippedToPath(...args: any[]): any;
-	/* typeEncoding=v88@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGPoint=dd}56d72^{CGContext=}80 */
-	renderBackgroundForPage_rect_origin_zoom_context(...args: any[]): any;
+	renderBackgroundBlurBehindLayer_context_clippedToPath(...args: any[]): any;
 	/* typeEncoding=v72@0:8@16@24{CGRect={CGPoint=dd}{CGSize=dd}}32@64 */
 	renderBordersForPath_style_rect_context(...args: any[]): any;
 	/* typeEncoding=v92@0:8@16@24@32q40{CGRect={CGPoint=dd}{CGSize=dd}}48c80@84 */
@@ -25543,17 +28443,54 @@ declare class MSNullRenderer extends NSObject /* implements MSAllRenderers */ {
 	renderShadow_rect_context_block(...args: any[]): any;
 }
 
-declare class MSOpacityBlendingInspectorViewController extends NSViewController /* implements MSInspectorSection, NSMenuDelegate */ {
+declare class MSOffsetPathAction extends MSDocumentAction {
+	/* typeEncoding=v24@0:8@16 */
+	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	offsetPath(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	validate(...args: any[]): any;
+}
+
+declare class MSOffsetPathSheet extends MSCanvasUpdatingSheet {
+	/* typeEncoding=c, ivar=_duplicateLayers, attributes=(assign,nonatomic) */
+	duplicateLayers(): boolean;
+	/* typeEncoding=d, ivar=_offset, attributes=(assign,nonatomic) */
+	offset(): number;
+
+	/* typeEncoding=v16@0:8 */
+	doPerformOperation(): void;
+	/* typeEncoding=c16@0:8 */
+	duplicateLayers(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	duplicatelayers(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	historyMomentTitle(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	offset(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	offsetLayer(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDuplicateLayers(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setNilValueForKey(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setOffset(...args: any[]): any;
+}
+
+declare class MSOpacityBlendingInspectorItem extends MSInspectorItem /* implements NSMenuDelegate */ {
 	/* typeEncoding=@"NSArrayController", ivar=_arrayController, attributes=(retain,nonatomic) */
 	arrayController(): NSArrayController;
+	/* typeEncoding=@"NSPopUpButton", ivar=_blendModePopUp, attributes=(retain,nonatomic) */
+	blendModePopUp(): NSPopUpButton;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=@"NSArray", ivar=_layers, attributes=(copy,nonatomic) */
-	layers(): NSArray;
 	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_opacityAdaptor, attributes=(retain,nonatomic) */
 	opacityAdaptor(): MSMathInspectorValueAdaptor;
 	/* typeEncoding=@"MSUpDownTextField", ivar=_opacityField, attributes=(retain,nonatomic) */
@@ -25561,12 +28498,21 @@ declare class MSOpacityBlendingInspectorViewController extends NSViewController 
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
 	arrayController(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	layers(...args: any[]): any;
+	blendModePopUp(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16@24@32^v40 */
+	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	opacityAdaptor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -25574,15 +28520,15 @@ declare class MSOpacityBlendingInspectorViewController extends NSViewController 
 	/* typeEncoding=v24@0:8@16 */
 	setArrayController(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLayers(...args: any[]): any;
+	setBlendModePopUp(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setOpacityAdaptor(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setOpacityField(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
-	/* typeEncoding=@16@0:8 */
-	views(...args: any[]): any;
 }
 
 declare class MSOpacityKeyboardShortcutRecognizer extends NSObject {
@@ -25626,8 +28572,191 @@ declare class MSOpacityKeyboardShortcutRecognizer extends NSObject {
 declare class MSOpenCloudPreferencesAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	openCloudPreferences(...args: any[]): any;
+}
+
+declare class MSOpenGLLayer extends NSOpenGLLayer {
+	/* typeEncoding=@?, ivar=_renderBlock, attributes=(copy,nonatomic) */
+	renderBlock(): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v48@0:8^{_CGLContextObject=^{__GLIContextRec}{__GLIFunctionDispatchRec=^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?^?}^{_CGLPrivateObject}^v}16^{_CGLPixelFormatObject=}24d32r^{?=IiqQdq{CVSMPTETime=ssIIIssss}QQ}40 */
+	drawInCGLContext_pixelFormat_forLayerTime_displayTime(...args: any[]): any;
+	/* typeEncoding=@?16@0:8 */
+	renderBlock(...args: any[]): any;
+	/* typeEncoding=v24@0:8@?16 */
+	setRenderBlock(...args: any[]): any;
+}
+
+declare class MSOpenGLOffscreenBuffer extends NSObject {
+	/* typeEncoding=I, ivar=_FBO, attributes=(assign,nonatomic) */
+	FBO(): number;
+	/* typeEncoding=^{CGColorSpace=}, ivar=_colorspace, attributes=(assign,nonatomic) */
+	colorspace(): any;
+	/* typeEncoding=@?, ivar=_completionHandler, attributes=(copy,nonatomic) */
+	completionHandler(): any;
+	/* typeEncoding=@"NSOpenGLContext", ivar=_context, attributes=(retain,nonatomic) */
+	context(): NSOpenGLContext;
+	/* typeEncoding=i, ivar=_height, attributes=(assign,nonatomic) */
+	height(): number;
+	/* typeEncoding=I, ivar=_texture, attributes=(assign,nonatomic) */
+	texture(): number;
+	/* typeEncoding=i, ivar=_width, attributes=(assign,nonatomic) */
+	width(): number;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=I16@0:8 */
+	FBO(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	_destroyObjects(): void;
+	/* typeEncoding=v24@0:8i16i20 */
+	beginRendering_height(...args: any[]): any;
+	/* typeEncoding=^{CGColorSpace=}16@0:8 */
+	colorspace(...args: any[]): any;
+	/* typeEncoding=@?16@0:8 */
+	completionHandler(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	context(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=v16@0:8 */
+	endRendering(): void;
+	/* typeEncoding=i16@0:8 */
+	height(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	init(...args: any[]): any;
+	/* typeEncoding=v24@0:8^{CGColorSpace=}16 */
+	setColorspace(...args: any[]): any;
+	/* typeEncoding=v24@0:8@?16 */
+	setCompletionHandler(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setContext(...args: any[]): any;
+	/* typeEncoding=v20@0:8I16 */
+	setFBO(...args: any[]): any;
+	/* typeEncoding=v20@0:8i16 */
+	setHeight(...args: any[]): any;
+	/* typeEncoding=v20@0:8I16 */
+	setTexture(...args: any[]): any;
+	/* typeEncoding=v20@0:8i16 */
+	setWidth(...args: any[]): any;
+	/* typeEncoding=I16@0:8 */
+	texture(...args: any[]): any;
+	/* typeEncoding=i16@0:8 */
+	width(...args: any[]): any;
+}
+
+declare class MSOpenGLRenderer extends NSObject /* implements MSGPURenderer */ {
+	/* typeEncoding=i, ivar=_drawableHeight, attributes=(assign,nonatomic) */
+	drawableHeight(): number;
+	/* typeEncoding=i, ivar=_drawableWidth, attributes=(assign,nonatomic) */
+	drawableWidth(): number;
+	/* typeEncoding=c, ivar=_hasScissorRect, attributes=(assign,nonatomic) */
+	hasScissorRect(): boolean;
+	/* typeEncoding=@"MSOpenGLOffscreenBuffer", ivar=_offscreenBuffer, attributes=(retain,nonatomic) */
+	offscreenBuffer(): MSOpenGLOffscreenBuffer;
+	/* typeEncoding=@"MSOpenGLLayer", ivar=_openGLLayer, attributes=(retain,nonatomic) */
+	openGLLayer(): MSOpenGLLayer;
+	/* typeEncoding={?=iiii}, ivar=_scissorRect, attributes=(assign,nonatomic) */
+	scissorRect(): any;
+
+	/* typeEncoding=@24@0:8@?16 */
+	static createWithCompletionHandler(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	_beginDrawCall(): void;
+	/* typeEncoding=v16@0:8 */
+	_endDrawCall(): void;
+	/* typeEncoding=c16@0:8 */
+	_renderingOffscreen(...args: any[]): any;
+	/* typeEncoding=c56@0:8@16{CGSize=dd}24d40^{CGColorSpace=}48 */
+	beginFrameWithClearColor_drawableSize_backingScaleFactor_colorSpace(...args: any[]): any;
+	/* typeEncoding=@32@0:8Q16Q24 */
+	createTextureWithWidth_height(...args: any[]): any;
+	/* typeEncoding=v64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16{?=ffff}48 */
+	drawColorQuadInRect_color(...args: any[]): any;
+	/* typeEncoding=v24@0:8r^{?=^{?}II}16 */
+	drawColorTriangleMesh(...args: any[]): any;
+	/* typeEncoding=v60@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16c48@52 */
+	drawShadowForArtboardInRect_selected_shadow(...args: any[]): any;
+	/* typeEncoding=v60@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48c56 */
+	drawTexturedQuadInDestinationRect_sourceTexture_bilinearFilter(...args: any[]): any;
+	/* typeEncoding=v92@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48{CGRect={CGPoint=dd}{CGSize=dd}}56c88 */
+	drawTexturedQuadInDestinationRect_sourceTexture_sourceRect_bilinearFilter(...args: any[]): any;
+	/* typeEncoding=i16@0:8 */
+	drawableHeight(...args: any[]): any;
+	/* typeEncoding=i16@0:8 */
+	drawableWidth(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	endFrame(): void;
+	/* typeEncoding=c16@0:8 */
+	hasScissorRect(...args: any[]): any;
+	/* typeEncoding=@24@0:8@?16 */
+	initWithCompletionHandler(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layer(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	lockTextures(): void;
+	/* typeEncoding=@16@0:8 */
+	offscreenBuffer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	openGLLayer(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	requiresSynchronousRendering(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	resetScissorRect(): void;
+	/* typeEncoding=v24@0:8@?16 */
+	scheduleDrawBlock(...args: any[]): any;
+	/* typeEncoding={?=iiii}16@0:8 */
+	scissorRect(...args: any[]): any;
+	/* typeEncoding=v20@0:8i16 */
+	setDrawableHeight(...args: any[]): any;
+	/* typeEncoding=v20@0:8i16 */
+	setDrawableWidth(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setHasScissorRect(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOffscreenBuffer(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOpenGLLayer(...args: any[]): any;
+	/* typeEncoding=v32@0:8{?=iiii}16 */
+	setScissorRect(...args: any[]): any;
+	/* typeEncoding=v32@0:8i16i20i24i28 */
+	setScissorRectWithX_y_width_height(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	unlockTextures(): void;
+}
+
+declare class MSOpenGLTexture extends NSObject /* implements MSGPUTexture */ {
+	/* typeEncoding=i, ivar=_filter, attributes=(assign,nonatomic) */
+	filter(): number;
+	/* typeEncoding=I, ivar=_textureID, attributes=(assign,nonatomic,readonly) */
+	textureID(): number;
+
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=i16@0:8 */
+	filter(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	height(...args: any[]): any;
+	/* typeEncoding=@36@0:8I16Q20Q28 */
+	initWithTextureID_width_height(...args: any[]): any;
+	/* typeEncoding=^{CGImage=}24@0:8^{CGColorSpace=}16 */
+	readImageWithColorSpace(...args: any[]): any;
+	/* typeEncoding=v48@0:8{?=iiii}16Q32r^v40 */
+	replaceRegion_bytesPerRow_pixels(...args: any[]): any;
+	/* typeEncoding=v20@0:8i16 */
+	setFilter(...args: any[]): any;
+	/* typeEncoding=I16@0:8 */
+	textureID(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	width(...args: any[]): any;
 }
 
 declare class MSOpenInLibraryAction extends MSDocumentAction {
@@ -25643,6 +28772,8 @@ declare class MSOpenInLibraryAction extends MSDocumentAction {
 declare class MSOpenPluginPreferencesAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	openPluginPreferences(...args: any[]): any;
 }
@@ -25650,6 +28781,8 @@ declare class MSOpenPluginPreferencesAction extends MSAction {
 declare class MSOpenPreferencesAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	openPreferences(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -25660,18 +28793,18 @@ declare class MSOpenPreviewAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	openMirrorPreview(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
 
 declare class MSOpenStyleInLibraryAction extends MSOpenInLibraryAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	openLibraryForStyles(...args: any[]): any;
 }
@@ -25679,6 +28812,8 @@ declare class MSOpenStyleInLibraryAction extends MSOpenInLibraryAction {
 declare class MSOpenSymbolInLibraryAction extends MSOpenInLibraryAction {
 	/* typeEncoding=@16@0:8 */
 	foreignObjects(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	openLibraryForForeignSymbols(...args: any[]): any;
 }
@@ -25729,6 +28864,8 @@ declare class MSOvalShape extends _MSOvalShape {
 }
 
 declare class MSOvalShapeAction extends MSBaseShapeAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	ovalShape(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -25737,46 +28874,194 @@ declare class MSOvalShapeAction extends MSBaseShapeAction {
 	touchBarImage(...args: any[]): any;
 }
 
-declare class MSOverlayRenderer extends NSObject {
-	/* typeEncoding=@"<MSOverlayRendererDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
-	delegate(): MSOverlayRendererDelegate;
-	/* typeEncoding=c, ivar=_enabled, attributes=(assign,nonatomic,getter=isEnabled) */
-	enabled(): boolean;
+declare class MSOverlayColorSettings extends NSObject {
+	/* typeEncoding=@"NSColor", ivar=_artboardTitleColor, attributes=(retain,nonatomic) */
+	artboardTitleColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=_canvasBackgroundColor, attributes=(retain,nonatomic) */
+	canvasBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=_pageBackgroundColor, attributes=(retain,nonatomic) */
+	pageBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=_pixelGridColor, attributes=(retain,nonatomic) */
+	pixelGridColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=_sliceOutlineColor, attributes=(retain,nonatomic) */
+	sliceOutlineColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=_symbolTitleColor, attributes=(retain,nonatomic) */
+	symbolTitleColor(): NSColor;
+
+	/* typeEncoding=@16@0:8 */
+	static colorSettings(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
-	delegate(...args: any[]): any;
+	artboardTitleColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	pageBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	pixelGridColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setArtboardTitleColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCanvasBackgroundColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPageBackgroundColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPixelGridColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSliceOutlineColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSymbolTitleColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	sliceOutlineColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	symbolTitleColor(...args: any[]): any;
+}
+
+declare class MSOverlayRenderer extends NSObject {
+	/* typeEncoding=c, ivar=_enabled, attributes=(assign,nonatomic,getter=isEnabled) */
+	enabled(): boolean;
+	/* typeEncoding=@"<MSTiledRendererHostView>", ivar=_hostView, attributes=(assign,nonatomic,weak) */
+	hostView(): MSTiledRendererHostView;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
 	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
 	drawRect_context(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	hostView(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isEnabled(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setDelegate(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setEnabled(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHostView(...args: any[]): any;
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	setNeedsDisplayInRect(...args: any[]): any;
 }
 
-declare class MSOverlayView extends NSView {
-	/* typeEncoding=@"MSContentDrawView", ivar=_contentView, attributes=(assign,nonatomic,weak) */
-	contentView(): MSContentDrawView;
+declare class MSOverrideInspectorItem extends MSInspectorItem /* implements MSDataMenuProviderDelegate */ {
+	/* typeEncoding=@"NSView", ivar=_contentView, attributes=(retain,nonatomic) */
+	contentView(): NSView;
+	/* typeEncoding=@"MSDataMenuProvider", ivar=_dataController, attributes=(retain,nonatomic) */
+	dataController(): MSDataMenuProvider;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=c, ivar=_displaysLabel, attributes=(assign,nonatomic) */
+	displaysLabel(): boolean;
+	/* typeEncoding=@"MSDocument", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	document(): MSDocument;
+	/* typeEncoding=@"MSDocumentData", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	documentData(): MSDocumentData;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasSingleOverride(): boolean;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"NSLayoutConstraint", ivar=_indentationConstraint, attributes=(retain,nonatomic) */
+	indentationConstraint(): NSLayoutConstraint;
+	/* typeEncoding=@"MSOverrideRepresentation", ivar=_overrideRepresentation, attributes=(assign,nonatomic,readonly) */
+	overrideRepresentation(): MSOverrideRepresentation;
+	/* typeEncoding=@"MSAvailableOverride", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	primaryOverride(): MSAvailableOverride;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+	/* typeEncoding=@"NSTrackingArea", ivar=_trackingArea, attributes=(assign,nonatomic,weak) */
+	trackingArea(): NSTrackingArea;
+
+	/* typeEncoding=c32@0:8@16@24 */
+	static allOverridesInLayers_match(...args: any[]): any;
+	/* typeEncoding=d44@0:8@16@24c32Q36 */
+	static heightForOverride_layers_shouldShowLabel_indentationLevel(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=c24@0:8@16 */
-	clickShouldDismissPopover(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	applyOverrideToSelectedLayers(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	build(): void;
 	/* typeEncoding=@16@0:8 */
 	contentView(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	drawRect(...args: any[]): any;
-	/* typeEncoding=@32@0:8{CGPoint=dd}16 */
-	hitTest(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	controlViewForEditingOverride(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	dataController(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16Q24 */
+	dataMenuProvider_canChooseDataOfType(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	dataMenuProvider_didChooseData(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	dataMenuProviderCanApplyMasterDataToInstances(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	dataMenuProviderCanRefreshData(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	dataMenuProviderDataIdentifier(...args: any[]): any;
+	/* typeEncoding=Q24@0:8@16 */
+	dataMenuProviderDataTypeForMenuBuilding(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	dataMenuProviderIsInspectorPopupMenu(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	dataMenuProviderRefreshData(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	dataMenuProviderRefreshMasterData(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	dataMenuProviderRemoveDataRecord(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	dataMenuProviderSelectedLayersWithAppliedData(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	isFlipped(...args: any[]): any;
+	displaysLabel(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	document(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	documentData(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasSingleOverride(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	highlightItemInCanvas(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	indentationConstraint(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithPrimaryOverrideRepresentation(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	labelView(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	mouseEntered(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	mouseExited(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	overrideRepresentation(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	overrideValueAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	primaryOverride(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setContentView(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDataController(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDisplaysLabel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setIndentationConstraint(...args: any[]): any;
+	/* typeEncoding=v24@0:8Q16 */
+	setIndentationLevel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setTrackingArea(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	supportedDataProviders(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	trackingArea(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateCanvasHighlight(): void;
+	/* typeEncoding=@24@0:8@16 */
+	valueFromControlView(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	viewWillAppear(): void;
+	/* typeEncoding=v16@0:8 */
+	viewWillDisappear(): void;
+	/* typeEncoding=@16@0:8 */
+	views(...args: any[]): any;
 }
 
 declare class MSOverrideMapping extends NSObject {
@@ -25821,20 +29106,22 @@ declare class MSOverrideMapping extends NSObject {
 }
 
 declare class MSOverridePoint extends NSObject {
-	/* typeEncoding=@"NSString", ivar=_dataIdentifier, attributes=(retain,nonatomic) */
-	dataIdentifier(): NSString;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isStyleOverride(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isSymbolOverride(): boolean;
 	/* typeEncoding=@"NSString", ivar=_layerID, attributes=(assign,nonatomic,readonly) */
 	layerID(): NSString;
-	/* typeEncoding=@"NSString", ivar=_layerIDPath, attributes=(assign,nonatomic,readonly) */
-	layerIDPath(): NSString;
 	/* typeEncoding=@"NSString", ivar=_layerName, attributes=(assign,nonatomic,readonly) */
 	layerName(): NSString;
 	/* typeEncoding=@"NSString", ivar=_name, attributes=(copy,nonatomic) */
 	name(): NSString;
 	/* typeEncoding=@"MSOverridePoint", ivar=_parent, attributes=(assign,nonatomic,readonly,weak) */
 	parent(): MSOverridePoint;
+	/* typeEncoding=@"NSString", ivar=_path, attributes=(assign,nonatomic,readonly) */
+	path(): NSString;
+	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	pathComponents(): NSArray;
 	/* typeEncoding=@"NSString", ivar=_property, attributes=(assign,nonatomic,readonly) */
 	property(): NSString;
 
@@ -25842,8 +29129,6 @@ declare class MSOverridePoint extends NSObject {
 	_cxx_destruct(): void;
 	/* typeEncoding=q24@0:8@16 */
 	comparisonScoreAgainst(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	dataIdentifier(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	description(...args: any[]): any;
 	/* typeEncoding=Q24@0:8@16 */
@@ -25853,11 +29138,11 @@ declare class MSOverridePoint extends NSObject {
 	/* typeEncoding=c24@0:8@16 */
 	isEqual(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	isStyleOverride(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	isSymbolOverride(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	layerID(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	layerIDPath(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	layerName(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -25865,14 +29150,316 @@ declare class MSOverridePoint extends NSObject {
 	/* typeEncoding=@16@0:8 */
 	parent(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	path(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	pathComponents(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	property(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setDataIdentifier(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setName(...args: any[]): any;
 }
 
+declare class MSOverrideRepresentation extends MSOverrideRepresentationBase /* implements BCOutlineViewNode, MSLayerListLayerExtensions, MSInterfaceImageOwner, MSHoverableItem */ {
+	/* typeEncoding=@"MSAvailableOverride", ivar=_availableOverride, attributes=(retain,nonatomic) */
+	availableOverride(): MSAvailableOverride;
+	/* typeEncoding=@"MSLayerBadgeImages", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	badgeImages(): MSLayerBadgeImages;
+	/* typeEncoding=@, ivar=(null), attributes=(assign,nonatomic,readonly,weak) */
+	cacheOwner(): any;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	containedByHiddenAncestorNode(): boolean;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	displayType(): number;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	expandableInLayerList(): boolean;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	filterTypeMask(): number;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasBadgedIcon(): boolean;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hiddenOnCanvas(): boolean;
+	/* typeEncoding=@"MSLayer", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hoveredLayer(): MSLayer;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	interfaceImageIdentifier(): NSString;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isActive(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isAtRootLevel(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isEditable(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isEditableInLayerList(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isExpanded(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isExportableViaDragAndDrop(): boolean;
+	/* typeEncoding=q, ivar=(null), attributes=(assign,nonatomic) */
+	layerListExpandedType(): number;
+	/* typeEncoding=q, ivar=_layerListExpandedType, attributes=(assign,nonatomic) */
+	layerListExpandedType(): number;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	lockedOnCanvas(): boolean;
+	/* typeEncoding=@"MSImmutableSymbolMaster", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	modifiedParentMaster(): MSImmutableSymbolMaster;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(retain,nonatomic) */
+	nodeName(): NSString;
+	/* typeEncoding=@"MSOverrideRepresentationBase", ivar=_parent, attributes=(assign,nonatomic,readonly,weak) */
+	parent(): MSOverrideRepresentationBase;
+	/* typeEncoding=r^{CGPath=}, ivar=_pathInInstance, attributes=(assign,nonatomic) */
+	pathInInstance(): any;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	previewShouldIndicateSharedStyle(): boolean;
+	/* typeEncoding=@"MSOverrideRepresentation", ivar=_previousSibling, attributes=(assign,nonatomic,weak) */
+	previousSibling(): MSOverrideRepresentation;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	selectedInLayerList(): boolean;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	selectionID(): NSString;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	addMastersForInstancesToDocument(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	availableOverride(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	badgeImages(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	badgeMenuConfigurator(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	calculateTransformAndPath(): void;
+	/* typeEncoding=c24@0:8@16 */
+	canBeHoveredOnPage(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
+	canCopyToLayer_beforeLayer(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
+	canMoveToLayer_beforeLayer(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	containedByHiddenAncestorNode(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	createOverrideViewController(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=@16@0:8 */
+	description(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	displayType(...args: any[]): any;
+	/* typeEncoding=v40@0:8d16@24@32 */
+	drawHoverWithZoom_color_cache(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	expandableInLayerList(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	filterTypeMask(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	handleBadgeClickWithAltState(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasBadgedIcon(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasHighlight(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hiddenOnCanvas(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	hoveredLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	hudDescription(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithParent(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	interfaceImageIdentifier(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isActive(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isAtRootLevel(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isEditable(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isEditableInLayerList(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isExportableViaDragAndDrop(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	layerListExpandedType(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	lockedOnCanvas(...args: any[]): any;
+	/* typeEncoding=@24@0:8Q16 */
+	maskIconWithState(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	modifiedMasterForInstanceInMaster(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	modifiedParentMaster(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	moveToLayer_beforeLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	nodeName(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	overrideRepresentation(...args: any[]): any;
+	/* typeEncoding=d36@0:8@16c24Q28 */
+	overrideViewControllerHeightWithLayers_shouldShowLabel_indentationLevel(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	parent(...args: any[]): any;
+	/* typeEncoding=r^{CGPath=}16@0:8 */
+	pathInInstance(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	placeholderIdentifier(...args: any[]): any;
+	/* typeEncoding=@24@0:8Q16 */
+	previewIconWithState(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	previewShouldIndicateSharedStyle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	previousSibling(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	refreshOverlay(): void;
+	/* typeEncoding=c16@0:8 */
+	selectedInLayerList(...args: any[]): any;
+	/* typeEncoding=@32@0:8{CGPoint=dd}16 */
+	selectionHitTest(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectionID(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	selfOrChildrenSelected(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setAvailableOverride(...args: any[]): any;
+	/* typeEncoding=v24@0:8q16 */
+	setLayerListExpandedType(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setNodeName(...args: any[]): any;
+	/* typeEncoding=v24@0:8^{CGPath=}16 */
+	setPathInInstance(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPreviousSibling(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	transformForConvertingToInstance(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateAfterSelectingChild(): void;
+	/* typeEncoding=v16@0:8 */
+	updateExpandedStateAfterSelection(): void;
+	/* typeEncoding=v24@0:8@?16 */
+	updateLayerListPreviewIfRequiredWithCompletionHandler(...args: any[]): any;
+}
+
+declare class MSOverrideRepresentationBase extends NSObject {
+	/* typeEncoding=@"NSArray", ivar=_children, attributes=(retain,nonatomic) */
+	children(): NSArray;
+	/* typeEncoding=@"MSSymbolInstance", ivar=_instance, attributes=(assign,nonatomic,readonly) */
+	instance(): MSSymbolInstance;
+	/* typeEncoding=c, ivar=_isEditable, attributes=(assign,nonatomic,readonly) */
+	isEditable(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isExpanded(): boolean;
+	/* typeEncoding=@"NSAffineTransform", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	transformForConvertingToInstance(): NSAffineTransform;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	children(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	childrenForLayerList(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithInstance(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	instance(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isEditable(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isExpanded(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	layerListExpandedType(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	modifiedMasterForInstanceInMaster(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedOverrides(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	selfOrChildrenSelected(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setChildren(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	syncChildrenWithOverrides(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	transformForConvertingToInstance(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateAfterSelectingChild(): void;
+}
+
+declare class MSOverrideRepresentationContainer extends MSOverrideRepresentationBase {
+	/* typeEncoding=@"MSImmutableSymbolInstance", ivar=_appliedInstance, attributes=(retain,nonatomic) */
+	appliedInstance(): MSImmutableSymbolInstance;
+	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	selectedOverrides(): NSArray;
+
+	/* typeEncoding=@24@0:8@16 */
+	static rootRepresentationForSymbolInstance(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	appliedInstance(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	children(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	description(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithInstance(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isEditable(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	modifiedMasterForInstanceInMaster(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedOverrides(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setAppliedInstance(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	transformForConvertingToInstance(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateAfterSelectingChild(): void;
+}
+
+declare class MSOverrideTextField extends NSTextField {
+	/* typeEncoding=c, ivar=_didChangeTextDuringEditing, attributes=(assign,nonatomic) */
+	didChangeTextDuringEditing(): boolean;
+
+	/* typeEncoding=#16@0:8 */
+	static cellClass(...args: any[]): any;
+
+	/* typeEncoding={NSEdgeInsets=dddd}16@0:8 */
+	alignmentRectInsets(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	becomeFirstResponder(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	cancelOperation(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	didChangeTextDuringEditing(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	giveUpFirstResponder(): void;
+	/* typeEncoding=v24@0:8@16 */
+	insertNewline(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	insertTabIgnoringFieldEditor(...args: any[]): any;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	intrinsicContentSize(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDidChangeTextDuringEditing(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	textDidBeginEditing(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16:24 */
+	textView_doCommandBySelector(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	tryGivingUpFirstResponderToSketchDocument(...args: any[]): any;
+}
+
 declare class MSOverrideValue extends _MSOverrideValue {
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	attributeName(): NSString;
 	/* typeEncoding=c, ivar=_isInherited, attributes=(assign,nonatomic) */
 	isInherited(): boolean;
 	/* typeEncoding=@"MSOverrideValue", ivar=_predecessor, attributes=(retain,nonatomic) */
@@ -25882,6 +29469,8 @@ declare class MSOverrideValue extends _MSOverrideValue {
 	_cxx_destruct(): void;
 	/* typeEncoding=v24@0:8@16 */
 	addPredecessor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	attributeName(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	description(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -25898,92 +29487,6 @@ declare class MSOverrideValue extends _MSOverrideValue {
 	setIsInherited(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setPredecessor(...args: any[]): any;
-}
-
-declare class MSOverrideViewController extends NSViewController /* implements MSDataMenuProviderDelegate */ {
-	/* typeEncoding=@"NSSet", ivar=_allOverrides, attributes=(retain,nonatomic) */
-	allOverrides(): NSSet;
-	/* typeEncoding=@"NSView", ivar=_contentView, attributes=(retain,nonatomic) */
-	contentView(): NSView;
-	/* typeEncoding=@"MSDataMenuProvider", ivar=_dataController, attributes=(retain,nonatomic) */
-	dataController(): MSDataMenuProvider;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	hasSingleOverride(): boolean;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=@"NSLayoutConstraint", ivar=_indentationConstraint, attributes=(retain,nonatomic) */
-	indentationConstraint(): NSLayoutConstraint;
-	/* typeEncoding=@"NSArray", ivar=_instances, attributes=(retain,nonatomic) */
-	instances(): NSArray;
-	/* typeEncoding=@"MSAvailableOverride", ivar=_primaryOverride, attributes=(assign,nonatomic,readonly) */
-	primaryOverride(): MSAvailableOverride;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=@16@0:8 */
-	allOverrides(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	applyOverrideToSelectedLayers(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	build(): void;
-	/* typeEncoding=@16@0:8 */
-	contentView(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	controlViewForEditingOverride(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	dataController(...args: any[]): any;
-	/* typeEncoding=c32@0:8@16Q24 */
-	dataMenuProvider_canChooseDataOfType(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16@24 */
-	dataMenuProvider_didChooseData(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	dataMenuProviderApplyMasterDataToInstances(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	dataMenuProviderCanApplyMasterDataToInstances(...args: any[]): any;
-	/* typeEncoding=Q24@0:8@16 */
-	dataMenuProviderDataTypeForMenuBuilding(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	dataMenuProviderIsInspectorPopupMenu(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	dataMenuProviderSelectedLayerDataSupplierIdentifier(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	hasSingleOverride(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	indentationConstraint(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initWithPrimaryOverride(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	instances(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	labelView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	overrideValueAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	primaryOverride(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setAllOverrides(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setContentView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setDataController(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setIndentationConstraint(...args: any[]): any;
-	/* typeEncoding=v24@0:8Q16 */
-	setIndentationLevel(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setInstances(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	supportedDataProviders(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	valueFromControlView(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	views(...args: any[]): any;
 }
 
 declare class MSPDFBookExporter extends NSObject {
@@ -26588,23 +30091,26 @@ declare class MSPNGExporter extends MSExporter {
 }
 
 declare class MSPaddingInspectorItem extends MSInspectorItem {
+	/* typeEncoding=c, ivar=_wantsInsetSeparator, attributes=(assign,nonatomic) */
+	wantsInsetSeparator(): boolean;
 	/* typeEncoding=c, ivar=_wantsSeparator, attributes=(assign,nonatomic) */
 	wantsSeparator(): boolean;
 
+	/* typeEncoding=@24@0:8d16 */
+	static paddingWithHeight(...args: any[]): any;
+
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setWantsInsetSeparator(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setWantsSeparator(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
+	updateView(): void;
+	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
 	/* typeEncoding=c16@0:8 */
-	wantsSeparator(...args: any[]): any;
-}
-
-declare class MSPaddingInspectorItemView extends NSView {
-	/* typeEncoding=c, ivar=_wantsSeparator, attributes=(assign,nonatomic) */
-	wantsSeparator(): boolean;
-
-	/* typeEncoding=v20@0:8c16 */
-	setWantsSeparator(...args: any[]): any;
+	wantsInsetSeparator(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	wantsSeparator(...args: any[]): any;
 }
@@ -26660,6 +30166,8 @@ declare class MSPage extends _MSPage /* implements MSRootLayer */ {
 	zoomValue(): number;
 
 	/* typeEncoding=@16@0:8 */
+	static defaultSymbolsPageName(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	static page(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
@@ -26679,15 +30187,15 @@ declare class MSPage extends _MSPage /* implements MSRootLayer */ {
 	/* typeEncoding=@24@0:8d16 */
 	artboardsMatchingWidth(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	badgeImages(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	cachedArtboards(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	cachedExportableLayers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	cachedSelectedLayers(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeContainedByDocument(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canBeHovered(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	canBeHoveredOnPage(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	canContainLayer(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
@@ -26695,11 +30203,11 @@ declare class MSPage extends _MSPage /* implements MSRootLayer */ {
 	/* typeEncoding=v16@0:8 */
 	changeLayerExpandedTypeToAutomaticIfCollapsed(): void;
 	/* typeEncoding=v24@0:8@16 */
+	changeSelectionByDeselectingLayers(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	changeSelectionBySelectingLayers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	changeSelectionUsingBlock(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	clearSelectionCache(): void;
 	/* typeEncoding=c40@0:8{CGPoint=dd}16d32 */
 	containsPoint_zoomValue(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
@@ -26732,6 +30240,8 @@ declare class MSPage extends _MSPage /* implements MSRootLayer */ {
 	isLayerSelected(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isLocked(...args: any[]): any;
+	/* typeEncoding=c24@0:8d16 */
+	isTooSmallForPreciseHitTestingAtZoomValue(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isVisible(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
@@ -26770,6 +30280,8 @@ declare class MSPage extends _MSPage /* implements MSRootLayer */ {
 	resizeToFitChildrenWithOption(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	rulerBase(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	rulerCoordinateSpace(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	scrollOrigin(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
@@ -26843,17 +30355,27 @@ declare class MSPageListController extends MSSidebarListController /* implements
 	/* typeEncoding=v36@0:8@16@24c32 */
 	dataController_handleBadgePressedOnNode_withAltState(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
+	dataController_isAncestorOfNodeHiddenOnCanvas(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
 	dataController_isNodeExpandable(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
 	dataController_isNodeExpanded(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
+	dataController_isNodeHiddenOnCanvas(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
+	dataController_isNodeHighlighted(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
+	dataController_isNodeLockedOnCanvas(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
 	dataController_isNodeSelected(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	dataController_menuItemsForSelectedObjects(...args: any[]): any;
 	/* typeEncoding=c48@0:8@16@24@32@40 */
 	dataController_moveFromPasteboard_toParent_after(...args: any[]): any;
+	/* typeEncoding=c32@0:8@16@24 */
+	dataController_nodeHasSharedStyle(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
-	dataController_refreshPreviewsOnNodes(...args: any[]): any;
+	dataController_refreshPreviewsOnNode(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	dataController_removeNodes(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16@24Q32 */
@@ -26862,6 +30384,8 @@ declare class MSPageListController extends MSSidebarListController /* implements
 	duplicatePages(...args: any[]): any;
 	/* typeEncoding=c40@0:8@16@24@32 */
 	moveNode_toParent_after(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	multipleNodesSelectedForDataController(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	pageForNode(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
@@ -26876,113 +30400,15 @@ declare class MSPageListController extends MSSidebarListController /* implements
 	setSelectedPages(...args: any[]): any;
 }
 
-declare class MSPageOverlayRendererCG extends NSObject /* implements MSPageOverlayRenderer */ {
-	/* typeEncoding=^{CGColor=}, ivar=_activeTitleColor, attributes=(assign,nonatomic) */
-	activeTitleColor(): any;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=@"MSArtboardShadow", ivar=_normalShadow, attributes=(retain,nonatomic) */
-	normalShadow(): MSArtboardShadow;
-	/* typeEncoding=^{CGColor=}, ivar=_pixelLineColor, attributes=(assign,nonatomic) */
-	pixelLineColor(): any;
-	/* typeEncoding=@"MSArtboardShadow", ivar=_selectedShadow, attributes=(retain,nonatomic) */
-	selectedShadow(): MSArtboardShadow;
-	/* typeEncoding=^{CGColor=}, ivar=_sliceColor, attributes=(assign,nonatomic) */
-	sliceColor(): any;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
-	/* typeEncoding=^{CGColor=}, ivar=_symbolTitleColor, attributes=(assign,nonatomic) */
-	symbolTitleColor(): any;
-	/* typeEncoding=@"NSFont", ivar=_titleFont, attributes=(assign,nonatomic,readonly) */
-	titleFont(): NSFont;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=^{CGColor=}16@0:8 */
-	activeTitleColor(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
-	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
-	drawGridForGroup_rect_context(...args: any[]): any;
-	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
-	drawPixelLinesInRect_context(...args: any[]): any;
-	/* typeEncoding=v48@0:8@16d24@32^{CGContext=}40 */
-	drawSliceOutline_zoom_ancestors_context(...args: any[]): any;
-	/* typeEncoding=v80@0:8@16@24{CGRect={CGPoint=dd}{CGSize=dd}}32Q64@72 */
-	drawSlicesOutlineForGroup_selectedLayers_inRect_options_context(...args: any[]): any;
-	/* typeEncoding=v96@0:8@16@24{CGRect={CGPoint=dd}{CGSize=dd}}32d64@72Q80^{CGContext=}88 */
-	drawSlicesOutlineForGroup_selectedLayers_inRect_zoom_ancestors_options_context(...args: any[]): any;
-	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
-	drawTitlesForArtboards_rect_context(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initWithTitleFont(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	normalShadow(...args: any[]): any;
-	/* typeEncoding=^{CGColor=}16@0:8 */
-	pixelLineColor(...args: any[]): any;
-	/* typeEncoding=v88@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGPoint=dd}56d72^{CGContext=}80 */
-	renderBackgroundForPage_rect_origin_zoom_context(...args: any[]): any;
-	/* typeEncoding=v88@0:8@16@24@32Q40{CGRect={CGPoint=dd}{CGSize=dd}}48@80 */
-	renderOverlayForPage_selectedLayers_selectedArtboard_options_rect_context(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	selectedShadow(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGColor=}16 */
-	setActiveTitleColor(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setNormalShadow(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGColor=}16 */
-	setPixelLineColor(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setSelectedShadow(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGColor=}16 */
-	setSliceColor(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGColor=}16 */
-	setSymbolTitleColor(...args: any[]): any;
-	/* typeEncoding=^{CGColor=}16@0:8 */
-	sliceColor(...args: any[]): any;
-	/* typeEncoding=^{CGColor=}16@0:8 */
-	symbolTitleColor(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	titleFont(...args: any[]): any;
-}
-
-declare class MSPageOverlayRendererCGDebug extends MSPageOverlayRendererCG {
-	/* typeEncoding=^{CGColor=}, ivar=_coordinateColor, attributes=(assign,nonatomic) */
-	coordinateColor(): any;
-
-	/* typeEncoding=^{CGColor=}16@0:8 */
-	coordinateColor(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
-	/* typeEncoding=v32@0:8d16^{CGContext=}24 */
-	drawDebugCoordinatesWithZoom_context(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initWithTitleFont(...args: any[]): any;
-	/* typeEncoding=v88@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGPoint=dd}56d72^{CGContext=}80 */
-	renderBackgroundForPage_rect_origin_zoom_context(...args: any[]): any;
-	/* typeEncoding=v88@0:8@16@24@32Q40{CGRect={CGPoint=dd}{CGSize=dd}}48@80 */
-	renderOverlayForPage_selectedLayers_selectedArtboard_options_rect_context(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGColor=}16 */
-	setCoordinateColor(...args: any[]): any;
-}
-
-declare class MSParagraphStyleViewController extends NSViewController {
-	/* typeEncoding=@"NSSegmentedControl", ivar=_decorationButton, attributes=(retain,nonatomic) */
-	decorationButton(): NSSegmentedControl;
-	/* typeEncoding=@"NSArray", ivar=_layers, attributes=(retain,nonatomic) */
-	layers(): NSArray;
-	/* typeEncoding=@"NSPopUpButton", ivar=_listPopUpButton, attributes=(retain,nonatomic) */
-	listPopUpButton(): NSPopUpButton;
-	/* typeEncoding=@"MSTextLayerSection", ivar=_textSection, attributes=(assign,nonatomic,weak) */
-	textSection(): MSTextLayerSection;
-	/* typeEncoding=@"NSPopUpButton", ivar=_transformPopUpButton, attributes=(retain,nonatomic) */
-	transformPopUpButton(): NSPopUpButton;
+declare class MSParagraphStyleItem extends MSInspectorItem {
+	/* typeEncoding=@"NSPopUpButton", ivar=_decorationButton, attributes=(retain,nonatomic) */
+	decorationButton(): NSPopUpButton;
+	/* typeEncoding=@"MSTextLayerItem", ivar=_textItem, attributes=(assign,nonatomic,weak) */
+	textItem(): MSTextLayerItem;
+	/* typeEncoding=@"NSMenuItem", ivar=_titleItem, attributes=(retain,nonatomic) */
+	titleItem(): NSMenuItem;
+	/* typeEncoding=@"NSSegmentedControl", ivar=_transformControl, attributes=(retain,nonatomic) */
+	transformControl(): NSSegmentedControl;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -27000,14 +30426,6 @@ declare class MSParagraphStyleViewController extends NSViewController {
 	firstOccurrenceOfAttributeWithName(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	init(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	layers(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	listPopUpAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	listPopUpButton(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	prepareBulletListPopUpButton(): void;
 	/* typeEncoding=v16@0:8 */
 	prepareDecorationButton(): void;
 	/* typeEncoding=v16@0:8 */
@@ -27015,26 +30433,30 @@ declare class MSParagraphStyleViewController extends NSViewController {
 	/* typeEncoding=v24@0:8@16 */
 	setDecorationButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLayers(...args: any[]): any;
+	setTextItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setListPopUpButton(...args: any[]): any;
+	setTitleItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setTextSection(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setTransformPopUpButton(...args: any[]): any;
+	setTransformControl(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	textSection(...args: any[]): any;
+	textItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	titleItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	transformControl(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	transformPopUpAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	transformPopUpButton(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	validateUI(): void;
+	updateDisplayedValues(): void;
+	/* typeEncoding=v16@0:8 */
+	viewDidLoad(): void;
 }
 
 declare class MSPasteAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	paste(...args: any[]): any;
 }
@@ -27042,6 +30464,8 @@ declare class MSPasteAction extends MSDocumentAction {
 declare class MSPasteHereAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	pasteHere(...args: any[]): any;
 }
@@ -27049,6 +30473,8 @@ declare class MSPasteHereAction extends MSDocumentAction {
 declare class MSPasteOverSelectionAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	pasteOverSelection(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -27058,6 +30484,8 @@ declare class MSPasteOverSelectionAction extends MSDocumentAction {
 declare class MSPasteStyleAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	pasteStyle(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -27067,6 +30495,8 @@ declare class MSPasteStyleAction extends MSDocumentAction {
 declare class MSPasteWithStyleAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	pasteWithStyle(...args: any[]): any;
 }
@@ -27472,8 +30902,6 @@ declare class MSPath extends NSObject /* implements NSCopying */ {
 	CGPath(): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	bounds(): CGRect;
-	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	closedSubpaths(): NSArray;
 	/* typeEncoding=@"NSArray", ivar=_contours, attributes=(copy,nonatomic) */
 	contours(): NSArray;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -27484,12 +30912,8 @@ declare class MSPath extends NSObject /* implements NSCopying */ {
 	isEmpty(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isRectangular(): boolean;
-	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	openSubpaths(): NSArray;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	safeBounds(): CGRect;
-	/* typeEncoding=q, ivar=_signedElementCount, attributes=(assign,nonatomic) */
-	signedElementCount(): number;
 	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	subpaths(): NSArray;
 
@@ -27516,9 +30940,9 @@ declare class MSPath extends NSObject /* implements NSCopying */ {
 	_cxx_destruct(): void;
 	/* typeEncoding=^{CGPath=}16@0:8 */
 	CGPath(...args: any[]): any;
-	/* typeEncoding={MSPathCachedProperties={CGPoint=dd}{CGPoint=dd}c}16@0:8 */
+	/* typeEncoding={MSPathCachedProperties={CGPoint=dd}{CGPoint=dd}Qc}16@0:8 */
 	_calculateCachedProperies(...args: any[]): any;
-	/* typeEncoding={MSPathCachedProperties={CGPoint=dd}{CGPoint=dd}c}16@0:8 */
+	/* typeEncoding={MSPathCachedProperties={CGPoint=dd}{CGPoint=dd}Qc}16@0:8 */
 	_initCachedProperties(...args: any[]): any;
 	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	_pathByScalingToBounds(...args: any[]): any;
@@ -27540,8 +30964,6 @@ declare class MSPath extends NSObject /* implements NSCopying */ {
 	bounds(...args: any[]): any;
 	/* typeEncoding=v40@0:8^{CGContext=}16Q24@?32 */
 	clipContext_windingRule_inBlock(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	closedSubpaths(...args: any[]): any;
 	/* typeEncoding=c32@0:8{CGPoint=dd}16 */
 	containsPoint(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -27552,8 +30974,6 @@ declare class MSPath extends NSObject /* implements NSCopying */ {
 	copyWithZone(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	createContours(...args: any[]): any;
-	/* typeEncoding=^{CGContext=}16@0:8 */
-	createHelperContext(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	dealloc(): void;
 	/* typeEncoding=@16@0:8 */
@@ -27588,8 +31008,8 @@ declare class MSPath extends NSObject /* implements NSCopying */ {
 	initWithSquircleInRect_radius(...args: any[]): any;
 	/* typeEncoding=@24@0:8d16 */
 	insetPathBy(...args: any[]): any;
-	/* typeEncoding=@40@0:8d16@24^{CGContext=}32 */
-	insetPathBy_borderOptions_context(...args: any[]): any;
+	/* typeEncoding=@32@0:8d16@24 */
+	insetPathBy_borderOptions(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isClosed(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -27604,14 +31024,20 @@ declare class MSPath extends NSObject /* implements NSCopying */ {
 	length(...args: any[]): any;
 	/* typeEncoding=d24@0:8d16 */
 	lengthWithMaximumError(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	openSubpaths(...args: any[]): any;
+	/* typeEncoding=d24@0:8@16 */
+	lineWidthForOutliningWithBorder(...args: any[]): any;
 	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	outerPathWithRect(...args: any[]): any;
-	/* typeEncoding=@40@0:8d16@24^{CGContext=}32 */
-	outlinePathWithLineWidth_borderOptions_context(...args: any[]): any;
+	/* typeEncoding=@32@0:8d16@24 */
+	outlinePathWithLineWidth_borderOptions(...args: any[]): any;
 	/* typeEncoding=@24@0:8d16 */
 	outlinePathWithWidth(...args: any[]): any;
+	/* typeEncoding=@32@0:8d16i24i28 */
+	outlinePathWithWidth_lineCap_lineJoin(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	outlinedPathWithBorder_options(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	outlinedSubpathWithBorder_options(...args: any[]): any;
 	/* typeEncoding=@24@0:8@?16 */
 	pathByApplyingModifierBlock(...args: any[]): any;
 	/* typeEncoding=@24@0:8Q16 */
@@ -27638,6 +31064,8 @@ declare class MSPath extends NSObject /* implements NSCopying */ {
 	pathByTrimmingToLength_withMaximumError(...args: any[]): any;
 	/* typeEncoding=@32@0:8Q16Q24 */
 	pathFromIndex_toIndex(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	pathWithDashPattern(...args: any[]): any;
 	/* typeEncoding=@24@0:8d16 */
 	pathWithInset(...args: any[]): any;
 	/* typeEncoding=@32@0:8d16Q24 */
@@ -27656,10 +31084,18 @@ declare class MSPath extends NSObject /* implements NSCopying */ {
 	safeBounds(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setContours(...args: any[]): any;
-	/* typeEncoding=v24@0:8q16 */
-	setSignedElementCount(...args: any[]): any;
-	/* typeEncoding=q16@0:8 */
-	signedElementCount(...args: any[]): any;
+	/* typeEncoding=@32@0:8q16d24 */
+	shadowPathForStrokeType_lineWidth(...args: any[]): any;
+	/* typeEncoding=@48@0:8q16d24@32@40 */
+	shadowPathForStrokeType_lineWidth_cacheObject_context(...args: any[]): any;
+	/* typeEncoding=@24@0:8d16 */
+	shadowPathWithSpread(...args: any[]): any;
+	/* typeEncoding=@48@0:8d16@24q32d40 */
+	shadowPathWithSpread_borderOptions_strokeType_lineWidth(...args: any[]): any;
+	/* typeEncoding=@64@0:8d16@24q32d40@48@56 */
+	shadowPathWithSpread_borderOptions_strokeType_lineWidth_cacheObject_context(...args: any[]): any;
+	/* typeEncoding=@40@0:8d16@24@32 */
+	shadowPathWithSpread_cacheObject_context(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	startPoint(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -27749,12 +31185,8 @@ declare class MSPathRendererCG extends NSObject /* implements MSPathRenderer */ 
 	renderFillsForPath_style_layer_rect_context(...args: any[]): any;
 	/* typeEncoding=v88@0:8@16@24@32{CGRect={CGPoint=dd}{CGSize=dd}}40^{CGColor=}72@80 */
 	renderPath_style_layer_inRect_fallbackColor_context(...args: any[]): any;
-	/* typeEncoding=Q24@0:8@16 */
-	shadowDrawingTypeForStyle(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	shadowFillShouldClipForStyle(...args: any[]): any;
-	/* typeEncoding=q24@0:8@16 */
-	shadowStrokeTypeForStyle(...args: any[]): any;
 	/* typeEncoding=c32@0:8@16@24 */
 	shouldAdvancedClipToAvoidInnerStrokeBleedForStyle_layer(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -27768,6 +31200,8 @@ declare class MSPencilAction extends MSDocumentAction {
 	isActive(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isSelectable(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	pencil(...args: any[]): any;
 	/* typeEncoding=:16@0:8 */
@@ -27963,6 +31397,8 @@ declare class MSPluginBundle extends NSObject {
 	name(): NSString;
 	/* typeEncoding=@"NSString", ivar=_pluginDescription, attributes=(copy,nonatomic,readonly) */
 	pluginDescription(): NSString;
+	/* typeEncoding=c, ivar=_suppliesData, attributes=(assign,nonatomic,readonly) */
+	suppliesData(): boolean;
 	/* typeEncoding=@"NSURL", ivar=_url, attributes=(copy,nonatomic,readonly) */
 	url(): NSURL;
 	/* typeEncoding=@"NSString", ivar=_version, attributes=(copy,nonatomic,readonly) */
@@ -27974,6 +31410,8 @@ declare class MSPluginBundle extends NSObject {
 	static commandsFromArray_sketchPluginURL_pluginBundle(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	static pluginBundleWithURL(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	static scriptDefaultTitle(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -28009,6 +31447,8 @@ declare class MSPluginBundle extends NSObject {
 	isCompatible(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isEnabled(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	logErrorString(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	maximumCompatibleVersion(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -28027,6 +31467,8 @@ declare class MSPluginBundle extends NSObject {
 	setIconInfo(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setMenuDescription(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	suppliesData(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	url(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -28069,7 +31511,7 @@ declare class MSPluginBundleIconInfo extends NSObject {
 	setPath(...args: any[]): any;
 }
 
-declare class MSPluginCommand extends NSObject {
+declare class MSPluginCommand extends NSObject /* implements COPrintController */ {
 	/* typeEncoding=@"MSPluginCommandSpecifier", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	commandSpecifier(): MSPluginCommandSpecifier;
 	/* typeEncoding=@"NSMutableDictionary", ivar=_context, attributes=(retain,nonatomic) */
@@ -28088,10 +31530,8 @@ declare class MSPluginCommand extends NSObject {
 	hasAPI(): boolean;
 	/* typeEncoding=@"NSString", ivar=_identifier, attributes=(copy,nonatomic,readonly) */
 	identifier(): NSString;
-	/* typeEncoding=@"NSMutableString", ivar=_log, attributes=(retain,nonatomic) */
-	log(): NSMutableString;
-	/* typeEncoding=@"ECLogChannel", ivar=_logger, attributes=(retain,nonatomic) */
-	logger(): ECLogChannel;
+	/* typeEncoding=@"NSMutableArray", ivar=_logsWhenRunViaTests, attributes=(retain,nonatomic) */
+	logsWhenRunViaTests(): NSMutableArray;
 	/* typeEncoding=@"MSPluginManager", ivar=_manager, attributes=(assign,nonatomic,weak) */
 	manager(): MSPluginManager;
 	/* typeEncoding=@"NSString", ivar=_name, attributes=(copy,nonatomic,readonly) */
@@ -28108,8 +31548,6 @@ declare class MSPluginCommand extends NSObject {
 	session(): COScript;
 	/* typeEncoding=@"NSString", ivar=_shortcut, attributes=(assign,nonatomic,readonly) */
 	shortcut(): NSString;
-	/* typeEncoding=c, ivar=_skipNextLog, attributes=(assign,nonatomic) */
-	skipNextLog(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
 	stayRunning(): boolean;
 
@@ -28138,8 +31576,6 @@ declare class MSPluginCommand extends NSObject {
 	context(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	coreModuleMap(...args: any[]): any;
-	/* typeEncoding=v48@0:8@16@24q32@40 */
-	coscript_hadError_onLineNumber_atSourceURL(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	dealloc(): void;
 	/* typeEncoding=c16@0:8 */
@@ -28176,14 +31612,12 @@ declare class MSPluginCommand extends NSObject {
 	initWithScript_identifier_name_runHandler_scope(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	loadAPISupport(): void;
-	/* typeEncoding=@16@0:8 */
-	log(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	log_atLevel(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	logger(...args: any[]): any;
+	logString(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	logs(...args: any[]): any;
+	logsWhenRunViaTests(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	manager(...args: any[]): any;
 	/* typeEncoding=@24@0:8:16 */
@@ -28204,8 +31638,6 @@ declare class MSPluginCommand extends NSObject {
 	prepareForPerformanceTesting(): void;
 	/* typeEncoding=v24@0:8@16 */
 	print(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	resetLogger(): void;
 	/* typeEncoding=@32@0:8@16@24 */
 	run_manager(...args: any[]): any;
 	/* typeEncoding=@40@0:8@16@24@?32 */
@@ -28241,9 +31673,7 @@ declare class MSPluginCommand extends NSObject {
 	/* typeEncoding=v20@0:8c16 */
 	setHasAPI(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLog(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setLogger(...args: any[]): any;
+	setLogsWhenRunViaTests(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setManager(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -28252,8 +31682,6 @@ declare class MSPluginCommand extends NSObject {
 	setPluginBundle(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setSession(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setSkipNextLog(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setStayRunning(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -28277,19 +31705,11 @@ declare class MSPluginCommand extends NSObject {
 	/* typeEncoding=c24@0:8@16 */
 	shouldReloadWithActionID(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	skipNextLog(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	startCapturingDeprecatedChannel(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
 	stayRunning(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	stopCapturingDeprecatedChannel(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	tearDownIfFinished(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	tearDownSession(): void;
-	/* typeEncoding=v16@0:8 */
-	testDeprecationLogging(): void;
 	/* typeEncoding=v16@0:8 */
 	testNextItem(): void;
 	/* typeEncoding=d40@0:8@16@24Q32 */
@@ -28335,8 +31755,6 @@ declare class MSPluginCommandSpecifier extends NSObject /* implements NSCopying 
 declare class MSPluginDataSupplier extends MSDataSupplier {
 	/* typeEncoding=@"NSString", ivar=_commandIdentifier, attributes=(assign,nonatomic,readonly) */
 	commandIdentifier(): NSString;
-	/* typeEncoding=@"<MSPluginDataSupplierDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
-	delegate(): MSPluginDataSupplierDelegate;
 	/* typeEncoding=@"NSString", ivar=_dynamicDataKey, attributes=(assign,nonatomic,readonly) */
 	dynamicDataKey(): NSString;
 	/* typeEncoding=@"NSString", ivar=_pluginIdentifier, attributes=(assign,nonatomic,readonly) */
@@ -28344,21 +31762,21 @@ declare class MSPluginDataSupplier extends MSDataSupplier {
 	/* typeEncoding=c, ivar=_registered, attributes=(assign,nonatomic) */
 	registered(): boolean;
 
-	/* typeEncoding=@48@0:8@16@24@32@40 */
-	static identifierWithPluginIdentifier_commandIdentifier_dynamicDataKey_dataName(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@32 */
+	static identifierWithPluginIdentifier_commandIdentifier_dynamicDataKey(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
 	commandIdentifier(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	delegate(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	dynamicDataKey(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	encodeWithCoder(...args: any[]): any;
-	/* typeEncoding=v40@0:8Q16@24@?32 */
-	generateDataWithCount_dataSupplierManager_dataApplier(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@?32 */
+	generateDataForLayers_dataSupplierManager_dataApplier(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@?32 */
+	generateDataForOverrides_dataSupplierManager_dataApplier(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	imageFileURLForDataItem(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -28369,33 +31787,47 @@ declare class MSPluginDataSupplier extends MSDataSupplier {
 	pluginIdentifier(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	registered(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setDelegate(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setRegistered(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	valid(...args: any[]): any;
 }
 
-declare class MSPluginDebugController extends NSObject /* implements CODebugController */ {
-	/* typeEncoding=v32@0:8@16[1{__va_list_tag=II^v^v}]24 */
-	output_args(...args: any[]): any;
-}
-
-declare class MSPluginLogHandler extends ECLogHandler {
-	/* typeEncoding=@"MSPluginCommand", ivar=_command, attributes=(assign,nonatomic,weak) */
-	command(): MSPluginCommand;
+declare class MSPluginDataSupplierContext extends NSObject {
+	/* typeEncoding=@"NSDictionary", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	dictionaryRepresentation(): NSDictionary;
+	/* typeEncoding=c, ivar=_isSymbolInstanceOverride, attributes=(assign,nonatomic,readonly) */
+	isSymbolInstanceOverride(): boolean;
+	/* typeEncoding=@"NSArray", ivar=_items, attributes=(assign,nonatomic,readonly) */
+	items(): NSArray;
+	/* typeEncoding=@"NSString", ivar=_key, attributes=(assign,nonatomic,readonly) */
+	key(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	requestedCount(): number;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
-	command(...args: any[]): any;
+	dictionaryRepresentation(...args: any[]): any;
+	/* typeEncoding=@28@0:8c16@20 */
+	initWithIsSymbolInstanceOverride_items(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	initWithCommand(...args: any[]): any;
-	/* typeEncoding=v48@0:8@16@24[1{__va_list_tag=II^v^v}]32^{?=*I**}40 */
-	logFromChannel_withObject_arguments_context(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setCommand(...args: any[]): any;
+	initWithLayers(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithOverrides(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isSymbolInstanceOverride(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	items(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	key(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	requestedCount(...args: any[]): any;
+}
+
+declare class MSPluginDebugController extends NSObject /* implements CODebugController */ {
+	/* typeEncoding=v32@0:8@16[1{__va_list_tag=II^v^v}]24 */
+	output_args(...args: any[]): any;
 }
 
 declare class MSPluginManager extends NSObject {
@@ -28994,7 +32426,7 @@ declare class MSPluginsPreferencePane extends MSPreferencePane /* implements NST
 	/* typeEncoding=@16@0:8 */
 	static identifier(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	static openWithPluginToHightlight(...args: any[]): any;
+	static openWithPluginToHighlight(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	static title(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -29028,10 +32460,14 @@ declare class MSPluginsPreferencePane extends MSPreferencePane /* implements NST
 	controlTextDidEndEditing(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	dealloc(): void;
+	/* typeEncoding=v16@0:8 */
+	didSwitchToPane(): void;
 	/* typeEncoding=v24@0:8@16 */
 	disableAllPlugins(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	disablePluginInfo(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	doAnyPluginsSupplyData(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	draggedTypesForView(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -29174,6 +32610,10 @@ declare class MSPluginsPreferencePane extends MSPreferencePane /* implements NST
 	uninstallSelectedPlugins(): void;
 	/* typeEncoding=v24@0:8@16 */
 	uninstallSelectedPlugins(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	uninstallSheetInfoTextForPlugins(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	uninstallSheetMessageTextForPlugins(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	updateAndReloadPluginsWithBlock(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -29423,17 +32863,21 @@ declare class MSPolygonShape extends _MSPolygonShape {
 	/* typeEncoding=c16@0:8 */
 	canFlatten(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	inspectorViewControllerNames(...args: any[]): any;
+	inspectorSections(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	resetPoints(): void;
 }
 
 declare class MSPolygonShapeAction extends MSBaseShapeAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	polygonShape(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 }
 
-declare class MSPolygonShapeSection extends MSCustomShapeSection /* implements MSInspectorValueAdaptorDelegate */ {
+declare class MSPolygonShapeItem extends MSCustomShapeItem /* implements MSInspectorMathValueAdaptorDelegate */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -29448,6 +32892,9 @@ declare class MSPolygonShapeSection extends MSCustomShapeSection /* implements M
 	sidesField(): MSUpDownTextField;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
+
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -29469,44 +32916,34 @@ declare class MSPolygonShapeSection extends MSCustomShapeSection /* implements M
 	viewDidLoad(): void;
 }
 
-declare class MSPopUpToolbarItem extends NSToolbarItem {
-	/* typeEncoding=@"<MSPopToolbarItemActionObject>", ivar=(null), attributes=(assign,dynamic,nonatomic,weak) */
-	actionObject(): MSPopToolbarItemActionObject;
-	/* typeEncoding=@"NSMenu", ivar=(null), attributes=(retain,dynamic,nonatomic) */
-	menu(): NSMenu;
+declare class MSPolygonShapeSection extends MSSingleItemInspectorSection {
+	/* typeEncoding=#16@0:8 */
+	static itemClass(...args: any[]): any;
+}
 
-	/* typeEncoding=:16@0:8 */
-	action(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	actionObject(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	image(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16Q24 */
-	initWithItemIdentifier_size(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	menu(...args: any[]): any;
-	/* typeEncoding=@24@0:8Q16 */
-	menuButtonWithSize(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	popupCell(...args: any[]): any;
-	/* typeEncoding=v24@0:8:16 */
-	setAction(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setActionObject(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setImage(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setMenu(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setTarget(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setToolTip(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	target(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	toolTip(...args: any[]): any;
+declare class MSPopUpButtonTextAndRightEdgeImageCell extends NSPopUpButtonCell {
+	/* typeEncoding=@"NSImage", ivar=_rightEdgeImage, attributes=(retain,nonatomic) */
+	rightEdgeImage(): NSImage;
+
 	/* typeEncoding=v16@0:8 */
-	validate(): void;
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	attributedTitle(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawBezelWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawImageWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	imageRectForBounds(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	rightEdgeImage(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setRightEdgeImage(...args: any[]): any;
+}
+
+declare class MSPopUpToolbarItem extends MSToolbarItem {
+	/* typeEncoding=@24@0:8@16 */
+	makeViewForAction(...args: any[]): any;
 }
 
 declare class MSPopoverAction extends MSDocumentAction /* implements BCPopoverDelegate */ {
@@ -29522,8 +32959,6 @@ declare class MSPopoverAction extends MSDocumentAction /* implements BCPopoverDe
 	popoverViewController(): NSViewController;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,readonly) */
 	popoverVisible(): boolean;
-	/* typeEncoding=@"MSPopUpToolbarItem", ivar=(null), attributes=(assign,readonly) */
-	popupToolbarItem(): MSPopUpToolbarItem;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
@@ -29536,8 +32971,6 @@ declare class MSPopoverAction extends MSDocumentAction /* implements BCPopoverDe
 	closePopover(): void;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	hasSubMenu(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	initWithDocument(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -29550,12 +32983,8 @@ declare class MSPopoverAction extends MSDocumentAction /* implements BCPopoverDe
 	popoverVisible(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	popoverWillClose(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	popupToolbarItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setPopover(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showPopover(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
@@ -29571,34 +33000,54 @@ declare class MSPopoverDismisserView extends NSView {
 	mouseDown(...args: any[]): any;
 }
 
-declare class MSPositionInspectorItem extends MSTwoTextFieldInspectorItem /* implements MSInspectorValueAdaptorDelegate */ {
+declare class MSPositionInspectorItem extends MSInspectorItem /* implements MSInspectorMathValueAdaptorDelegate */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
+	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_rotationAdapter, attributes=(retain,nonatomic) */
+	rotationAdapter(): MSMathInspectorValueAdaptor;
+	/* typeEncoding=@"MSInlineUpDownTextField", ivar=_rotationField, attributes=(retain,nonatomic) */
+	rotationField(): MSInlineUpDownTextField;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 	/* typeEncoding=@"MSCoordinateInspectorValueAdaptor", ivar=_xAdaptor, attributes=(retain,nonatomic) */
 	xAdaptor(): MSCoordinateInspectorValueAdaptor;
+	/* typeEncoding=@"MSInlineUpDownTextField", ivar=_xField, attributes=(retain,nonatomic) */
+	xField(): MSInlineUpDownTextField;
 	/* typeEncoding=@"MSCoordinateInspectorValueAdaptor", ivar=_yAdaptor, attributes=(retain,nonatomic) */
 	yAdaptor(): MSCoordinateInspectorValueAdaptor;
+	/* typeEncoding=@"MSInlineUpDownTextField", ivar=_yField, attributes=(retain,nonatomic) */
+	yField(): MSInlineUpDownTextField;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=c16@0:8 */
 	allowFloatValues(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-	/* typeEncoding=@40@0:8@16@24@32 */
-	initWithTitle_field1Label_field2Label(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	inspectorValueAdaptorAllowFloat(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	inspectorValueAdaptorDidChangeValue(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	rotationAdapter(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	rotationField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setRotationAdapter(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setRotationField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setXAdaptor(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setXField(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setYAdaptor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setYField(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateDisplayedValues(): void;
 	/* typeEncoding=v16@0:8 */
@@ -29606,7 +33055,11 @@ declare class MSPositionInspectorItem extends MSTwoTextFieldInspectorItem /* imp
 	/* typeEncoding=@16@0:8 */
 	xAdaptor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	xField(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	yAdaptor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	yField(...args: any[]): any;
 }
 
 declare class MSPreferencePane extends NSViewController {
@@ -29624,6 +33077,8 @@ declare class MSPreferencePane extends NSViewController {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	didSwitchToPane(): void;
 	/* typeEncoding=v16@0:8 */
 	dismissAlertSheet(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -29709,8 +33164,6 @@ declare class MSPreferencesController extends NSWindowController /* implements N
 	updateWindowFrame(): void;
 	/* typeEncoding=c24@0:8@16 */
 	validateToolbarItem(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16@24 */
-	windowWillReturnFieldEditor_toObject(...args: any[]): any;
 }
 
 declare class MSPreferencesPluginInfo extends NSObject {
@@ -29736,6 +33189,8 @@ declare class MSPreferencesPluginInfo extends NSObject {
 	pluginBundle(): MSPluginBundle;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,nonatomic,readonly) */
 	pluginDescription(): NSString;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	suppliesData(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	updateAvailable(): boolean;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,nonatomic,readonly) */
@@ -29791,6 +33246,8 @@ declare class MSPreferencesPluginInfo extends NSObject {
 	/* typeEncoding=v24@0:8@16 */
 	setPluginBundle(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	suppliesData(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	updateAvailable(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	updateVersionString(...args: any[]): any;
@@ -29842,6 +33299,8 @@ declare class MSPreviewAtActualSizeAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	keyUp(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSPreviewImageCache extends NSObject {
@@ -29884,6 +33343,8 @@ declare class MSPreviewImageCache extends NSObject {
 declare class MSPreviousPageAction extends MSChangePageAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	previousPage(...args: any[]): any;
 }
@@ -29895,6 +33356,8 @@ declare class MSPrintAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasDynamicTitle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	makeArtboardBeforePrinting(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -30130,9 +33593,7 @@ declare class MSRectSnapItem extends MSSnapItem {
 	static rectSnapItemWithLayer_rect_constrainProportions(...args: any[]): any;
 
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16Q24 */
-	alignmentRectInLayer_options(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	anchorsForSnapping(...args: any[]): any;
+	alignmentRectInCoordinateSpace_options(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	bottomAnchor(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
@@ -30143,6 +33604,8 @@ declare class MSRectSnapItem extends MSSnapItem {
 	centerYAnchor(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	concatAncestorsAndSelfTransforms(): void;
+	/* typeEncoding=v32@0:8Q16@?24 */
+	enumerateAnchorsForSnappingOnAxes_usingBlock(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	leftAnchor(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
@@ -30192,6 +33655,8 @@ declare class MSRectangleShape extends _MSRectangleShape {
 	/* typeEncoding=c24@0:8@16 */
 	static validateComponentString(...args: any[]): any;
 
+	/* typeEncoding=v16@0:8 */
+	adjustAfterInsert(): void;
 	/* typeEncoding=@16@0:8 */
 	bezierPathForCursorPreview(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -30207,7 +33672,7 @@ declare class MSRectangleShape extends _MSRectangleShape {
 	/* typeEncoding=c16@0:8 */
 	hasSmoothCorners(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	inspectorViewControllers(...args: any[]): any;
+	inspectorSections(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	maximumAllowedRadius(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
@@ -30239,8 +33704,6 @@ declare class MSRectangleShape extends _MSRectangleShape {
 	/* typeEncoding=v24@0:8d16 */
 	setNormalizedExponentialCornerRadius(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	shouldDrawSelectionStroke(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
 	smoothCornersAllowed(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	validateProposedCornerRadiusSizeWithString(...args: any[]): any;
@@ -30251,13 +33714,19 @@ declare class MSRectangleShape extends _MSRectangleShape {
 }
 
 declare class MSRectangleShapeAction extends MSBaseShapeAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	rectangleShape(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
 
-declare class MSRectangleShapeItem extends MSCustomShapeItem /* implements MSInspectorValueAdaptorDelegate, MSLayerChangeObserver */ {
+declare class MSRectangleShapeItem extends MSCustomShapeItem /* implements MSInspectorMathValueAdaptorDelegate, MSLayerChangeObserver */ {
+	/* typeEncoding=@"NSPopUpButton", ivar=_curvaturePopup, attributes=(retain,nonatomic) */
+	curvaturePopup(): NSPopUpButton;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -30266,25 +33735,27 @@ declare class MSRectangleShapeItem extends MSCustomShapeItem /* implements MSIns
 	hash(): number;
 	/* typeEncoding=@"MSCornerRadiusInspectorValueAdaptor", ivar=_radiusAdaptor, attributes=(retain,nonatomic) */
 	radiusAdaptor(): MSCornerRadiusInspectorValueAdaptor;
-	/* typeEncoding=@"MSUpDownTextField", ivar=_radiusField, attributes=(retain,nonatomic) */
-	radiusField(): MSUpDownTextField;
+	/* typeEncoding=@"MSInlineUpDownTextField", ivar=_radiusField, attributes=(retain,nonatomic) */
+	radiusField(): MSInlineUpDownTextField;
 	/* typeEncoding=@"NSSlider", ivar=_radiusSlider, attributes=(retain,nonatomic) */
 	radiusSlider(): NSSlider;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
-	/* typeEncoding=@24@0:8@16 */
-	static filterSelection(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	curvaturePopup(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	dealloc(): void;
 	/* typeEncoding=@32@0:8@16@24 */
 	initWithNibName_bundle(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	inspectorValueAdaptor_didEncounterError(...args: any[]): any;
-	/* typeEncoding=c48@0:8@16d24@32@40 */
+	/* typeEncoding=c48@0:8@16@24@32@40 */
 	inspectorValueAdaptor_validateValue_forModel_context(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	layerDidChange(...args: any[]): any;
@@ -30297,7 +33768,7 @@ declare class MSRectangleShapeItem extends MSCustomShapeItem /* implements MSIns
 	/* typeEncoding=@16@0:8 */
 	radiusSlider(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	refreshAction(...args: any[]): any;
+	setCurvaturePopup(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLayers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -30312,6 +33783,11 @@ declare class MSRectangleShapeItem extends MSCustomShapeItem /* implements MSIns
 	updateDisplayedValues(): void;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
+}
+
+declare class MSRectangleShapeSection extends MSSingleItemInspectorSection {
+	/* typeEncoding=#16@0:8 */
+	static itemClass(...args: any[]): any;
 }
 
 declare class MSRedoAction extends MSUndoBaseAction {
@@ -30332,6 +33808,8 @@ declare class MSRedoAction extends MSUndoBaseAction {
 declare class MSReduceFileSizeAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	reduceFileSize(...args: any[]): any;
 }
@@ -30350,8 +33828,12 @@ declare class MSReduceImageSizeAction extends MSDocumentAction {
 declare class MSRemoteAssetLibrary extends MSAssetLibrary {
 	/* typeEncoding=@"NSURL", ivar=_appcastURL, attributes=(retain,nonatomic) */
 	appcastURL(): NSURL;
+	/* typeEncoding=@"NSString", ivar=_displayName, attributes=(copy,nonatomic) */
+	displayName(): NSString;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	downloadAvailable(): boolean;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	fileName(): NSString;
 	/* typeEncoding=@"NSString", ivar=_infoText, attributes=(retain,nonatomic) */
 	infoText(): NSString;
 	/* typeEncoding=@"NSString", ivar=_libraryVersion, attributes=(retain,nonatomic) */
@@ -30374,10 +33856,16 @@ declare class MSRemoteAssetLibrary extends MSAssetLibrary {
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
 	appcastURL(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	assetLibraryUpdated(): void;
+	/* typeEncoding=@16@0:8 */
+	displayName(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	downloadAvailable(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	encodeWithCoder(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	fileName(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	infoText(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -30390,6 +33878,8 @@ declare class MSRemoteAssetLibrary extends MSAssetLibrary {
 	libraryType(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	libraryVersion(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	name(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	newUpdatingInfo(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -30400,6 +33890,8 @@ declare class MSRemoteAssetLibrary extends MSAssetLibrary {
 	resolveLocationOnDisk(): void;
 	/* typeEncoding=v24@0:8@16 */
 	setAppcastURL(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDisplayName(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setInfoText(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -30416,6 +33908,15 @@ declare class MSRemoteAssetLibrary extends MSAssetLibrary {
 	updatingInfo(...args: any[]): any;
 }
 
+declare class MSRemoveAllOverridesAction extends MSDocumentAction {
+	/* typeEncoding=v24@0:8@16 */
+	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	removeAllOverridesFromSelection(...args: any[]): any;
+}
+
 declare class MSRemoveFlowAction extends MSFlowBaseAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
@@ -30430,6 +33931,8 @@ declare class MSRemoveFlowAction extends MSFlowBaseAction {
 }
 
 declare class MSRemoveTextTransformAction extends MSTextTransformAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	removeTextTransform(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -30439,6 +33942,8 @@ declare class MSRemoveTextTransformAction extends MSTextTransformAction {
 declare class MSRemoveUnusedStylesAction extends MSBaseStyleAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	removeUnusedStyles(...args: any[]): any;
 }
@@ -30446,6 +33951,8 @@ declare class MSRemoveUnusedStylesAction extends MSBaseStyleAction {
 declare class MSRenameLayerAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	renameLayer(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -30498,11 +34005,6 @@ declare class MSRenderMonitor extends NSObject {
 	timestampForEvent(...args: any[]): any;
 	/* typeEncoding={?=[6Q]}16@0:8 */
 	timestamps(...args: any[]): any;
-}
-
-declare class MSRenderingCALayer extends CALayer {
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
 }
 
 declare class MSRenderingContext extends NSObject {
@@ -30697,10 +34199,6 @@ declare class MSRenderingContextCG extends MSRenderingContext {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=c16@0:8 */
-	allowsSubpixelQuantization(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	allowsSubpixelQuantization(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	applyFillColor(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -30723,8 +34221,6 @@ declare class MSRenderingContextCG extends MSRenderingContext {
 	beginTransparencyLayerInRect_inheritClip(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	bitmapTransparencyLayerSavedStates(...args: any[]): any;
-	/* typeEncoding=@72@0:8^{CGContext=}16@24d32{CGRect={CGPoint=dd}{CGSize=dd}}40 */
-	blurSubContextWithCGContext_backgroundBlurLayer_pointScale_rect(...args: any[]): any;
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	clipToRect(...args: any[]): any;
 	/* typeEncoding=v64@0:8{CGAffineTransform=dddddd}16 */
@@ -30803,6 +34299,8 @@ declare class MSRenderingContextCG extends MSRenderingContext {
 	shouldDrawFills(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	shouldSkipDrawingShadow(...args: any[]): any;
+	/* typeEncoding=@72@0:8^{CGContext=}16@24d32{CGRect={CGPoint=dd}{CGSize=dd}}40 */
+	subContextForBackgroundBlurWithCGContext_backgroundBlurLayer_pointScale_rect(...args: any[]): any;
 	/* typeEncoding=@52@0:8^{CGContext=}16c24d28d36Q44 */
 	subContextWithCGContext_contextIsVectorBacked_pointScale_zoomLevel_options(...args: any[]): any;
 	/* typeEncoding=@36@0:8^{CGContext=}16c24@28 */
@@ -30844,8 +34342,6 @@ declare class MSRenderingDriver extends NSObject {
 }
 
 declare class MSRenderingDriverCG extends MSRenderingDriver {
-	/* typeEncoding=v24@0:8@16 */
-	addGridRenderersToMap(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	addSimpleRenderersToMap(...args: any[]): any;
 	/* typeEncoding=@40@0:8@16^{CGContext=}24@32 */
@@ -30941,8 +34437,6 @@ declare class MSRenderingRequest extends NSObject {
 	pointScale(): number;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly,getter=isPrinting) */
 	printing(): boolean;
-	/* typeEncoding=q, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	renderingQuality(): number;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	shouldFlipShadows(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -30984,8 +34478,6 @@ declare class MSRenderingRequest extends NSObject {
 	options(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	pointScale(...args: any[]): any;
-	/* typeEncoding=q16@0:8 */
-	renderingQuality(...args: any[]): any;
 	/* typeEncoding=@24@0:8Q16 */
 	requestWithOptions(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -31086,11 +34578,15 @@ declare class MSReorderingView extends NSView /* implements NSDraggingSource */ 
 	startDragWithEvent(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	target(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	wantsSeparator(...args: any[]): any;
 }
 
 declare class MSReplaceColorAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	replaceColor(...args: any[]): any;
 }
@@ -31271,6 +34767,9 @@ declare class MSReplaceFontsSheet extends CHSheetController /* implements NSTabl
 	/* typeEncoding=@"NSViewController", ivar=_viewController, attributes=(retain,nonatomic) */
 	viewController(): NSViewController;
 
+	/* typeEncoding=@16@0:8 */
+	static dontReplaceFontLabel(...args: any[]): any;
+
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -31331,6 +34830,8 @@ declare class MSReplaceImageAction extends MSDocumentAction {
 	/* typeEncoding=v32@0:8@16@24 */
 	applyImage_tolayer(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	openPanel(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	replaceImage(...args: any[]): any;
@@ -31350,6 +34851,8 @@ declare class MSReplaceWithSymbolAction extends MSSharedSymbolAction {
 	documentCloseObserver(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasSubMenu(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	menuItemsForMenu(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -31362,8 +34865,6 @@ declare class MSReplaceWithSymbolAction extends MSSharedSymbolAction {
 	replaceWithSymbol(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDocumentCloseObserver(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -31390,18 +34891,11 @@ declare class MSReplacementFontPickerViewController extends MSFontFamilyPickerVi
 	tableViewSelectionDidChange(...args: any[]): any;
 }
 
-declare class MSResetBooleanAction extends MSBaseBooleanAction {
-	/* typeEncoding=v24@0:8@16 */
-	doPerformAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	historyMomentTitle(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	resetBooleanAction(...args: any[]): any;
-}
-
 declare class MSResetOriginAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	resetRulerOrigin(...args: any[]): any;
 }
@@ -31418,6 +34912,8 @@ declare class MSResetSharedStyleAction extends MSBaseSharedObjectAction {
 declare class MSResetSymbolSizeAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	resetSymbolSize(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -31427,6 +34923,8 @@ declare class MSResetSymbolSizeAction extends MSDocumentAction {
 declare class MSResizeArtboardToFitAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	resizeArtboardToFit(...args: any[]): any;
 	/* typeEncoding=c56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24 */
@@ -31440,38 +34938,77 @@ declare class MSResizeArtboardToFitValidator extends NSObject {
 	static isValidForSelectedLayers(...args: any[]): any;
 }
 
-declare class MSResizeGestureRecognizer extends MSDragGestureRecognizer {
-	/* typeEncoding=c, ivar=(null), attributes=(assign,readonly) */
-	constrainProportions(): boolean;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,readonly) */
-	maySnap(): boolean;
-	/* typeEncoding=d, ivar=_originalProportions, attributes=(assign,nonatomic) */
-	originalProportions(): number;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,readonly) */
-	shouldResizeFromCenter(): boolean;
-
-	/* typeEncoding=c16@0:8 */
-	constrainProportions(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16:24 */
-	initWithTarget_action(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	maySnap(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	originalProportions(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setOriginalProportions(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	shouldResizeFromCenter(...args: any[]): any;
-}
-
 declare class MSResizeInspectorItem extends MSInspectorItem {
+	/* typeEncoding=@"NSButton", ivar=_fixHorizontalButton, attributes=(retain,nonatomic) */
+	fixHorizontalButton(): NSButton;
+	/* typeEncoding=@"NSButton", ivar=_fixVerticalButton, attributes=(retain,nonatomic) */
+	fixVerticalButton(): NSButton;
+	/* typeEncoding=@"_TtC6Sketch21MSResizingPreviewView", ivar=_resizingPreviewView, attributes=(retain,nonatomic) */
+	resizingPreviewView(): _TtC6Sketch21MSResizingPreviewView;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=@16@0:8 */
+	fixHorizontalButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	fixVerticalButton(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16@24@32^v40 */
+	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	resetConstraints(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	resizeConstraintsAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	resizingPreviewView(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFixHorizontalButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFixVerticalButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setResizingPreviewView(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	toggleBoth(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateButtonOrder(): void;
+	/* typeEncoding=v16@0:8 */
+	viewDidLoad(): void;
+	/* typeEncoding=q24@0:8@16 */
+	zPositionForButton(...args: any[]): any;
+}
+
+declare class MSResizeInspectorSection extends MSBaseInspectorSection {
+	/* typeEncoding=@"MSCollapsibleHeaderInspectorItem", ivar=_resizeHeader, attributes=(retain,nonatomic) */
+	resizeHeader(): MSCollapsibleHeaderInspectorItem;
+	/* typeEncoding=@"MSResizeInspectorItem", ivar=_resizeItem, attributes=(retain,nonatomic) */
+	resizeItem(): MSResizeInspectorItem;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v28@0:8@16c24 */
+	item_wantsSectionToCollapse(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	resizeHeader(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	resizeItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setResizeHeader(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setResizeItem(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateItems(): void;
 }
 
 declare class MSRevealInLayerListAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	revealInLayerList(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -31481,6 +35018,8 @@ declare class MSRevealInLayerListAction extends MSDocumentAction {
 declare class MSRevealPluginsAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	revealPlugins(...args: any[]): any;
 }
@@ -31488,6 +35027,8 @@ declare class MSRevealPluginsAction extends MSAction {
 declare class MSReversePathAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	reversePath(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -31502,12 +35043,16 @@ declare class MSRightOffsetHoverButtonCell extends MSHoverButtonCell {
 declare class MSRotateAction extends MSEventHandlerAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	refreshTouchBarItem(): void;
 	/* typeEncoding=v24@0:8@16 */
 	rotate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	rotationBarAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarItem(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -31517,6 +35062,8 @@ declare class MSRotateAction extends MSEventHandlerAction {
 declare class MSRotateClockwiseAction extends MSEventHandlerAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	rotate90C(...args: any[]): any;
 }
@@ -31524,6 +35071,8 @@ declare class MSRotateClockwiseAction extends MSEventHandlerAction {
 declare class MSRotateCounterclockwiseAction extends MSEventHandlerAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	rotate90CC(...args: any[]): any;
 }
@@ -31549,10 +35098,10 @@ declare class MSRotateEventHandler extends MSNormalBaseEventHandler /* implement
 	exitOnMouseUp(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding={CGPoint=dd}, ivar=_rotationAnchorPoint, attributes=(assign,nonatomic) */
-	rotationAnchorPoint(): CGPoint;
 	/* typeEncoding={CGPoint=dd}, ivar=_rotationCenterPoint, attributes=(assign,nonatomic) */
 	rotationCenterPoint(): CGPoint;
+	/* typeEncoding=@"NSArray", ivar=_rotationItems, attributes=(assign,nonatomic,readonly) */
+	rotationItems(): NSArray;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
@@ -31611,14 +35160,14 @@ declare class MSRotateEventHandler extends MSNormalBaseEventHandler /* implement
 	refreshTouchBarItemWithIdentifier(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	resetWithSelection(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	rotationAnchorPoint(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	rotationBarAction(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	rotationCenterPoint(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16@32 */
 	rotationCenterPointForAnchorPoint_layer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	rotationItems(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	selectionDidChangeTo(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -31630,11 +35179,9 @@ declare class MSRotateEventHandler extends MSNormalBaseEventHandler /* implement
 	/* typeEncoding=v20@0:8c16 */
 	setExitOnMouseUp(...args: any[]): any;
 	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setRotationAnchorPoint(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
 	setRotationCenterPoint(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setRotationCenterPointWithoutUpdatingAnchorPoint(...args: any[]): any;
+	/* typeEncoding=v36@0:8{CGPoint=dd}16c32 */
+	setRotationCenterPoint_updateAnchorPoints(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	touchBar_makeItemForIdentifier(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -31748,27 +35295,19 @@ declare class MSRotationBar extends NSControl {
 declare class MSRotationGestureInterpreter extends NSObject {
 	/* typeEncoding={CGPoint=dd}, ivar=_centerPoint, attributes=(assign,nonatomic) */
 	centerPoint(): CGPoint;
-	/* typeEncoding=@"NSArray", ivar=_initialRotations, attributes=(copy,nonatomic) */
-	initialRotations(): NSArray;
 
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
 	/* typeEncoding=d40@0:8{CGPoint=dd}16@32 */
 	angleOfPoint_inLayer(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	centerPoint(...args: any[]): any;
 	/* typeEncoding=d32@0:8d16@24 */
 	convertRotation_toLayer(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	initialRotations(...args: any[]): any;
 	/* typeEncoding=d24@0:8@16 */
 	rotationInDegreesInLayer(...args: any[]): any;
 	/* typeEncoding=d24@0:8@16 */
 	rotationInLayer(...args: any[]): any;
 	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
 	setCenterPoint(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setInitialRotations(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	updateWithDragRecognizer(...args: any[]): any;
 	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
@@ -31780,8 +35319,6 @@ declare class MSRoundToPixelAction extends MSDocumentAction {
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doRoundLayerFrame(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -31818,8 +35355,6 @@ declare class MSRoundToPixelAction extends MSDocumentAction {
 
 declare class MSRoundedRectangleShapeAction extends MSBaseShapeAction {
 	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	prototypeLayer(...args: any[]): any;
@@ -31836,8 +35371,56 @@ declare class MSRulerBlockCell extends MSTintedHoverButtonCell {
 	drawImage_withFrame_inView(...args: any[]): any;
 	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
 	drawInteriorWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	hoverTint(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	normalTint(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	state(...args: any[]): any;
+}
+
+declare class MSRulerCoordinateSpace extends NSObject /* implements MSLayerCoordinateSpace */ {
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	bounds(): CGRect;
+	/* typeEncoding=@"MSLayer<MSRootLayer>", ivar=_layer, attributes=(assign,nonatomic,readonly,weak) */
+	layer(): MSLayer;
+	/* typeEncoding=@"<MSLayerCoordinateSpace>", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	parentCoordinateSpace(): MSLayerCoordinateSpace;
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	transformForConvertingFromParentCoordinateSpace(): CGAffineTransform;
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	transformForConvertingToParentCoordinateSpace(): CGAffineTransform;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	bounds(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16@32 */
+	convertPoint_fromCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16@32 */
+	convertPoint_toCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	convertRect_fromCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	convertRect_toCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGVector=dd}40@0:8{CGVector=dd}16@32 */
+	convertVector_fromCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGVector=dd}40@0:8{CGVector=dd}16@32 */
+	convertVector_toCoordinateSpace(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithLayer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	parentCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGAffineTransform=dddddd}24@0:8@16 */
+	transformForConvertingFromCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGAffineTransform=dddddd}16@0:8 */
+	transformForConvertingFromParentCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGAffineTransform=dddddd}24@0:8@16 */
+	transformForConvertingToCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGAffineTransform=dddddd}16@0:8 */
+	transformForConvertingToParentCoordinateSpace(...args: any[]): any;
 }
 
 declare class MSRulerData extends _MSRulerData {
@@ -31866,22 +35449,22 @@ declare class MSRulerData extends _MSRulerData {
 declare class MSRulerGuides extends NSObject {
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
 	static absoluteFrameOfSelectedLayersOnPage(...args: any[]): any;
-	/* typeEncoding=@52@0:8@16{CGPoint=dd}24c40d44 */
-	static findHoverGuidesOnPage_mouse_rulesVisible_zoomScale(...args: any[]): any;
-	/* typeEncoding=@76@0:8@16@24c32{CGRect={CGPoint=dd}{CGSize=dd}}36d68 */
-	static horizontalGuidesForGrid_ruler_forDrawing_inRect_zoomScale(...args: any[]): any;
-	/* typeEncoding=@72@0:8@16c24{CGRect={CGPoint=dd}{CGSize=dd}}28c60d64 */
-	static horizontalGuidesForVerticalRulerOnPage_forDrawing_inRect_rulersVisible_zoomScale(...args: any[]): any;
-	/* typeEncoding=@40@0:8@16c24c28d32 */
-	static horizontalGuidesForVerticalRulerOnPage_forDrawing_rulersVisible_zoomScale(...args: any[]): any;
+	/* typeEncoding=@56@0:8@16{CGPoint=dd}24Q40d48 */
+	static findHoverGuidesOnPage_mouse_mask_zoomScale(...args: any[]): any;
+	/* typeEncoding=@80@0:8@16@24Q32{CGRect={CGPoint=dd}{CGSize=dd}}40d72 */
+	static horizontalGuidesForGrid_ruler_mask_inRect_zoomScale(...args: any[]): any;
+	/* typeEncoding=@72@0:8@16Q24{CGRect={CGPoint=dd}{CGSize=dd}}32d64 */
+	static horizontalGuidesForVerticalRulerOnPage_mask_inRect_zoomScale(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16Q24d32 */
+	static horizontalGuidesForVerticalRulerOnPage_mask_zoomScale(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16Q24 */
 	static snapGuidesForRulerData_axis(...args: any[]): any;
-	/* typeEncoding=@80@0:8@16@24c32{CGRect={CGPoint=dd}{CGSize=dd}}36c68d72 */
-	static verticalGuidesForGrid_ruler_forDrawing_inRect_rulersVisible_zoomScale(...args: any[]): any;
-	/* typeEncoding=@72@0:8@16c24{CGRect={CGPoint=dd}{CGSize=dd}}28c60d64 */
-	static verticalGuidesForHorizontalRulerOnPage_forDrawing_inRect_rulersVisible_zoomScale(...args: any[]): any;
-	/* typeEncoding=@40@0:8@16c24c28d32 */
-	static verticalGuidesForHorizontalRulerOnPage_forDrawing_rulersVisible_zoomScale(...args: any[]): any;
+	/* typeEncoding=@80@0:8@16@24Q32{CGRect={CGPoint=dd}{CGSize=dd}}40d72 */
+	static verticalGuidesForGrid_ruler_mask_inRect_zoomScale(...args: any[]): any;
+	/* typeEncoding=@72@0:8@16Q24{CGRect={CGPoint=dd}{CGSize=dd}}32d64 */
+	static verticalGuidesForHorizontalRulerOnPage_mask_inRect_zoomScale(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16Q24d32 */
+	static verticalGuidesForHorizontalRulerOnPage_mask_zoomScale(...args: any[]): any;
 }
 
 declare class MSRulerView extends NSView {
@@ -32075,6 +35658,10 @@ declare class MSRulerViewLayer extends CALayer {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=c32@0:8d16q24 */
+	_shouldDrawTickmarkAtPosition_options(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	adjustedBase(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	axis(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
@@ -32093,12 +35680,18 @@ declare class MSRulerViewLayer extends CALayer {
 	drawMetric_atPoint(...args: any[]): any;
 	/* typeEncoding=v44@0:8@16{CGPoint=dd}24c40 */
 	drawMetric_atPoint_drawBackground(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	drawMetricsWithColor(...args: any[]): any;
-	/* typeEncoding=v32@0:8q16@24 */
-	drawMetricsWithOptions_color(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	drawMetrics(): void;
+	/* typeEncoding=v24@0:8q16 */
+	drawMetricsWithOptions(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	drawOccupiedRegion(): void;
+	/* typeEncoding=v16@0:8 */
+	drawSeparatorForOccupiedRegion(): void;
+	/* typeEncoding=v56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24 */
+	drawTickmarksWithColor_inRect(...args: any[]): any;
+	/* typeEncoding=v64@0:8q16@24{CGRect={CGPoint=dd}{CGSize=dd}}32 */
+	drawTickmarksWithOptions_color_inRect(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	formatter(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -32135,6 +35728,8 @@ declare class MSRulerViewLayer extends CALayer {
 	setZoomValue(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldDrawGuides(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	smallStep(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	snapColor(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
@@ -32144,6 +35739,8 @@ declare class MSRulerViewLayer extends CALayer {
 declare class MSRunCustomScriptAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	runCustomScript(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -32178,6 +35775,8 @@ declare class MSRunCustomScriptSheet extends CHSheetController /* implements NST
 	commentSelection(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	logField(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16@24@32^v40 */
+	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	redoAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -32196,6 +35795,8 @@ declare class MSRunCustomScriptSheet extends CHSheetController /* implements NST
 	setTouchBarSave(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setUndoManager(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	sheetWillClose(): void;
 	/* typeEncoding=v24@0:8@16 */
 	showHelp(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
@@ -32214,11 +35815,15 @@ declare class MSRunCustomScriptSheet extends CHSheetController /* implements NST
 	undoManagerForTextView(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	validateMenuItem(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	windowDidLoad(): void;
 }
 
 declare class MSRunLastScriptAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	runLastScript(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -32228,6 +35833,8 @@ declare class MSRunLastScriptAction extends MSAction {
 declare class MSRunPluginAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	runPlugin(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
@@ -32358,8 +35965,8 @@ declare class MSSVGImporter extends NSObject /* implements MSImporter */ {
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
-	/* typeEncoding=@, ivar=_graph, attributes=(retain,nonatomic) */
-	graph(): any;
+	/* typeEncoding=@"SVGElement", ivar=_graph, attributes=(retain,nonatomic) */
+	graph(): SVGElement;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
 	/* typeEncoding=@"SVGImporter", ivar=_importer, attributes=(retain,nonatomic) */
@@ -32388,6 +35995,8 @@ declare class MSSVGImporter extends NSObject /* implements MSImporter */ {
 	prepareToImportFromData(...args: any[]): any;
 	/* typeEncoding=Q24@0:8@16 */
 	prepareToImportFromURL(...args: any[]): any;
+	/* typeEncoding=v32@0:8d16@24 */
+	scale_rootGroup(...args: any[]): any;
 	/* typeEncoding=@32@0:8q16q24 */
 	secondPhaseSubtitleForValue_maximum(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -32491,6 +36100,8 @@ declare class MSSVGfeFilterPrimitive extends MSXMLElementWrapper {
 declare class MSSaveAsTemplateAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	saveAsTemplate(...args: any[]): any;
 }
@@ -32518,38 +36129,20 @@ declare class MSSaveAsTemplateSheet extends CHSheetController {
 	setInputField(...args: any[]): any;
 }
 
-declare class MSSavedLayerFrames extends NSObject {
-	/* typeEncoding=@"NSDictionary", ivar=_framesByLayerID, attributes=(assign,nonatomic,readonly) */
-	framesByLayerID(): NSDictionary;
-	/* typeEncoding=@"MSLayer", ivar=_layer, attributes=(assign,nonatomic,readonly) */
-	layer(): MSLayer;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=@16@0:8 */
-	framesByLayerID(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initWithLayer(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	layer(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	restore(): void;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
-	savedFrameForLayer(...args: any[]): any;
-}
-
 declare class MSScaleAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	scale(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
 
-declare class MSScaleSheet extends CHSheetController {
-	/* typeEncoding=c, ivar=_hasDoneFirstScale, attributes=(assign,nonatomic) */
-	hasDoneFirstScale(): boolean;
+declare class MSScaleSheet extends MSCanvasUpdatingSheet {
 	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
 	height(): number;
 	/* typeEncoding=@"NSTextField", ivar=_heightField, attributes=(retain,nonatomic) */
@@ -32562,16 +36155,12 @@ declare class MSScaleSheet extends CHSheetController {
 	originLabel(): NSTextField;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=_originalRect, attributes=(assign,nonatomic,readonly) */
 	originalRect(): CGRect;
-	/* typeEncoding=@"NSTimer", ivar=_refreshTimer, attributes=(retain,nonatomic) */
-	refreshTimer(): NSTimer;
 	/* typeEncoding=d, ivar=_scale, attributes=(assign,nonatomic) */
 	scale(): number;
 	/* typeEncoding=@"NSTextField", ivar=_scalingField, attributes=(retain,nonatomic) */
 	scalingField(): NSTextField;
 	/* typeEncoding=q, ivar=_scalingOriginCorner, attributes=(assign,nonatomic) */
 	scalingOriginCorner(): number;
-	/* typeEncoding=@"NSDictionary", ivar=_selectedObjectsBackup, attributes=(assign,nonatomic,readonly) */
-	selectedObjectsBackup(): NSDictionary;
 	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
 	width(): number;
 	/* typeEncoding=@"NSTextField", ivar=_widthField, attributes=(retain,nonatomic) */
@@ -32579,22 +36168,16 @@ declare class MSScaleSheet extends CHSheetController {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=v24@0:8@16 */
-	cancel(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	confirm(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	didChangeValues(): void;
 	/* typeEncoding=v16@0:8 */
-	doScaling(): void;
-	/* typeEncoding=@16@0:8 */
-	doc(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	hasDoneFirstScale(...args: any[]): any;
+	doPerformOperation(): void;
 	/* typeEncoding=d16@0:8 */
 	height(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	heightField(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	initWithWindow(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -32609,28 +36192,14 @@ declare class MSScaleSheet extends CHSheetController {
 	refreshScalingOriginButton(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	refreshScalingOriginControls(): void;
-	/* typeEncoding=@16@0:8 */
-	refreshTimer(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	restoreCurrentPage(): void;
-	/* typeEncoding=v16@0:8 */
-	saveBackupOfSelection(): void;
 	/* typeEncoding=d16@0:8 */
 	scale(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	scaleSelectedObjects(): void;
 	/* typeEncoding=@16@0:8 */
 	scalingField(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	scalingOriginCorner(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	scheduleRefreshTimerIfNeeded(): void;
 	/* typeEncoding=v24@0:8@16 */
 	selectScalingOrigin(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	selectedObjectsBackup(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setHasDoneFirstScale(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	setHeight(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -32643,8 +36212,6 @@ declare class MSScaleSheet extends CHSheetController {
 	setOriginButtonsContainer(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setOriginLabel(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setRefreshTimer(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	setScale(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -32666,6 +36233,8 @@ declare class MSScaleSheet extends CHSheetController {
 }
 
 declare class MSScissorsAction extends MSEventHandlerAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	scissors(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -32702,8 +36271,6 @@ declare class MSScissorsEventHandler extends MSEventHandler {
 	drawThinStrokeBezierSegments_hoverIndex(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	handlerGotFocus(): void;
-	/* typeEncoding=v16@0:8 */
-	handlerWillLoseFocus(): void;
 	/* typeEncoding=@32@0:8{CGPoint=dd}16 */
 	hoverSegmentForMouse(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -32767,6 +36334,8 @@ declare class MSSectionBackgroundSeparatorView extends NSView {
 	static separator(...args: any[]): any;
 	/* typeEncoding=@48@0:8{NSEdgeInsets=dddd}16 */
 	static separatorWithInsets(...args: any[]): any;
+	/* typeEncoding=@56@0:8{NSEdgeInsets=dddd}16d48 */
+	static separatorWithInsets_width(...args: any[]): any;
 
 	/* typeEncoding=@16@0:8 */
 	color(...args: any[]): any;
@@ -32785,6 +36354,8 @@ declare class MSSectionBackgroundView extends NSView {
 	static requiredHeightForViews(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	static sectionBackgroundWithController(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	static sectionBackgroundWithController_wantsSeparatorAfterViews(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	static separatorBetweenView_andView(...args: any[]): any;
 
@@ -32800,9 +36371,20 @@ declare class MSSectionBackgroundView extends NSView {
 	stackSubviews(): void;
 }
 
+declare class MSSegmentedToolbarItem extends NSToolbarItemGroup {
+	/* typeEncoding=@28@0:8@16c24 */
+	initWithAction_forToolbar(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	makeViewForAction(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	validateWithAction(...args: any[]): any;
+}
+
 declare class MSSelectAllAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	selectAll(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -32812,6 +36394,8 @@ declare class MSSelectAllAction extends MSDocumentAction {
 declare class MSSelectAllArtboardsAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	selectAllArtboards(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -32935,6 +36519,31 @@ declare class MSSendToSymbolsPageAction extends MSDocumentAction {
 	validate(...args: any[]): any;
 }
 
+declare class MSSeparatorConfigurableView extends NSView {
+	/* typeEncoding=c, ivar=_inset, attributes=(assign,nonatomic) */
+	inset(): boolean;
+	/* typeEncoding=c, ivar=_wantsSeparator, attributes=(assign,nonatomic) */
+	wantsSeparator(): boolean;
+
+	/* typeEncoding=c16@0:8 */
+	inset(...args: any[]): any;
+	/* typeEncoding={NSEdgeInsets=dddd}24@0:8@16 */
+	separatorInsetBetweenSelfAndView(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setInset(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setWantsSeparator(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	wantsSeparator(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	wantsSeparatorBetweenSelfAndView(...args: any[]): any;
+}
+
+declare class MSSeparatorInspectorItem extends MSInspectorItem {
+	/* typeEncoding=v16@0:8 */
+	loadView(): void;
+}
+
 declare class MSSeparatorlessFlippedView extends MSSeparatorlessView {
 	/* typeEncoding=c16@0:8 */
 	isFlipped(...args: any[]): any;
@@ -32945,11 +36554,9 @@ declare class MSSeparatorlessView extends NSView {
 	wantsSeparator(...args: any[]): any;
 }
 
-declare class MSShadowInspectorViewController extends MSStylePartInspectorViewController {
+declare class MSShadowInspectorViewController extends MSColorStylePartInspectorViewController {
 	/* typeEncoding=@"MSUpDownTextField", ivar=_blurRadiusField, attributes=(retain,nonatomic) */
 	blurRadiusField(): MSUpDownTextField;
-	/* typeEncoding=@"MSStylePartPreviewButton", ivar=_colorButton, attributes=(retain,nonatomic) */
-	colorButton(): MSStylePartPreviewButton;
 	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_radiusAdapter, attributes=(retain,nonatomic) */
 	radiusAdapter(): MSMathInspectorValueAdaptor;
 	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_spreadAdapter, attributes=(retain,nonatomic) */
@@ -32973,10 +36580,6 @@ declare class MSShadowInspectorViewController extends MSStylePartInspectorViewCo
 	allowsNegativeSpread(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	blurRadiusField(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	colorButton(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
 	/* typeEncoding=v16@0:8 */
 	didGetAddedToInspector(): void;
 	/* typeEncoding=c16@0:8 */
@@ -32991,8 +36594,6 @@ declare class MSShadowInspectorViewController extends MSStylePartInspectorViewCo
 	sectionTitle(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setBlurRadiusField(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setColorButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setRadiusAdapter(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -33060,12 +36661,48 @@ declare class MSShadowRendererCG extends NSObject /* implements MSShadowRenderer
 declare class MSShapeAction extends MSDocumentAction {
 	/* typeEncoding=c16@0:8 */
 	hasSubMenu(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	imageForToolbar(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	menuNeedsUpdate(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	submenuActionIDs(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	tag(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	tooltip(...args: any[]): any;
+}
+
+declare class MSShapeButtonInspectorItem extends MSInspectorItem {
+	/* typeEncoding=@"NSButton", ivar=_closePathButton, attributes=(retain,nonatomic) */
+	closePathButton(): NSButton;
+	/* typeEncoding=@"MSPathController", ivar=_pathController, attributes=(retain,nonatomic) */
+	pathController(): MSPathController;
+	/* typeEncoding=@"MSShapeEventHandler", ivar=_shapeEventHandler, attributes=(assign,nonatomic) */
+	shapeEventHandler(): MSShapeEventHandler;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	closePathAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	closePathButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	finishEditingAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	pathController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setClosePathButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPathController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setShapeEventHandler(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	shapeEventHandler(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
 }
 
 declare class MSShapeChange extends NSObject {
@@ -33125,7 +36762,7 @@ declare class MSShapeChangeContext extends NSObject /* implements NSCopying */ {
 	/* typeEncoding=@16@0:8 */
 	layers(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}32@0:8@16@24 */
-	locationOfHandleAtIndexPath_inLayer(...args: any[]): any;
+	locationOfHandleAtIndexPath_inCoordinateSpace(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	orderedHandleIndexPaths(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
@@ -33188,6 +36825,8 @@ declare class MSShapeEventHandler extends MSEventHandler /* implements MSVectorC
 	layers(): NSArray;
 	/* typeEncoding=@"MSPathController", ivar=_pathController, attributes=(assign,nonatomic,readonly) */
 	pathController(): MSPathController;
+	/* typeEncoding=@"MSStyleInspectorSection", ivar=_styleSection, attributes=(assign,nonatomic,weak) */
+	styleSection(): MSStyleInspectorSection;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
@@ -33235,8 +36874,6 @@ declare class MSShapeEventHandler extends MSEventHandler /* implements MSVectorC
 	insertTab(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	inspectorLocation(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	inspectorShouldShowPositions(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	inspectorViewController(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
@@ -33280,6 +36917,12 @@ declare class MSShapeEventHandler extends MSEventHandler /* implements MSVectorC
 	/* typeEncoding=v24@0:8@16 */
 	setLayers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setStyleSection(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	styleSection(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	styleViewControllersForLayers_fromStyleInspectorSection(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	toggleForceSelection(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	toolbarIdentifier(...args: any[]): any;
@@ -33307,65 +36950,75 @@ declare class MSShapeEventHandler extends MSEventHandler /* implements MSVectorC
 	zoomToSelection(): void;
 }
 
-declare class MSShapeGroup extends _MSShapeGroup /* implements MSShapeGroup */ {
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	decoratedBezierPathInBounds(): MSPath;
+declare class MSShapeGroup extends _MSShapeGroup /* implements MSLayerPreviewability, MSShapeGroup, MSPathLayer */ {
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	CGTransformForFrame(): CGAffineTransform;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	badgeType(): number;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	bounds(): CGRect;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,dynamic,nonatomic) */
+	edited(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	hasMarkers(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasTransforms(): boolean;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding={BCEdgePaddings=dddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	influenceRectEdgePaddingsThatCascadeToContainedLayers(): BCEdgePaddings;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
 	isClosed(): boolean;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedHorizontal(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedVertical(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isLayerExportable(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isPartOfClippingMask(): boolean;
-	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
-	length(): number;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isVisible(): boolean;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	objectID(): NSString;
+	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	origin(): CGPoint;
 	/* typeEncoding=@"MSPath", ivar=(null), attributes=(copy,dynamic,nonatomic) */
 	pathInFrame(): MSPath;
-	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
-	x1(): number;
-	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
-	x2(): number;
-	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
-	y1(): number;
-	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
-	y2(): number;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rect(): CGRect;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rotation(): number;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
 
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
 	static groupBoundsForContainer(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	static groupBoundsShouldBeIntegral(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	static keyPathsForValuesAffectingPreviewImages(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	static keyPathsForValuesAffectingValueForKey(...args: any[]): any;
+	static groupWithLayers(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	static shapeWithBezierPath(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	static shapeWithPath(...args: any[]): any;
+	static layerWithPath(...args: any[]): any;
+	/* typeEncoding=@32@0:8q16@24 */
+	static shapeWithBooleanOperation_onLayers(...args: any[]): any;
 	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	static shapeWithRect(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	static styleForBooleanOperation(...args: any[]): any;
 
 	/* typeEncoding=@16@0:8 */
 	CSSAttributeString(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	CSSAttributes(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	adjustStyleToFitSubPaths(): void;
-	/* typeEncoding=q44@0:8{CGPoint=dd}16d32c40 */
-	adjustmentHandleAtPoint_zoomScale_resizing(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16@24 */
-	applyOverride_toPoint(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	applyPropertiesToBezier(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	booleanOperationCanBeReset(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	boundsRectForAlignment(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	canContainLayer(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canConvertToOutlines(...args: any[]): any;
-	/* typeEncoding=c32@0:8@16@24 */
-	canCopyToLayer_beforeLayer(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canCutSegments(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -33376,28 +37029,16 @@ declare class MSShapeGroup extends _MSShapeGroup /* implements MSShapeGroup */ {
 	canRotate(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canSmartRotate(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canSplitPaths(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	changeInnerOuterBordersIfHasOpenPaths(): void;
-	/* typeEncoding=c48@0:8{CGPoint=dd}16Q32d40 */
-	containsPoint_options_zoomValue(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	cutBezierSegmentAtIndex(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	decoratedBezierPathInBounds(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	defaultName(...args: any[]): any;
-	/* typeEncoding=v40@0:8d16@24@32 */
-	drawHoverWithZoom_color_cache(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	expandableInLayerList(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	fillFromBorder(...args: any[]): any;
+	edited(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	firstPoint(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	flatten(): void;
+	flatten(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	handleDoubleClick(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
@@ -33410,180 +37051,174 @@ declare class MSShapeGroup extends _MSShapeGroup /* implements MSShapeGroup */ {
 	hasLines(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasMarkers(...args: any[]): any;
-	/* typeEncoding=c40@0:8{CGPoint=dd}16d32 */
-	hitTestAsLine_zoomValue(...args: any[]): any;
-	/* typeEncoding=c40@0:8{CGPoint=dd}16d32 */
-	hitTestMarkers_zoomValue(...args: any[]): any;
-	/* typeEncoding=c48@0:8{CGPoint=dd}16@32d40 */
-	hitTestPoint_inPath_zoomValue(...args: any[]): any;
-	/* typeEncoding=@24@0:8d16 */
-	hitTestablePathInBoundsForZoomValue(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hitTestAsPath(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	inspectorViewControllers(...args: any[]): any;
+	inspectorSections(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	interfaceImageIdentifier(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isClosed(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isHorizontalLine(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isLine(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isPartOfClippingMask(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isStraightTriangle(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isVerticalLine(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	lastPoint(...args: any[]): any;
-	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16q48 */
-	layerDidResizeFromRect_corner(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	layersByConvertingToOutlines(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	length(...args: any[]): any;
-	/* typeEncoding=d24@0:8@16 */
-	lineWidthForOutliningWithBorder(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	makeLinePixelAligned(): void;
-	/* typeEncoding=v32@0:8@16@24 */
-	moveToLayer_beforeLayer(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	moveTransformsToChildren(): void;
 	/* typeEncoding=v32@0:8@16@24 */
 	object_didChangeProperty(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16@24 */
-	outlinePathForPath_withBorder(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16@24 */
-	outlineShapeFromPath_withBorder(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	p1(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	p2(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	pathForHoverInBounds(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
-	/* typeEncoding=v16@0:8 */
-	possiblyFixRectangleBorderBeforeCut(): void;
-	/* typeEncoding=v16@0:8 */
-	prepareAsMask(): void;
 	/* typeEncoding=c24@0:8q16 */
 	resizeToFitChildrenWithOption(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	reversePath(): void;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	rulerBase(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
 	safeFrameForBezierPath(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	selectedInLayerList(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	selectedPreviewImage(...args: any[]): any;
+	selectedPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setEdited(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setIsClosed(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setLength(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setP1(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setP2(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setPathInFrame(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setX1(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setX2(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setY1(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setY2(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setStyle(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldDrawSelectionStroke(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldFlattenAfterRotate(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	shouldHitTestOnFill(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldStripShadowsAndInnerShadow(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	simplify(): void;
-	/* typeEncoding=@24@0:8@16 */
-	splitPathIntoShape(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	splitPathsIntoShapes(...args: any[]): any;
+	styleForBooleanOperation(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	supportsInnerOuterBorders(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	unselectedPreviewImage(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	x1(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	x2(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	y1(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	y2(...args: any[]): any;
+	unselectedPreviewTemplateImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	usedStyle(...args: any[]): any;
 }
 
 declare class MSShapePath extends _MSShapePath {
 }
 
-declare class MSShapePathLayer extends _MSShapePathLayer {
+declare class MSShapePathLayer extends _MSShapePathLayer /* implements MSLayerPreviewability, MSPathLayer */ {
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	CGTransformForFrame(): CGAffineTransform;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	badgeType(): number;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	bounds(): CGRect;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	canFlatten(): boolean;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
+	edited(): boolean;
 	/* typeEncoding=@"MSCurvePoint", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	firstPoint(): MSCurvePoint;
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	hasRoundedCorners(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasTransforms(): boolean;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding={BCEdgePaddings=dddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	influenceRectEdgePaddingsThatCascadeToContainedLayers(): BCEdgePaddings;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic) */
+	isClosed(): boolean;
 	/* typeEncoding=c, ivar=_isEditing, attributes=(assign,nonatomic) */
 	isEditing(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedHorizontal(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedVertical(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isLayerExportable(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isVisible(): boolean;
 	/* typeEncoding=@"MSCurvePoint", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	lastPoint(): MSCurvePoint;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
+	length(): number;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	numberOfCurvePoints(): number;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	objectID(): NSString;
+	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	origin(): CGPoint;
 	/* typeEncoding=@"MSPath", ivar=(null), attributes=(copy,dynamic,nonatomic) */
 	pathInFrame(): MSPath;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rect(): CGRect;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rotation(): number;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
+	x1(): number;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
+	x2(): number;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
+	y1(): number;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,dynamic,nonatomic) */
+	y2(): number;
 
 	/* typeEncoding=@16@0:8 */
-	static keyPathsForValuesAffectingBadgeMap(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	static keyPathsForValuesAffectingPreviewImages(...args: any[]): any;
+	static keyPathsForValuesAffectingPreviewTemplateImages(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	static layerWithPath(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	static layerWithPath_integralFrame(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	static performBatchEdits(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	static shapeWithPath(...args: any[]): any;
+	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	static shapeWithRect(...args: any[]): any;
 
-	/* typeEncoding=v20@0:8c16 */
-	adjustFrameAfterEditIntegral(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	adjustAfterInsert(): void;
+	/* typeEncoding=v24@0:8c16c20 */
+	adjustFrameAfterEditIntegral_fixAncestors(...args: any[]): any;
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	adjustGeometryToBoundsRect(...args: any[]): any;
+	/* typeEncoding=q44@0:8{CGPoint=dd}16d32c40 */
+	adjustmentHandleAtPoint_zoomScale_resizing(...args: any[]): any;
 	/* typeEncoding=v64@0:8{CGAffineTransform=dddddd}16 */
 	applyAffineTransformToPath(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	applyPropertiesToBezier(...args: any[]): any;
-	/* typeEncoding=c32@0:8@16@24 */
-	attemptToSimplifyBetweenPoint_andPoint(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	badgeMenu(...args: any[]): any;
+	/* typeEncoding=c80@0:8@16@24{CGAffineTransform=dddddd}32 */
+	attemptToSimplifyBetweenPoint_andPoint_pathToLayerTransform(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	bezierPathForCursorPreview(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	booleanOperationCanBeReset(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	boundsForCursorPreview(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}20@0:8c16 */
 	boundsOfPathIntegral(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	canBeContainedByGroup(...args: any[]): any;
-	/* typeEncoding=c32@0:8@16@24 */
-	canCopyToLayer_beforeLayer(...args: any[]): any;
+	canCutSegments(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canFlatten(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canSmartRotate(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}32@0:8{CGPoint=dd}16 */
-	convertPointFromPathCoordinates(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}32@0:8{CGPoint=dd}16 */
-	convertPointToPathCoordinates(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16Q24 */
 	copyPropertiesToObject_options(...args: any[]): any;
+	/* typeEncoding=v24@0:8Q16 */
+	cutBezierSegmentAtIndex(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	didChangeValueForKey(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -33598,26 +37233,22 @@ declare class MSShapePathLayer extends _MSShapePathLayer {
 	flatten(): void;
 	/* typeEncoding=@16@0:8 */
 	flattenedLayer(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	handleBadgeClickWithAltState(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	handleDoubleClick(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
 	handlerClass(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasRoundedCorners(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hitTestAsPath(...args: any[]): any;
 	/* typeEncoding=Q48@0:8{CGPoint=dd}16{CGSize=dd}32 */
 	indexOfSegmentAtPoint_tolerance(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	insertionCursor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	interfaceImageIdentifier(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isEditing(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isExportableViaDragAndDrop(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isLine(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isMasked(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isNearlyEmpty(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -33628,16 +37259,16 @@ declare class MSShapePathLayer extends _MSShapePathLayer {
 	isRectangle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	lastPoint(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	layerSuitableForInsertingIntoGroup(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16@24 */
-	moveToLayer_beforeLayer(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	length(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	multiplyBy(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	numberOfCurvePoints(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	onBooleanOperation(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}16@0:8 */
+	p1(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}16@0:8 */
+	p2(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding={CGPoint=dd}24@0:8Q16 */
@@ -33645,29 +37276,41 @@ declare class MSShapePathLayer extends _MSShapePathLayer {
 	/* typeEncoding=@24@0:8Q16 */
 	pointsAroundIndex(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
+	possiblyFixRectangleBorderBeforeCut(): void;
+	/* typeEncoding=v16@0:8 */
 	resetPoints(): void;
 	/* typeEncoding=v16@0:8 */
 	resetPointsBasedOnUserInteraction(): void;
+	/* typeEncoding=v32@0:8{CGSize=dd}16 */
+	resizeWithOldGroupSize(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	reversePath(): void;
-	/* typeEncoding=Q16@0:8 */
-	selectedBadgeMenuItem(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	selectedPreviewImage(...args: any[]): any;
-	/* typeEncoding=v24@0:8q16 */
-	setBooleanOperation(...args: any[]): any;
+	selectedPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	setEndMarkerType(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setIsEditing(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setLength(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setNilValueForKey(...args: any[]): any;
+	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
+	setP1(...args: any[]): any;
+	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
+	setP2(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setPathInFrame(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	setStartMarkerType(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	setupWithLayerBuilderDictionary(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setX1(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setX2(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setY1(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setY2(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	shareableObjectType(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -33681,13 +37324,23 @@ declare class MSShapePathLayer extends _MSShapePathLayer {
 	/* typeEncoding=c16@0:8 */
 	simplifyPathOnce(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	styledLayer(...args: any[]): any;
+	styleForBooleanOperation(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	supportsInnerOuterBorders(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	unselectedPreviewImage(...args: any[]): any;
+	unselectedPreviewTemplateImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	usedStyle(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	willChangeValueForKey(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	x1(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	x2(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	y1(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	y2(...args: any[]): any;
 }
 
 declare class MSShapeRendererCG extends MSGroupRendererCG {
@@ -33739,21 +37392,29 @@ declare class MSShareButtonHandler extends NSObject /* implements NSSharingServi
 	window(...args: any[]): any;
 }
 
-declare class MSShareableObjectPopUpButton extends NSPopUpButton {
+declare class MSShareableObjectPopUpButton extends NSPopUpButton /* implements NSMenuDelegate */ {
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
 	/* typeEncoding=@"NSArray", ivar=_layers, attributes=(assign,nonatomic,weak) */
 	layers(): NSArray;
 	/* typeEncoding=@"MSForeignObjectMenuBuilder", ivar=_menuBuilder, attributes=(assign,nonatomic,weak) */
 	menuBuilder(): MSForeignObjectMenuBuilder;
 	/* typeEncoding=@"NSDictionary", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	menuItemSelectorDictionary(): NSDictionary;
+	/* typeEncoding=c, ivar=_needsRebuildMenu, attributes=(assign,nonatomic) */
+	needsRebuildMenu(): boolean;
 	/* typeEncoding=@"NSArray", ivar=_objectLibraryMapping, attributes=(retain,nonatomic) */
 	objectLibraryMapping(): NSArray;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	objectType(): number;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	objectTypeName(): NSString;
 	/* typeEncoding=@"MSShareableObjectReference", ivar=_selectedObjectReference, attributes=(retain,nonatomic) */
 	selectedObjectReference(): MSShareableObjectReference;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -33787,28 +37448,32 @@ declare class MSShareableObjectPopUpButton extends NSPopUpButton {
 	layers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	libraryControllerDidChange(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	localizedTypeString(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	masterObjects(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	menuBuilder(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	menuItemSelectorDictionary(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	menuNeedsUpdate(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	needsRebuildMenu(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	objectLibraryMapping(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	objectType(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	objectTypeName(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	objectsAtSameLevelAsMaster(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	selectedObjectReference(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLayers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setMenuBuilder(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setNeedsRebuildMenu(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setObjectLibraryMapping(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -33817,6 +37482,8 @@ declare class MSShareableObjectPopUpButton extends NSPopUpButton {
 	symbolMenuItemSelectorDictionary(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	textStyleMenuItemSelectorDictionary(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	update(): void;
 	/* typeEncoding=v32@0:8@16@24 */
 	updateWithMenuBuilder_forLayers(...args: any[]): any;
 }
@@ -33864,6 +37531,8 @@ declare class MSShareableObjectReference extends NSObject /* implements BCSortab
 	generatePreviewForPopup_backingScale_completionBlock(...args: any[]): any;
 	/* typeEncoding=v60@0:8{CGSize=dd}16d32c40@44@?52 */
 	generatePreviewForSyncSheetWithSize_backingScale_shadow_colorSpace_completionBlock(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	hash(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	isEqual(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -33938,10 +37607,6 @@ declare class MSShareableObjectUpdater extends NSObject {
 	menuItemTitleForUnlinkAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	menuItemTitleForUnlinkAndSyncAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	menuItemType(...args: any[]): any;
-	/* typeEncoding=@24@0:8Q16 */
-	menuItemTypeNameForType(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	performCreateNewStyleAction(): void;
 	/* typeEncoding=v16@0:8 */
@@ -34070,6 +37735,8 @@ declare class MSSharedObjectContainer extends _MSSharedObjectContainer {
 	registerInstance_withSharedObject(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	removeSharedObject(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	removeSharedObjects(...args: any[]): any;
 	/* typeEncoding=@24@0:8Q16 */
 	sharedObjectAtIndex(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
@@ -34170,6 +37837,10 @@ declare class MSSharedStyle extends _MSSharedStyle /* implements MSSharedObjectS
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
+	/* typeEncoding=@16@0:8 */
+	allInstances(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	allLayersInstances(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	applyStyleToMenuItem_withColorSpace(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -34246,7 +37917,7 @@ declare class MSSharedStyleReference extends MSShareableObjectReference {
 	sharedObjectID(...args: any[]): any;
 }
 
-declare class MSSharedStylesInspectorSection extends NSViewController /* implements MSInspectorSection, NSMenuDelegate */ {
+declare class MSSharedStylesInspectorItem extends MSInspectorItem /* implements MSSharedStylesPopUpButtonCellDelegate, NSMenuDelegate */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -34255,8 +37926,6 @@ declare class MSSharedStylesInspectorSection extends NSViewController /* impleme
 	editNameField(): NSTextField;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=@"MSLayerArray", ivar=_layers, attributes=(copy,nonatomic) */
-	layers(): MSLayerArray;
 	/* typeEncoding=@"MSForeignObjectMenuBuilder", ivar=_menuBuilder, attributes=(retain,nonatomic) */
 	menuBuilder(): MSForeignObjectMenuBuilder;
 	/* typeEncoding=@?, ivar=_renameBlock, attributes=(copy,nonatomic) */
@@ -34268,22 +37937,23 @@ declare class MSSharedStylesInspectorSection extends NSViewController /* impleme
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=v32@0:8@16@?24 */
 	beginRenameSharedObject_completionBlock(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	document(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	cachedImageForPopupButtonCell_withSharedObject(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	editNameField(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	layerWithSharedStyleDidChange(): void;
-	/* typeEncoding=@16@0:8 */
-	layers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	menuBuilder(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	reloadData(): void;
+	/* typeEncoding=v40@0:8@16@24@32 */
+	popupButtonCell_didCreatePreviewImage_forSharedObject(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
 	/* typeEncoding=@?16@0:8 */
 	renameBlock(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -34295,8 +37965,6 @@ declare class MSSharedStylesInspectorSection extends NSViewController /* impleme
 	/* typeEncoding=v24@0:8@16 */
 	setEditNameField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLayers(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setMenuBuilder(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	setRenameBlock(...args: any[]): any;
@@ -34306,11 +37974,13 @@ declare class MSSharedStylesInspectorSection extends NSViewController /* impleme
 	setSharedObjectsPopUpButton(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	sharedObjectsPopUpButton(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	views(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
 }
 
 declare class MSSharedStylesPopUpButtonCell extends NSPopUpButtonCell {
+	/* typeEncoding=@"<MSSharedStylesPopUpButtonCellDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
+	delegate(): MSSharedStylesPopUpButtonCellDelegate;
 	/* typeEncoding=c, ivar=_localIsOutOfSync, attributes=(assign,nonatomic) */
 	localIsOutOfSync(): boolean;
 	/* typeEncoding=@"NSImage", ivar=_previewImage, attributes=(retain,nonatomic) */
@@ -34322,6 +37992,8 @@ declare class MSSharedStylesPopUpButtonCell extends NSPopUpButtonCell {
 	_cxx_destruct(): void;
 	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
 	attachPopUpWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	delegate(...args: any[]): any;
 	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
 	drawBorderAndBackgroundWithFrame_inView(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
@@ -34342,6 +38014,8 @@ declare class MSSharedStylesPopUpButtonCell extends NSPopUpButtonCell {
 	localIsOutOfSync(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	previewImage(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDelegate(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setLocalIsOutOfSync(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -34368,6 +38042,14 @@ declare class MSSharedSymbolAction extends MSSharedObjectAction {
 	sharedObjectName(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	sortedObjectMenuItemsForMenu(...args: any[]): any;
+}
+
+declare class MSSharedSymbolStylesInspectorItem extends MSSharedStylesInspectorItem {
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
 }
 
 declare class MSSharedTextReference extends MSSharedStyleReference {
@@ -34400,24 +38082,48 @@ declare class MSSharedTextStyleProvider extends MSForeignObjectProvider {
 declare class MSShowBorderOptionsAction extends MSBaseStyleAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showBorderOptions(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
 
+declare class MSShowColorsAction extends MSDocumentAction {
+	/* typeEncoding=v24@0:8@16 */
+	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	showColorsAction(...args: any[]): any;
+}
+
 declare class MSShowFillOptionsAction extends MSBaseStyleAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showFillOptions(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
 
+declare class MSShowFontsAction extends MSDocumentAction {
+	/* typeEncoding=v24@0:8@16 */
+	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	showFontsAction(...args: any[]): any;
+}
+
 declare class MSShowOnlineHelpAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showOnlineHelp(...args: any[]): any;
 }
@@ -34425,6 +38131,8 @@ declare class MSShowOnlineHelpAction extends MSAction {
 declare class MSShowReleaseNotesWindowAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showReleaseNotesWindow(...args: any[]): any;
 }
@@ -34432,6 +38140,8 @@ declare class MSShowReleaseNotesWindowAction extends MSAction {
 declare class MSShowReplaceColorSheetAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showReplaceColorSheet(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -34441,6 +38151,8 @@ declare class MSShowReplaceColorSheetAction extends MSDocumentAction {
 declare class MSShowSupportPageAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showSupportPage(...args: any[]): any;
 }
@@ -34483,6 +38195,8 @@ declare class MSSidebarListController extends NSObject {
 	initWithDelegate(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	layerForNode(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	layersFromNodeArray(...args: any[]): any;
 	/* typeEncoding=c40@0:8@16@24@32 */
 	moveNode_toParent_after(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
@@ -34529,76 +38243,146 @@ declare class MSSimpleGrid extends _MSSimpleGrid {
 	verticalGuidesForRulerData_inRect(...args: any[]): any;
 }
 
-declare class MSSimpleGridRendererCG extends MSGridRendererCG {
-	/* typeEncoding=v88@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16{CGPoint=dd}48d64q72^{CGContext=}80 */
-	drawLinesInRect_origin_increment_interval_context(...args: any[]): any;
-	/* typeEncoding=v80@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGPoint=dd}56@72 */
-	renderGrid_in_origin_context(...args: any[]): any;
-}
+declare class MSSingleItemInspectorSection extends MSBaseInspectorSection {
+	/* typeEncoding=@"MSInspectorItem", ivar=_item, attributes=(retain,nonatomic) */
+	item(): MSInspectorItem;
 
-declare class MSSizeInspectorItem extends MSTwoTextFieldInspectorItem /* implements MSInspectorValueAdaptorDelegate */ {
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	accessory(): number;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=@"MSSizeInspectorValueAdaptor", ivar=_heightAdapter, attributes=(retain,nonatomic) */
-	heightAdapter(): MSSizeInspectorValueAdaptor;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
-	/* typeEncoding=@"MSSizeInspectorValueAdaptor", ivar=_widthAdapter, attributes=(retain,nonatomic) */
-	widthAdapter(): MSSizeInspectorValueAdaptor;
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+	/* typeEncoding=#16@0:8 */
+	static itemClass(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=Q16@0:8 */
-	accessory(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	allowFloatValues(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	heightAdapter(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-	/* typeEncoding=@40@0:8@16@24@32 */
-	initWithTitle_field1Label_field2Label(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16@24 */
-	inspectorValueAdaptor_didEncounterError(...args: any[]): any;
-	/* typeEncoding=c48@0:8@16d24@32@40 */
-	inspectorValueAdaptor_validateValue_forModel_context(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	inspectorValueAdaptorAllowFloat(...args: any[]): any;
+	item(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	inspectorValueAdaptorDidChangeValue(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	interTextFieldButtonAction(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setHeightAdapter(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setLayers(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setWidthAdapter(...args: any[]): any;
+	setItem(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	setupAccessoryButton(): void;
-	/* typeEncoding=v24@0:8d16 */
-	showSizeAlertForValue(...args: any[]): any;
+	updateItems(): void;
+}
+
+declare class MSSizeInspectorItem extends MSBaseSizeInspectorItem {
+	/* typeEncoding=@"NSButton", ivar=_flipHorizontalButton, attributes=(retain,nonatomic) */
+	flipHorizontalButton(): NSButton;
+	/* typeEncoding=@"NSButton", ivar=_flipVerticalButton, attributes=(retain,nonatomic) */
+	flipVerticalButton(): NSButton;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	flipHorizontalButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	flipVerticalButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFlipHorizontalButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFlipVerticalButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	updateButtonState(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateDisplayedValues(): void;
 	/* typeEncoding=v16@0:8 */
 	updateUI(): void;
-	/* typeEncoding=v16@0:8 */
-	viewDidLoad(): void;
-	/* typeEncoding=@16@0:8 */
-	widthAdapter(...args: any[]): any;
 }
 
 declare class MSSizeInspectorValueAdaptor extends MSCoordinateInspectorValueAdaptor {
 	/* typeEncoding=q28@0:8S16Q20 */
 	anchorFromSuffix_axis(...args: any[]): any;
 	/* typeEncoding=@48@0:8@16@24^@32^@40 */
-	transformValueString_forModel_context_error(...args: any[]): any;
+	transformAdaptorValue_forModel_context_error(...args: any[]): any;
+}
+
+declare class MSSliceBackgroundColorInspectorItem extends MSInspectorItem /* implements MSColorInspectorDelegate, BCPopoverDelegate, MSStylePartPreviewButtonDelegate, MSStylePartPreviewButtonDisabledTarget, MSLayerChangeObserver */ {
+	/* typeEncoding=@"MSStylePartPreviewButton", ivar=_backgroundColorButton, attributes=(retain,nonatomic) */
+	backgroundColorButton(): MSStylePartPreviewButton;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"BCPopover", ivar=_popover, attributes=(retain,nonatomic) */
+	popover(): BCPopover;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	backgroundColorAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	backgroundColorButton(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	canHandleColorMagnifierAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasColorSpace(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	changeBackgroundColorTo(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	colorInspector_didChangeToColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	colorMagnifierAction(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=v24@0:8@16 */
+	dismissViewController(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	documentColorSpace(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	layerDidChange(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	popover(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setBackgroundColorButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLayers(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPopover(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	stylePartPreviewButtonDisabledAction(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	stylePartPreviewButtonPreviewColorSpace(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
+	/* typeEncoding=v16@0:8 */
+	viewWillDisappear(): void;
+}
+
+declare class MSSliceExportGroupContentsOnlyInspectorItem extends MSInspectorItem /* implements MSLayerChangeObserver */ {
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=@"NSButton", ivar=_groupContentsOnlyButton, attributes=(retain,nonatomic) */
+	groupContentsOnlyButton(): NSButton;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=v24@0:8@16 */
+	groupContentsOnlyAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	groupContentsOnlyButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	layerDidChange(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setGroupContentsOnlyButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLayers(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateDisplayedValues(): void;
 }
 
 declare class MSSliceExportOptions extends NSViewController {
@@ -34636,7 +38420,11 @@ declare class MSSliceExportOptions extends NSViewController {
 	setOptionsViewWebP(...args: any[]): any;
 }
 
-declare class MSSliceLayer extends _MSSliceLayer /* implements MSLayerWithMutableBackgroundColor, MSColorConvertible */ {
+declare class MSSliceLayer extends _MSSliceLayer /* implements MSLayerPreviewability, MSLayerWithMutableBackgroundColor, MSColorConvertible */ {
+	/* typeEncoding=@"MSColor", ivar=(null), attributes=(retain,nonatomic) */
+	backgroundColor(): MSColor;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	badgeType(): number;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -34648,33 +38436,40 @@ declare class MSSliceLayer extends _MSSliceLayer /* implements MSLayerWithMutabl
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 
-	/* typeEncoding=@16@0:8 */
-	static keyPathsForValuesAffectingPreviewImages(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	static sliceLayerFromLayer(...args: any[]): any;
 
+	/* typeEncoding=@16@0:8 */
+	cacheOwner(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canBeTransformed(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	canChangeBooleanOperation(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	canRotate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	convertColorsUsing(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
-	filterType(...args: any[]): any;
+	filterTypeMask(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	immutableBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	interfaceImageIdentifier(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isActive(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	rootForNameUniquing(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	selectedPreviewImage(...args: any[]): any;
+	selectedPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setName(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldDrawSelectionStroke(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	unselectedPreviewImage(...args: any[]): any;
+	unselectedPreviewTemplateImage(...args: any[]): any;
+}
+
+declare class MSSliceTrimTransparencyInspectorItem extends MSInspectorItem {
 }
 
 declare class MSSliceTrimming extends NSObject {
@@ -34713,6 +38508,8 @@ declare class MSSmartRotateAction extends MSDocumentAction {
 	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	smartRotate(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -34843,8 +38640,6 @@ declare class MSSmoothBezierFillet extends MSBezierFillet {
 }
 
 declare class MSSnapItem extends NSObject /* implements MSSnappable */ {
-	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	anchorsForSnapping(): NSArray;
 	/* typeEncoding=@"MSLayoutPosition", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	baselineAnchor(): MSLayoutPosition;
 	/* typeEncoding=@"MSLayoutPosition", ivar=(null), attributes=(assign,nonatomic,readonly) */
@@ -34861,8 +38656,8 @@ declare class MSSnapItem extends NSObject /* implements MSSnappable */ {
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=@"MSLayoutAnchor", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	heightAnchor(): MSLayoutAnchor;
+	/* typeEncoding=@"MSLayoutDimension", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	heightAnchor(): MSLayoutDimension;
 	/* typeEncoding=@"MSLayer", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	layer(): MSLayer;
 	/* typeEncoding=@"NSArray", ivar=_layers, attributes=(copy,nonatomic,readonly) */
@@ -34889,18 +38684,20 @@ declare class MSSnapItem extends NSObject /* implements MSSnappable */ {
 	supportsResizingForSnapping(): boolean;
 	/* typeEncoding=@"MSLayoutPosition", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	topAnchor(): MSLayoutPosition;
-	/* typeEncoding=@"MSLayoutAnchor", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	widthAnchor(): MSLayoutAnchor;
+	/* typeEncoding=@"MSLayoutDimension", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	widthAnchor(): MSLayoutDimension;
 
+	/* typeEncoding=@32@0:8@16Q24 */
+	static candidateSpacingsBetweenLayers_alongAxis(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	static snapItemWithLayers(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16Q24 */
-	alignmentRectInLayer_options(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	anchorsForSnapping(...args: any[]): any;
+	alignmentRectInCoordinateSpace_options(...args: any[]): any;
+	/* typeEncoding=@24@0:8Q16 */
+	anchorsForSnappingOnAxes(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	artboardForSnapping(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -34911,6 +38708,8 @@ declare class MSSnapItem extends NSObject /* implements MSSnappable */ {
 	boundsRect(...args: any[]): any;
 	/* typeEncoding=@24@0:8Q16 */
 	candidateLayersForSnapping(...args: any[]): any;
+	/* typeEncoding=@32@0:8Q16Q24 */
+	candidateLayersForSnappingSpacingAlongAxis_order(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	centerXAnchor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -34923,6 +38722,8 @@ declare class MSSnapItem extends NSObject /* implements MSSnappable */ {
 	description(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16Q24 */
 	distanceRectangleToItem_axis(...args: any[]): any;
+	/* typeEncoding=v32@0:8Q16@?24 */
+	enumerateAnchorsForSnappingOnAxes_usingBlock(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	heightAnchor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -34941,6 +38742,8 @@ declare class MSSnapItem extends NSObject /* implements MSSnappable */ {
 	midXHeightAnchor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	name(...args: any[]): any;
+	/* typeEncoding=c88@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16{CGRect={CGPoint=dd}{CGSize=dd}}48Q80 */
+	rect_isOnLineWithRect_inDirection(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	rectAtInit(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
@@ -34974,65 +38777,51 @@ declare class MSSnapItem extends NSObject /* implements MSSnappable */ {
 }
 
 declare class MSSnapper extends NSObject {
+	/* typeEncoding=c, ivar=_enabled, attributes=(assign,nonatomic) */
+	enabled(): boolean;
 	/* typeEncoding=@"MSSnapperData", ivar=_snapperData, attributes=(retain,nonatomic) */
 	snapperData(): MSSnapperData;
-	/* typeEncoding=c, ivar=_useAlignmentGuides, attributes=(assign,nonatomic) */
-	useAlignmentGuides(): boolean;
-	/* typeEncoding=d, ivar=_zoomValue, attributes=(assign,nonatomic) */
-	zoomValue(): number;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=v48@0:8@16@24c32Q36c44 */
-	_snapAttributes_toLines_visible_snap_resize(...args: any[]): any;
-	/* typeEncoding=v76@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48@56c64Q68 */
-	changeItemToRect_usingAnchor_forLine_visible_snap(...args: any[]): any;
+	/* typeEncoding=v72@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48@56Q64 */
+	changeItemToRect_usingAnchor_forLine_adjustableAxes(...args: any[]): any;
 	/* typeEncoding=v48@0:8@16@24Q32Q40 */
 	collectSnapsForItem_withLayer_onAxis_snap(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16Q24 */
-	distanceRectanglesBetweenSnapItems_inDirection(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	enabled(...args: any[]): any;
 	/* typeEncoding=@40@0:8@16@24Q32 */
-	findClosestDistanceMatchForItem_againstItems_direction(...args: any[]): any;
-	/* typeEncoding=c88@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16{CGRect={CGPoint=dd}{CGSize=dd}}48Q80 */
-	rect_isOnLineWithRect_inDirection(...args: any[]): any;
+	findClosestDistanceMatchForItem_againstLayers_direction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	init(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}92@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16{CGRect={CGPoint=dd}{CGSize=dd}}48Q80c88 */
 	rectBySnappingRect_toClosestDistance_inDirection_mayResize(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setEnabled(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setSnapperData(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setUseAlignmentGuides(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setZoomValue(...args: any[]): any;
 	/* typeEncoding=v36@0:8@16Q24c32 */
-	snapAgainstItems_inDirection_resize(...args: any[]): any;
-	/* typeEncoding=v40@0:8@16Q24c32c36 */
-	snapAttributes_snap_resize_rulersVisible(...args: any[]): any;
-	/* typeEncoding=v48@0:8@16@24c32Q36c44 */
-	snapAttributes_toLines_visible_snap_resize(...args: any[]): any;
-	/* typeEncoding=Q28@0:8q16c24 */
-	snapByDistanceEdges_resize(...args: any[]): any;
-	/* typeEncoding=@36@0:8@16Q24c32 */
-	snapItemDuringMove_allowSnaps_rulersVisible(...args: any[]): any;
-	/* typeEncoding=@36@0:8@16c24Q28 */
-	snapItemDuringResize_rulersVisible_edges(...args: any[]): any;
-	/* typeEncoding=@28@0:8@16c24 */
-	snapLayerKeys_rulersVisible(...args: any[]): any;
+	snapAgainstLayers_alongAxis_mayResize(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	snapDuringSession(...args: any[]): any;
 	/* typeEncoding=v28@0:8Q16c24 */
-	snapOnAxis_resize(...args: any[]): any;
+	snapEdgesForAxes_mayResize(...args: any[]): any;
 	/* typeEncoding=Q32@0:8Q16q24 */
 	snapSize_edges(...args: any[]): any;
 	/* typeEncoding=v40@0:8Q16Q24q32 */
 	snapSizeOnAxis_snap_edges(...args: any[]): any;
+	/* typeEncoding=v28@0:8Q16c24 */
+	snapSpacingOnAxis_mayResize(...args: any[]): any;
+	/* typeEncoding=Q28@0:8Q16c24 */
+	snapSpacingOnEdges_mayResize(...args: any[]): any;
+	/* typeEncoding=v36@0:8@16Q24c32 */
+	snapToLines_adjustableAxes_mayResize(...args: any[]): any;
+	/* typeEncoding=v76@0:8@16Q24Q32c40{CGRect={CGPoint=dd}{CGSize=dd}}44 */
+	snapToLines_axis_adjustableAxes_mayResize_originalRect(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	snappableAnchorsOfItems_exceptLayers(...args: any[]): any;
-	/* typeEncoding=@40@0:8@16Q24q32 */
-	snappableItemsOnLineFromLayer_inDirection_order(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	snapperData(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	useAlignmentGuides(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	zoomValue(...args: any[]): any;
 }
 
 declare class MSSnapperData extends NSObject {
@@ -35040,10 +38829,14 @@ declare class MSSnapperData extends NSObject {
 	dimensionAxes(): number;
 	/* typeEncoding=@"MSMeasurementDrawing", ivar=_drawingHelper, attributes=(retain,nonatomic) */
 	drawingHelper(): MSMeasurementDrawing;
-	/* typeEncoding=@"MSSnapItem", ivar=_item, attributes=(assign,nonatomic,readonly) */
+	/* typeEncoding=@"MSSnapItem", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	item(): MSSnapItem;
 	/* typeEncoding=@"NSNumberFormatter", ivar=_numberFormatter, attributes=(retain,nonatomic) */
 	numberFormatter(): NSNumberFormatter;
+	/* typeEncoding=@"MSSnappingSession", ivar=_snappingSession, attributes=(assign,nonatomic,readonly) */
+	snappingSession(): MSSnappingSession;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	spacingAxes(): number;
 	/* typeEncoding=@"MSSnappingAccumulator", ivar=_xAxisAccumulator, attributes=(assign,nonatomic,readonly) */
 	xAxisAccumulator(): MSSnappingAccumulator;
 	/* typeEncoding=@"MSSnappingAccumulator", ivar=_yAxisAccumulator, attributes=(assign,nonatomic,readonly) */
@@ -35057,6 +38850,8 @@ declare class MSSnapperData extends NSObject {
 	addDimensionSnap(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	addEdgeSnap(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	addSpacingMeasurementsForEdgeSnaps(): void;
 	/* typeEncoding=v24@0:8@16 */
 	addSpacingSnap(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -35067,6 +38862,10 @@ declare class MSSnapperData extends NSObject {
 	drawDimensionSnap_zoomScale(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16d24 */
 	drawForGroup_zoomScale(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16d24 */
+	drawSnappedDimension_zoomScale(...args: any[]): any;
+	/* typeEncoding=v64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16d48@56 */
+	drawSpacingRect_zoomScale_coordinateSpace(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16d24@32 */
 	drawSpacingSnap_zoomScale_coordinateSpace(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -35077,8 +38876,10 @@ declare class MSSnapperData extends NSObject {
 	firstSpacingSnapForAxis(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	hash(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	init(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
-	initWithItem(...args: any[]): any;
+	initWithSnappingSession(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	isEqual(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -35091,6 +38892,10 @@ declare class MSSnapperData extends NSObject {
 	setDrawingHelper(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setNumberFormatter(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	snappingSession(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	spacingAxes(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	xAxisAccumulator(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -35137,45 +38942,124 @@ declare class MSSnappingAccumulator extends NSObject {
 	spacingSnaps(...args: any[]): any;
 }
 
+declare class MSSnappingSession extends NSObject {
+	/* typeEncoding=Q, ivar=_allowedAxes, attributes=(assign,nonatomic) */
+	allowedAxes(): number;
+	/* typeEncoding=q, ivar=_corner, attributes=(assign,nonatomic) */
+	corner(): number;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,readonly) */
+	effectiveSnapDistance(): number;
+	/* typeEncoding=@"MSSnapItem", ivar=_item, attributes=(assign,nonatomic,readonly) */
+	item(): MSSnapItem;
+	/* typeEncoding=@"MSLayer", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layer(): MSLayer;
+	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layers(): NSArray;
+	/* typeEncoding=Q, ivar=_sessionType, attributes=(assign,nonatomic,readonly) */
+	sessionType(): number;
+	/* typeEncoding=c, ivar=_shouldSnapToLayers, attributes=(assign,nonatomic) */
+	shouldSnapToLayers(): boolean;
+	/* typeEncoding=d, ivar=_snapDistance, attributes=(assign,nonatomic) */
+	snapDistance(): number;
+	/* typeEncoding=@"NSIndexSet", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	snappableAttributes(): NSIndexSet;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	snappableEdges(): number;
+	/* typeEncoding=Q, ivar=_snappableGuidesMask, attributes=(assign,nonatomic) */
+	snappableGuidesMask(): number;
+	/* typeEncoding=d, ivar=_zoomScale, attributes=(assign,nonatomic) */
+	zoomScale(): number;
+
+	/* typeEncoding=@24@0:8@16 */
+	static keySnappingSessionWithItem(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	static moveSnappingSessionWithItem(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16q24 */
+	static resizeSnappingSessionWithItem_corner(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=Q16@0:8 */
+	allowedAxes(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	corner(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	effectiveSnapDistance(...args: any[]): any;
+	/* typeEncoding=@32@0:8Q16@24 */
+	initWithType_item(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	item(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layer(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layers(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	sessionType(...args: any[]): any;
+	/* typeEncoding=v24@0:8Q16 */
+	setAllowedAxes(...args: any[]): any;
+	/* typeEncoding=v24@0:8q16 */
+	setCorner(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setShouldSnapToLayers(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setSnapDistance(...args: any[]): any;
+	/* typeEncoding=v24@0:8Q16 */
+	setSnappableGuidesMask(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setZoomScale(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shouldSnapToLayers(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	snapDistance(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	snappableAttributes(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	snappableEdges(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	snappableGuidesMask(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	zoomScale(...args: any[]): any;
+}
+
 declare class MSSnappingTarget extends NSObject /* implements NSCopying */ {
-	/* typeEncoding=Q, ivar=_axes, attributes=(assign,nonatomic,readonly) */
-	axes(): number;
-	/* typeEncoding=d, ivar=_length, attributes=(assign,nonatomic,readonly) */
-	length(): number;
+	/* typeEncoding={CGVector=dd}, ivar=_directionVector, attributes=(assign,nonatomic,readonly) */
+	directionVector(): CGVector;
+	/* typeEncoding=Q, ivar=_guideType, attributes=(assign,nonatomic,readonly) */
+	guideType(): number;
+	/* typeEncoding={MSLine=ddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	line(): MSLine;
+	/* typeEncoding={MSLineSegment={CGPoint=dd}{CGPoint=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	lineSegment(): MSLineSegment;
 	/* typeEncoding={CGPoint=dd}, ivar=_point, attributes=(assign,nonatomic,readonly) */
 	point(): CGPoint;
-	/* typeEncoding=c, ivar=_wantsGuide, attributes=(assign,nonatomic,readonly) */
-	wantsGuide(): boolean;
 
-	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	static targetsForEdgesAndCentersOfRect(...args: any[]): any;
+	/* typeEncoding=@52@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16c48 */
+	static targetsForEdgesOfRect_includeCenter(...args: any[]): any;
 
-	/* typeEncoding=Q16@0:8 */
-	axes(...args: any[]): any;
 	/* typeEncoding=@24@0:8^{_NSZone=}16 */
 	copyWithZone(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	description(...args: any[]): any;
+	/* typeEncoding={CGVector=dd}16@0:8 */
+	directionVector(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
-	hash(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-	/* typeEncoding=@32@0:8{_BCLine=dQ}16 */
-	initWithLine(...args: any[]): any;
-	/* typeEncoding=@32@0:8{CGPoint=dd}16 */
-	initWithPoint(...args: any[]): any;
+	guideType(...args: any[]): any;
+	/* typeEncoding=@48@0:8{MSLineSegment={CGPoint=dd}{CGPoint=dd}}16 */
+	initWithGuideLine(...args: any[]): any;
 	/* typeEncoding=@52@0:8{CGPoint=dd}16Q32c40d44 */
-	initWithPoint_snappableAxes_wantsGuide_length(...args: any[]): any;
+	initWithPoint_axis_wantsGuide_length(...args: any[]): any;
+	/* typeEncoding=@56@0:8{CGPoint=dd}16{CGVector=dd}32Q48 */
+	initWithPoint_directionVector_guideType(...args: any[]): any;
 	/* typeEncoding=@32@0:8d16Q24 */
 	initWithPosition_onAxis(...args: any[]): any;
-	/* typeEncoding=c24@0:8@16 */
-	isEqual(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	length(...args: any[]): any;
+	/* typeEncoding={MSLine=ddd}16@0:8 */
+	line(...args: any[]): any;
+	/* typeEncoding={MSLineSegment={CGPoint=dd}{CGPoint=dd}}16@0:8 */
+	lineSegment(...args: any[]): any;
 	/* typeEncoding={CGPoint=dd}16@0:8 */
 	point(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	wantsGuide(...args: any[]): any;
+	/* typeEncoding=@64@0:8{CGAffineTransform=dddddd}16 */
+	targetByApplyingTransform(...args: any[]): any;
 }
 
 declare class MSSortableObjectMenuBuilder extends NSObject /* implements NSMenuDelegate */ {
@@ -35228,72 +39112,77 @@ declare class MSSortableObjectMenuBuilder extends NSObject /* implements NSMenuD
 	validateMenuItem(...args: any[]): any;
 }
 
-declare class MSSpecialLayerViewController extends NSViewController /* implements MSInspectorSectionDelegate, MSInspectorSection, NSMenuDelegate */ {
+declare class MSSpecialLayerViewController extends MSNestedInspectorSection /* implements MSSymbolInstanceSectionDelegate, NSMenuDelegate */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
-	/* typeEncoding=@"<MSInspectorSectionDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
-	delegate(): MSInspectorSectionDelegate;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
-	/* typeEncoding=@"NSArray", ivar=_layerInspectorControllers, attributes=(retain,nonatomic) */
-	layerInspectorControllers(): NSArray;
-	/* typeEncoding=@"NSArray", ivar=_layers, attributes=(copy,nonatomic) */
-	layers(): NSArray;
+	/* typeEncoding=@"NSArray", ivar=_layerInspectorSections, attributes=(retain,nonatomic) */
+	layerInspectorSections(): NSArray;
+	/* typeEncoding=@"NSCache", ivar=_sectionInterfaceCache, attributes=(retain,nonatomic) */
+	sectionInterfaceCache(): NSCache;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
+	/* typeEncoding=@"MSSymbolInstanceSection", ivar=_symbolInstanceSection, attributes=(retain,nonatomic) */
+	symbolInstanceSection(): MSSymbolInstanceSection;
+	/* typeEncoding=@"MSBaseInspectorSection", ivar=_textSection, attributes=(retain,nonatomic) */
+	textSection(): MSBaseInspectorSection;
+
+	/* typeEncoding=@16@0:8 */
+	static sectionOrder(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=c16@0:8 */
+	canHandleColorMagnifierAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	changeTextLayerFont(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	colorMagnifierAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	delegate(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	documentForInspectorSection(...args: any[]): any;
+	externalLayerInspectorSections(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	init(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	inspectorsWithProperContent(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	layerInspectorControllers(...args: any[]): any;
+	layerInspectorSections(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16#24 */
 	layerOrContentsOfLayer_ifKindOfClass(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	layers(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	loadView(): void;
+	/* typeEncoding=v36@0:8c16@20@28 */
+	persistentlyCollapse_sectionWithIdentifier_reloadTarget(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	regularLayerInspectorSections(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	sectionDidResize(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	sectionInterfaceCache(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setDelegate(...args: any[]): any;
+	setLayerInspectorSections(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLayerInspectorControllers(...args: any[]): any;
+	setSectionInterfaceCache(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLayers(...args: any[]): any;
+	setSymbolInstanceSection(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setTextSection(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	symbolInstanceSection(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	textSection(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateItems(): void;
+	/* typeEncoding=@24@0:8@16 */
+	userInterfaceCacheForSection(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	valuesPossiblyChanged(): void;
 	/* typeEncoding=@16@0:8 */
 	views(...args: any[]): any;
-}
-
-declare class MSSpiralShapeAction extends MSBaseShapeAction {
-	/* typeEncoding=v24@0:8@16 */
-	spiralShape(...args: any[]): any;
-}
-
-declare class MSSplitAction extends MSDocumentAction {
-	/* typeEncoding=v24@0:8@16 */
-	doPerformAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	historyMomentTitle(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	split(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	validate(...args: any[]): any;
 }
 
 declare class MSSplitView extends NSSplitView {
@@ -35369,50 +39258,45 @@ declare class MSStackView extends NSView {
 }
 
 declare class MSStackViewScrollView extends NSScrollView {
+	/* typeEncoding=@"<MSStackViewScrollViewDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
+	delegate(): MSStackViewScrollViewDelegate;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	delegate(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	enclosedStackView(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	reflectScrolledClipView(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDelegate(...args: any[]): any;
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	setFrame(...args: any[]): any;
 }
 
 declare class MSStandardInspectorViewControllers extends NSObject {
-	/* typeEncoding=@"MSBlurInspectorViewController", ivar=_blurViewController, attributes=(assign,nonatomic,readonly) */
-	blurViewController(): MSBlurInspectorViewController;
-	/* typeEncoding=@"MSMultipleBorderInspectorViewController", ivar=_borderViewController, attributes=(assign,nonatomic,readonly) */
-	borderViewController(): MSMultipleBorderInspectorViewController;
-	/* typeEncoding=@"MSColorControlsInspectorViewController", ivar=_colorControlsViewController, attributes=(assign,nonatomic,readonly) */
-	colorControlsViewController(): MSColorControlsInspectorViewController;
+	/* typeEncoding=@"MSAppearanceInspectorSection", ivar=_appearanceInspectorSection, attributes=(assign,nonatomic,readonly) */
+	appearanceInspectorSection(): MSAppearanceInspectorSection;
 	/* typeEncoding=@"MSExportPreviewInspectorSection", ivar=_exportPreviewViewController, attributes=(assign,nonatomic,readonly) */
 	exportPreviewViewController(): MSExportPreviewInspectorSection;
-	/* typeEncoding=@"MSMultipleFillInspectorViewController", ivar=_fillViewController, attributes=(assign,nonatomic,readonly) */
-	fillViewController(): MSMultipleFillInspectorViewController;
-	/* typeEncoding=@"MSFlowInspectorViewController", ivar=_flowInspectorViewController, attributes=(assign,nonatomic,readonly) */
-	flowInspectorViewController(): MSFlowInspectorViewController;
+	/* typeEncoding=@"MSFlowInspectorSection", ivar=_flowInspectorViewController, attributes=(assign,nonatomic,readonly) */
+	flowInspectorViewController(): MSFlowInspectorSection;
 	/* typeEncoding=@"MSGeometryInspectorSection", ivar=_geometryViewController, attributes=(assign,nonatomic,readonly) */
 	geometryViewController(): MSGeometryInspectorSection;
-	/* typeEncoding=@"MSMultipleShadowInspectorViewController", ivar=_innerShadowViewController, attributes=(assign,nonatomic,readonly) */
-	innerShadowViewController(): MSMultipleShadowInspectorViewController;
-	/* typeEncoding=@"MSOpacityBlendingInspectorViewController", ivar=_opacityBlendingViewController, attributes=(assign,nonatomic,readonly) */
-	opacityBlendingViewController(): MSOpacityBlendingInspectorViewController;
-	/* typeEncoding=@"MSMultipleShadowInspectorViewController", ivar=_shadowViewController, attributes=(assign,nonatomic,readonly) */
-	shadowViewController(): MSMultipleShadowInspectorViewController;
-	/* typeEncoding=@"MSSharedStylesInspectorSection", ivar=_sharedStyledInspectorSection, attributes=(assign,nonatomic,readonly) */
-	sharedStyledInspectorSection(): MSSharedStylesInspectorSection;
+	/* typeEncoding=@"MSResizeInspectorSection", ivar=_resizeSection, attributes=(assign,nonatomic,readonly) */
+	resizeSection(): MSResizeInspectorSection;
 	/* typeEncoding=@"MSSpecialLayerViewController", ivar=_specialLayerViewController, attributes=(assign,nonatomic,readonly) */
 	specialLayerViewController(): MSSpecialLayerViewController;
+	/* typeEncoding=@"MSStyleInspectorSection", ivar=_styleSection, attributes=(assign,nonatomic,readonly) */
+	styleSection(): MSStyleInspectorSection;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
-	blurViewController(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	borderViewController(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	colorControlsViewController(...args: any[]): any;
+	appearanceInspectorSection(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	exportPreviewViewController(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	fillViewController(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	flowInspectorViewController(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -35420,15 +39304,11 @@ declare class MSStandardInspectorViewControllers extends NSObject {
 	/* typeEncoding=@16@0:8 */
 	init(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	innerShadowViewController(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	opacityBlendingViewController(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	shadowViewController(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	sharedStyledInspectorSection(...args: any[]): any;
+	resizeSection(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	specialLayerViewController(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	styleSection(...args: any[]): any;
 }
 
 declare class MSStarShape extends _MSStarShape {
@@ -35437,7 +39317,7 @@ declare class MSStarShape extends _MSStarShape {
 	/* typeEncoding=c16@0:8 */
 	canFlatten(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	inspectorViewControllerNames(...args: any[]): any;
+	inspectorSections(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	resetPoints(): void;
 	/* typeEncoding=c24@0:8@16 */
@@ -35445,11 +39325,15 @@ declare class MSStarShape extends _MSStarShape {
 }
 
 declare class MSStarShapeAction extends MSBaseShapeAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	starShape(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 }
 
-declare class MSStarShapeSection extends MSCustomShapeSection /* implements MSInspectorValueAdaptorDelegate */ {
+declare class MSStarShapeItem extends MSCustomShapeItem /* implements MSInspectorMathValueAdaptorDelegate */ {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -35468,6 +39352,9 @@ declare class MSStarShapeSection extends MSCustomShapeSection /* implements MSIn
 	radiusField(): MSUpDownTextField;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
+
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -35495,6 +39382,11 @@ declare class MSStarShapeSection extends MSCustomShapeSection /* implements MSIn
 	setRadiusField(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
+}
+
+declare class MSStarShapeSection extends MSSingleItemInspectorSection {
+	/* typeEncoding=#16@0:8 */
+	static itemClass(...args: any[]): any;
 }
 
 declare class MSStyle extends _MSStyle /* implements MSSharedObjectInstance, NSCopying */ {
@@ -35633,8 +39525,12 @@ declare class MSStyleBasicFill extends _MSStyleBasicFill /* implements MSColorCo
 	static drawBasicFill_colorSpace_enabled_inRect(...args: any[]): any;
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	static drawCheckerboardBackgroundInRect(...args: any[]): any;
+	/* typeEncoding=v68@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16d48c56@60 */
+	static drawCheckerboardBackgroundInRect_checkerboardSize_forDarkAppearance_backgroundColor(...args: any[]): any;
 	/* typeEncoding=v60@0:8@16c24{CGRect={CGPoint=dd}{CGSize=dd}}28 */
 	static drawColor_enabled_inRect(...args: any[]): any;
+	/* typeEncoding=v72@0:8@16c24{CGRect={CGPoint=dd}{CGSize=dd}}28d60c68 */
+	static drawColor_enabled_inRect_checkerboardSize_forDarkAppearance(...args: any[]): any;
 	/* typeEncoding=v64@0:8@16@24{CGRect={CGPoint=dd}{CGSize=dd}}32 */
 	static drawColorFill_colorSpace_inRect(...args: any[]): any;
 	/* typeEncoding=v64@0:8@16@24{CGRect={CGPoint=dd}{CGSize=dd}}32 */
@@ -35648,6 +39544,8 @@ declare class MSStyleBasicFill extends _MSStyleBasicFill /* implements MSColorCo
 	configureFillForPreview(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	convertColorsUsing(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	hasEqualAppearance(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=@52@0:8{CGSize=dd}16@32c40d44 */
@@ -35655,10 +39553,20 @@ declare class MSStyleBasicFill extends _MSStyleBasicFill /* implements MSColorCo
 }
 
 declare class MSStyleBlur extends _MSStyleBlur {
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic) */
+	userVisibleMotionAngle(): number;
+
+	/* typeEncoding=@16@0:8 */
+	static keyPathsForValuesAffectingUserVisibleMotionAngle(...args: any[]): any;
+
 	/* typeEncoding=d16@0:8 */
 	cropRadius(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	multiplyBy(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setUserVisibleMotionAngle(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	userVisibleMotionAngle(...args: any[]): any;
 }
 
 declare class MSStyleBorder extends _MSStyleBorder /* implements MSColorConvertible */ {
@@ -35676,6 +39584,8 @@ declare class MSStyleBorder extends _MSStyleBorder /* implements MSColorConverti
 
 	/* typeEncoding=@16@0:8 */
 	CSSAttributeString(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	asFill(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	blendingViewForColorInspector(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
@@ -35705,6 +39615,11 @@ declare class MSStyleBorderOptions extends _MSStyleBorderOptions {
 }
 
 declare class MSStyleColorControls extends _MSStyleColorControls {
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic) */
+	userVisibleContrast(): number;
+
+	/* typeEncoding=@16@0:8 */
+	static keyPathsForValuesAffectingUserVisibleContrast(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	static keyPathsForValuesAffectingValueForKey(...args: any[]): any;
 
@@ -35712,6 +39627,10 @@ declare class MSStyleColorControls extends _MSStyleColorControls {
 	hasDefaultColorControlsValues(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	resetToDefaultValues(): void;
+	/* typeEncoding=v24@0:8d16 */
+	setUserVisibleContrast(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	userVisibleContrast(...args: any[]): any;
 }
 
 declare class MSStyleFill extends _MSStyleFill /* implements MSImageOwner */ {
@@ -35739,6 +39658,8 @@ declare class MSStyleFill extends _MSStyleFill /* implements MSImageOwner */ {
 	canReduceImageSize(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	configureFillForPreview(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	hasEqualAppearance(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasOpacity(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
@@ -35770,17 +39691,171 @@ declare class MSStyleInnerShadow extends _MSStyleInnerShadow {
 	performInitEmptyObject(): void;
 }
 
+declare class MSStyleInspectorSection extends MSNestedInspectorSection /* implements MSStylePartInspectorDelegate */ {
+	/* typeEncoding=@"MSBlurInspectorViewController", ivar=_blurViewController, attributes=(retain,nonatomic) */
+	blurViewController(): MSBlurInspectorViewController;
+	/* typeEncoding=@"MSMultipleBorderInspectorViewController", ivar=_borderViewController, attributes=(retain,nonatomic) */
+	borderViewController(): MSMultipleBorderInspectorViewController;
+	/* typeEncoding=@"MSColorControlsInspectorViewController", ivar=_colorControlsViewController, attributes=(retain,nonatomic) */
+	colorControlsViewController(): MSColorControlsInspectorViewController;
+	/* typeEncoding=@"NSArray", ivar=_currentControllers, attributes=(retain,nonatomic) */
+	currentControllers(): NSArray;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=@"MSMultipleFillInspectorViewController", ivar=_fillViewController, attributes=(retain,nonatomic) */
+	fillViewController(): MSMultipleFillInspectorViewController;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasContent(): boolean;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"MSCollapsibleHeaderInspectorItem", ivar=_headerItem, attributes=(retain,nonatomic) */
+	headerItem(): MSCollapsibleHeaderInspectorItem;
+	/* typeEncoding=@"MSMultipleInnerShadowInspectorViewController", ivar=_innerShadowViewController, attributes=(retain,nonatomic) */
+	innerShadowViewController(): MSMultipleInnerShadowInspectorViewController;
+	/* typeEncoding=@"MSMultipleShadowInspectorViewController", ivar=_shadowViewController, attributes=(retain,nonatomic) */
+	shadowViewController(): MSMultipleShadowInspectorViewController;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	blurViewController(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	borderViewController(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	closeAnyColorPopover(): void;
+	/* typeEncoding=@16@0:8 */
+	colorControlsViewController(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	currentControllers(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	fillViewController(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasContent(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	headerItem(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	innerShadowViewController(...args: any[]): any;
+	/* typeEncoding=v28@0:8@16c24 */
+	item_wantsSectionToCollapse(...args: any[]): any;
+	/* typeEncoding=v32@0:8Q16Q24 */
+	openPopoverForStylePart_atIndex(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	sectionWithIdentifierWillCollapse(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setBlurViewController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setBorderViewController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setColorControlsViewController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCurrentControllers(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setFillViewController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeaderItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setInnerShadowViewController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setShadowViewController(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	shadowViewController(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	showBorderOptionsAction(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	showFillOptionsAction(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateItems(): void;
+	/* typeEncoding=v16@0:8 */
+	valuesPossiblyChanged(): void;
+	/* typeEncoding=@16@0:8 */
+	views(...args: any[]): any;
+}
+
+declare class MSStyleOverrideInspectorItem extends MSOverrideInspectorItem {
+	/* typeEncoding=@"NSLayoutConstraint", ivar=_labelConstraint, attributes=(retain,nonatomic) */
+	labelConstraint(): NSLayoutConstraint;
+	/* typeEncoding=@"NSPopUpButton", ivar=_labelView, attributes=(retain,nonatomic) */
+	labelView(): NSPopUpButton;
+	/* typeEncoding=@"MSForeignObjectProvider", ivar=_menuObjectProvider, attributes=(assign,nonatomic,readonly) */
+	menuObjectProvider(): MSForeignObjectProvider;
+	/* typeEncoding=@"MSStyleOverridePopupButton", ivar=_overrideControl, attributes=(retain,nonatomic) */
+	overrideControl(): MSStyleOverridePopupButton;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	applyOverrideToSelectedLayers(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	build(): void;
+	/* typeEncoding=v16@0:8 */
+	buildMenu(): void;
+	/* typeEncoding=c16@0:8 */
+	displaysLabel(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithPrimaryOverrideRepresentation(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	labelConstraint(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	labelView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	menuObjectProvider(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	overrideControl(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDisplaysLabel(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLabelConstraint(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLabelView(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setOverrideControl(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	valueFromControlView(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	viewWillAppear(): void;
+}
+
+declare class MSStyleOverridePopupButton extends NSPopUpButton {
+	/* typeEncoding=@"MSForeignObjectMenuBuilder", ivar=_menuBuilder, attributes=(retain,nonatomic) */
+	menuBuilder(): MSForeignObjectMenuBuilder;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v24@0:8@16 */
+	applyPreviewImage(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16@24@32@?40 */
+	buildMenuForOverride_withMenuBuilder_document_imageCallback(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	menuBuilder(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setMenuBuilder(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16@24@32@?40 */
+	setupButtonTitleWithCurrentStyle_primaryOverride_document_imageCallback(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	setupResetMenuForPrimaryOverride_document(...args: any[]): any;
+}
+
 declare class MSStylePart extends _MSStylePart /* implements NSCopying, MSStylePart */ {
 	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
 	isEnabled(): boolean;
 
 	/* typeEncoding=@24@0:8@16 */
 	static defaultStylePartForStyle(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	static stylesHaveEqualAppearance(...args: any[]): any;
 
 	/* typeEncoding=@24@0:8@16 */
 	blendingViewForColorInspector(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	configureFillForPreview(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	hasEqualAppearance(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	multiplyBy(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -35816,6 +39891,8 @@ declare class MSStylePartInspectorItem extends NSViewController {
 	/* typeEncoding=@16@0:8 */
 	layers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	sectionWithIdentifierWillCollapse(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setDelegate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setStyleParts(...args: any[]): any;
@@ -35831,11 +39908,14 @@ declare class MSStylePartInspectorItem extends NSViewController {
 	viewDidLoad(): void;
 }
 
-declare class MSStylePartInspectorViewController extends NSViewController /* implements NSPopoverDelegate, MSStylePartPreviewButtonDisabledTarget, MSInspectorSection, NSWindowDelegate, MSColorInspectorDelegate, MSStylePartPreviewButtonDelegate */ {
+declare class MSStylePartInspectorValueAdaptor extends MSInspectorValueAdaptor {
+	/* typeEncoding=@16@0:8 */
+	value(...args: any[]): any;
+}
+
+declare class MSStylePartInspectorViewController extends NSViewController /* implements MSInspectorSection, NSWindowDelegate */ {
 	/* typeEncoding=@"NSArrayController", ivar=_arrayController, attributes=(retain,nonatomic) */
 	arrayController(): NSArrayController;
-	/* typeEncoding=@"MSStylePartPreviewButton", ivar=_colorPickerButton, attributes=(retain,nonatomic) */
-	colorPickerButton(): MSStylePartPreviewButton;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
 	debugDescription(): NSString;
 	/* typeEncoding=@"<MSStylePartInspectorDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
@@ -35846,8 +39926,8 @@ declare class MSStylePartInspectorViewController extends NSViewController /* imp
 	hash(): number;
 	/* typeEncoding=Q, ivar=_index, attributes=(assign,nonatomic) */
 	index(): number;
-	/* typeEncoding=@"BCPopover", ivar=_popover, attributes=(retain,nonatomic) */
-	popover(): BCPopover;
+	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layers(): NSArray;
 	/* typeEncoding=@"NSArray", ivar=_styleParts, attributes=(retain,nonatomic) */
 	styleParts(): NSArray;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
@@ -35864,24 +39944,12 @@ declare class MSStylePartInspectorViewController extends NSViewController /* imp
 	arrayController(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	awakeFromNib(): void;
-	/* typeEncoding=v24@0:8@16 */
-	checkBoxAction(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	closePopover(): void;
-	/* typeEncoding=v32@0:8@16@24 */
-	colorInspector_didChangeToColor(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	colorInspectorDidChange(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	colorPickerButton(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
 	/* typeEncoding=@16@0:8 */
 	delegate(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	didGetAddedToInspector(): void;
-	/* typeEncoding=v24@0:8@16 */
-	dismissViewController(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasEnabledStyle(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -35889,40 +39957,30 @@ declare class MSStylePartInspectorViewController extends NSViewController /* imp
 	/* typeEncoding=@24@0:8@16 */
 	initWithDelegate(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	popover(...args: any[]): any;
+	layers(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	prepare(): void;
 	/* typeEncoding=v16@0:8 */
 	prepareForReuse(): void;
 	/* typeEncoding=v24@0:8@16 */
-	previewCellAction(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setArrayController(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setColorPickerButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDelegate(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	setIndex(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setPopover(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setStyleParts(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	stylePartPreviewButtonDisabledAction(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	stylePartPreviewButtonPreviewColorSpace(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	styleParts(...args: any[]): any;
 	/* typeEncoding=Q24@0:8@16 */
 	supportedActionsForLayers(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	updateColorInActiveInspector(): void;
+	updateDisplayedValues(): void;
 	/* typeEncoding=@16@0:8 */
 	views(...args: any[]): any;
 }
 
-declare class MSStylePartPreviewButton extends NSButton {
+declare class MSStylePartPreviewButton extends MSInspectorButton {
 	/* typeEncoding=@"NSColor", ivar=_color, attributes=(copy,nonatomic) */
 	color(): NSColor;
 	/* typeEncoding=@"<MSStylePartPreviewButtonDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
@@ -35935,11 +39993,9 @@ declare class MSStylePartPreviewButton extends NSButton {
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
-	borderColor(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	color(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	colorFrame(...args: any[]): any;
+	contentRect(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	delegate(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -35948,10 +40004,6 @@ declare class MSStylePartPreviewButton extends NSButton {
 	drawButton(): void;
 	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
 	drawRect(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	fillColor(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	innerBorderColor(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isFlipped(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -35966,6 +40018,53 @@ declare class MSStylePartPreviewButton extends NSButton {
 	setStylePart(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	stylePart(...args: any[]): any;
+}
+
+declare class MSStylePartPreviewButtonWithBlendMode extends MSStylePartPreviewButton {
+	/* typeEncoding=@"NSMenu", ivar=_blendModeMenu, attributes=(retain,nonatomic) */
+	blendModeMenu(): NSMenu;
+	/* typeEncoding=@"NSSet", ivar=_blendModes, attributes=(retain,nonatomic) */
+	blendModes(): NSSet;
+	/* typeEncoding=@"<MSStylePartPreviewButtonWithBlendModeDelegae>", ivar=(null), attributes=(assign,dynamic,nonatomic,weak) */
+	delegate(): MSStylePartPreviewButtonWithBlendModeDelegae;
+	/* typeEncoding=@"NSButton", ivar=_inlineBlendModeButton, attributes=(retain,nonatomic) */
+	inlineBlendModeButton(): NSButton;
+
+	/* typeEncoding=@24@0:8@16 */
+	static toolTipForBlendModes(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	awakeFromNib(): void;
+	/* typeEncoding=@16@0:8 */
+	blendModeMenu(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	blendModes(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	changeBlendMode(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	contentRect(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	initWithCoder(...args: any[]): any;
+	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	initWithFrame(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inlineBlendModeButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setBlendModeMenu(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setBlendModes(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setInlineBlendModeButton(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	setupStylePartPreviewButtonWithBlendMode(): void;
+	/* typeEncoding=v24@0:8@16 */
+	showBlendModeMenu(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateButtonState(): void;
+	/* typeEncoding=c24@0:8@16 */
+	validateMenuItem(...args: any[]): any;
 }
 
 declare class MSStyleShadow extends _MSStyleShadow /* implements MSColorConvertible */ {
@@ -35986,6 +40085,8 @@ declare class MSStyleShadow extends _MSStyleShadow /* implements MSColorConverti
 	configureFillForPreview(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	convertColorsUsing(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	hasEqualAppearance(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	multiplyBy(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -35994,7 +40095,40 @@ declare class MSStyleShadow extends _MSStyleShadow /* implements MSColorConverti
 	valueForUndefinedKey(...args: any[]): any;
 }
 
-declare class MSStyledLayer extends _MSStyledLayer {
+declare class MSStyledLayer extends _MSStyledLayer /* implements MSStyledLayer */ {
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	CGTransformForFrame(): CGAffineTransform;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	bounds(): CGRect;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hasTransforms(): boolean;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding={BCEdgePaddings=dddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	influenceRectEdgePaddingsThatCascadeToContainedLayers(): BCEdgePaddings;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedHorizontal(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isFlippedVertical(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isLayerExportable(): boolean;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isVisible(): boolean;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	objectID(): NSString;
+	/* typeEncoding={CGPoint=dd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	origin(): CGPoint;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rect(): CGRect;
+	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	rotation(): number;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+
 	/* typeEncoding=@24@0:8@16 */
 	static layerWithImage(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -36016,8 +40150,18 @@ declare class MSStyledLayer extends _MSStyledLayer {
 
 	/* typeEncoding=@16@0:8 */
 	CSSAttributes(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	adjustAfterInsert(): void;
+	/* typeEncoding=v32@0:8@16@24 */
+	applyOverride_document(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	applyOverrides_document(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	applyPropertiesToBezier(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	applyScreenPickerColor_preferredStyleName(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	canConvertToOutlines(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	changeColor(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -36029,11 +40173,19 @@ declare class MSStyledLayer extends _MSStyledLayer {
 	/* typeEncoding=c16@0:8 */
 	hasEnabledBackgroundBlur(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	hasSharedStyle(...args: any[]): any;
+	hasMarkers(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	layerStyleDidChange(): void;
+	/* typeEncoding=@16@0:8 */
+	layersByConvertingToOutlines(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	multiplyBy(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	outlineShapeFromPath_withBorder(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	prepareAsMask(): void;
+	/* typeEncoding=c16@0:8 */
+	previewShouldIndicateSharedStyle(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setStyleByPreservingSharedObjectReference(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -36042,10 +40194,10 @@ declare class MSStyledLayer extends _MSStyledLayer {
 	shareableObjectType(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	sharedObject(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	styledLayer(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	stylesForColorAdjustingWithPreferredName(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	usedStyle(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	writeStyleToPasteboard(...args: any[]): any;
 }
@@ -36059,13 +40211,20 @@ declare class MSSubtleSectionSeparatorView extends MSSectionBackgroundSeparatorV
 	isOpaque(...args: any[]): any;
 }
 
+declare class MSSubtleSeparatorInspectorItem extends MSInspectorItem {
+	/* typeEncoding=v16@0:8 */
+	loadView(): void;
+}
+
 declare class MSSubtractAction extends MSBaseBooleanAction {
+	/* typeEncoding=q16@0:8 */
+	booleanOperation(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	booleanSubtract(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	historyMomentTitle(...args: any[]): any;
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 }
@@ -36084,14 +40243,16 @@ declare class MSSubtreeRoot extends NSObject {
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
 	ancestorsOfObject(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	contentDirtyDiffRect(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
+	contentDirtyDiffRectForPage(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	document(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	object(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	overlayInfluenceRect(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
+	overlayDirtyDiffRectForPage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	page(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setAncestorsOfObject(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -36137,16 +40298,24 @@ declare class MSSymbolInstance extends _MSSymbolInstance {
 	influencingSymbolIDs(): NSSet;
 	/* typeEncoding=q, ivar=_masterRefreshCounter, attributes=(assign,nonatomic) */
 	masterRefreshCounter(): number;
+	/* typeEncoding=@"MSImmutableSymbolMaster", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	modifiedMaster(): MSImmutableSymbolMaster;
+	/* typeEncoding=@"MSOverrideRepresentationContainer", ivar=_overrideContainer, attributes=(assign,nonatomic,readonly) */
+	overrideContainer(): MSOverrideRepresentationContainer;
+	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	overridePoints(): NSArray;
 	/* typeEncoding=@"NSDictionary", ivar=(null), attributes=(copy,nonatomic) */
 	overrides(): NSDictionary;
 
 	/* typeEncoding=@16@0:8 */
-	static keyPathsForValuesAffectingPreviewImages(...args: any[]): any;
+	static keyPathsForValuesAffectingPreviewTemplateImages(...args: any[]): any;
 
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
 	/* typeEncoding=v32@0:8@16@24 */
-	applyOverride_toPoint(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	applyOverrides(...args: any[]): any;
+	applyOverride_document(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	applyOverrides_document(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	availableOverrides(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -36160,17 +40329,23 @@ declare class MSSymbolInstance extends _MSSymbolInstance {
 	/* typeEncoding=v24@0:8@16 */
 	changeInstanceToSymbol(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	childrenForLayerList(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	detachByReplacingWithGroup(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	expandableInLayerList(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	influencingSymbolIDs(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	inspectorViewControllerNames(...args: any[]): any;
+	inspectorSections(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	internalSetValue_forOverridePointNamed(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	invalidateIfAffectedBySymbolMastersIn(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	invalidateImmutableObject(): void;
+	/* typeEncoding=c16@0:8 */
+	isExpanded(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	isInstanceForMaster(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
@@ -36179,6 +40354,8 @@ declare class MSSymbolInstance extends _MSSymbolInstance {
 	mapOverridesUnderOverridePoint_inBlock(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	masterRefreshCounter(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	modifiedMaster(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	multiplyBy(...args: any[]): any;
 	/* typeEncoding={CGSize=dd}16@0:8 */
@@ -36186,13 +40363,23 @@ declare class MSSymbolInstance extends _MSSymbolInstance {
 	/* typeEncoding=Q16@0:8 */
 	numberOfVisibleCells(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	overrideContainer(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	overrideMatchingPoint(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	overridePoints(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	overrides(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	pathForHoverInBounds(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithImmutableModelObject(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16@24@32 */
 	prepareOverrideMappingForPoint_withSymbolMapTable_attributeMapTable(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	previewShouldIndicateSharedStyle(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	removeShareableObjectsFromOverrides(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	replaceWithInstanceOfSymbol(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -36202,7 +40389,9 @@ declare class MSSymbolInstance extends _MSSymbolInstance {
 	/* typeEncoding=d16@0:8 */
 	scale(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	selectedPreviewImage(...args: any[]): any;
+	selectedPreviewTemplateImage(...args: any[]): any;
+	/* typeEncoding=@48@0:8{CGPoint=dd}16Q32d40 */
+	selectionHitTest_options_zoomValue(...args: any[]): any;
 	/* typeEncoding=v24@0:8q16 */
 	setMasterRefreshCounter(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -36215,29 +40404,29 @@ declare class MSSymbolInstance extends _MSSymbolInstance {
 	shareableObjectType(...args: any[]): any;
 	/* typeEncoding=^{MSModelObject=#@@@c}16@0:8 */
 	sharedMaster(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	sharedStylesReferencedInDocument(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldRefreshOverlayForFlows(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	shouldWrapDetachedSymbolMasterInGroup(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	styleForBooleanOperation(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	symbolID(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	symbolMaster(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	unselectedPreviewImage(...args: any[]): any;
+	unselectedPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	updateOverrides_withMapping(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	updateOverridesWithObjectIDMap(...args: any[]): any;
 }
 
-declare class MSSymbolInstanceOverrideViewController extends MSOverrideViewController {
+declare class MSSymbolInstanceOverrideInspectorItem extends MSOverrideInspectorItem {
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	currentMasterID(): NSString;
-	/* typeEncoding=@"MSDocument", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	document(): MSDocument;
-	/* typeEncoding=@"MSDocumentData", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	documentData(): MSDocumentData;
 	/* typeEncoding=@"MSSymbolInstance", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	firstInstance(): MSSymbolInstance;
 	/* typeEncoding=@"NSTextField", ivar=_labelField, attributes=(retain,nonatomic) */
@@ -36261,10 +40450,6 @@ declare class MSSymbolInstanceOverrideViewController extends MSOverrideViewContr
 	controlViewForEditingOverride(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	currentMasterID(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	document(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	documentData(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	firstInstance(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -36307,45 +40492,107 @@ declare class MSSymbolInstanceOverrideViewController extends MSOverrideViewContr
 	viewWillAppear(): void;
 }
 
-declare class MSSymbolInstanceSection extends MSLayerSection {
-	/* typeEncoding=@"NSArray", ivar=_overrideViewControllers, attributes=(retain,nonatomic) */
-	overrideViewControllers(): NSArray;
-	/* typeEncoding=@"NSView", ivar=_overridesHeaderView, attributes=(retain,nonatomic) */
-	overridesHeaderView(): NSView;
-	/* typeEncoding=@"NSView", ivar=_stylesHeaderView, attributes=(retain,nonatomic) */
-	stylesHeaderView(): NSView;
+declare class MSSymbolInstanceSection extends MSBaseInspectorSection /* implements MSInspectorTableViewManagerDelegate, MSInspectorItemProvider */ {
+	/* typeEncoding=@"<MSSymbolInstanceSectionDelegate>", ivar=(null), attributes=(assign,dynamic,nonatomic,weak) */
+	delegate(): MSSymbolInstanceSectionDelegate;
+	/* typeEncoding=@"MSCollapsibleHeaderInspectorItem", ivar=_headerItem, attributes=(retain,nonatomic) */
+	headerItem(): MSCollapsibleHeaderInspectorItem;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	numberOfItems(): number;
+	/* typeEncoding=@"MSTableContainerInspectorItem", ivar=_overrideContainerItem, attributes=(retain,nonatomic) */
+	overrideContainerItem(): MSTableContainerInspectorItem;
+	/* typeEncoding=@"NSMutableArray<MSSymbolOverrideItemDescription>", ivar=_overrideItemDescriptions, attributes=(retain,nonatomic) */
+	overrideItemDescriptions(): NSMutableArray;
+	/* typeEncoding=@"NSMutableDictionary", ivar=_rowHeightCache, attributes=(retain,nonatomic) */
+	rowHeightCache(): NSMutableDictionary;
+	/* typeEncoding=@"NSArray", ivar=_selectedOverrides, attributes=(copy,nonatomic) */
+	selectedOverrides(): NSArray;
+	/* typeEncoding=@"MSSharedSymbolStylesInspectorItem", ivar=_sharedStyleItem, attributes=(retain,nonatomic) */
+	sharedStyleItem(): MSSharedSymbolStylesInspectorItem;
+	/* typeEncoding=@"MSInspectorTableViewManager", ivar=_tableViewManager, attributes=(retain,nonatomic) */
+	tableViewManager(): MSInspectorTableViewManager;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=v16@0:8 */
-	makeOverrideViewControllers(): void;
+	/* typeEncoding=v44@0:8@16@24c32q36 */
+	cacheHeight_forOverrideRepresentation_shouldShowLabel_indentationLevel(...args: any[]): any;
+	/* typeEncoding=c24@0:8Q16 */
+	displaysLabelAtIndex(...args: any[]): any;
+	/* typeEncoding=d36@0:8@16c24q28 */
+	getAndCacheHeightForOverrideRepresentation_shouldShowLabel_indentationLevel(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	overrideViewControllers(...args: any[]): any;
+	headerItem(...args: any[]): any;
+	/* typeEncoding=d24@0:8Q16 */
+	heightOfItemViewAtIndex(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v28@0:8@16c24 */
+	item_wantsSectionToCollapse(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	numberOfItems(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	overridesHeaderView(...args: any[]): any;
+	overrideContainerItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	overrideItemDescriptions(...args: any[]): any;
+	/* typeEncoding=c24@0:8@16 */
+	overrideSelectionHasChanged(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	parentViewControllerForTableViewManager(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	recursivelyGatherOverrideItemsForOverrides_into(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	recycleItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	refreshIfNecessary(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	rowHeightCache(...args: any[]): any;
+	/* typeEncoding=@36@0:8@16c24q28 */
+	rowHeightCacheKeyForOverrideRepresentation_shouldShowLabel_indentationLevel(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	sectionsForTableViewManager(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	selectedOverrides(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeaderItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setLayers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setOverrideViewControllers(...args: any[]): any;
+	setOverrideContainerItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setOverridesHeaderView(...args: any[]): any;
+	setOverrideItemDescriptions(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setStylesHeaderView(...args: any[]): any;
+	setRowHeightCache(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSelectedOverrides(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSharedStyleItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setTableViewManager(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	stylesHeaderView(...args: any[]): any;
+	sharedStyleItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tableViewManager(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	uniqueArtboardIDsOfSelectedLayers(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	views(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateItems(): void;
+	/* typeEncoding=@24@0:8@16 */
+	userInterfaceCacheForItem(...args: any[]): any;
+	/* typeEncoding=@24@0:8Q16 */
+	vendItemAtIndex(...args: any[]): any;
+	/* typeEncoding=c24@0:8Q16 */
+	wantSeparatorAtIndex(...args: any[]): any;
 }
 
-declare class MSSymbolMaster extends _MSSymbolMaster /* implements MSPreviewGeneration, MSSharedObjectStyling, BCSortable */ {
+declare class MSSymbolMaster extends _MSSymbolMaster /* implements MSPreviewGeneration, MSLayerPreviewability, MSSharedObjectStyling, BCSortable */ {
 	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	allInfluencedInstances(): NSArray;
 	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	allInstances(): NSArray;
 	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	availableOverrides(): NSArray;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	badgeType(): number;
 	/* typeEncoding=q, ivar=_changeIdentifier, attributes=(assign,nonatomic) */
 	changeIdentifier(): number;
 	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
@@ -36394,8 +40641,8 @@ declare class MSSymbolMaster extends _MSSymbolMaster /* implements MSPreviewGene
 	ancestorIDsForLayerNamed(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	ancestorIDsForLayerNamed_skip(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	applyOverrides(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	applyOverrides_document(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	applyStyleToMenuItem_withColorSpace(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -36456,12 +40703,14 @@ declare class MSSymbolMaster extends _MSSymbolMaster /* implements MSPreviewGene
 	parentSymbol(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithImmutableModelObject(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	previewShouldIndicateSharedStyle(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	removeFromParentAndDetachAllInstances(): void;
 	/* typeEncoding=@16@0:8 */
 	rootForNameUniquing(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	selectedPreviewImage(...args: any[]): any;
+	selectedPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=v24@0:8q16 */
 	setChangeIdentifier(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
@@ -36473,7 +40722,7 @@ declare class MSSymbolMaster extends _MSSymbolMaster /* implements MSPreviewGene
 	/* typeEncoding=@16@0:8 */
 	ungroup(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	unselectedPreviewImage(...args: any[]): any;
+	unselectedPreviewTemplateImage(...args: any[]): any;
 }
 
 declare class MSSymbolMasterReference extends MSShareableObjectReference {
@@ -36673,101 +40922,149 @@ declare class MSSyncLocalStyleAction extends MSUnlinkAndOrSyncAction {
 	syncLocalSharedStyle(...args: any[]): any;
 }
 
-declare class MSSynchronousTiledRendererView extends NSView /* implements MSTiledLayerPileHostView */ {
-	/* typeEncoding=^{CGContext=}, ivar=_contextRef, attributes=(assign,nonatomic,readonly) */
-	contextRef(): any;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=@"MSImmutableDocumentData", ivar=_documentData, attributes=(assign,nonatomic,readonly,weak) */
-	documentData(): MSImmutableDocumentData;
-	/* typeEncoding=c, ivar=_finished, attributes=(assign,nonatomic) */
-	finished(): boolean;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=c, ivar=_ignoreScheduleRedrawRequest, attributes=(assign) */
-	ignoreScheduleRedrawRequest(): boolean;
-	/* typeEncoding=d, ivar=_scale, attributes=(assign,nonatomic) */
-	scale(): number;
-	/* typeEncoding={CGPoint=dd}, ivar=_scrollOrigin, attributes=(assign,nonatomic) */
-	scrollOrigin(): CGPoint;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
-	/* typeEncoding=@"MSTiledLayerPile", ivar=_tiledLayerPile, attributes=(retain,nonatomic) */
-	tiledLayerPile(): MSTiledLayerPile;
-	/* typeEncoding=d, ivar=_zoomValue, attributes=(assign,nonatomic) */
-	zoomValue(): number;
+declare class MSTableContainerInspectorItem extends MSInspectorItem {
+	/* typeEncoding=@"NSTableView", ivar=_tableView, attributes=(retain,nonatomic) */
+	tableView(): NSTableView;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=v40@0:8d16{CGPoint=dd}24 */
-	addTiledLayerWithZoom_scrollOrigin(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	canDrawConcurrently(...args: any[]): any;
-	/* typeEncoding=^{CGContext=}16@0:8 */
-	contextRef(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
-	/* typeEncoding=@16@0:8 */
-	documentData(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	draw(): void;
-	/* typeEncoding=@16@0:8 */
-	driver(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	finished(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	ignoreScheduleRedrawRequest(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	imageRepresentation(...args: any[]): any;
-	/* typeEncoding=@64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16d48@56 */
-	initWithFrame_scale_documentData(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isFlipped(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGSize=dd}16 */
-	makeCGContext(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	makeTiledLayerPile(): void;
-	/* typeEncoding=v16@0:8 */
-	redrawTiles(): void;
-	/* typeEncoding=d16@0:8 */
-	scale(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	scheduleRedraw(): void;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	scrollOrigin(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setFinished(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setIgnoreScheduleRedrawRequest(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setScale(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setScrollOrigin(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setTiledLayerPile(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setZoomValue(...args: any[]): any;
+	setTableView(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	tiledLayerPile(...args: any[]): any;
-	/* typeEncoding=v56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24 */
-	tiledLayerPile_requiresRedrawInRect(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16Q24 */
-	tiledLayerPileDidRefreshTileContent_finishTime(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	zoomValue(...args: any[]): any;
+	tableView(...args: any[]): any;
 }
 
-declare class MSTextAlignTouchBarGroupAction extends MSTouchBarGroupAction {
+declare class MSTextAlignTouchBarGroupAction extends MSActionGroup {
 	/* typeEncoding=@16@0:8 */
 	actionNames(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	supportsState(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarItem(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	touchBarItemSizing(...args: any[]): any;
+}
+
+declare class MSTextFieldWithDropDownMenu extends NSTextField {
+	/* typeEncoding=@"NSMenu", ivar=_popupMenu, attributes=(retain,nonatomic) */
+	popupMenu(): NSMenu;
+
+	/* typeEncoding=@16@0:8 */
+	static dropDownArrowImage(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	dropDownArrowHitTestRect(...args: any[]): any;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	intrinsicContentSize(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	mouseDown(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	popupMenu(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	resetCursorRects(): void;
+	/* typeEncoding=v24@0:8@16 */
+	setPopupMenu(...args: any[]): any;
+}
+
+declare class MSTextFieldWithDropDownMenuCell extends MSInlineUpDownTextFieldCell {
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawArrowWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawInteriorWithFrame_inView(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	drawingRectForBounds(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	dropDownArrowRectWithFrame(...args: any[]): any;
+}
+
+declare class MSTextHeaderInspectorItem extends MSCollapsibleHeaderInspectorItem {
+	/* typeEncoding=@"<MSTextHeaderInspectorItemDelegate>", ivar=(null), attributes=(assign,dynamic,nonatomic,weak) */
+	delegate(): MSTextHeaderInspectorItemDelegate;
+	/* typeEncoding=@"NSButton", ivar=_detailSettingsButton, attributes=(retain,nonatomic) */
+	detailSettingsButton(): NSButton;
+	/* typeEncoding=c, ivar=_detailSettingsDisclosed, attributes=(assign,nonatomic) */
+	detailSettingsDisclosed(): boolean;
+	/* typeEncoding=c, ivar=_detailSettingsEnabled, attributes=(assign,nonatomic) */
+	detailSettingsEnabled(): boolean;
+	/* typeEncoding=c, ivar=_detailSettingsVisible, attributes=(assign,nonatomic) */
+	detailSettingsVisible(): boolean;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	detailSettingsButton(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	detailSettingsDisclosed(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	detailSettingsEnabled(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	detailSettingsVisible(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	init(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDetailSettingsButton(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDetailSettingsDisclosed(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDetailSettingsEnabled(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setDetailSettingsVisible(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	toggleSettings(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateUI(): void;
+	/* typeEncoding=v16@0:8 */
+	viewDidLoad(): void;
+}
+
+declare class MSTextInspectorSection extends MSBaseInspectorSection /* implements MSTextHeaderInspectorItemDelegate */ {
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	debugDescription(): NSString;
+	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
+	description(): NSString;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
+	hash(): number;
+	/* typeEncoding=@"MSTextHeaderInspectorItem", ivar=_headerItem, attributes=(retain,nonatomic) */
+	headerItem(): MSTextHeaderInspectorItem;
+	/* typeEncoding=@"MSMissingFontItem", ivar=_missingFontItem, attributes=(retain,nonatomic) */
+	missingFontItem(): MSMissingFontItem;
+	/* typeEncoding=@"MSParagraphStyleItem", ivar=_paragraphStyleItem, attributes=(retain,nonatomic) */
+	paragraphStyleItem(): MSParagraphStyleItem;
+	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
+	superclass(): any;
+	/* typeEncoding=@"MSTextLayerItem", ivar=_textItem, attributes=(retain,nonatomic) */
+	textItem(): MSTextLayerItem;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	headerItem(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	initWithNibName_bundle(...args: any[]): any;
+	/* typeEncoding=v28@0:8@16c24 */
+	item_wantsSectionToCollapse(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	itemWantsToggleDetailSettings(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	missingFontItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	paragraphStyleItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHeaderItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setMissingFontItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setParagraphStyleItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setTextItem(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	textItem(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	updateItems(): void;
 }
 
 declare class MSTextLabelForUpDownField extends NSTextField {
@@ -36797,6 +41094,8 @@ declare class MSTextLabelForUpDownField extends NSTextField {
 	dealloc(): void;
 	/* typeEncoding=@16@0:8 */
 	flagsMonitor(...args: any[]): any;
+	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	initWithFrame(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	mouseDown(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -36811,6 +41110,8 @@ declare class MSTextLabelForUpDownField extends NSTextField {
 	setTextFields(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setUpDownTextField(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	setupTextLabelForUpDownField(): void;
 	/* typeEncoding=@16@0:8 */
 	textField(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -36823,6 +41124,8 @@ declare class MSTextLabelForUpDownField extends NSTextField {
 	upDownTextField(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateCursor(): void;
+	/* typeEncoding=v32@0:8@16@24 */
+	userClickedWithMouseDownEvent_mouseUpEvent(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	viewDidMoveToWindow(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -36864,8 +41167,6 @@ declare class MSTextLayer extends _MSTextLayer /* implements MSFirstLineTypesett
 	textAlignment(): number;
 	/* typeEncoding=@"MSColor", ivar=(null), attributes=(copy,nonatomic) */
 	textColor(): MSColor;
-	/* typeEncoding=@"NSValue", ivar=_transientGlyphBoundsValue, attributes=(retain,nonatomic) */
-	transientGlyphBoundsValue(): NSValue;
 	/* typeEncoding=q, ivar=(null), attributes=(assign,nonatomic) */
 	verticalAlignment(): number;
 
@@ -36874,13 +41175,17 @@ declare class MSTextLayer extends _MSTextLayer /* implements MSFirstLineTypesett
 	/* typeEncoding=c24@0:8@16 */
 	static canSetTextVerticalAlignmentForLayers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	static defaultValue(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	static keyPathsForValuesAffectingCanFixHeight(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	static keyPathsForValuesAffectingHasFixedHeight(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	static keyPathsForValuesAffectingSupportsVerticalAlignment(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	static keyPathsForValuesAffectingTextBehaviourSegmentIndex(...args: any[]): any;
+	static keyPathsForValuesAffectingTextBehaviourLabelString(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	static keyPathsForValuesAffectingTextBehaviourSegmentTag(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@?24 */
 	static maintainTextLayerBaselinesForLayers_inBlock(...args: any[]): any;
 	/* typeEncoding=q32@0:8Q16@24 */
@@ -36909,11 +41214,9 @@ declare class MSTextLayer extends _MSTextLayer /* implements MSFirstLineTypesett
 	/* typeEncoding=v16@0:8 */
 	adjustFrameToFit(): void;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}32@0:8@16Q24 */
-	alignmentRectInLayer_options(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	anchorsForSnapping(...args: any[]): any;
+	alignmentRectInCoordinateSpace_options(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
-	applyOverride_toPoint(...args: any[]): any;
+	applyOverride_document(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	applyScreenPickerColor_preferredStyleName(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -36972,6 +41275,8 @@ declare class MSTextLayer extends _MSTextLayer /* implements MSFirstLineTypesett
 	editingDelegate(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	embedInTransformedGroup(): void;
+	/* typeEncoding=v32@0:8Q16@?24 */
+	enumerateAnchorsForSnappingOnAxes_usingBlock(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	finishEditing(): void;
 	/* typeEncoding=@16@0:8 */
@@ -36993,7 +41298,7 @@ declare class MSTextLayer extends _MSTextLayer /* implements MSFirstLineTypesett
 	/* typeEncoding=@72@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48@56q64 */
 	initWithFrame_attributes_documentColorSpace_type(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	inspectorViewControllerNames(...args: any[]): any;
+	inspectorSections(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	invalidateFonts(): void;
 	/* typeEncoding=c16@0:8 */
@@ -37032,8 +41337,6 @@ declare class MSTextLayer extends _MSTextLayer /* implements MSFirstLineTypesett
 	paragraphStyle(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
-	/* typeEncoding=v24@0:8@16 */
-	performInitWithImmutableModelObject(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
 	previousRectCache(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -37053,7 +41356,7 @@ declare class MSTextLayer extends _MSTextLayer /* implements MSFirstLineTypesett
 	/* typeEncoding=Q16@0:8 */
 	resizingConstraint(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	selectedPreviewImage(...args: any[]): any;
+	selectedPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=Q24@0:8d16 */
 	selectionCornerMaskWithZoomValue(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -37072,8 +41375,6 @@ declare class MSTextLayer extends _MSTextLayer /* implements MSFirstLineTypesett
 	setFontPostscriptName(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	setFontSize(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	setGlyphBounds(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setIsEditingText(...args: any[]): any;
 	/* typeEncoding=v20@0:8f16 */
@@ -37101,13 +41402,11 @@ declare class MSTextLayer extends _MSTextLayer /* implements MSFirstLineTypesett
 	/* typeEncoding=v28@0:8q16c24 */
 	setTextBehaviour_mayAdjustFrame(...args: any[]): any;
 	/* typeEncoding=v24@0:8q16 */
-	setTextBehaviourSegmentIndex(...args: any[]): any;
+	setTextBehaviourSegmentTag(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setTextColor(...args: any[]): any;
 	/* typeEncoding=v40@0:8Q16{_NSRange=QQ}24 */
 	setTextTransform_range(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setTransientGlyphBoundsValue(...args: any[]): any;
 	/* typeEncoding=v24@0:8q16 */
 	setVerticalAlignment(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
@@ -37122,6 +41421,8 @@ declare class MSTextLayer extends _MSTextLayer /* implements MSFirstLineTypesett
 	sharedObject(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldDrawSelection(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	shouldDrawSelectionStroke(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldStorePDFPreviews(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
@@ -37140,18 +41441,20 @@ declare class MSTextLayer extends _MSTextLayer /* implements MSFirstLineTypesett
 	syncTextStyleAttributes(): void;
 	/* typeEncoding=Q16@0:8 */
 	textAlignment(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	textBehaviourLabelString(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
-	textBehaviourSegmentIndex(...args: any[]): any;
+	textBehaviourSegmentTag(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	textColor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	transientGlyphBoundsValue(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	unselectedPreviewImage(...args: any[]): any;
+	unselectedPreviewTemplateImage(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	updateAttributedStringInBlock(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateNameFromStorage(): void;
+	/* typeEncoding=v24@0:8@?16 */
+	updateStyleInBlock(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	verticalAlignment(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -37308,6 +41611,8 @@ declare class MSTextLayerEventHandler extends MSEventHandler /* implements NSLay
 	validateMenuItem(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	viewDidScroll(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	willStartExporting(): void;
 	/* typeEncoding=v24@0:8@16 */
 	windowDidResignKey(...args: any[]): any;
 	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
@@ -37316,7 +41621,7 @@ declare class MSTextLayerEventHandler extends MSEventHandler /* implements NSLay
 	zoomValueWillChangeTo(...args: any[]): any;
 }
 
-declare class MSTextLayerSection extends MSLayerSection /* implements NSMenuDelegate, MSColorInspectorDelegate, NSComboBoxDataSource, MSStylePartPreviewButtonDelegate */ {
+declare class MSTextLayerItem extends MSInspectorItem /* implements NSMenuDelegate, MSColorInspectorDelegate, NSComboBoxDataSource, MSStylePartPreviewButtonDelegate */ {
 	/* typeEncoding=@"NSSegmentedControl", ivar=_alignmentButton, attributes=(retain,nonatomic) */
 	alignmentButton(): NSSegmentedControl;
 	/* typeEncoding=@"NSView", ivar=_basicView, attributes=(retain,nonatomic) */
@@ -37335,8 +41640,8 @@ declare class MSTextLayerSection extends MSLayerSection /* implements NSMenuDele
 	fontPointSizes(): NSSet;
 	/* typeEncoding=@"NSSet", ivar=_fontPostscriptNames, attributes=(copy,nonatomic) */
 	fontPostscriptNames(): NSSet;
-	/* typeEncoding=@"NSComboBox", ivar=_fontSizeField, attributes=(retain,nonatomic) */
-	fontSizeField(): NSComboBox;
+	/* typeEncoding=@"NSTextField", ivar=_fontSizeField, attributes=(retain,nonatomic) */
+	fontSizeField(): NSTextField;
 	/* typeEncoding=@"NSPopUpButton", ivar=_fontWeightPopUpButton, attributes=(retain,nonatomic) */
 	fontWeightPopUpButton(): NSPopUpButton;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
@@ -37345,23 +41650,19 @@ declare class MSTextLayerSection extends MSLayerSection /* implements NSMenuDele
 	kerningField(): NSTextField;
 	/* typeEncoding=@"MSUpDownTextField", ivar=_lineHeightField, attributes=(retain,nonatomic) */
 	lineHeightField(): MSUpDownTextField;
-	/* typeEncoding=@"NSButton", ivar=_missingFontFamilyButton, attributes=(retain,nonatomic) */
-	missingFontFamilyButton(): NSButton;
-	/* typeEncoding=@"NSTextField", ivar=_missingFontsLabel, attributes=(retain,nonatomic) */
-	missingFontsLabel(): NSTextField;
-	/* typeEncoding=@"NSView", ivar=_missingFontsView, attributes=(retain,nonatomic) */
-	missingFontsView(): NSView;
 	/* typeEncoding=@"NSTextField", ivar=_paragraphHeightField, attributes=(retain,nonatomic) */
 	paragraphHeightField(): NSTextField;
 	/* typeEncoding=@"BCPopover", ivar=_popover, attributes=(retain,nonatomic) */
 	popover(): BCPopover;
+	/* typeEncoding=@"NSTextField", ivar=_sizingLabel, attributes=(retain,nonatomic) */
+	sizingLabel(): NSTextField;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
 	/* typeEncoding=@"NSSegmentedControl", ivar=_verticalAlignmentButton, attributes=(retain,nonatomic) */
 	verticalAlignmentButton(): NSSegmentedControl;
 
-	/* typeEncoding=v16@0:8 */
-	static initialize(): void;
+	/* typeEncoding=c24@0:8@16 */
+	static canHandleLayer(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -37399,10 +41700,10 @@ declare class MSTextLayerSection extends MSLayerSection /* implements NSMenuDele
 	colorInspectorUndoManager(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	colorInspectorWillClose(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	colorMagnifierAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	colorPickerButton(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16q24 */
-	comboBox_objectValueForItemAtIndex(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	commitHistory(): void;
 	/* typeEncoding=@16@0:8 */
@@ -37413,8 +41714,6 @@ declare class MSTextLayerSection extends MSLayerSection /* implements NSMenuDele
 	defaultLineHeight(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	dismissViewController(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	document(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	documentColorSpace(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -37442,9 +41741,7 @@ declare class MSTextLayerSection extends MSLayerSection /* implements NSMenuDele
 	/* typeEncoding=@16@0:8 */
 	fontWeightPopUpButton(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	hasMissingFonts(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	hasMoreThanOneMissingFont(...args: any[]): any;
+	hasMultipleColors(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	kerningAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -37457,16 +41754,8 @@ declare class MSTextLayerSection extends MSLayerSection /* implements NSMenuDele
 	lineHeightField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	maintainTextLayerBaselinesInBlock(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	missingFontFamilyButton(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	missingFontTitle(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	missingFontsLabel(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	missingFontsView(...args: any[]): any;
-	/* typeEncoding=q24@0:8@16 */
-	numberOfItemsInComboBox(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	occurencesOfAttributeWithName(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	paragraphHeightAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -37512,21 +41801,19 @@ declare class MSTextLayerSection extends MSLayerSection /* implements NSMenuDele
 	/* typeEncoding=v24@0:8@16 */
 	setLineHeightField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setMissingFontFamilyButton(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setMissingFontsLabel(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setMissingFontsView(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setParagraphHeightField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setPopover(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setSizingLabel(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setVerticalAlignmentButton(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showColorPickerAction(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	showParagraphStylingAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	sizingLabel(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	storeCurrentFontNamesAndSizes(): void;
 	/* typeEncoding=@24@0:8@16 */
@@ -37553,8 +41840,6 @@ declare class MSTextLayerSection extends MSLayerSection /* implements NSMenuDele
 	verticalAlignmentButton(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	viewWillDisappear(): void;
-	/* typeEncoding=@16@0:8 */
-	views(...args: any[]): any;
 }
 
 declare class MSTextLayerTextView extends NSTextView {
@@ -37676,6 +41961,8 @@ declare class MSTextOnPathAction extends MSDocumentAction {
 	/* typeEncoding=c16@0:8 */
 	isActive(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	textLayers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	textOnPath(...args: any[]): any;
@@ -37683,9 +41970,20 @@ declare class MSTextOnPathAction extends MSDocumentAction {
 	validate(...args: any[]): any;
 }
 
-declare class MSTextOverrideViewController extends MSOverrideViewController {
+declare class MSTextOverrideInspectorItem extends MSOverrideInspectorItem {
 	/* typeEncoding=@"NSTextField", ivar=_overrideTextField, attributes=(retain,nonatomic) */
 	overrideTextField(): NSTextField;
+
+	/* typeEncoding=d44@0:8@16@24c32Q36 */
+	static heightForOverride_layers_shouldShowLabel_indentationLevel(...args: any[]): any;
+	/* typeEncoding=Q32@0:8@16@24 */
+	static numberOfLinesForOverride_layers(...args: any[]): any;
+	/* typeEncoding=Q24@0:8@16 */
+	static numberOfLinesForSingleOverride(...args: any[]): any;
+	/* typeEncoding=d24@0:8Q16 */
+	static textFieldHeightForNumberOfLines(...args: any[]): any;
+	/* typeEncoding=d32@0:8@16@24 */
+	static textFieldHeightForOverrideRepresentation_layers(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -37693,8 +41991,10 @@ declare class MSTextOverrideViewController extends MSOverrideViewController {
 	controlViewForEditingOverride(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
 	dataMenuProvider_didChooseData(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	numberOfLines(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	dataMenuProviderRefreshMasterData(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	dataOverrides(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	overrideTextField(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -37799,10 +42099,17 @@ declare class MSTextStyleMenuPreview extends NSObject {
 	static attributedTitleForTextStyle_colorSpace(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	static attributesForDrawingTextWithStyle_inColorSpace(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	static ensureAttributes_areVisibleAgainstColor(...args: any[]): any;
 	/* typeEncoding=@48@0:8@16d24d32d40 */
 	static ensureAttributes_areVisibleDrawingAgainstRed_green_blue(...args: any[]): any;
 	/* typeEncoding=@32@0:8@16@24 */
 	static ensureAttributes_areVisibleDrawingInMenuItem(...args: any[]): any;
+}
+
+declare class MSTextStyleOverrideInspectorItem extends MSStyleOverrideInspectorItem {
+	/* typeEncoding=@16@0:8 */
+	menuObjectProvider(...args: any[]): any;
 }
 
 declare class MSTextStyleTouchBarAction extends MSDocumentAction /* implements NSTouchBarDelegate */ {
@@ -37817,6 +42124,8 @@ declare class MSTextStyleTouchBarAction extends MSDocumentAction /* implements N
 
 	/* typeEncoding=v24@0:8@16 */
 	applySharedStyle(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	makeTouchBar(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -37884,328 +42193,824 @@ declare class MSTextWindow extends NSWindow {
 	textView(...args: any[]): any;
 }
 
+declare class MSTheme extends NSObject {
+	/* typeEncoding=@"BCCache", ivar=_cache, attributes=(assign,nonatomic,readonly) */
+	cache(): BCCache;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasArtboardTitleColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasFlowArrowColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasLayerHighlightColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasLayerSelectionColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasMeasurementLabelBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasPageBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasPixelLineColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasRulerBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasRulerLineColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasRulerLineOccupiedColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasRulerLockColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasRulerOccupiedColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasRulerTextBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasRulerTextColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasSliceOutlineColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasSymbolErrorBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasSymbolErrorBorderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasSymbolErrorTextColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	canvasSymbolTitleColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	cloudPopoverButtonTintColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	cloudPopoverButtonTintColorPressed(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	cloudPopoverCancelButtonTintColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	cloudPopoverCancelButtonTintColorPressed(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	colorPickerAssetBorderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	colorPickerCheckerboardBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	colorPickerCheckerboardBorderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	colorPickerDarkShadowColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	colorPickerLightShadowColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	colorPickerMarkerFillColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	colorPickerMarkerShadowColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	colorPickerSeparatorColor(): NSColor;
+	/* typeEncoding=@"NSDictionary", ivar=_colorPlist, attributes=(assign,nonatomic,readonly) */
+	colorPlist(): NSDictionary;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hoverButtonHoverColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hoverButtonNormalColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorAccentColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorAlignmentDisabledStrutColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorAlignmentStrutColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorAlignmentViewBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorArtboardPresetHeaderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorArtboardPresetTableViewBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorBorderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorButtonBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorButtonDropShadowColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorButtonHighlightedBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorDisabledIconColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorHighlightedAccentColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorHighlightedBorderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorHighlightedIconColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorHighlightedSliderKnobColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorIconAccentColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorIconColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorInlineLabelTextColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorLabelBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorLabelBorderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorLabelTextColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorPushButtonBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorResizePreviewBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorResizePreviewEdgeIndicatorColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorResizePreviewInnerLayerBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorResizePreviewInnerLayerBorderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorSecondaryLabelTextColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorSecondaryLabelTextColorHighlighted(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorSectionBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorSectionHeaderTextColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorSectionSeparatorColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorSeparatorColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorSliderKnobBorderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorSliderKnobColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorSliderRightTrackColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	inspectorStylePreviewButtonOverlayHighlightingColor(): NSColor;
+	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	isDark(): boolean;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListArtboardBorderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListBackgroundColor(): NSColor;
+	/* typeEncoding=@"MSLayerBadgeImages", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListBadgeImages(): MSLayerBadgeImages;
+	/* typeEncoding=@"MSLayerBadgeImages", ivar=_layerListBadgeImages, attributes=(retain,nonatomic) */
+	layerListBadgeImages(): MSLayerBadgeImages;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListFilterBarBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListFilterBarBorderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListFilterTokenBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListFilterTokenSelectedBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListFilterTokenSelectedTitleColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListFilterTokenTitleColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListIconPressedTintColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListIconSelectedActiveTintColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListIconSelectedInactiveTintColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListIconSharedTintColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListIconTintColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListLightBackgroundColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListSelectedArtboardBorderColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListSplitViewDividerColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListSymbolOverrideIconTintColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layerListTabButtonColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	licenseWindowErrorTextColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	menuItemIconTintColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	preferencesWindowErrorTextColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	splitViewDividerColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	windowBadgeFontsMissingColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	windowBadgeLibraryChangesAvailableColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	windowBadgeMultipleNotificationsColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	windowBadgePluginUpdatesAvailableColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	windowBadgeTextColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	windowBadgeTrialMessageColor(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	windowBadgeUnfocusedPillColor(): NSColor;
+
+	/* typeEncoding=v16@0:8 */
+	static initialize(): void;
+	/* typeEncoding=@16@0:8 */
+	static sharedTheme(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@32@0:8@16@24 */
+	_colorForStringValue_cachingKey(...args: any[]): any;
+	/* typeEncoding=@36@0:8@16@24c32 */
+	_colorNamed_forWindow_isActiveView(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24Q32 */
+	attributedStringWithString_color_controlSize(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cache(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@32 */
+	cacheImage_forKey_owner(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	cachedImageForKey_owner(...args: any[]): any;
+	/* typeEncoding=@40@0:8@16@24@?32 */
+	cachedImageForKey_owner_createBlock(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasArtboardTitleColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasFlowArrowColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasLayerHighlightColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasLayerSelectionColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasMeasurementLabelBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasPageBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasPixelLineColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasRulerBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasRulerLineColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasRulerLineOccupiedColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasRulerLockColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasRulerOccupiedColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasRulerTextBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasRulerTextColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasSliceOutlineColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasSymbolErrorBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasSymbolErrorBorderColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasSymbolErrorTextColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasSymbolTitleColor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@?16 */
+	changeApplicationAppearanceInBlock(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cloudPopoverButtonTintColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cloudPopoverButtonTintColorPressed(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cloudPopoverCancelButtonTintColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cloudPopoverCancelButtonTintColorPressed(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	colorForResolvedName(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	colorNamed(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16Q24 */
+	colorNamed_options(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorPickerAssetBorderColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorPickerCheckerboardBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorPickerCheckerboardBorderColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorPickerDarkShadowColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorPickerLightShadowColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorPickerMarkerFillColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorPickerMarkerShadowColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorPickerSeparatorColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorPlist(...args: any[]): any;
+	/* typeEncoding=q16@0:8 */
+	darkModeScheme(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	hoverButtonHoverColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	hoverButtonNormalColor(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	imageNamed(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16Q24 */
+	imageNamed_options(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	init(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorAccentColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorAlignmentDisabledStrutColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorAlignmentStrutColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorAlignmentViewBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorArtboardPresetHeaderColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorArtboardPresetTableViewBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorBorderColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorButtonBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorButtonDropShadowColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorButtonHighlightedBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorDisabledIconColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorHighlightedAccentColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorHighlightedBorderColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorHighlightedIconColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorHighlightedSliderKnobColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorIconAccentColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorIconColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorInlineLabelTextColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorLabelBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorLabelBorderColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorLabelTextColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorPushButtonBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorResizePreviewBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorResizePreviewEdgeIndicatorColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorResizePreviewInnerLayerBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorResizePreviewInnerLayerBorderColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorSecondaryLabelTextColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorSecondaryLabelTextColorHighlighted(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorSectionBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorSectionHeaderTextColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorSectionSeparatorColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorSeparatorColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorSliderKnobBorderColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorSliderKnobColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorSliderRightTrackColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	inspectorStylePreviewButtonOverlayHighlightingColor(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isDark(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListArtboardBorderColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListBadgeImages(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListFilterBarBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListFilterBarBorderColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListFilterTokenBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListFilterTokenSelectedBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListFilterTokenSelectedTitleColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListFilterTokenTitleColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListIconPressedTintColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListIconSelectedActiveTintColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListIconSelectedInactiveTintColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListIconSharedTintColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListIconTintColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListLightBackgroundColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListSelectedArtboardBorderColor(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	layerListSelectionColorForWindow_isActiveOutlineView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListSplitViewDividerColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListSymbolOverrideIconTintColor(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	layerListSymbolOverrideSelectionColorForWindow_isActiveOutlineView(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layerListTabButtonColor(...args: any[]): any;
+	/* typeEncoding=@40@0:8q16c24c28c32c36 */
+	layerListTextColorForBackgroundStyle_nodeIsHidden_editing_selected_active(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	licenseWindowErrorTextColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	menuItemIconTintColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	preferencesWindowErrorTextColor(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16Q24 */
+	resolvedNamesForBaseName_options(...args: any[]): any;
+	/* typeEncoding=v24@0:8q16 */
+	setDarkModeScheme(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setLayerListBadgeImages(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	splitViewDividerColor(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	systemColorNamed(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	validate(): void;
+	/* typeEncoding=v16@0:8 */
+	validateColorPlist(): void;
+	/* typeEncoding=@16@0:8 */
+	windowBadgeFontsMissingColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	windowBadgeLibraryChangesAvailableColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	windowBadgeMultipleNotificationsColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	windowBadgePluginUpdatesAvailableColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	windowBadgeTextColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	windowBadgeTrialMessageColor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	windowBadgeUnfocusedPillColor(...args: any[]): any;
+}
+
+declare class MSThemeImageView extends NSImageView {
+	/* typeEncoding=@"NSString", ivar=_imageName, attributes=(copy,nonatomic) */
+	imageName(): NSString;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	imageName(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setImageName(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	setThemedImage(): void;
+	/* typeEncoding=v16@0:8 */
+	viewDidChangeEffectiveAppearance(): void;
+}
+
+declare class MSThemedColorView extends MSColorView {
+	/* typeEncoding=@"NSString", ivar=_colorName, attributes=(copy,nonatomic) */
+	colorName(): NSString;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	color(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	colorName(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setColorName(...args: any[]): any;
+}
+
 declare class MSTiffExporter extends MSExporter {
 	/* typeEncoding=@16@0:8 */
 	data(...args: any[]): any;
 }
 
-declare class MSTile extends MSRenderingCALayer /* implements CALayerDelegate */ {
-	/* typeEncoding=^{CGColorSpace=}, ivar=_colorSpace, attributes=(assign,nonatomic,readonly) */
-	colorSpace(): any;
-	/* typeEncoding=c, ivar=_completedFirstRenderOrWasCancelled, attributes=(assign,nonatomic) */
-	completedFirstRenderOrWasCancelled(): boolean;
-	/* typeEncoding=@"MSContentCALayer", ivar=_contentLayer, attributes=(retain,nonatomic) */
-	contentLayer(): MSContentCALayer;
-	/* typeEncoding=d, ivar=(null), attributes=(assign,nonatomic) */
-	contentLayerScale(): number;
-	/* typeEncoding=@"MSTileRenderOperation", ivar=_currentRenderOperation, attributes=(assign,nonatomic,weak) */
-	currentRenderOperation(): MSTileRenderOperation;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"CALayer", ivar=_debugDrawingAreaLayer, attributes=(retain,nonatomic) */
-	debugDrawingAreaLayer(): CALayer;
-	/* typeEncoding=@"CATextLayer", ivar=_debugLabelLayer, attributes=(retain,nonatomic) */
-	debugLabelLayer(): CATextLayer;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding={CGPoint=dd}, ivar=_distanceFromScrollOrigin, attributes=(assign,nonatomic) */
-	distanceFromScrollOrigin(): CGPoint;
-	/* typeEncoding=c, ivar=_drawingIsCancelled, attributes=(assign,nonatomic,readonly) */
-	drawingIsCancelled(): boolean;
-	/* typeEncoding=@"MSRenderingDriver", ivar=_driver, attributes=(assign,nonatomic,readonly) */
-	driver(): MSRenderingDriver;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=Q, ivar=_index, attributes=(assign,nonatomic) */
-	index(): number;
-	/* typeEncoding=@"MSRenderingRequest", ivar=_renderingRequest, attributes=(retain) */
-	renderingRequest(): MSRenderingRequest;
-	/* typeEncoding={CGPoint=dd}, ivar=_scrollOrigin, attributes=(assign,nonatomic) */
-	scrollOrigin(): CGPoint;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
+declare class MSTile extends NSObject {
+	/* typeEncoding={?=ii}, ivar=_point, attributes=(assign,nonatomic) */
+	point(): any;
+	/* typeEncoding={?=iiii}, ivar=_rectWithImageFragment, attributes=(assign,nonatomic,readonly) */
+	rectWithImageFragment(): any;
+	/* typeEncoding=@"<MSGPUTexture>", ivar=_texture, attributes=(retain,nonatomic) */
+	texture(): MSGPUTexture;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=v16@0:8 */
-	cancelDrawing(): void;
-	/* typeEncoding=^{CGColorSpace=}16@0:8 */
-	colorSpace(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	completedFirstRenderOrWasCancelled(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	contentLayer(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	contentLayerScale(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	currentRenderOperation(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
-	/* typeEncoding=@16@0:8 */
-	debugDrawingAreaLayer(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	debugLabelLayer(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	description(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	distanceFromScrollOrigin(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	drawingIsCancelled(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	driver(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	index(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-	/* typeEncoding=@48@0:8@16{CGSize=dd}24^{CGColorSpace=}40 */
-	initWithTiledLayer_size_colorSpace(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	moveToPosition(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16{CGPoint=dd}48 */
-	normalizeRect_origin(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	removeFromSuperlayer(): void;
-	/* typeEncoding=@72@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48@56@64 */
-	renderOperationForContentRect_page_renderingRequest_contextPool(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	renderingRequest(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	scrollOrigin(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setCompletedFirstRenderOrWasCancelled(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16{?=ii}24 */
+	initWithRenderer_point(...args: any[]): any;
+	/* typeEncoding={?=ii}16@0:8 */
+	point(...args: any[]): any;
+	/* typeEncoding={?=iiii}16@0:8 */
+	rectWithImageFragment(...args: any[]): any;
+	/* typeEncoding=v48@0:8{?=iiii}16r^v32Q40 */
+	replaceRegion_withBytes_bytesPerRow(...args: any[]): any;
+	/* typeEncoding=v24@0:8{?=ii}16 */
+	setPoint(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setContentLayer(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setContentLayerScale(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setCurrentRenderOperation(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setDebugDrawingAreaLayer(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setDebugLabelLayer(...args: any[]): any;
-	/* typeEncoding=v28@0:8c16c20c24 */
-	setDebugOptionsToDrawInner_outer_dirty(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setDistanceFromScrollOrigin(...args: any[]): any;
-	/* typeEncoding=v24@0:8Q16 */
-	setIndex(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setRenderingRequest(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setScrollOrigin(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	setupDebugDrawingArea(): void;
-	/* typeEncoding=v16@0:8 */
-	setupDebugLabel(): void;
-	/* typeEncoding=v16@0:8 */
-	tileRenderingDidFinish(): void;
-	/* typeEncoding=v16@0:8 */
-	updateDebugLabel(): void;
+	setTexture(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	texture(...args: any[]): any;
 }
 
-declare class MSTilePlacer extends NSObject {
-	/* typeEncoding=@"<MSTilePlacerDelegate>", ivar=_delegate, attributes=(assign,nonatomic,weak) */
-	delegate(): MSTilePlacerDelegate;
-	/* typeEncoding={CGPoint=dd}, ivar=_scrollOrigin, attributes=(assign,nonatomic) */
-	scrollOrigin(): CGPoint;
-	/* typeEncoding=@"MSTiledLayer", ivar=_tiledLayer, attributes=(assign,nonatomic,weak) */
-	tiledLayer(): MSTiledLayer;
-	/* typeEncoding=@"NSMutableDictionary", ivar=_tiles, attributes=(retain,nonatomic) */
-	tiles(): NSMutableDictionary;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=_viewBounds, attributes=(assign,nonatomic) */
-	viewBounds(): CGRect;
+declare class MSTileMipLevel extends NSObject {
+	/* typeEncoding=c, ivar=_clearBeforeUpload, attributes=(assign) */
+	clearBeforeUpload(): boolean;
+	/* typeEncoding=^{CGColorSpace=}, ivar=_currentColorSpace, attributes=(assign,nonatomic) */
+	currentColorSpace(): any;
+	/* typeEncoding=^{?={?=iiii}^{?}}, ivar=_dirtyRegion, attributes=(assign,nonatomic) */
+	dirtyRegion(): any;
+	/* typeEncoding=d, ivar=_scale, attributes=(assign,nonatomic) */
+	scale(): number;
+	/* typeEncoding=d, ivar=_scaleRangeMax, attributes=(assign,nonatomic,readonly) */
+	scaleRangeMax(): number;
+	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	tileCount(): number;
+	/* typeEncoding=@"NSMutableArray", ivar=_tiles, attributes=(retain,nonatomic) */
+	tiles(): NSMutableArray;
+
+	/* typeEncoding=@24@0:8d16 */
+	static tileMipLevelWithScaleRangeMax(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=v24@0:8@16 */
-	addMissingTilesFrom(...args: any[]): any;
-	/* typeEncoding=v28@0:8@16c24 */
-	addTiles_shouldRedraw(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	allTileIDs(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	allTiles(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	cancelAllDrawing(): void;
+	addTile(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	clearBeforeUpload(...args: any[]): any;
+	/* typeEncoding=Q48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	countExistingTilesForVisibleRect(...args: any[]): any;
+	/* typeEncoding=^{CGColorSpace=}16@0:8 */
+	currentColorSpace(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	dealloc(): void;
-	/* typeEncoding=@16@0:8 */
-	delegate(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	idForTile(...args: any[]): any;
-	/* typeEncoding=@20@0:8c16 */
-	identifiersOfVisibleTilesIncludingMargin(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initWithTiledLayer(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	makeNewTilesWithIDs(...args: any[]): any;
+	/* typeEncoding=^{?={?=iiii}^{?}}16@0:8 */
+	dirtyRegion(...args: any[]): any;
+	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	enqueueRenderableTilesForVisibleRect(...args: any[]): any;
+	/* typeEncoding=@24@0:8{?=ii}16 */
+	findWritableTileAt(...args: any[]): any;
+	/* typeEncoding=@24@0:8d16 */
+	initWithScaleRangeMax(...args: any[]): any;
+	/* typeEncoding=c24@0:8^{CGColorSpace=}16 */
+	isCurrentColorSpaceEqualTo(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	moveTiles(): void;
-	/* typeEncoding=d24@0:8d16 */
-	normaliseOriginValue(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	originForFirstTile(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	removeTilesNotIncludedIn(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	removeTilesWithIDs(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	removeTilesWithIDsFromSuperLayer(...args: any[]): any;
+	removeAllTiles(): void;
 	/* typeEncoding=v16@0:8 */
-	repositionExistingTiles(): void;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	scrollOrigin(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setDelegate(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16@24 */
-	setPositionForTile_withID(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setScrollOrigin(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setTiledLayer(...args: any[]): any;
+	removeAllTilesAndClearDirtyRegion(): void;
+	/* typeEncoding=v32@0:8{?=iiii}16 */
+	removeAllTilesAndResetDirtyRegionToRect(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	scale(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	scaleRangeMax(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setClearBeforeUpload(...args: any[]): any;
+	/* typeEncoding=v24@0:8^{CGColorSpace=}16 */
+	setCurrentColorSpace(...args: any[]): any;
+	/* typeEncoding=v24@0:8^{?={?=iiii}^{?}}16 */
+	setDirtyRegion(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setScale(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setTiles(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	setViewBounds(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	shouldDrawPixelated(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	tileRemovingOffscreenTiles(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	tileSize(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	tiledLayer(...args: any[]): any;
+	/* typeEncoding=v32@0:8{?=iiii}16 */
+	subtractDirtyRect(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	tileCount(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	tiles(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	unregisterTilesWithIDs(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	viewBounds(...args: any[]): any;
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	uniteDirtyRect(...args: any[]): any;
 }
 
-declare class MSTileRenderOperation extends NSOperation /* implements CALayerDelegate */ {
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=_contentBounds, attributes=(assign,nonatomic) */
-	contentBounds(): CGRect;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=_contentRectNeedingRedraw, attributes=(assign,nonatomic) */
-	contentRectNeedingRedraw(): CGRect;
-	/* typeEncoding=@"MSRenderingContext", ivar=_context, attributes=(retain) */
-	context(): MSRenderingContext;
-	/* typeEncoding=@"MSCGContextPool", ivar=_contextPool, attributes=(assign,nonatomic,readonly) */
+declare class MSTileRasterisationOperation extends NSOperation {
+	/* typeEncoding=d, ivar=_backingScaleFactor, attributes=(assign,nonatomic) */
+	backingScaleFactor(): number;
+	/* typeEncoding=Q, ivar=_bytesPerRow, attributes=(assign,nonatomic) */
+	bytesPerRow(): number;
+	/* typeEncoding=@"<MSRenderingContextCacheProvider>", ivar=_cacheProvider, attributes=(retain,nonatomic) */
+	cacheProvider(): MSRenderingContextCacheProvider;
+	/* typeEncoding=^{CGColorSpace=}, ivar=_colorSpace, attributes=(assign,nonatomic) */
+	colorSpace(): any;
+	/* typeEncoding=@"MSCGContextPool", ivar=_contextPool, attributes=(retain,nonatomic) */
 	contextPool(): MSCGContextPool;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding={CGPoint=dd}, ivar=_distanceFromScrollOrigin, attributes=(assign,nonatomic) */
-	distanceFromScrollOrigin(): CGPoint;
-	/* typeEncoding=@"MSRenderingDriver", ivar=_driver, attributes=(assign,nonatomic,readonly) */
+	/* typeEncoding=@"MSImmutableDocumentData", ivar=_document, attributes=(retain,nonatomic) */
+	document(): MSImmutableDocumentData;
+	/* typeEncoding=@"MSRenderingDriver", ivar=_driver, attributes=(retain,nonatomic) */
 	driver(): MSRenderingDriver;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=^{CGImage=}, ivar=_image, attributes=(assign,nonatomic,readonly) */
-	image(): any;
-	/* typeEncoding=@"MSImmutablePage", ivar=_pageForContent, attributes=(retain,nonatomic) */
-	pageForContent(): MSImmutablePage;
-	/* typeEncoding=@"MSRenderingRequest", ivar=_renderingRequest, attributes=(assign,nonatomic,readonly) */
-	renderingRequest(): MSRenderingRequest;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
-	/* typeEncoding=@"MSTile", ivar=_tile, attributes=(assign,nonatomic,weak) */
-	tile(): MSTile;
+	/* typeEncoding=^v, ivar=_memory, attributes=(assign,nonatomic) */
+	memory(): any;
+	/* typeEncoding=@"MSImmutablePage", ivar=_page, attributes=(retain,nonatomic) */
+	page(): MSImmutablePage;
+	/* typeEncoding={?=iiii}, ivar=_rect, attributes=(assign,nonatomic) */
+	rect(): any;
+	/* typeEncoding=d, ivar=_zoomValue, attributes=(assign,nonatomic) */
+	zoomValue(): number;
+
+	/* typeEncoding=@112@0:8^v16Q24{?=iiii}32d48d56@64@72@80@88@96^{CGColorSpace=}104 */
+	static operationWithMemory_bytesPerRow_rect_zoomValue_backingScaleFactor_page_document_driver_contextPool_cacheProvider_colorSpace(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=d16@0:8 */
+	backingScaleFactor(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
-	_tileIndex(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	cancelDrawing(): void;
-	/* typeEncoding=v32@0:8^{CGContext=}16^{CGContext=}24 */
-	combineContent_withBackground(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	contentBounds(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	contentRectNeedingRedraw(...args: any[]): any;
+	bytesPerRow(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	context(...args: any[]): any;
+	cacheProvider(...args: any[]): any;
+	/* typeEncoding=^{CGColorSpace=}16@0:8 */
+	colorSpace(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	contextPool(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	dealloc(): void;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	distanceFromScrollOrigin(...args: any[]): any;
-	/* typeEncoding=v24@0:8^{CGContext=}16 */
-	drawBackgroundInContext(...args: any[]): any;
-	/* typeEncoding=v56@0:8^{CGContext=}16{CGRect={CGPoint=dd}{CGSize=dd}}24 */
-	drawContentInContext_clipRect(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	document(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	driver(...args: any[]): any;
-	/* typeEncoding=^{CGImage=}16@0:8 */
-	image(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-	/* typeEncoding=@40@0:8@16@24@32 */
-	initWithRenderingRequest_contextPool_driver(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	main(): void;
-	/* typeEncoding=@80@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24d56d64^{CGContext=}72 */
-	makeRenderingContextForPage_rect_scale_zoom_context(...args: any[]): any;
+	/* typeEncoding=^v16@0:8 */
+	memory(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	pageForContent(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	renderingRequest(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	setContentBounds(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	setContentRectNeedingRedraw(...args: any[]): any;
+	page(...args: any[]): any;
+	/* typeEncoding={?=iiii}16@0:8 */
+	rect(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setBackingScaleFactor(...args: any[]): any;
+	/* typeEncoding=v24@0:8Q16 */
+	setBytesPerRow(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setContext(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setDistanceFromScrollOrigin(...args: any[]): any;
+	setCacheProvider(...args: any[]): any;
+	/* typeEncoding=v24@0:8^{CGColorSpace=}16 */
+	setColorSpace(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setPageForContent(...args: any[]): any;
+	setContextPool(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setTile(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	tile(...args: any[]): any;
+	setDocument(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDriver(...args: any[]): any;
+	/* typeEncoding=v24@0:8^v16 */
+	setMemory(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPage(...args: any[]): any;
+	/* typeEncoding=v32@0:8{?=iiii}16 */
+	setRect(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setZoomValue(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	zoomValue(...args: any[]): any;
 }
 
-declare class MSTileUpdateOperation extends NSOperation {
-	/* typeEncoding=Q, ivar=_finishTime, attributes=(assign,nonatomic) */
-	finishTime(): number;
-	/* typeEncoding=@"NSMapTable", ivar=_operationsToTilesMapTable, attributes=(retain,nonatomic) */
-	operationsToTilesMapTable(): NSMapTable;
-	/* typeEncoding=@"MSTiledLayer", ivar=_tiledLayer, attributes=(assign,nonatomic,readonly,weak) */
-	tiledLayer(): MSTiledLayer;
+declare class MSTileRenderOperation extends NSOperation {
+	/* typeEncoding=d, ivar=_backingScaleFactor, attributes=(assign,nonatomic) */
+	backingScaleFactor(): number;
+	/* typeEncoding=@"<MSRenderingContextCacheProvider>", ivar=_cacheProvider, attributes=(retain,nonatomic) */
+	cacheProvider(): MSRenderingContextCacheProvider;
+	/* typeEncoding=@"NSColorSpace", ivar=_canvasColorSpace, attributes=(retain,nonatomic) */
+	canvasColorSpace(): NSColorSpace;
+	/* typeEncoding=c, ivar=_isExecuting, attributes=(assign) */
+	isExecuting(): boolean;
+	/* typeEncoding=c, ivar=_isFinished, attributes=(assign) */
+	isFinished(): boolean;
+	/* typeEncoding=Q, ivar=_pageOverlayRenderOptions, attributes=(assign,nonatomic) */
+	pageOverlayRenderOptions(): number;
+	/* typeEncoding={CGSize=dd}, ivar=_pixelViewSize, attributes=(assign,nonatomic) */
+	pixelViewSize(): CGSize;
+	/* typeEncoding=c, ivar=_pixelated, attributes=(assign,nonatomic) */
+	pixelated(): boolean;
+	/* typeEncoding=@"NSOperationQueue", ivar=_renderPassQueue, attributes=(retain,nonatomic) */
+	renderPassQueue(): NSOperationQueue;
+	/* typeEncoding=@"NSArray", ivar=_renderPasses, attributes=(copy,nonatomic) */
+	renderPasses(): NSArray;
+	/* typeEncoding=@"NSBitmapImageRep", ivar=_renderedImage, attributes=(retain,nonatomic) */
+	renderedImage(): NSBitmapImageRep;
+	/* typeEncoding=@"MSTiledRenderer", ivar=_renderer, attributes=(retain,nonatomic) */
+	renderer(): MSTiledRenderer;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=_visibleContentRect, attributes=(assign,nonatomic) */
+	visibleContentRect(): CGRect;
 
-	/* typeEncoding=v16@0:8 */
-	static initialize(): void;
-	/* typeEncoding=v16@0:8 */
-	static layerContentsUpdateThreadMain(): void;
+	/* typeEncoding=@108@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24d56{CGSize=dd}64c80Q84@92@100 */
+	static bitmapImageFromRenderPasses_visibleContentRect_backingScaleFactor_pixelViewSize_pixelated_pageOverlayRenderOptions_cacheProvider_canvasColorSpace(...args: any[]): any;
+	/* typeEncoding=@124@0:8@16@24{CGRect={CGPoint=dd}{CGSize=dd}}32d64{CGSize=dd}72d88c96Q100@108@116 */
+	static bitmapImageRenderForPage_inDocument_visibleContentRect_backingScaleFactor_pixelViewSize_zoomValue_pixelated_pageOverlayRenderOptions_cacheProvider_canvasColorSpace(...args: any[]): any;
+	/* typeEncoding=@124@0:8@16@24{CGRect={CGPoint=dd}{CGSize=dd}}32d64{CGSize=dd}72d88c96Q100@108@116 */
+	static renderOperationWithPage_inDocument_visibleContentRect_backingScaleFactor_pixelViewSize_zoomValue_pixelated_pageOverlayRenderOptions_cacheProvider_canvasColorSpace(...args: any[]): any;
+	/* typeEncoding=@108@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24d56{CGSize=dd}64c80Q84@92@100 */
+	static renderOperationWithRenderPasses_visibleContentRect_backingScaleFactor_pixelViewSize_pixelated_pageOverlayRenderOptions_cacheProvider_canvasColorSpace(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=v32@0:8@16@24 */
-	addRenderOperation_forTile(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	cancel(): void;
+	/* typeEncoding=c16@0:8 */
+	asynchronous(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	backingScaleFactor(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cacheProvider(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	canvasColorSpace(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isExecuting(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	isFinished(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
-	finishTime(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initWithTiledLayer(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	main(): void;
-	/* typeEncoding=@16@0:8 */
-	operationsToTilesMapTable(...args: any[]): any;
-	/* typeEncoding=v24@0:8Q16 */
-	setFinishTime(...args: any[]): any;
+	pageOverlayRenderOptions(...args: any[]): any;
+	/* typeEncoding={CGSize=dd}16@0:8 */
+	pixelViewSize(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	pixelated(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setOperationsToTilesMapTable(...args: any[]): any;
+	renderComplete(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16^{CGImage=}24 */
+	renderNextPass_image(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	tiledLayer(...args: any[]): any;
+	renderPassQueue(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	renderPasses(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	renderedImage(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	renderer(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setBackingScaleFactor(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCacheProvider(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCanvasColorSpace(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setIsExecuting(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setIsFinished(...args: any[]): any;
+	/* typeEncoding=v24@0:8Q16 */
+	setPageOverlayRenderOptions(...args: any[]): any;
+	/* typeEncoding=v32@0:8{CGSize=dd}16 */
+	setPixelViewSize(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setPixelated(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setRenderPassQueue(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setRenderPasses(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setRenderedImage(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setRenderer(...args: any[]): any;
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	setVisibleContentRect(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	start(): void;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	visibleContentRect(...args: any[]): any;
+}
+
+declare class MSTileRenderPass extends NSObject {
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=_dirtyRect, attributes=(assign,nonatomic) */
+	dirtyRect(): CGRect;
+	/* typeEncoding=@"MSImmutableDocumentData", ivar=_documentData, attributes=(retain,nonatomic) */
+	documentData(): MSImmutableDocumentData;
+	/* typeEncoding=@"MSImmutablePage", ivar=_page, attributes=(retain,nonatomic) */
+	page(): MSImmutablePage;
+	/* typeEncoding=d, ivar=_zoomValue, attributes=(assign,nonatomic) */
+	zoomValue(): number;
+
+	/* typeEncoding=@72@0:8@16@24{CGRect={CGPoint=dd}{CGSize=dd}}32d64 */
+	static tileRenderPassWithPage_inDocument_dirtyRect_zoomValue(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	dirtyRect(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	documentData(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	page(...args: any[]): any;
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	setDirtyRect(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setDocumentData(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPage(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setZoomValue(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	zoomValue(...args: any[]): any;
 }
 
 declare class MSTiledImageView extends NSView {
@@ -38222,291 +43027,171 @@ declare class MSTiledImageView extends NSView {
 	setImage(...args: any[]): any;
 }
 
-declare class MSTiledLayer extends CALayer /* implements MSTilePlacerDelegate */ {
-	/* typeEncoding=@"NSColorSpace", ivar=_colorSpace, attributes=(assign,nonatomic,readonly) */
-	colorSpace(): NSColorSpace;
+declare class MSTiledRenderer extends NSObject {
+	/* typeEncoding={?=ffff}, ivar=_artboardBackgroundColor, attributes=(assign,nonatomic,readonly) */
+	artboardBackgroundColor(): any;
+	/* typeEncoding=@"MSGPUArtboardShadow", ivar=_artboardShadow, attributes=(assign,nonatomic,readonly) */
+	artboardShadow(): MSGPUArtboardShadow;
+	/* typeEncoding=c, ivar=_clearOtherLevels, attributes=(assign) */
+	clearOtherLevels(): boolean;
+	/* typeEncoding=@"MSMemoryBuffer", ivar=_contextMemory, attributes=(retain,nonatomic) */
+	contextMemory(): MSMemoryBuffer;
 	/* typeEncoding=@"MSCGContextPool", ivar=_contextPool, attributes=(retain,nonatomic) */
 	contextPool(): MSCGContextPool;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=@"MSRenderingDriver", ivar=_driver, attributes=(assign,nonatomic,readonly) */
+	/* typeEncoding=@"MSRenderingDriver", ivar=(null), attributes=(assign,nonatomic,readonly) */
 	driver(): MSRenderingDriver;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=c, ivar=_isRendering, attributes=(assign,nonatomic) */
-	isRendering(): boolean;
-	/* typeEncoding=@"MSTileUpdateOperation", ivar=_layerUpdateOperation, attributes=(retain,nonatomic) */
-	layerUpdateOperation(): MSTileUpdateOperation;
+	/* typeEncoding=c, ivar=_hideOverlay, attributes=(assign,nonatomic) */
+	hideOverlay(): boolean;
+	/* typeEncoding=@"NSView<MSTiledRendererHostView>", ivar=_hostView, attributes=(assign,nonatomic,weak) */
+	hostView(): NSView;
+	/* typeEncoding=c, ivar=_inFastZoom, attributes=(assign,nonatomic) */
+	inFastZoom(): boolean;
+	/* typeEncoding=@"CALayer", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	layer(): CALayer;
+	/* typeEncoding=Q, ivar=_layerCount, attributes=(assign,nonatomic) */
+	layerCount(): number;
+	/* typeEncoding=@"MSMemoryBuffer", ivar=_overlayMemory, attributes=(retain,nonatomic) */
+	overlayMemory(): MSMemoryBuffer;
+	/* typeEncoding=@"<MSOverlayRenderingDelegate>", ivar=_overlayRenderingDelegate, attributes=(assign,nonatomic,weak) */
+	overlayRenderingDelegate(): MSOverlayRenderingDelegate;
+	/* typeEncoding=@"<MSGPUTexture>", ivar=_overlayTexture, attributes=(assign,nonatomic,readonly) */
+	overlayTexture(): MSGPUTexture;
+	/* typeEncoding=@"MSTileMipLevel", ivar=_previousLevel, attributes=(assign,nonatomic,weak) */
+	previousLevel(): MSTileMipLevel;
+	/* typeEncoding=@"NSString", ivar=_previousPageObjectID, attributes=(retain,nonatomic) */
+	previousPageObjectID(): NSString;
+	/* typeEncoding=c, ivar=_rasterisationInProgress, attributes=(assign) */
+	rasterisationInProgress(): boolean;
+	/* typeEncoding=@"<MSGPURenderer>", ivar=_renderer, attributes=(assign,nonatomic,readonly) */
+	renderer(): MSGPURenderer;
 	/* typeEncoding=@"<MSRenderingContextCacheProvider>", ivar=_renderingCacheProvider, attributes=(retain,nonatomic) */
 	renderingCacheProvider(): MSRenderingContextCacheProvider;
-	/* typeEncoding=q, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	renderingQuality(): number;
-	/* typeEncoding=@"NSOperationQueue", ivar=_renderingQueue, attributes=(retain,nonatomic) */
-	renderingQueue(): NSOperationQueue;
-	/* typeEncoding=@"NSSet", ivar=_renderingTiles, attributes=(retain,nonatomic) */
-	renderingTiles(): NSSet;
-	/* typeEncoding=d, ivar=_renderingZoomLevel, attributes=(assign,nonatomic) */
-	renderingZoomLevel(): number;
-	/* typeEncoding={CGPoint=dd}, ivar=_scrollOrigin, attributes=(assign,nonatomic) */
-	scrollOrigin(): CGPoint;
-	/* typeEncoding=Q, ivar=_state, attributes=(assign,nonatomic) */
-	state(): number;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	tileCount(): number;
-	/* typeEncoding=@"MSTilePlacer", ivar=_tilePlacer, attributes=(retain,nonatomic) */
-	tilePlacer(): MSTilePlacer;
-	/* typeEncoding=@?, ivar=_tileRenderingCompletion, attributes=(copy,nonatomic) */
-	tileRenderingCompletion(): any;
-	/* typeEncoding=@"<MSTiledLayerDelegate>", ivar=_tiledLayerDelegate, attributes=(assign,nonatomic,weak) */
-	tiledLayerDelegate(): MSTiledLayerDelegate;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	tiledRect(): CGRect;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=_viewBounds, attributes=(assign,nonatomic) */
-	viewBounds(): CGRect;
-	/* typeEncoding=d, ivar=_zoomLevel, attributes=(assign,nonatomic) */
-	zoomLevel(): number;
+	/* typeEncoding=@"NSArray", ivar=_tileLevels, attributes=(assign,nonatomic,readonly) */
+	tileLevels(): NSArray;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=@24@0:8@16 */
-	actionForKey(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	_createDocumentColorSpaceWithCanvasColorSpace_document(...args: any[]): any;
+	/* typeEncoding=v128@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16c48d52{CGSize=dd}60d76c84@88Q96@104@112@120 */
+	_doDrawTilesInVisibleRect_hasArtboards_backingScaleFactor_pixelViewSize_zoomValue_displayPixels_page_pageOverlayRenderOptions_tiles_overlayColors_canvasColorSpace(...args: any[]): any;
+	/* typeEncoding=v168@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48@56{CGRect={CGPoint=dd}{CGSize=dd}}64d96{CGSize=dd}104d120c128Q132@140@148c156@160 */
+	_doUpdateContentInRect_forPage_document_visibleImageRect_backingScaleFactor_pixelViewSize_zoomValue_pixelated_pageOverlayRenderOptions_cacheProvider_canvasColorSpace_renderContentSynchronously_overlayColors(...args: any[]): any;
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24d56 */
+	_drawArtboardShadowsForPage_visibleRect_zoom(...args: any[]): any;
+	/* typeEncoding=v88@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24d56d64{CGPoint=dd}72 */
+	_drawGridForGroup_rect_zoom_backingScaleFactor_baseOrigin(...args: any[]): any;
+	/* typeEncoding=v104@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16d48{CGSize=dd}56d72@80Q88@96 */
+	_drawOverlayInVisibleRect_backingScaleFactor_pixelViewSize_zoomValue_page_pageOverlayRenderOptions_overlayColors(...args: any[]): any;
+	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24d56 */
+	_drawPageBackgroundElementsForPage_visibleRect_zoom(...args: any[]): any;
+	/* typeEncoding=v128@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16c48d52{CGSize=dd}60d76c84@88Q96@104@112@120 */
+	_drawTilesInVisibleRect_hasArtboards_backingScaleFactor_pixelViewSize_zoomValue_displayPixels_page_pageOverlayRenderOptions_tiles_overlayColors_canvasColorSpace(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	adaptToColorSpaceChange(): void;
+	_fastZoomExit(): void;
+	/* typeEncoding=@24@0:8d16 */
+	_findTileLevelForContentWithZoom(...args: any[]): any;
+	/* typeEncoding=v84@0:8^{?=II^{?}}16@24@32d40d48@56@64^{CGColorSpace=}72c80 */
+	_flattenTilesInRects_forPage_document_backingScaleFactor_zoomValue_cacheProvider_tiles_documentColorSpace_renderContentSynchronously(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@32 */
+	_rasterisationFinishedForTileLevel_page_document(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	adaptToPixelGridChange(): void;
+	_removeAllTilesAndClearDirtyRegions(): void;
+	/* typeEncoding=v136@0:8@16Q24d32d40{CGPoint=dd}48{CGRect={CGPoint=dd}{CGSize=dd}}64{CGRect={CGPoint=dd}{CGSize=dd}}96@128 */
+	_renderPageOverlayElementsForPage_options_zoomLevel_backingScaleFactor_baseOrigin_rect_visibleRect_overlayColors(...args: any[]): any;
+	/* typeEncoding=^{?={?=iiii}^{?}}76@0:8d16c24{CGRect={CGPoint=dd}{CGSize=dd}}28@60r^{?={?=iiii}^{?}}68 */
+	_renderTileLevelWithTotalZoom_displayPixels_visibleRect_tiles_inRegion(...args: any[]): any;
+	/* typeEncoding=v84@0:8d16c24{CGRect={CGPoint=dd}{CGSize=dd}}28{CGSize=dd}60@76 */
+	_renderTilesWithTotalZoom_displayPixels_visibleRect_pixelViewSize_tiles(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	clear(): void;
+	_scheduleRedraw(): void;
+	/* typeEncoding=v88@0:8^{?=II^{?}}16d24d32@40@48@56@64d72^{CGColorSpace=}80 */
+	_tileFlatteningWorker_zoomValue_backingScaleFactor_forPage_document_cacheProvider_tiles_contentsScale_documentColorSpace(...args: any[]): any;
+	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	_uniteDirtyRect(...args: any[]): any;
+	/* typeEncoding={?={CGRect={CGPoint=dd}{CGSize=dd}}c}64@0:8@16@24{CGRect={CGPoint=dd}{CGSize=dd}}32 */
+	_updatePageObjectID_document_dirtyRect(...args: any[]): any;
+	/* typeEncoding=^{?=II^{?}}72@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16d48d56@64 */
+	_visibleDirtyRects_totalZoom_previousContentScale_level(...args: any[]): any;
+	/* typeEncoding={?=ffff}16@0:8 */
+	artboardBackgroundColor(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	colorSpace(...args: any[]): any;
-	/* typeEncoding=v144@0:8{CATransform3D=dddddddddddddddd}16 */
-	concatTransform(...args: any[]): any;
+	artboardShadow(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	beginFastZooming(): void;
+	/* typeEncoding=c16@0:8 */
+	clearOtherLevels(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	contextMemory(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	contextPool(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
 	/* typeEncoding=@16@0:8 */
 	driver(...args: any[]): any;
-	/* typeEncoding=@88@0:8@16d24{CGPoint=dd}32{CGRect={CGPoint=dd}{CGSize=dd}}48@80 */
-	initWithDriver_zoomLevel_scrollOrigin_viewBounds_colorSpace(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	isRenderable(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isRenderableOrNew(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isRendering(...args: any[]): any;
+	hideOverlay(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	layerUpdateOperation(...args: any[]): any;
+	hostView(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	makeCurrentIfPossible(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	midPoint(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16@?24 */
-	observeRenderingOfTiles_completion(...args: any[]): any;
-	/* typeEncoding=v48@0:8@16@24@32^v40 */
-	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	prepare(): void;
-	/* typeEncoding=v40@0:8@16@24q32 */
-	refreshContentForPage_document_quality(...args: any[]): any;
-	/* typeEncoding=v72@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48@56q64 */
-	refreshContentRect_forPage_document_quality(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	removeOffscreenTiles(): void;
+	inFastZoom(...args: any[]): any;
+	/* typeEncoding=@24@0:8@?16 */
+	initWithCompletionHandler(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	layer(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	layerCount(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	overlayMemory(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	overlayRenderingDelegate(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	overlayTexture(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	previousLevel(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	previousPageObjectID(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	rasterisationInProgress(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	renderer(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	renderingCacheProvider(...args: any[]): any;
-	/* typeEncoding=q16@0:8 */
-	renderingQuality(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	renderingQueue(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	renderingTiles(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	renderingZoomLevel(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	replace(): void;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	scrollBy(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	scrollOrigin(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setClearOtherLevels(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setContextMemory(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setContextPool(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
-	setIsRendering(...args: any[]): any;
+	setHideOverlay(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setLayerUpdateOperation(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setRenderingCacheProvider(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setRenderingQueue(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setRenderingTiles(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setRenderingZoomLevel(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setScrollOrigin(...args: any[]): any;
+	setHostView(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setInFastZoom(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
-	setState(...args: any[]): any;
+	setLayerCount(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setTilePlacer(...args: any[]): any;
-	/* typeEncoding=v24@0:8@?16 */
-	setTileRenderingCompletion(...args: any[]): any;
+	setOverlayMemory(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setTiledLayerDelegate(...args: any[]): any;
-	/* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	setViewBounds(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setZoomLevel(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	setupContextPool(): void;
-	/* typeEncoding=c16@0:8 */
-	shouldDrawPixelated(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	state(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	stopObservingRenderingTiles(): void;
-	/* typeEncoding=d16@0:8 */
-	tileContentLayerScale(...args: any[]): any;
-	/* typeEncoding=Q16@0:8 */
-	tileCount(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	tilePlacer(...args: any[]): any;
-	/* typeEncoding=v56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24 */
-	tilePlacer_requiresRedrawInRect(...args: any[]): any;
-	/* typeEncoding=@?16@0:8 */
-	tileRenderingCompletion(...args: any[]): any;
+	setOverlayRenderingDelegate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	tileUpdateOperationDidComplete(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	tiledLayerDelegate(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	tiledRect(...args: any[]): any;
-	/* typeEncoding=v32@0:8Q16Q24 */
-	transitionFromState_toState(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	viewBounds(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	zoomBy(...args: any[]): any;
-	/* typeEncoding=v40@0:8d16{CGPoint=dd}24 */
-	zoomBy_centeredOnViewPoint(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	zoomLevel(...args: any[]): any;
-}
-
-declare class MSTiledLayerPile extends NSObject /* implements MSTiledLayerDelegate */ {
-	/* typeEncoding=@"MSTiledLayer", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	currentTiledLayer(): MSTiledLayer;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=@"MSImmutableDocumentData", ivar=_document, attributes=(retain,nonatomic) */
-	document(): MSImmutableDocumentData;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=@"NSView<MSTiledLayerPileHostView>", ivar=_hostView, attributes=(assign,nonatomic,readonly,weak) */
-	hostView(): NSView;
-	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	isRendering(): boolean;
-	/* typeEncoding=@"MSImmutablePage", ivar=_page, attributes=(retain,nonatomic) */
-	page(): MSImmutablePage;
-	/* typeEncoding=@"<MSRenderingContextCacheProvider>", ivar=_renderingCacheProvider, attributes=(retain,nonatomic) */
-	renderingCacheProvider(): MSRenderingContextCacheProvider;
-	/* typeEncoding={CGPoint=dd}, ivar=_scrollOrigin, attributes=(assign,nonatomic) */
-	scrollOrigin(): CGPoint;
-	/* typeEncoding=@"NSArray", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	supercededTiledLayers(): NSArray;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
-	/* typeEncoding=@"NSMutableArray", ivar=_tiledLayers, attributes=(retain,nonatomic) */
-	tiledLayers(): NSMutableArray;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	tiledRect(): CGRect;
-	/* typeEncoding=d, ivar=_zoomValue, attributes=(assign,nonatomic) */
-	zoomValue(): number;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=v16@0:8 */
-	adaptToPixelGridChange(): void;
+	setPreviousLevel(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	addNewTiledLayer(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	clearAllSupercededTiledLayers(): void;
-	/* typeEncoding=@16@0:8 */
-	currentTiledLayer(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
-	/* typeEncoding=@16@0:8 */
-	document(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	hostView(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-	/* typeEncoding=@24@0:8@16 */
-	initWithHostView(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	isRendering(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	page(...args: any[]): any;
-	/* typeEncoding=@48@0:8d16{CGPoint=dd}24@40 */
-	prepareNewTiledLayerWithZoomValue_scrollOrigin_colorSpace(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	redraw(): void;
-	/* typeEncoding=v40@0:8@16@24q32 */
-	refreshContentForPage_document_quality(...args: any[]): any;
-	/* typeEncoding=v72@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48@56q64 */
-	refreshContentRect_forPage_document_quality(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	removeAllTiledLayers(): void;
-	/* typeEncoding=v16@0:8 */
-	removeObsoleteTiledLayers(): void;
-	/* typeEncoding=@16@0:8 */
-	renderingCacheProvider(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	scrollBy(...args: any[]): any;
-	/* typeEncoding={CGPoint=dd}16@0:8 */
-	scrollOrigin(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setDocument(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setPage(...args: any[]): any;
+	setPreviousPageObjectID(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setRasterisationInProgress(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setRenderingCacheProvider(...args: any[]): any;
-	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
-	setScrollOrigin(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setTiledLayers(...args: any[]): any;
-	/* typeEncoding=v24@0:8d16 */
-	setZoomValue(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	supercededTiledLayers(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	tile(): void;
-	/* typeEncoding=v32@0:8@16Q24 */
-	tiledLayer_didChangeToState(...args: any[]): any;
-	/* typeEncoding=v56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24 */
-	tiledLayer_requiresRedrawInRect(...args: any[]): any;
-	/* typeEncoding=v32@0:8@16Q24 */
-	tiledLayerDidRefreshTileContent_finishTime(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	tiledLayers(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	tiledRect(...args: any[]): any;
-	/* typeEncoding=v40@0:8d16{CGPoint=dd}24 */
-	zoomBy_centeredOnViewPoint(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	zoomValue(...args: any[]): any;
+	tileLevels(...args: any[]): any;
+	/* typeEncoding=v168@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48@56{CGRect={CGPoint=dd}{CGSize=dd}}64d96{CGSize=dd}104d120c128Q132@140@148c156@160 */
+	updateContentInRect_forPage_document_visibleImageRect_backingScaleFactor_pixelViewSize_zoomValue_pixelated_pageOverlayRenderOptions_cacheProvider_canvasColorSpace_renderContentSynchronously_overlayColors(...args: any[]): any;
 }
 
 declare class MSTintedHoverButtonCell extends MSHoverButtonCell {
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	hoverTint(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	normalTint(): NSString;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	hoverTint(): NSColor;
+	/* typeEncoding=@"NSColor", ivar=(null), attributes=(assign,nonatomic,readonly) */
+	normalTint(): NSColor;
 
 	/* typeEncoding=@16@0:8 */
 	hoverTint(...args: any[]): any;
@@ -38552,6 +43237,8 @@ declare class MSToggleBaseAction extends MSDocumentAction {
 declare class MSToggleBorderAction extends MSToggleStylePartAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	toggleBorder(...args: any[]): any;
 }
@@ -38559,6 +43246,8 @@ declare class MSToggleBorderAction extends MSToggleStylePartAction {
 declare class MSToggleFillAction extends MSToggleStylePartAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	toggleFill(...args: any[]): any;
 }
@@ -38569,8 +43258,8 @@ declare class MSToggleFixToViewportAction extends MSDocumentAction {
 
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	showInToolbar(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	state(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -38585,8 +43274,6 @@ declare class MSToggleFlowInteractionAction extends MSToggleViewPreferenceAction
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	labelForToolbar(...args: any[]): any;
@@ -38594,13 +43281,13 @@ declare class MSToggleFlowInteractionAction extends MSToggleViewPreferenceAction
 	preferenceKey(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	toggleFlowInteraction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 }
 
 declare class MSToggleGridAction extends MSToggleBaseAction {
 	/* typeEncoding=@16@0:8 */
 	grid(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -38609,6 +43296,8 @@ declare class MSToggleGridAction extends MSToggleBaseAction {
 	setGrid(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	toggleGrid(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -38631,6 +43320,8 @@ declare class MSToggleInspectorVisibilityAction extends MSToggleVisibilityAction
 	hide(): void;
 	/* typeEncoding=c16@0:8 */
 	isActive(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	show(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -38699,6 +43390,8 @@ declare class MSToggleLayerListVisibilityAction extends MSToggleVisibilityAction
 	hide(): void;
 	/* typeEncoding=c16@0:8 */
 	isActive(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	show(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -38709,8 +43402,6 @@ declare class MSToggleLayoutAction extends MSToggleBaseAction {
 	/* typeEncoding=@16@0:8 */
 	grid(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	prepareNewGrid(...args: any[]): any;
@@ -38718,6 +43409,8 @@ declare class MSToggleLayoutAction extends MSToggleBaseAction {
 	setGrid(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	toggleLayout(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -38735,6 +43428,8 @@ declare class MSTogglePixelGridAction extends MSDocumentAction {
 	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	togglePixelGrid(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	validateMenuItem(...args: any[]): any;
 }
@@ -38748,9 +43443,18 @@ declare class MSTogglePixelLinesAction extends MSToggleViewPreferenceAction {
 	togglePixelLines(...args: any[]): any;
 }
 
+declare class MSToggleResizeButtonCell extends NSButtonCell {
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawBezelWithFrame_inView(...args: any[]): any;
+	/* typeEncoding=v56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	drawWithFrame_inView(...args: any[]): any;
+}
+
 declare class MSToggleRulerDragLockingAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	toggleRulerDragLocking(...args: any[]): any;
 }
@@ -38760,8 +43464,6 @@ declare class MSToggleRulersAction extends MSToggleVisibilityAction {
 	defaultsKey(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	hide(): void;
-	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isActive(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -38770,6 +43472,8 @@ declare class MSToggleRulersAction extends MSToggleVisibilityAction {
 	show(): void;
 	/* typeEncoding=v24@0:8@16 */
 	toggleRulers(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 }
@@ -38787,8 +43491,6 @@ declare class MSToggleSliceInteractionAction extends MSToggleViewPreferenceActio
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	imageName(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	labelForToolbar(...args: any[]): any;
@@ -38796,6 +43498,8 @@ declare class MSToggleSliceInteractionAction extends MSToggleViewPreferenceActio
 	preferenceKey(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	toggleSliceInteraction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 }
 
 declare class MSToggleStylePartAction extends MSDocumentAction {
@@ -38810,6 +43514,8 @@ declare class MSToggleToolbarVisibilityAction extends MSToggleVisibilityAction {
 	isActive(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isFullscreen(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	shouldRunForAllTabsInWindow(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -38859,15 +43565,11 @@ declare class MSToggleVisibilityAction extends MSDocumentAction {
 
 declare class MSToolbar extends NSToolbar {
 	/* typeEncoding=c24@0:8Q16 */
-	_allowsDisplayMode(...args: any[]): any;
-	/* typeEncoding=c24@0:8Q16 */
 	_allowsSizeMode(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
-	ms_toolbarHeight(...args: any[]): any;
-	/* typeEncoding=v24@0:8Q16 */
-	setDisplayMode(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	setSizeMode(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	toolbarHeight_ms(...args: any[]): any;
 }
 
 declare class MSToolbarConstructor extends NSObject /* implements NSToolbarDelegate */ {
@@ -38883,20 +43585,22 @@ declare class MSToolbarConstructor extends NSObject /* implements NSToolbarDeleg
 	superclass(): any;
 	/* typeEncoding=@"NSToolbar", ivar=_toolbar, attributes=(retain,nonatomic) */
 	toolbar(): NSToolbar;
+	/* typeEncoding=@"NSArray", ivar=_toolbarAllowedItemIdentifiers, attributes=(copy,nonatomic) */
+	toolbarAllowedItemIdentifiers(): NSArray;
+	/* typeEncoding=@"NSArray", ivar=_toolbarDefaultItemIdentifiers, attributes=(copy,nonatomic) */
+	toolbarDefaultItemIdentifiers(): NSArray;
 	/* typeEncoding=@"NSArray", ivar=_toolbarSelectableIdentifiers, attributes=(copy,nonatomic) */
 	toolbarSelectableIdentifiers(): NSArray;
 
-	/* typeEncoding=@24@0:8@16 */
-	static toolbarForDocument(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	static toolbarAllowedItemIdentifiers(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	static toolbarDefaultItemIdentifiers(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=@16@0:8 */
-	allActions(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	constructToolbarForWindow(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	dealloc(): void;
 	/* typeEncoding=@16@0:8 */
 	doc(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
@@ -38906,41 +43610,41 @@ declare class MSToolbarConstructor extends NSObject /* implements NSToolbarDeleg
 	/* typeEncoding=v24@0:8@16 */
 	setToolbar(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	setToolbarAllowedItemIdentifiers(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setToolbarDefaultItemIdentifiers(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setToolbarSelectableIdentifiers(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	standardToolbarIdentifiers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	toolbar(...args: any[]): any;
 	/* typeEncoding=@36@0:8@16@24c32 */
 	toolbar_itemForItemIdentifier_willBeInsertedIntoToolbar(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	toolbarAllowedItemIdentifiers(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	toolbarAllowedItemIdentifiers(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	toolbarDefaultItemIdentifiers(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	toolbarDefaultItemIdentifiers(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	toolbarSelectableIdentifiers(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	toolbarSelectableItemIdentifiers(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	validateToolbarItems(): void;
 }
 
-declare class MSToolbarPopUpButtonCell extends NSButtonCell {
-	/* typeEncoding=@"<MSPopToolbarItemActionObject>", ivar=_actionObject, attributes=(assign,nonatomic,weak) */
-	actionObject(): MSPopToolbarItemActionObject;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=@16@0:8 */
-	actionObject(...args: any[]): any;
-	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
-	arrowBezierInRect(...args: any[]): any;
-	/* typeEncoding=v64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
-	drawImage_withFrame_inView(...args: any[]): any;
+declare class MSToolbarItem extends NSToolbarItem {
 	/* typeEncoding=@24@0:8@16 */
-	initTextCell(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setActionObject(...args: any[]): any;
-	/* typeEncoding=c68@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56c64 */
-	trackMouse_inRect_ofView_untilMouseUp(...args: any[]): any;
+	initWithAction(...args: any[]): any;
+	/* typeEncoding=@24@0:8@16 */
+	makeViewForAction(...args: any[]): any;
+}
+
+declare class MSToolbarPopUpButton extends NSPopUpButton {
+	/* typeEncoding=#16@0:8 */
+	static cellClass(...args: any[]): any;
 }
 
 declare class MSToolbarPopoverContentViewController extends NSViewController {
@@ -38999,20 +43703,37 @@ declare class MSToolbarPopoverContentViewController extends NSViewController {
 
 declare class MSToolsMenuAction extends MSDocumentAction {
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	submenuActionIDs(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 }
 
-declare class MSTouchBarGroupAction extends MSDocumentAction {
-	/* typeEncoding=@16@0:8 */
-	actionNames(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	doPerformAction(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	makeTouchBarItem(...args: any[]): any;
+declare class MSTooltipHostingView extends NSView {
+	/* typeEncoding=@"NSView", ivar=_toolTipProvider, attributes=(assign,nonatomic,weak) */
+	toolTipProvider(): NSView;
+
 	/* typeEncoding=v16@0:8 */
-	refreshTouchBarItem(): void;
-	/* typeEncoding=c16@0:8 */
-	supportsState(...args: any[]): any;
+	_cxx_destruct(): void;
+	/* typeEncoding=v16@0:8 */
+	awakeFromNib(): void;
+	/* typeEncoding=v16@0:8 */
+	dealloc(): void;
+	/* typeEncoding=@24@0:8@16 */
+	initWithCoder(...args: any[]): any;
+	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	initWithFrame(...args: any[]): any;
+	/* typeEncoding=v48@0:8@16@24@32^v40 */
+	observeValueForKeyPath_ofObject_change_context(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	refreshToolTip(): void;
+	/* typeEncoding=v24@0:8@16 */
+	setToolTipProvider(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	setupTooltipHostingView(): void;
+	/* typeEncoding=@16@0:8 */
+	toolTipProvider(...args: any[]): any;
 }
 
 declare class MSTrailingLayerInfo extends NSObject {
@@ -39061,6 +43782,8 @@ declare class MSTrailingLayersMover extends NSObject {
 declare class MSTransformAction extends MSEventHandlerAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	tooltip(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -39173,40 +43896,6 @@ declare class MSTransformEventHandler extends MSPointsEventHandler {
 	useSnaps(...args: any[]): any;
 }
 
-declare class MSTransformInspectorItem extends MSBaseTransformInspectorItem /* implements MSInspectorValueAdaptorDelegate */ {
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	debugDescription(): NSString;
-	/* typeEncoding=@"NSString", ivar=(null), attributes=(copy,readonly) */
-	description(): NSString;
-	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
-	hash(): number;
-	/* typeEncoding=@"MSMathInspectorValueAdaptor", ivar=_rotationAdapter, attributes=(retain,nonatomic) */
-	rotationAdapter(): MSMathInspectorValueAdaptor;
-	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
-	superclass(): any;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=@16@0:8 */
-	init(...args: any[]): any;
-	/* typeEncoding=@32@0:8@16@24 */
-	initWithTitle_textFieldLabel(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	inspectorValueAdaptorDidChangeValue(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	rotationAdapter(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setRotationAdapter(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	textFieldAction(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	updateDisplayedValues(): void;
-	/* typeEncoding=v16@0:8 */
-	updateTouchbarItems(): void;
-	/* typeEncoding=v16@0:8 */
-	viewDidLoad(): void;
-}
-
 declare class MSTransparencyLayerSavedState extends NSObject {
 	/* typeEncoding=^{CGContext=}, ivar=_contextRef, attributes=(assign,nonatomic) */
 	contextRef(): any;
@@ -39246,6 +43935,12 @@ declare class MSTransparencyLayerSavedState extends NSObject {
 }
 
 declare class MSTreeDiff extends NSObject {
+	/* typeEncoding=Q, ivar=_allTraits, attributes=(assign,nonatomic) */
+	allTraits(): number;
+	/* typeEncoding=c, ivar=_allTraitsCompared, attributes=(assign,nonatomic) */
+	allTraitsCompared(): boolean;
+	/* typeEncoding=Q, ivar=_combinedTraits, attributes=(assign,nonatomic) */
+	combinedTraits(): number;
 	/* typeEncoding=@"MSImmutableDocumentData", ivar=_firstDoc, attributes=(retain,nonatomic) */
 	firstDoc(): MSImmutableDocumentData;
 	/* typeEncoding=@"NSMutableArray", ivar=_firstObjectAncestorStack, attributes=(retain,nonatomic) */
@@ -39256,17 +43951,27 @@ declare class MSTreeDiff extends NSObject {
 	secondDoc(): MSImmutableDocumentData;
 	/* typeEncoding=@"NSMutableArray", ivar=_secondObjectAncestorStack, attributes=(retain,nonatomic) */
 	secondObjectAncestorStack(): NSMutableArray;
+	/* typeEncoding=c, ivar=_traitsCalculated, attributes=(assign,nonatomic) */
+	traitsCalculated(): boolean;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=v32@0:8@16@24 */
 	addDiffPairForFirstObject_secondObject(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	allTraits(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	allTraitsCompared(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	buildPropertyTraitsIfNeeded(): void;
 	/* typeEncoding=c32@0:8Q16^c24 */
 	changedPropertiesAllExhibitTrait_allKeysWereCompared(...args: any[]): any;
+	/* typeEncoding=Q16@0:8 */
+	combinedTraits(...args: any[]): any;
 	/* typeEncoding=c24@0:8Q16 */
 	containsLayerWithTraits(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	contentDirtyDiffRect(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
+	contentDirtyDiffRectForPage(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	description(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16@24 */
@@ -39285,12 +43990,18 @@ declare class MSTreeDiff extends NSObject {
 	initWithFirstDocument_secondDocument(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	mutableDiffs(...args: any[]): any;
-	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
-	overlayDirtyDiffRect(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16 */
+	overlayDirtyDiffRectForPage(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	secondDoc(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	secondObjectAncestorStack(...args: any[]): any;
+	/* typeEncoding=v24@0:8Q16 */
+	setAllTraits(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setAllTraitsCompared(...args: any[]): any;
+	/* typeEncoding=v24@0:8Q16 */
+	setCombinedTraits(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setFirstDoc(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -39301,12 +44012,16 @@ declare class MSTreeDiff extends NSObject {
 	setSecondDoc(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setSecondObjectAncestorStack(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setTraitsCalculated(...args: any[]): any;
 	/* typeEncoding=c32@0:8Q16^c24 */
 	someChangedPropertiesExhibitTrait_allKeysWereCompared(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	subTreeRootContainsSymbolChange(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	symbolsChanged(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	traitsCalculated(...args: any[]): any;
 }
 
 declare class MSTriangleShape extends _MSTriangleShape {
@@ -39319,13 +44034,15 @@ declare class MSTriangleShape extends _MSTriangleShape {
 }
 
 declare class MSTriangleShapeAction extends MSBaseShapeAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	triangleShape(...args: any[]): any;
 }
 
 declare class MSTwoTextFieldInspectorItem extends MSInspectorItem {
-	/* typeEncoding=c, ivar=(null), attributes=(assign,nonatomic,readonly) */
-	allowFloatValues(): boolean;
 	/* typeEncoding=@"NSString", ivar=_field1, attributes=(retain,nonatomic) */
 	field1(): NSString;
 	/* typeEncoding=@"NSString", ivar=_field2, attributes=(retain,nonatomic) */
@@ -39336,19 +44053,13 @@ declare class MSTwoTextFieldInspectorItem extends MSInspectorItem {
 	itemLabel(): NSTextField;
 	/* typeEncoding=@"NSString", ivar=_itemTitle, attributes=(retain,nonatomic) */
 	itemTitle(): NSString;
-	/* typeEncoding=@"MSUpDownTextField", ivar=_textField1, attributes=(retain,nonatomic) */
-	textField1(): MSUpDownTextField;
-	/* typeEncoding=@"MSTextLabelForUpDownField", ivar=_textField1Label, attributes=(retain,nonatomic) */
-	textField1Label(): MSTextLabelForUpDownField;
-	/* typeEncoding=@"MSUpDownTextField", ivar=_textField2, attributes=(retain,nonatomic) */
-	textField2(): MSUpDownTextField;
-	/* typeEncoding=@"MSTextLabelForUpDownField", ivar=_textField2Label, attributes=(retain,nonatomic) */
-	textField2Label(): MSTextLabelForUpDownField;
+	/* typeEncoding=@"MSInlineUpDownTextField", ivar=_textField1, attributes=(retain,nonatomic) */
+	textField1(): MSInlineUpDownTextField;
+	/* typeEncoding=@"MSInlineUpDownTextField", ivar=_textField2, attributes=(retain,nonatomic) */
+	textField2(): MSInlineUpDownTextField;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
-	/* typeEncoding=c16@0:8 */
-	allowFloatValues(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	field1(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -39380,11 +44091,7 @@ declare class MSTwoTextFieldInspectorItem extends MSInspectorItem {
 	/* typeEncoding=v24@0:8@16 */
 	setTextField1(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setTextField1Label(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
 	setTextField2(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	setTextField2Label(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	setupLabels(): void;
 	/* typeEncoding=@16@0:8 */
@@ -39392,13 +44099,9 @@ declare class MSTwoTextFieldInspectorItem extends MSInspectorItem {
 	/* typeEncoding=v24@0:8@16 */
 	textField1Action(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	textField1Label(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	textField2(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	textField2Action(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	textField2Label(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	viewDidLoad(): void;
 }
@@ -39478,6 +44181,8 @@ declare class MSUnderlineAction extends MSDocumentAction {
 	/* typeEncoding=c16@0:8 */
 	isActive(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	selectedTextLayers(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	underline(...args: any[]): any;
@@ -39511,6 +44216,8 @@ declare class MSUngroupAction extends MSDocumentAction {
 	/* typeEncoding=@16@0:8 */
 	historyMomentTitle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	tooltip(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	ungroup(...args: any[]): any;
@@ -39519,14 +44226,61 @@ declare class MSUngroupAction extends MSDocumentAction {
 }
 
 declare class MSUnionAction extends MSBaseBooleanAction {
+	/* typeEncoding=q16@0:8 */
+	booleanOperation(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	booleanUnion(...args: any[]): any;
-	/* typeEncoding=v24@0:8@16 */
-	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
-	historyMomentTitle(...args: any[]): any;
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	tooltip(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
+}
+
+declare class MSUnitCoordinateSpace extends NSObject /* implements MSLayerCoordinateSpace */ {
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	bounds(): CGRect;
+	/* typeEncoding=@"<MSLayerCoordinateSpace>", ivar=_parentCoordinateSpace, attributes=(assign,nonatomic,weak) */
+	parentCoordinateSpace(): MSLayerCoordinateSpace;
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	transformForConvertingFromParentCoordinateSpace(): CGAffineTransform;
+	/* typeEncoding={CGAffineTransform=dddddd}, ivar=(null), attributes=(assign,nonatomic,readonly) */
+	transformForConvertingToParentCoordinateSpace(): CGAffineTransform;
+
+	/* typeEncoding={CGPoint=dd}64@0:8{CGPoint=dd}16{CGRect={CGPoint=dd}{CGSize=dd}}32 */
+	static convertPoint_fromBounds(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}64@0:8{CGPoint=dd}16{CGRect={CGPoint=dd}{CGSize=dd}}32 */
+	static convertPoint_toBounds(...args: any[]): any;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	bounds(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16@32 */
+	convertPoint_fromCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGPoint=dd}40@0:8{CGPoint=dd}16@32 */
+	convertPoint_toCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	convertRect_fromCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}56@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16@48 */
+	convertRect_toCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGVector=dd}40@0:8{CGVector=dd}16@32 */
+	convertVector_fromCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGVector=dd}40@0:8{CGVector=dd}16@32 */
+	convertVector_toCoordinateSpace(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	parentCoordinateSpace(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setParentCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGAffineTransform=dddddd}24@0:8@16 */
+	transformForConvertingFromCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGAffineTransform=dddddd}16@0:8 */
+	transformForConvertingFromParentCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGAffineTransform=dddddd}24@0:8@16 */
+	transformForConvertingToCoordinateSpace(...args: any[]): any;
+	/* typeEncoding={CGAffineTransform=dddddd}16@0:8 */
+	transformForConvertingToParentCoordinateSpace(...args: any[]): any;
 }
 
 declare class MSUnlinkAndOrSyncAction extends MSBaseSharedObjectAction {
@@ -39559,6 +44313,8 @@ declare class MSUpDownComboBox extends NSComboBox /* implements NSTextViewDelega
 	description(): NSString;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
+	/* typeEncoding=d, ivar=_minimumIncrementValue, attributes=(assign,nonatomic) */
+	minimumIncrementValue(): number;
 	/* typeEncoding=@, ivar=_refreshDelegate, attributes=(assign,nonatomic,weak) */
 	refreshDelegate(): any;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
@@ -39580,8 +44336,12 @@ declare class MSUpDownComboBox extends NSComboBox /* implements NSTextViewDelega
 	maximum(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	minimum(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	minimumIncrementValue(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	refreshDelegate(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setMinimumIncrementValue(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setRefreshDelegate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -39606,6 +44366,8 @@ declare class MSUpDownController extends NSResponder {
 
 	/* typeEncoding=v16@0:8 */
 	static initialize(): void;
+	/* typeEncoding=#16@0:8 */
+	static stepperClass(...args: any[]): any;
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
@@ -39625,13 +44387,15 @@ declare class MSUpDownController extends NSResponder {
 	doCommandBySelector(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	eventIsInsideView(...args: any[]): any;
-	/* typeEncoding=d16@0:8 */
+	/* typeEncoding=f16@0:8 */
 	floatValue(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	hideStepper(): void;
+	giveUpFirstResponder(): void;
+	/* typeEncoding=v20@0:8c16 */
+	hideStepper(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	increment(): void;
-	/* typeEncoding=v24@0:8d16 */
+	/* typeEncoding=c24@0:8d16 */
 	incrementBy(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	incrementDecrementDelegate(...args: any[]): any;
@@ -39641,6 +44405,8 @@ declare class MSUpDownController extends NSResponder {
 	incrementValueAccountingForModifierFlags(...args: any[]): any;
 	/* typeEncoding=@28@0:8@16c24 */
 	initWithTextField_createStepper(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	insertNewline(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	isEditable(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -39667,6 +44433,8 @@ declare class MSUpDownController extends NSResponder {
 	setTextField(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	stepper(...args: any[]): any;
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}16@0:8 */
+	stepperRect(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	textDidChange(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -39696,10 +44464,14 @@ declare class MSUpDownTextField extends NSTextField /* implements NSTextViewDele
 	hasMinimum(): boolean;
 	/* typeEncoding=Q, ivar=(null), attributes=(assign,readonly) */
 	hash(): number;
+	/* typeEncoding=d, ivar=_minimumIncrementValue, attributes=(assign,nonatomic) */
+	minimumIncrementValue(): number;
 	/* typeEncoding=d, ivar=_ownMaximum, attributes=(assign,nonatomic) */
 	ownMaximum(): number;
 	/* typeEncoding=d, ivar=_ownMinimum, attributes=(assign,nonatomic) */
 	ownMinimum(): number;
+	/* typeEncoding=@"NSView", ivar=_preferredNextKeyView, attributes=(retain,nonatomic) */
+	preferredNextKeyView(): NSView;
 	/* typeEncoding=@, ivar=_refreshDelegate, attributes=(assign,nonatomic,weak) */
 	refreshDelegate(): any;
 	/* typeEncoding=Q, ivar=_scrubberCount, attributes=(assign,nonatomic) */
@@ -39708,7 +44480,7 @@ declare class MSUpDownTextField extends NSTextField /* implements NSTextViewDele
 	scrubberIndex(): number;
 	/* typeEncoding=#, ivar=(null), attributes=(assign,readonly) */
 	superclass(): any;
-	/* typeEncoding=@"MSUpDownController", ivar=_upDownController, attributes=(assign,nonatomic,readonly) */
+	/* typeEncoding=@"MSUpDownController", ivar=_upDownController, attributes=(retain,nonatomic) */
 	upDownController(): MSUpDownController;
 
 	/* typeEncoding=v16@0:8 */
@@ -39736,9 +44508,13 @@ declare class MSUpDownTextField extends NSTextField /* implements NSTextViewDele
 	/* typeEncoding=@16@0:8 */
 	minimum(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
+	minimumIncrementValue(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
 	ownMaximum(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	ownMinimum(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	preferredNextKeyView(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	refreshDelegate(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -39750,15 +44526,21 @@ declare class MSUpDownTextField extends NSTextField /* implements NSTextViewDele
 	/* typeEncoding=v20@0:8c16 */
 	setHasMinimum(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
+	setMinimumIncrementValue(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
 	setOwnMaximum(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	setOwnMinimum(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setPreferredNextKeyView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setRefreshDelegate(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	setScrubberCount(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	setScrubberIndex(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setUpDownController(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	textDidChange(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -39803,6 +44585,8 @@ declare class MSUpdateController extends NSObject /* implements SUUpdaterDelegat
 	commandEnabled(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	commandLabel(...args: any[]): any;
+	/* typeEncoding=@28@0:8@16c24 */
+	feedParametersForUpdater_sendingSystemProfile(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	feedURLStringForUpdater(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
@@ -39959,6 +44743,10 @@ declare class MSVectorCanvas extends NSObject /* implements MSSelectVectorHandle
 	activeHandleBehavior(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	activeIndexPath(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	addHandlesToSnapperForDragging(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	addOtherLayersToSnapper(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	addTargetsToSnapperForDragging(...args: any[]): any;
 	/* typeEncoding=v40@0:8@16d24Q32 */
@@ -40301,6 +45089,11 @@ declare class MSVersionedArchive extends NSObject {
 	version(...args: any[]): any;
 }
 
+declare class MSVerticalOffsetSegmentedControl extends NSSegmentedControl {
+	/* typeEncoding=#16@0:8 */
+	static cellClass(...args: any[]): any;
+}
+
 declare class MSVerticalRulerView extends MSRulerView {
 	/* typeEncoding=v16@0:8 */
 	awakeFromNib(): void;
@@ -40344,7 +45137,31 @@ declare class MSVerticallyCenteredTextFieldCell extends NSTextFieldCell {
 	selectWithFrame_inView_editor_delegate_start_length(...args: any[]): any;
 }
 
+declare class MSViewControllerHostingCell extends NSTableCellView {
+	/* typeEncoding=@"NSViewController", ivar=_hostedItem, attributes=(retain,nonatomic) */
+	hostedItem(): NSViewController;
+	/* typeEncoding=@"<MSInspectorItemProvider>", ivar=_itemOwner, attributes=(assign,nonatomic,weak) */
+	itemOwner(): MSInspectorItemProvider;
+
+	/* typeEncoding=v16@0:8 */
+	_cxx_destruct(): void;
+	/* typeEncoding=@16@0:8 */
+	hostedItem(...args: any[]): any;
+	/* typeEncoding=v40@0:8@16@24@32 */
+	installItem_owner_withParentViewController(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	itemOwner(...args: any[]): any;
+	/* typeEncoding=@24@0:8^@16 */
+	popHostedItemAndGetOwner(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setHostedItem(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setItemOwner(...args: any[]): any;
+}
+
 declare class MSViewMenuAction extends MSDocumentAction {
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	submenuActionIDs(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -40383,6 +45200,8 @@ declare class MSViewPort extends NSObject {
 declare class MSVisitDocumentationAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	visitDocumentation(...args: any[]): any;
 }
@@ -40413,6 +45232,8 @@ declare class MSWebExporter extends NSObject {
 	cacheManager(): MSCacheManager;
 	/* typeEncoding=c, ivar=_cancelled, attributes=(assign,nonatomic) */
 	cancelled(): boolean;
+	/* typeEncoding=@"SCKOrganization", ivar=_cloudOrganization, attributes=(retain,nonatomic) */
+	cloudOrganization(): SCKOrganization;
 	/* typeEncoding=@"NSURL", ivar=_destinationURL, attributes=(retain,nonatomic) */
 	destinationURL(): NSURL;
 	/* typeEncoding=@"MSDocumentData", ivar=_documentData, attributes=(retain,nonatomic) */
@@ -40450,6 +45271,8 @@ declare class MSWebExporter extends NSObject {
 	/* typeEncoding=c16@0:8 */
 	cancelled(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	cloudOrganization(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	destinationURL(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	documentData(...args: any[]): any;
@@ -40477,6 +45300,8 @@ declare class MSWebExporter extends NSObject {
 	setCacheManager(...args: any[]): any;
 	/* typeEncoding=v20@0:8c16 */
 	setCancelled(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCloudOrganization(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setDestinationURL(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -40693,6 +45518,8 @@ declare class MSWelcomeProgressView extends NSView {
 declare class MSWelcomeToSketchAction extends MSAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	welcomeToSketch(...args: any[]): any;
 }
@@ -40702,6 +45529,8 @@ declare class MSWelcomeTopFadeView extends NSView {
 	drawRect(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	gradientAngle(...args: any[]): any;
+	/* typeEncoding=v16@0:8 */
+	viewDidChangeEffectiveAppearance(): void;
 }
 
 declare class MSWelcomeWindow extends NSWindow {
@@ -40711,15 +45540,15 @@ declare class MSWelcomeWindow extends NSWindow {
 	canBecomeMainWindow(...args: any[]): any;
 }
 
-declare class MSWelcomeWindowController extends CHWindowController /* implements NSMenuDelegate, NSWindowDelegate, MSWelcomeCollectionViewDelegate */ {
-	/* typeEncoding=@"NSArray", ivar=_cachedCloudItems, attributes=(retain,nonatomic) */
-	cachedCloudItems(): NSArray;
+declare class MSWelcomeWindowController extends CHWindowController /* implements MSCloudSharesControllerDelegate, NSMenuDelegate, NSWindowDelegate, MSWelcomeCollectionViewDelegate */ {
 	/* typeEncoding=@"NSArray", ivar=_cachedRecentDocumentItems, attributes=(retain,nonatomic) */
 	cachedRecentDocumentItems(): NSArray;
 	/* typeEncoding=@"NSArray", ivar=_cachedTemplateItems, attributes=(retain,nonatomic) */
 	cachedTemplateItems(): NSArray;
 	/* typeEncoding=@"NSButton", ivar=_closeButton, attributes=(retain,nonatomic) */
 	closeButton(): NSButton;
+	/* typeEncoding=@"MSCloudSharesController", ivar=_cloudSharesController, attributes=(retain,nonatomic) */
+	cloudSharesController(): MSCloudSharesController;
 	/* typeEncoding=@"NSScrollView", ivar=_collectionScrollView, attributes=(retain,nonatomic) */
 	collectionScrollView(): NSScrollView;
 	/* typeEncoding=@"NSView", ivar=_collectionStaticContainerView, attributes=(retain,nonatomic) */
@@ -40771,8 +45600,6 @@ declare class MSWelcomeWindowController extends CHWindowController /* implements
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
 	/* typeEncoding=@16@0:8 */
-	cachedCloudItems(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
 	cachedRecentDocumentItems(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	cachedTemplateItems(...args: any[]): any;
@@ -40786,6 +45613,14 @@ declare class MSWelcomeWindowController extends CHWindowController /* implements
 	close(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	closeButton(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cloudItems(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	cloudSharesController(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	cloudSharesController_didFailLoadingWithError(...args: any[]): any;
+	/* typeEncoding=v32@0:8@16@24 */
+	cloudSharesController_didFinishLoadingShares(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	cloudUserDidChange(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -40847,13 +45682,15 @@ declare class MSWelcomeWindowController extends CHWindowController /* implements
 	/* typeEncoding=v24@0:8@16 */
 	revealDocumentInFinder(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	setCachedCloudItems(...args: any[]): any;
+	scrollViewDidScrollNotification(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setCachedRecentDocumentItems(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setCachedTemplateItems(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setCloseButton(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	setCloudSharesController(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setCollectionScrollView(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -40967,41 +45804,49 @@ declare class MSXMLElementWrapper extends NSObject {
 declare class MSZoomAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	findZoomPopupButton(...args: any[]): any;
 	/* typeEncoding=c24@0:8@16 */
 	handlesKeyEvent(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasSubMenu(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	keyDown(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	keyUp(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@20@0:8c16 */
 	makeToolbarItemForToolbar(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	menu(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
-	zoomModeToggle(...args: any[]): any;
+	menuDidClose(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	validate(...args: any[]): any;
+	/* typeEncoding=@32@0:8@16@24 */
+	zoomButtonWithAction_imageNamed(...args: any[]): any;
+	/* typeEncoding=@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
+	zoomPopupButtonWithFrame(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	zoomTo200Action(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	zoomTo25Action(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	zoomTo400Action(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
+	zoomTo50Action(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	zoomValueDidChange(): void;
 	/* typeEncoding=@16@0:8 */
 	zoomValueString(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	zoomView(...args: any[]): any;
 }
 
-declare class MSZoomActionToolbarItem extends NSToolbarItem {
-	/* typeEncoding=@"MSZoomAction", ivar=_zoomAction, attributes=(assign,nonatomic,weak) */
-	zoomAction(): MSZoomAction;
-
-	/* typeEncoding=v16@0:8 */
-	_cxx_destruct(): void;
-	/* typeEncoding=v24@0:8@16 */
-	setZoomAction(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	validate(): void;
-	/* typeEncoding=@16@0:8 */
-	zoomAction(...args: any[]): any;
-}
-
-declare class MSZoomActions extends MSTouchBarGroupAction {
+declare class MSZoomActions extends MSActionGroup {
 	/* typeEncoding=@16@0:8 */
 	actionNames(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
 	touchBarItemSizing(...args: any[]): any;
 }
@@ -41012,6 +45857,8 @@ declare class MSZoomBlurEventHandler extends MSPointsEventHandler {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=c16@0:8 */
+	allowsEmptySelection(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	blurStyle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -41041,6 +45888,8 @@ declare class MSZoomBlurInspectorItem extends MSBaseBlurInspectorItem {
 	/* typeEncoding=@32@0:8@16@24 */
 	initWithNibName_bundle(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
+	sectionWithIdentifierWillCollapse(...args: any[]): any;
+	/* typeEncoding=v24@0:8@16 */
 	setEditOriginButton(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	updateDisplayedValues(): void;
@@ -41049,6 +45898,8 @@ declare class MSZoomBlurInspectorItem extends MSBaseBlurInspectorItem {
 declare class MSZoomInAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
@@ -41061,6 +45912,8 @@ declare class MSZoomOutAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
 	touchBarImage(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
@@ -41068,16 +45921,30 @@ declare class MSZoomOutAction extends MSDocumentAction {
 	zoomOut(...args: any[]): any;
 }
 
+declare class MSZoomPopUpButton extends NSPopUpButton {
+	/* typeEncoding=#16@0:8 */
+	static cellClass(...args: any[]): any;
+}
+
+declare class MSZoomPopUpButtonCell extends NSPopUpButtonCell {
+	/* typeEncoding={CGRect={CGPoint=dd}{CGSize=dd}}64@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24@56 */
+	drawTitle_withFrame_inView(...args: any[]): any;
+}
+
 declare class MSZoomToActualSizeAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	actualSize(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 }
 
 declare class MSZoomToArtboardAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -41087,6 +45954,8 @@ declare class MSZoomToArtboardAction extends MSDocumentAction {
 declare class MSZoomToSelectionAction extends MSDocumentAction {
 	/* typeEncoding=v24@0:8@16 */
 	doPerformAction(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	label(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	validate(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -42523,8 +47392,6 @@ declare class _MSImmutableArtboardGroup extends MSImmutableLayerGroup {
 	/* typeEncoding=@16@0:8 */
 	layout(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -42602,8 +47469,6 @@ declare class _MSImmutableAssetCollection extends MSImmutableModelObject {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -42644,8 +47509,6 @@ declare class _MSImmutableBaseGrid extends MSImmutableModelObject {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -42693,8 +47556,6 @@ declare class _MSImmutableBitmapLayer extends MSImmutableStyledLayer {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -42744,8 +47605,6 @@ declare class _MSImmutableColor extends MSImmutableModelObject {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -42809,8 +47668,6 @@ declare class _MSImmutableCurvePoint extends MSImmutableModelObject {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -42896,8 +47753,6 @@ declare class _MSImmutableDocumentData extends MSImmutableModelObject {
 	layerSymbols(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	layerTextStyles(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=@16@0:8 */
 	pages(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -42974,8 +47829,6 @@ declare class _MSImmutableExportFormat extends MSImmutableModelObject {
 	/* typeEncoding=q16@0:8 */
 	namingScheme(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43035,8 +47888,6 @@ declare class _MSImmutableExportOptions extends MSImmutableModelObject {
 	/* typeEncoding=Q16@0:8 */
 	layerOptions(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43086,8 +47937,6 @@ declare class _MSImmutableExportPreset extends MSImmutableModelObject {
 	/* typeEncoding=@16@0:8 */
 	name(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43133,8 +47982,6 @@ declare class _MSImmutableFlowConnection extends MSImmutableModelObject {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43164,8 +48011,6 @@ declare class _MSImmutableForeignLayerStyle extends MSImmutableForeignStyle {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -43201,8 +48046,6 @@ declare class _MSImmutableForeignObject extends MSImmutableModelObject {
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	libraryID(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -43245,8 +48088,6 @@ declare class _MSImmutableForeignStyle extends MSImmutableForeignObject {
 	/* typeEncoding=@16@0:8 */
 	localSharedStyle(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43285,8 +48126,6 @@ declare class _MSImmutableForeignSymbol extends MSImmutableForeignObject {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=@16@0:8 */
 	originalMaster(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -43321,8 +48160,6 @@ declare class _MSImmutableForeignTextStyle extends MSImmutableForeignStyle {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -43368,8 +48205,6 @@ declare class _MSImmutableGradient extends MSImmutableModelObject {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -43420,8 +48255,6 @@ declare class _MSImmutableGradientStop extends MSImmutableModelObject {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43460,8 +48293,6 @@ declare class _MSImmutableGraphicsContextSettings extends MSImmutableModelObject
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=d16@0:8 */
 	opacity(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -43495,8 +48326,6 @@ declare class _MSImmutableHotspotLayer extends MSImmutableLayer {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43529,8 +48358,6 @@ declare class _MSImmutableImageCollection extends MSImmutableModelObject {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -43566,8 +48393,6 @@ declare class _MSImmutableLayer extends MSImmutableModelObject {
 	nameIsFixed(): boolean;
 	/* typeEncoding=@"NSString", ivar=_originalObjectID, attributes=(retain,nonatomic) */
 	originalObjectID(): NSString;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathInBounds(): MSPath;
 	/* typeEncoding=Q, ivar=_resizingConstraint, attributes=(assign,nonatomic) */
 	resizingConstraint(): number;
 	/* typeEncoding=Q, ivar=_resizingType, attributes=(assign,nonatomic) */
@@ -43586,8 +48411,6 @@ declare class _MSImmutableLayer extends MSImmutableModelObject {
 	_cxx_destruct(): void;
 	/* typeEncoding=q16@0:8 */
 	booleanOperation(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	calculatePathInBounds(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	decodePropertiesWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -43604,6 +48427,8 @@ declare class _MSImmutableLayer extends MSImmutableModelObject {
 	frame(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasDefaultValues(...args: any[]): any;
+	/* typeEncoding=@16@0:8 */
+	initWithMinimalSetup(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	initializeUnsetObjectPropertiesWithDefaults(): void;
 	/* typeEncoding=c24@0:8@16 */
@@ -43626,12 +48451,8 @@ declare class _MSImmutableLayer extends MSImmutableModelObject {
 	name(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	nameIsFixed(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=@16@0:8 */
 	originalObjectID(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	pathInBounds(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -43718,8 +48539,6 @@ declare class _MSImmutableLayerGroup extends MSImmutableStyledLayer {
 	/* typeEncoding=@16@0:8 */
 	layers(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43795,8 +48614,6 @@ declare class _MSImmutableLayoutGrid extends MSImmutableBaseGrid {
 	/* typeEncoding=d16@0:8 */
 	numberOfColumns(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43849,8 +48666,6 @@ declare class _MSImmutableOvalShape extends MSImmutableShapePathLayer {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43898,8 +48713,6 @@ declare class _MSImmutablePage extends MSImmutableLayerGroup {
 	/* typeEncoding=@16@0:8 */
 	layout(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43943,8 +48756,6 @@ declare class _MSImmutablePolygonShape extends MSImmutableShapePathLayer {
 	/* typeEncoding=q16@0:8 */
 	numberOfPoints(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -43987,8 +48798,6 @@ declare class _MSImmutableRect extends MSImmutableModelObject {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -44041,8 +48850,6 @@ declare class _MSImmutableRectangleShape extends MSImmutableShapePathLayer {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -44084,8 +48891,6 @@ declare class _MSImmutableRulerData extends MSImmutableModelObject {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -44096,16 +48901,9 @@ declare class _MSImmutableRulerData extends MSImmutableModelObject {
 }
 
 declare class _MSImmutableShapeGroup extends MSImmutableLayerGroup {
-	/* typeEncoding=q, ivar=_clippingMaskMode, attributes=(assign,nonatomic) */
-	clippingMaskMode(): number;
-	/* typeEncoding=c, ivar=_hasClippingMask, attributes=(assign,nonatomic) */
-	hasClippingMask(): boolean;
-
 	/* typeEncoding=#16@0:8 */
 	static mutableClass(...args: any[]): any;
 
-	/* typeEncoding=q16@0:8 */
-	clippingMaskMode(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	decodePropertiesWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -44115,8 +48913,6 @@ declare class _MSImmutableShapeGroup extends MSImmutableLayerGroup {
 	/* typeEncoding=v24@0:8@?16 */
 	enumerateProperties(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
-	hasClippingMask(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
 	hasDefaultValues(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	initializeUnsetObjectPropertiesWithDefaults(): void;
@@ -44125,15 +48921,9 @@ declare class _MSImmutableShapeGroup extends MSImmutableLayerGroup {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
-	/* typeEncoding=v24@0:8q16 */
-	setClippingMaskMode(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setHasClippingMask(...args: any[]): any;
 }
 
 declare class _MSImmutableShapePath extends MSImmutableModelObject {
@@ -44168,8 +48958,6 @@ declare class _MSImmutableShapePath extends MSImmutableModelObject {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -44185,7 +48973,7 @@ declare class _MSImmutableShapePath extends MSImmutableModelObject {
 	setPoints(...args: any[]): any;
 }
 
-declare class _MSImmutableShapePathLayer extends MSImmutableLayer {
+declare class _MSImmutableShapePathLayer extends MSImmutableStyledLayer {
 	/* typeEncoding=c, ivar=_edited, attributes=(assign,nonatomic) */
 	edited(): boolean;
 	/* typeEncoding=c, ivar=_isClosed, attributes=(assign,nonatomic) */
@@ -44220,8 +49008,6 @@ declare class _MSImmutableShapePathLayer extends MSImmutableLayer {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -44270,8 +49056,6 @@ declare class _MSImmutableSharedObject extends MSImmutableModelObject {
 	/* typeEncoding=@16@0:8 */
 	name(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -44308,8 +49092,6 @@ declare class _MSImmutableSharedObjectContainer extends MSImmutableModelObject {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=@16@0:8 */
 	objects(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -44341,8 +49123,6 @@ declare class _MSImmutableSharedStyle extends MSImmutableSharedObject {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -44369,8 +49149,6 @@ declare class _MSImmutableSharedStyleContainer extends MSImmutableSharedObjectCo
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -44396,8 +49174,6 @@ declare class _MSImmutableSharedTextStyleContainer extends MSImmutableSharedStyl
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -44431,8 +49207,6 @@ declare class _MSImmutableSimpleGrid extends MSImmutableBaseGrid {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -44477,8 +49251,6 @@ declare class _MSImmutableSliceLayer extends MSImmutableLayer {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -44515,8 +49287,6 @@ declare class _MSImmutableStarShape extends MSImmutableShapePathLayer {
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	numberOfPoints(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -44598,8 +49368,6 @@ declare class _MSImmutableStyle extends MSImmutableModelObject {
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=q16@0:8 */
 	miterLimit(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -44684,8 +49452,6 @@ declare class _MSImmutableStyleBasicFill extends MSImmutableStylePart {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -44706,6 +49472,8 @@ declare class _MSImmutableStyleBlur extends MSImmutableStylePart {
 	motionAngle(): number;
 	/* typeEncoding=d, ivar=_radius, attributes=(assign,nonatomic) */
 	radius(): number;
+	/* typeEncoding=d, ivar=_saturation, attributes=(assign,nonatomic) */
+	saturation(): number;
 	/* typeEncoding=Q, ivar=_type, attributes=(assign,nonatomic) */
 	type(): number;
 
@@ -44733,19 +49501,21 @@ declare class _MSImmutableStyleBlur extends MSImmutableStylePart {
 	/* typeEncoding=d16@0:8 */
 	motionAngle(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	radius(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	saturation(...args: any[]): any;
 	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
 	setCenter(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	setMotionAngle(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	setRadius(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setSaturation(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	setType(...args: any[]): any;
 	/* typeEncoding=Q16@0:8 */
@@ -44777,8 +49547,6 @@ declare class _MSImmutableStyleBorder extends MSImmutableStyleBasicFill {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -44829,8 +49597,6 @@ declare class _MSImmutableStyleBorderOptions extends MSImmutableStylePart {
 	/* typeEncoding=Q16@0:8 */
 	lineJoinStyle(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -44877,8 +49643,6 @@ declare class _MSImmutableStyleColorControls extends MSImmutableStylePart {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -44934,8 +49698,6 @@ declare class _MSImmutableStyleFill extends MSImmutableStyleBasicFill {
 	noiseIndex(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	noiseIntensity(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=q16@0:8 */
 	patternFillType(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
@@ -44977,8 +49739,6 @@ declare class _MSImmutableStyleInnerShadow extends MSImmutableStyleShadow {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -45009,8 +49769,6 @@ declare class _MSImmutableStylePart extends MSImmutableModelObject {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -45060,8 +49818,6 @@ declare class _MSImmutableStyleShadow extends MSImmutableStylePart {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=d16@0:8 */
 	offsetX(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
@@ -45087,6 +49843,10 @@ declare class _MSImmutableStyleShadow extends MSImmutableStylePart {
 }
 
 declare class _MSImmutableStyledLayer extends MSImmutableLayer {
+	/* typeEncoding=q, ivar=_clippingMaskMode, attributes=(assign,nonatomic) */
+	clippingMaskMode(): number;
+	/* typeEncoding=c, ivar=_hasClippingMask, attributes=(assign,nonatomic) */
+	hasClippingMask(): boolean;
 	/* typeEncoding=@"MSImmutableStyle", ivar=_style, attributes=(retain,nonatomic) */
 	style(): MSImmutableStyle;
 
@@ -45095,6 +49855,8 @@ declare class _MSImmutableStyledLayer extends MSImmutableLayer {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=q16@0:8 */
+	clippingMaskMode(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	decodePropertiesWithUnarchiver(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -45104,6 +49866,8 @@ declare class _MSImmutableStyledLayer extends MSImmutableLayer {
 	/* typeEncoding=v24@0:8@?16 */
 	enumerateProperties(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
+	hasClippingMask(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
 	hasDefaultValues(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	initializeUnsetObjectPropertiesWithDefaults(): void;
@@ -45112,11 +49876,13 @@ declare class _MSImmutableStyledLayer extends MSImmutableLayer {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
+	/* typeEncoding=v24@0:8q16 */
+	setClippingMaskMode(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setHasClippingMask(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setStyle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
@@ -45144,8 +49910,6 @@ declare class _MSImmutableSymbol extends MSImmutableSharedObject {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -45171,8 +49935,6 @@ declare class _MSImmutableSymbolContainer extends MSImmutableSharedObjectContain
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -45214,8 +49976,6 @@ declare class _MSImmutableSymbolInstance extends MSImmutableStyledLayer {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=@16@0:8 */
 	overrideValues(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -45269,8 +50029,6 @@ declare class _MSImmutableSymbolMaster extends MSImmutableArtboardGroup {
 	isEqualForDiffToObject(...args: any[]): any;
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
-	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -45331,8 +50089,6 @@ declare class _MSImmutableTextLayer extends MSImmutableStyledLayer {
 	/* typeEncoding=q16@0:8 */
 	lineSpacingBehaviour(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -45386,8 +50142,6 @@ declare class _MSImmutableTextStyle extends MSImmutableModelObject {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -45425,8 +50179,6 @@ declare class _MSImmutableTriangleShape extends MSImmutableShapePathLayer {
 	/* typeEncoding=@24@0:8@16 */
 	keysDifferingFromObject(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
-	objectDidInit(): void;
-	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
 	performInitWithMutableModelObject(...args: any[]): any;
@@ -45461,8 +50213,6 @@ declare class _MSLayer extends MSModelObject {
 	nameIsFixed(): boolean;
 	/* typeEncoding=@"NSString", ivar=_originalObjectID, attributes=(retain,nonatomic) */
 	originalObjectID(): NSString;
-	/* typeEncoding=@"MSPath", ivar=(null), attributes=(assign,nonatomic,readonly) */
-	pathInBounds(): MSPath;
 	/* typeEncoding=Q, ivar=_resizingConstraint, attributes=(assign,nonatomic) */
 	resizingConstraint(): number;
 	/* typeEncoding=Q, ivar=_resizingType, attributes=(assign,nonatomic) */
@@ -45517,8 +50267,6 @@ declare class _MSLayer extends MSModelObject {
 	nameIsFixed(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */
 	originalObjectID(...args: any[]): any;
-	/* typeEncoding=@16@0:8 */
-	pathInBounds(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	performInitEmptyObject(): void;
 	/* typeEncoding=v24@0:8@16 */
@@ -46013,26 +50761,17 @@ declare class _MSRulerData extends MSModelObject {
 }
 
 declare class _MSShapeGroup extends MSLayerGroup {
-	/* typeEncoding=q, ivar=_clippingMaskMode, attributes=(assign,nonatomic) */
-	clippingMaskMode(): number;
-	/* typeEncoding=c, ivar=_hasClippingMask, attributes=(assign,nonatomic) */
-	hasClippingMask(): boolean;
-
 	/* typeEncoding=c16@0:8 */
 	static allowsFaulting(...args: any[]): any;
 	/* typeEncoding=#16@0:8 */
 	static immutableClass(...args: any[]): any;
 
-	/* typeEncoding=q16@0:8 */
-	clippingMaskMode(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16Q24 */
 	copyPropertiesToObject_options(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	enumerateChildProperties(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	enumerateProperties(...args: any[]): any;
-	/* typeEncoding=c16@0:8 */
-	hasClippingMask(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasDefaultValues(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -46045,10 +50784,6 @@ declare class _MSShapeGroup extends MSLayerGroup {
 	propertiesAreEqual(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	setAsParentOnChildren(): void;
-	/* typeEncoding=v24@0:8q16 */
-	setClippingMaskMode(...args: any[]): any;
-	/* typeEncoding=v20@0:8c16 */
-	setHasClippingMask(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	syncPropertiesFromObject(...args: any[]): any;
 }
@@ -46126,7 +50861,7 @@ declare class _MSShapePath extends MSModelObject {
 	syncPropertiesFromObject(...args: any[]): any;
 }
 
-declare class _MSShapePathLayer extends MSLayer {
+declare class _MSShapePathLayer extends MSStyledLayer {
 	/* typeEncoding=c, ivar=_edited, attributes=(assign,nonatomic) */
 	edited(): boolean;
 	/* typeEncoding=c, ivar=_isClosed, attributes=(assign,nonatomic) */
@@ -46791,6 +51526,8 @@ declare class _MSStyleBlur extends MSStylePart {
 	motionAngle(): number;
 	/* typeEncoding=d, ivar=_radius, attributes=(assign,nonatomic) */
 	radius(): number;
+	/* typeEncoding=d, ivar=_saturation, attributes=(assign,nonatomic) */
+	saturation(): number;
 	/* typeEncoding=Q, ivar=_type, attributes=(assign,nonatomic) */
 	type(): number;
 
@@ -46821,6 +51558,8 @@ declare class _MSStyleBlur extends MSStylePart {
 	propertiesAreEqual(...args: any[]): any;
 	/* typeEncoding=d16@0:8 */
 	radius(...args: any[]): any;
+	/* typeEncoding=d16@0:8 */
+	saturation(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	setAsParentOnChildren(): void;
 	/* typeEncoding=v32@0:8{CGPoint=dd}16 */
@@ -46829,6 +51568,8 @@ declare class _MSStyleBlur extends MSStylePart {
 	setMotionAngle(...args: any[]): any;
 	/* typeEncoding=v24@0:8d16 */
 	setRadius(...args: any[]): any;
+	/* typeEncoding=v24@0:8d16 */
+	setSaturation(...args: any[]): any;
 	/* typeEncoding=v24@0:8Q16 */
 	setType(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
@@ -47172,6 +51913,10 @@ declare class _MSStyleShadow extends MSStylePart {
 }
 
 declare class _MSStyledLayer extends MSLayer {
+	/* typeEncoding=q, ivar=_clippingMaskMode, attributes=(assign,nonatomic) */
+	clippingMaskMode(): number;
+	/* typeEncoding=c, ivar=_hasClippingMask, attributes=(assign,nonatomic) */
+	hasClippingMask(): boolean;
 	/* typeEncoding=@"MSStyle", ivar=_style, attributes=(retain,nonatomic) */
 	style(): MSStyle;
 
@@ -47182,12 +51927,16 @@ declare class _MSStyledLayer extends MSLayer {
 
 	/* typeEncoding=v16@0:8 */
 	_cxx_destruct(): void;
+	/* typeEncoding=q16@0:8 */
+	clippingMaskMode(...args: any[]): any;
 	/* typeEncoding=v32@0:8@16Q24 */
 	copyPropertiesToObject_options(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	enumerateChildProperties(...args: any[]): any;
 	/* typeEncoding=v24@0:8@?16 */
 	enumerateProperties(...args: any[]): any;
+	/* typeEncoding=c16@0:8 */
+	hasClippingMask(...args: any[]): any;
 	/* typeEncoding=c16@0:8 */
 	hasDefaultValues(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
@@ -47200,6 +51949,10 @@ declare class _MSStyledLayer extends MSLayer {
 	propertiesAreEqual(...args: any[]): any;
 	/* typeEncoding=v16@0:8 */
 	setAsParentOnChildren(): void;
+	/* typeEncoding=v24@0:8q16 */
+	setClippingMaskMode(...args: any[]): any;
+	/* typeEncoding=v20@0:8c16 */
+	setHasClippingMask(...args: any[]): any;
 	/* typeEncoding=v24@0:8@16 */
 	setStyle(...args: any[]): any;
 	/* typeEncoding=@16@0:8 */

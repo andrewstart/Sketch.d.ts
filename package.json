@@ -24,6 +24,8 @@
   "scripts": {
     "build": "tsc -p . --pretty && skpm-link",
     "inheritance": "ts-node --project scripts/tsconfig.json $NODE_DEBUG_OPTION scripts/generateInheritance.ts",
+    "generate": "ts-node --project scripts/tsconfig.json $NODE_DEBUG_OPTION scripts/runPlugin.ts",
+    "generate-beta": "ts-node --project scripts/tsconfig.json $NODE_DEBUG_OPTION scripts/runPlugin.ts -- --beta",
     "test": "tsc -p . --pretty --noEmit && echo 'Test passed.'"
   },
   "devDependencies": {
