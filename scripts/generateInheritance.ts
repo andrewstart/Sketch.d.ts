@@ -1,5 +1,6 @@
 import { createInterface } from "readline";
-import { createReadStream } from "fs";
+import { createReadStream, readFile, writeFile } from "fs-extra";
+import { resolve } from "path";
 
 main();
 
@@ -18,7 +19,7 @@ async function main() {
     const regex = /declare class (\S+) extends (\S+)/;
     
     const lineReader = createInterface({
-        input: createReadStream(__dirname  + "/../../types/sketch.d.ts"),
+        input: createReadStream(resolve(__dirname, "../types/sketch.d.ts")),
     });
     
     lineReader.on("line", function(line: string) {
@@ -38,28 +39,34 @@ async function main() {
     });
     
     lineReader.on("close", function() {
-        const output = generateOutput(classes);
-        
-        console.log(output);
+        generateOutput(classes).catch(err => console.error(err));
     });
 }
 
-function generateOutput(classes: ClassDescriptionsArray) {
+async function generateOutput(classes: ClassDescriptionsArray) {
     const supers = ["NSResponder", "NSObject"]; // getSuperClasses(classes);
     
-    const output = supers.map(sup => {
-        const current = classes[sup];
-        return generateItem(current) + "\n";
-    });
+    let readme = await readFile(resolve(__dirname, "../readme.md"), "utf8");
     
-    return output.join("\n");
+    for (const s of supers) {
+        const current = classes[s];
+        const list = generateItem(current) + "\n";
+        
+        readme = readme.replace(
+            new RegExp(`<summary>${s}<\\/summary>\\n\\n\`\`\`([^\`]*)\`\`\``),
+            (match) => {
+                return `<summary>${s}</summary>\n\n\`\`\`\n${list}\`\`\``;
+            });
+    }
+    
+    await writeFile(resolve(__dirname, "../readme.md"), readme);
 }
 
 function generateItem({ name, childs }: ClassDescription, level: number = 0): string {
     const output = [];
     const indent = "  ";
     
-    if (name[0] !== "_") {
+    if (name[0] !== "_" && level > 0) {
         output.push(indent.repeat(level) + name);
     }
     

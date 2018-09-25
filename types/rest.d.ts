@@ -8,6 +8,15 @@ declare interface SketchContext {
 }
 declare function log(...any: any[]): any;
 
+/*
+ABOUT:
+The rest of this file are bare minimum types referenced in sketch.d.ts.
+NS*, CG*, WK*: AppKit types
+MS*: Sketch interface (@interface) or delegate (@protocol)
+SCK*: More Sketch classes
+others are likely more Sketch things
+*/
+
 declare const NSUTF8StringEncoding: number;
 
 declare class AFAmazonS3Manager {}
@@ -217,3 +226,50 @@ declare class _MSOverrideValue {}
 declare class MSRenderer {}
 declare class MSProfilingRendererDelegate {}
 declare class CATextLayer {}
+declare class _NSRange {}
+declare class NSValue {}
+declare class CGVector {
+    dx: CGFloat;
+    dy: CGFloat;
+}
+declare class CGFloat {}
+declare class NSCopying {}
+declare class NSFileWrapper {}
+declare class NSURLSessionDataTask {}
+declare class NSURLProtocol {}
+declare class NSURLSessionTask {}
+declare class NSMutableURLRequest {}
+declare class SCKAPIAuthentication {}
+declare class SCKAPISignable {}
+declare class SCKArtboardViewport {}
+declare class NSURLRequest {}
+declare class NSURLSessionDownloadTask {}
+declare class NSUUID {}
+declare class NSURLSessionUploadTask {}
+declare class SCKShareUploadDataSource {}
+declare class WKWebView extends NSView {
+	static alloc():any;
+}
+declare class WKWebViewConfiguration {
+    static alloc():any;
+}
+declare class SCKCloudDocument {}
+declare class MSAlignmentEngineDelegate {}
+declare class MSLine {}
+declare class MSInspectorSectionDelegate {}
+declare class MSLineSegment {}
+declare class MSCloudLoginWindowControllerDelegate {}
+declare class MSDataMenuProviderDelegate {}
+declare class MSDataSupplierManagerDelegate {}
+declare class MSInspectorItemDelegate {}
+declare class MSInspectorValueAdaptorDelegate {}
+declare class MSSnappable {}
+declare class MSLocalDataSupplierDelegate {}
+declare class MSOverlayRendererDelegate {}
+declare class MSPluginDataSupplierDelegate {}
+declare class MSPluginLogAction {}
+declare class MSMenuBuilderDelegate {}
+declare class MSStylePartPreviewButtonDelegate {}
+declare class MSStylePartInspectorItemDelegate {}
+declare class MSTextLayerTextViewDelegate {}
+declare class MSIncrementDecrementDelegate {}

@@ -1,12 +1,17 @@
 {
-  "compilerOptions": {
-    "module": "es6",
-    "target": "es6",
-    "lib": ["es2016"],
-    "strict": true
-  },
-  "exclude": [
-    "node_modules",
-    "inheritance-diagram-generator"
-  ]
+    "compilerOptions": {
+        "module": "es6",
+        "target": "es6",
+        "lib": ["es2016"],
+        "strict": true,
+        "types":[]
+    },
+    "include": [
+        "./index.d.ts",
+        "./Generate Sketch.d.ts.sketchplugin/Contents/Sketch/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "scripts"
+    ]
 }

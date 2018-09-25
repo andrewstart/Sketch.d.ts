@@ -17,10 +17,22 @@
   "bugs": {
     "url": "https://github.com/pravdomil/Sketch.d.ts/issues"
   },
+  "skpm": {
+    "name": "Generate Sketch.d.ts",
+    "main": "Generate Sketch.d.ts.sketchplugin"
+  },
   "scripts": {
+    "build": "tsc -p . --pretty && skpm-link",
+    "inheritance": "ts-node --project scripts/tsconfig.json $NODE_DEBUG_OPTION scripts/generateInheritance.ts",
     "test": "tsc -p . --pretty --noEmit && echo 'Test passed.'"
   },
   "devDependencies": {
-    "typescript": "^2.6.2"
-  }
+    "@skpm/builder": "^0.5.2",
+    "@types/fs-extra": "^5.0.4",
+    "@types/node": "^8.0.56",
+    "fs-extra": "^7.0.0",
+    "ts-node": "^3.3.0",
+    "typescript": "^3.0.0"
+  },
+  "dependencies": {}
 }

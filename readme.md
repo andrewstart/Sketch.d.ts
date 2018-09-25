@@ -20,9 +20,13 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
 
 ```
   MSAction
+    MSAddRemoteLibraryAction
     MSDocumentAction
       MSAddAsLibraryAction
       MSAddExportFormatAction
+      MSApplySharedStyleAction
+        MSApplySharedLayerStyleAction
+        MSApplySharedTextStyleAction
       MSAutoExpandGroupsAction
       MSBackToInstanceAction
       MSBadgeMenuAction
@@ -69,10 +73,15 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
         MSBaseMoveForwardAction
           MSMoveForwardAction
           MSMoveToFrontAction
-      MSBaseSharedStyleAction
+      MSBaseSharedObjectAction
         MSCreateSharedStyleAction
+        MSDetachSharedStyleAction
+        MSManageShareableObjectsAction
         MSResetSharedStyleAction
-        MSSyncSharedStyleAction
+        MSUnlinkAndOrSyncAction
+          MSSyncLocalStyleAction
+          MSUnlinkAndSyncFromLibraryAction
+          MSUnlinkFromLibraryAction
       MSBaseStyleAction
         MSAddBorderAction
         MSAddFillAction
@@ -87,6 +96,12 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
       MSChangeColorSpaceAction
         MSAssignColorSpaceAction
         MSConvertColorSpaceAction
+      MSChangeFlowAnimationAction
+        MSChangeFlowAnimationFromBottomAnimationAction
+        MSChangeFlowAnimationFromLeftAnimationAction
+        MSChangeFlowAnimationFromRightAnimationAction
+        MSChangeFlowAnimationFromTopAnimationAction
+        MSChangeFlowAnimationNoAnimationAction
       MSChangeFontAction
       MSChangePageAction
         MSNextPageAction
@@ -101,7 +116,6 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
         MSColorInspectorImageTabAction
         MSColorInspectorLinearGradientTabAction
         MSColorInspectorRadialGradientTabAction
-      MSComponentsPanelAction
       MSConstraintAction
         MSConstraintFixHeightAction
         MSConstraintFixWidthAction
@@ -123,6 +137,7 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
         MSCurveModeMirroredAction
         MSCurveModeStraightAction
       MSCutAction
+      MSDataAction
       MSDefaultStyleAction
       MSDeleteAction
       MSDistributeAction
@@ -143,6 +158,13 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
       MSFindLayerAction
       MSFlattenAction
       MSFlattenSelectionAction
+      MSFlowBaseAction
+        MSAddFlowAction
+        MSAddFlowBackAction
+        MSAddFlowHomeAction
+        MSConvertFlowToHotspotAction
+        MSFollowFlowAction
+        MSRemoveFlowAction
       MSGridSettingsAction
       MSGroupAction
       MSHideAllGridsAndLayoutsAction
@@ -150,6 +172,7 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
       MSIgnoreClippingMaskAction
       MSImageOriginalSizeAction
       MSIncompatiblePluginsDisabledAction
+      MSInsertHotspotAction
       MSInsertMenuAction
       MSInsertSliceAction
       MSInsertVectorAction
@@ -161,13 +184,22 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
       MSLayoutSettingsAction
       MSLicenseExpiredAction
       MSLicenseSheetAction
+      MSListTypeAction
+        MSListTypeActionBullet
+        MSListTypeActionNone
+        MSListTypeActionNumbered
       MSLockLayerAction
       MSMagnifierAction
       MSMakeGridAction
-      MSManageForeignSymbolAction
       MSMaskWithShapeAction
+      MSMirrorAction
+      MSMoveToTopAction
       MSMoveUpHierarchyAction
       MSNewPageAction
+      MSOpenInLibraryAction
+        MSOpenStyleInLibraryAction
+        MSOpenSymbolInLibraryAction
+      MSOpenPreviewAction
       MSPasteAction
       MSPasteHereAction
       MSPasteOverSelectionAction
@@ -176,7 +208,6 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
       MSPencilAction
       MSPopoverAction
         MSCloudAction
-        MSMirrorAction
       MSPreviewAtActualSizeAction
       MSPrintAction
       MSReduceFileSizeAction
@@ -185,6 +216,7 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
       MSReplaceColorAction
       MSReplaceFontsAction
       MSReplaceImageAction
+      MSResetOriginAction
       MSResetSymbolSizeAction
       MSResizeArtboardToFitAction
       MSRevealInLayerListAction
@@ -194,6 +226,7 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
       MSScaleAction
       MSSelectAllAction
       MSSelectAllArtboardsAction
+      MSSendToSymbolsPageAction
       MSShapeAction
       MSSharedObjectAction
         MSInsertSharedTextAction
@@ -217,19 +250,21 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
       MSToggleBaseAction
         MSToggleGridAction
         MSToggleLayoutAction
+      MSToggleFixToViewportAction
       MSToggleInterfaceAction
-      MSToggleLayerInteractionAction
       MSTogglePixelGridAction
-      MSToggleSliceInteractionAction
+      MSToggleRulerDragLockingAction
       MSToggleStylePartAction
         MSToggleBorderAction
         MSToggleFillAction
       MSToggleViewPreferenceAction
         MSToggleAlignmentGuidesAction
         MSToggleArtboardShadowAction
+        MSToggleFlowInteractionAction
         MSToggleLayerHighlightAction
         MSTogglePixelLinesAction
         MSToggleSelectionAction
+        MSToggleSliceInteractionAction
       MSToggleVisibilityAction
         MSToggleInspectorVisibilityAction
         MSToggleLayerListVisibilityAction
@@ -257,8 +292,10 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
       MSZoomInAction
       MSZoomOutAction
       MSZoomToActualSizeAction
+      MSZoomToArtboardAction
       MSZoomToSelectionAction
     MSFeedbackAction
+    MSLogAction
     MSOpenCloudPreferencesAction
     MSOpenPluginPreferencesAction
     MSOpenPreferencesAction
@@ -281,8 +318,10 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
     MSDragRectEventHandler
       MSInsertLayerEventHandler
         MSInsertArtboardEventHandler
+        MSInsertHotspotEventHandler
         MSInsertSliceEventHandler
       MSInsertShapeEventHandler
+    MSFlowEventHandler
     MSInsertLineEventHandler
       MSInsertArrowEventHandler
     MSInsertSymbolEventHandler
@@ -314,7 +353,12 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
 <summary>NSObject</summary>
 
 ```
-  MSAnalytics
+  BCReadWriteLock
+  MSAlignmentEngine
+  MSAlignmentEngineConstraint
+  MSAlignmentEngineResult
+  MSAlignmentEngineResultGuide
+  MSAlignmentEngineWorkings
   MSApplicationMetadata
   MSArchiveHeader
   MSArchivedColor
@@ -333,9 +377,10 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSAssetMigrationSources
   MSAssetPreferenceItem
   MSAssetSyncSheetHeader
-  MSAssetSyncSheetSymbol
+  MSAssetSyncSheetObject
   MSAttributeConverter
   MSAttributedString
+  MSAttributedStringAttribute
   MSAvailableOverride
     MSSymbolOverride
   MSBackgroundBlurRendererCG
@@ -351,6 +396,7 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
       MSJSONDictionaryUnarchiver
       MSJSONZippedUnarchiver
     MSKeyedUnarchiver
+  MSBeepSuppressor
   MSBezierBuilder
   MSBezierContour
   MSBezierFillet
@@ -366,12 +412,13 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSBitmapEditor
     MSBitmapMagicWandEditor
     MSBitmapRectangleEditor
+  MSBitmapShadowRendererCG
   MSBooleanOperationChain
   MSBooleanOperationChainStep
   MSBooleanOperations
   MSCGContextWrapper
   MSCacheManager
-  MSCloudController
+  MSCachedShadowMask
   MSCloudShareUploadController
   MSCloudUser
   MSColorArchivingFactory
@@ -380,15 +427,21 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSColorReplacementConverter
   MSColorSpaceConverter
   MSCommand
-  MSComponentsPanelSection
   MSConstantBaselineInfo
   MSCoreImageQueue
+  MSCornerRadiusInspectorValueAdaptorContext
   MSCrashLogManager
   MSCurvePointBehaviour
     MSCurvePointAsymmetricBehaviour
     MSCurvePointDisconnectedBehaviour
     MSCurvePointMirroredBehaviour
     MSCurvePointStraightBehaviour
+  MSDataMenuProvider
+  MSDataPreferenceItem
+  MSDataSupplier
+    MSLocalDataSupplier
+    MSPluginDataSupplier
+  MSDataSupplierManager
   MSDiff
   MSDocumentImporter
   MSDocumentReader
@@ -402,7 +455,9 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSDuplicateOffsetTracker
   MSEventHandlerManager
   MSExportManager
+  MSExportPreviewViewModel
   MSExportRequest
+    MSWebExportRequest
   MSExporter
     MSEPSExporter
     MSExportRendererWithSVGSupport
@@ -417,21 +472,31 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSFillRendererCG
   MSFlashController
   MSFlattenActionValidator
+  MSFlowMenuBuilder
+  MSFlowRendererCollector
   MSFolderMonitor
+    MSDataSupplierFileSystemMonitor
     MSFileMonitor
   MSFontList
-  MSForeignSymbolMenuBuilder
+  MSFontWatcher
+  MSForeignObjectCollector
+  MSForeignObjectProvider
+    MSForeignSymbolProvider
+    MSSharedLayerStyleProvider
+    MSSharedTextStyleProvider
   MSFrequentColorTracker
   MSGestureRecognizer
     MSClickGestureRecognizer
     MSDragGestureRecognizer
       MSDragRectGestureRecognizer
+      MSDragSegmentGestureRecognizer
       MSDragToMoveOrCopyGestureRecognizer
         MSDragHandleGestureRecognizer
         MSDragLayerGestureRecognizer
       MSDragToSelectGestureRecognizer
       MSResizeGestureRecognizer
     MSSelectVectorHandleGestureRecognizer
+  MSGoogleAnalyticsWrapper
   MSGridConstructor
   MSGridRendererCG
     MSLayoutGridRendererCG
@@ -446,6 +511,11 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSImageSizeReducer
   MSImmutableLayerAncestry
   MSInspectorNextResponderFixer
+  MSInspectorValueAdaptor
+    MSMathInspectorValueAdaptor
+      MSCoordinateInspectorValueAdaptor
+        MSSizeInspectorValueAdaptor
+      MSCornerRadiusInspectorValueAdaptor
   MSInterfaceColorFactory
   MSJSONArchiveReference
     MSJSONDataReference
@@ -457,33 +527,98 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSLayerCachedImage
   MSLayerFlattener
   MSLayerInserting
+  MSLayerMeasurementTarget
   MSLayerMovement
   MSLayerPaster
-  MSLayerPositionDrawing
   MSLayerRendererCG
     MSBitmapRendererCG
     MSGroupRendererCG
       MSArtboardRendererCG
+        MSSymbolMasterRendererCG
         MSSymbolRendererCG
       MSShapeRendererCG
     MSTextRendererCG
   MSLayerSelectionDrawing
   MSLayerSelector
-  MSLayerStylePreviewGenerator
-  MSLine
+  MSLayoutAnchor
+    MSLayoutPosition
+  MSLayoutRelationship
+  MSLoadedImageData
   MSMainSplitViewController
   MSManageForeignSymbolItem
   MSManifestMaker
     MSCloudManifestMaker
   MSMaskWithShape
+  MSMeasurementData
   MSMenuBuilder
     MSLayerPickerMenuBuilder
     MSReplaceWithSymbolMenuBuilder
   MSMirrorDataProvider
-  MSMirrorScaleCalculator
   MSModalInputSheet
   MSModelObjectCacheGeneration
   MSModelObjectCommon
+    MSImmutableModelObject
+      MSImmutableArray
+        MSImmutableAssetCollection
+          MSImmutablePersistentAssetCollection
+        MSImmutableBaseGrid
+            MSImmutableLayoutGrid
+            MSImmutableSimpleGrid
+        MSImmutableColor
+        MSImmutableCurvePoint
+        MSImmutableDocumentData
+        MSImmutableExportFormat
+        MSImmutableExportOptions
+        MSImmutableExportPreset
+        MSImmutableFlowConnection
+        MSImmutableForeignObject
+            MSImmutableForeignStyle
+                MSImmutableForeignLayerStyle
+                MSImmutableForeignTextStyle
+            MSImmutableForeignSymbol
+        MSImmutableGradient
+        MSImmutableGradientStop
+        MSImmutableGraphicsContextSettings
+        MSImmutableImageCollection
+        MSImmutableLayer
+            MSImmutableHotspotLayer
+            MSImmutableShapePathLayer
+                MSImmutableOvalShape
+                MSImmutablePolygonShape
+                MSImmutableRectangleShape
+                MSImmutableStarShape
+                MSImmutableTriangleShape
+            MSImmutableSliceLayer
+            MSImmutableStyledLayer
+                MSImmutableBitmapLayer
+                MSImmutableLayerGroup
+                    MSImmutableArtboardGroup
+                        MSImmutableSymbolMaster
+                    MSImmutablePage
+                    MSImmutableShapeGroup
+                MSImmutableSymbolInstance
+                MSImmutableTextLayer
+        MSImmutableRect
+        MSImmutableRulerData
+        MSImmutableShapePath
+        MSImmutableSharedObject
+            MSImmutableSharedStyle
+            MSImmutableSymbol
+        MSImmutableSharedObjectContainer
+            MSImmutableSharedStyleContainer
+                MSImmutableSharedTextStyleContainer
+            MSImmutableSymbolContainer
+        MSImmutableStyle
+        MSImmutableStylePart
+            MSImmutableStyleBasicFill
+                MSImmutableStyleBorder
+                MSImmutableStyleFill
+            MSImmutableStyleBlur
+            MSImmutableStyleBorderOptions
+            MSImmutableStyleColorControls
+            MSImmutableStyleShadow
+                MSImmutableStyleInnerShadow
+        MSImmutableTextStyle
     MSModelObject
         MSAssetCollection
           MSPersistentAssetCollection
@@ -496,12 +631,18 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
         MSExportFormat
         MSExportOptions
         MSExportPreset
-        MSForeignSymbol
+        MSFlowConnection
+        MSForeignObject
+            MSForeignStyle
+                MSForeignLayerStyle
+                MSForeignTextStyle
+            MSForeignSymbol
         MSGradient
         MSGradientStop
         MSGraphicsContextSettings
         MSImageCollection
         MSLayer
+            MSHotspotLayer
             MSShapePathLayer
                 MSOvalShape
                 MSPolygonShape
@@ -548,9 +689,14 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSNormalEventContextualMenuBuilder
   MSNormalEventData
   MSNullRenderer
-    MSOptionalRenderer
-      MSLayerAnnotationsRenderer
   MSOpacityKeyboardShortcutRecognizer
+  MSOperatingSystem
+  MSOptionalRenderer
+    MSLayerAnnotationsRenderer
+  MSOverlayRenderer
+    MSFlowRenderer
+    MSLayerMeasurementRenderer
+  MSOverrideMapping
   MSOverridePoint
   MSPDFBookExporter
   MSPDFImporter
@@ -560,24 +706,29 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSPageOverlayRendererCG
     MSPageOverlayRendererCGDebug
   MSPasteboardFileDataProvider
+  MSPasteboardImageProvider
   MSPasteboardImageWriter
   MSPasteboardImagesReader
     MSPasteboardInternalImageReader
-  MSPasteboardLayerArrayEncoder
+  MSPasteboardLayerListImageProvider
+  MSPasteboardLayerProvider
   MSPasteboardLayers
   MSPasteboardLayersBase
   MSPasteboardLayersReaderWriter
+    MSPasteboardLayerListReaderWriter
+    MSPasteboardPageListReaderWriter
   MSPasteboardManager
   MSPasteboardPDFReader
-  MSPasteboardPNGImageDataProvider
   MSPasteboardPathsReader
   MSPasteboardTextReader
+  MSPasteboardTextWriting
   MSPastingViewport
   MSPath
   MSPathController
   MSPathRendererCG
   MSPerspectiveInstructions
   MSPluginBundle
+  MSPluginBundleIconInfo
   MSPluginCommand
   MSPluginCommandSpecifier
   MSPluginDebugController
@@ -591,11 +742,6 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSPointArray
     MSGradientPointArray
   MSPointInsertion
-  MSPointSnapper
-  MSPointSnapperWorkings
-  MSPointSnappingGuide
-  MSPointSnappingResult
-  MSPointSnappingTarget
   MSPreferencesPluginInfo
   MSPreviewImageCache
   MSProfilingRenderer
@@ -603,12 +749,17 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSRenderMonitor
     MSAveragingRenderMonitor
   MSRenderingContext
-    MSExportRenderingContext
+    MSRenderingContextCG
+      MSExportRenderingContext
   MSRenderingDriver
     MSRenderingDriverCG
       MSRenderingDriverCGDebug
       MSRenderingDriverCGProfiling
+      MSRenderingDriverExport
+  MSRenderingDriverSettings
+  MSRenderingRequest
   MSResizeArtboardToFitValidator
+  MSRotationGestureInterpreter
   MSRulerGuides
   MSSVGBlendMode
   MSSVGImporter
@@ -619,14 +770,18 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSShapeChangeContext
   MSShapeEditingBehavior
   MSShareButtonHandler
+  MSShareableObjectReference
+    MSSharedStyleReference
+      MSSharedLayerReference
+      MSSharedTextReference
+    MSSymbolMasterReference
+  MSShareableObjectUpdater
   MSSidebarListController
     MSLayerListController
     MSPageListController
   MSSliceTrimming
-  MSSnapDrawInstruction
-    MSSnapDrawDistanceInstruction
-    MSSnapDrawSizeInstruction
-  MSSnapDrawing
+  MSSmartGuideDrawing
+    MSMeasurementDrawing
   MSSnapItem
     MSCompoundSnapItem
     MSRectSnapItem
@@ -634,25 +789,15 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
     MSTextSnapItem
   MSSnapper
   MSSnapperData
-  MSSnapperEdgeHelperBase
-    MSSnapperEdgeHelperBaseline
-      MSSnapperEdgeHelperMidXHeight
-    MSSnapperEdgeHelperBottom
-    MSSnapperEdgeHelperLeft
-    MSSnapperEdgeHelperMidX
-    MSSnapperEdgeHelperMidY
-    MSSnapperEdgeHelperRight
-    MSSnapperEdgeHelperTop
+  MSSnappingAccumulator
+  MSSnappingTarget
   MSSortableObjectMenuBuilder
-    MSSharedStyleMenuBuilder
-    MSSymbolsMenuBuilder
+    MSForeignObjectMenuBuilder
   MSStandardInspectorViewControllers
   MSSubtreeRoot
   MSSymbolCreator
-  MSSymbolMasterReference
   MSSymbolMasterReferenceDescriptor
   MSSymbolPreviewGenerator
-  MSTextColorProvider
   MSTextLayout
   MSTextStyleMenuPreview
   MSTilePlacer
@@ -673,6 +818,7 @@ Clone [sketch.d.ts example plugin](https://github.com/pravdomil/sketch.d.ts-exam
   MSWebExporter
   MSWelcomeCollectionItem
     MSExistingDocumentCollectionItem
+      MSCloudShareCollectionItem
     MSNewDocumentCollectionItem
   MSXMLElementWrapper
     MSSVGFilter
