@@ -15,27 +15,62 @@ declare module "sketch/dom" {
             /**
              * The native Sketch model object.
              */
-            sketchObject:NativeType;
+            readonly sketchObject:NativeType;
             /**
              * A string that represent the type of the component. If it’s undefined, it means that we couldn’t match the native object and that we returned a really lightweight wrapper.
              */
-            type:string|undefined;
+            readonly type:Types|undefined;
+            /**
+             * Returns the object ID of the wrapped Sketch model object.
+             */
+            readonly id:string;
+            /**
+             * returns if the component is wrapping an immutable version of a native Sketch model object. If that is the case, you won't be able to mutable the object (setting any property will be a no-op).
+             */
+            isImmutable():boolean;
+            /**
+             * Because the API objects are thin wrappers, they are created on demand and are
+             * thrown away regularly.
+             *
+             * No attempt is made to have a one-to-one correspondence between wrapper and model
+             * object - many wrapper instances may exist which point to the same model object.
+             *
+             * This is not the most efficient solution in some respects, but it's pragmatic and
+             * works well for simple cases.
+             * Because multiple wrappers might exist for a given model object, if you're
+             * testing two for equality, you should test the things that they wrap, rather than
+             * the wrapper objects themselves
+             */
+            isEqual(wrappedObject:Component):boolean;
         }
         
         export enum Types {
-            Document = "Document",
-            Page = "Page",
-            Group = "Group",
-            Artboard = "Artboard",
-            Image = "Image",
-            Shape = "Shape",
-            Text = "Text",
-            SymbolMaster = "SymbolMaster",
-            SymbolInstance = "SymbolInstance",
-            Flow = "Flow",
-            HotSpot = "HotSpot",
-            Library = "Library",
-            ImportableObject = "ImportableObject",
+            Group = 'Group',
+            Page = 'Page',
+            Artboard = 'Artboard',
+            Shape = 'Shape',
+            Style = 'Style',
+            Blur = 'Blur',
+            Border = 'Border',
+            BorderOptions = 'BorderOptions',
+            Fill = 'Fill',
+            Gradient = 'Gradient',
+            GradientStop = 'GradientStop',
+            Shadow = 'Shadow',
+            Image = 'Image',
+            Text = 'Text',
+            Document = 'Document',
+            Library = 'Library',
+            SymbolMaster = 'SymbolMaster',
+            SymbolInstance = 'SymbolInstance',
+            Override = 'Override',
+            ImageData = 'ImageData',
+            Flow = 'Flow',
+            HotSpot = 'HotSpot',
+            ImportableObject = 'ImportableObject',
+            SharedStyle = 'SharedStyle',
+            DataOverride = 'DataOverride',
+            ShapePath = 'ShapePath',
         }
         
         /**
@@ -102,6 +137,28 @@ declare module "sketch/dom" {
              */
             getLayersNamed(name:string):Layer[];
             /**
+             * A method to get all shared layer styles defined in the document.
+             * @return Return an array of the layer SharedStyle objects defined in the document.
+             */
+            getSharedLayerStyles():SharedStyle[];
+            /**
+             * A method to help find a shared style in the document.
+             * @param id The ID of the shared style to find
+             * @return Return a SharedStyle object or undefined if it's not found.
+             */
+            getSharedLayerStyleWithID(id:string):SharedStyle|undefined;
+            /**
+             * A method to get all shared text styles defined in the document.
+             * @return Return an array of the text SharedStyle objects defined in the document.
+             */
+            getSharedTextStyles():SharedStyle[];
+            /**
+             * A method to help find a shared style in the document.
+             * @param id The ID of the shared style to find
+             * @return Return a SharedStyle object or undefined if it's not found.
+             */
+            getSharedTextStyleWithID(id:string):SharedStyle|undefined;
+            /**
              * A method to get all symbol masters defined in the document.
              * @return Return an array of the SymbolMaster objects defined in the document.
              */
@@ -123,7 +180,7 @@ declare module "sketch/dom" {
              * @param options The options for the save operation (only used when specifing a path).
              * @param cb A function called after the document is saved. It is called with an Error if saving the Document was unsuccessful.
              */
-            save(path?:string, options?:{saveMode:SaveMode}, cb?:(err:any)=>void):void;
+            save(path?:string, options?:{saveMode:SaveMode, iKnowThatImOverwritingAFolder?:boolean}, cb?:(err:any)=>void):void;
             /**
              * A method to save a document to a specific path or ask the user to choose where to save it. The method is asynchronous so if you want to do something after the document is saved, make sure that you pass a callback and continue your script there.
              * @param path The path where the document will be saved. If undefined, the user will be asked to select one.
@@ -224,13 +281,14 @@ declare module "sketch/dom" {
             /**
              * The style of the layer.
              */
-            style: IStyle;
+            style: Style|IStyle;
         }
         
         export type LayerPropertyType = Layer |
             (GroupProperties & {type:Types.Group}) |
             (ImageProperties & {type:Types.Image}) |
             (ShapeProperties & {type:Types.Shape}) |
+            (ShapeProperties & {type:Types.ShapePath}) |
             (TextProperties & {type:Types.Text}) |
             (SymbolInstanceProperties & {type:Types.SymbolInstance}) |
             (HotSpotProperties & {type:Types.HotSpot});
@@ -258,7 +316,7 @@ declare module "sketch/dom" {
             /**
              * The style of the Group.
              */
-            style?: IStyle;
+            style?: Style|IStyle;
             /**
              * The layers that this Group has
              */
@@ -363,7 +421,7 @@ declare module "sketch/dom" {
             /**
              * The style of the Image.
              */
-            style?: IStyle;
+            style?: Style|IStyle;
             /**
              * The image property accept a wide range of input:
              * * an ImageData
@@ -393,9 +451,20 @@ declare module "sketch/dom" {
          * An ImageData is a wrapper around a native NSImage.
          * You can access the native NSImage with nsimage or a native NSData representation of the image with nsdata.
          */
-        export interface ImageData {
+        export abstract class ImageData extends Component<MSImageData> {
             readonly nsimage: NSImage;
             readonly nsdata: NSData;
+            /**
+             * The image property accept a wide range of input:
+             * * an ImageData
+             * * a native NSImage
+             * * a native NSURL
+             * * a native MSImageData
+             * * a string: path to the file to load the image from
+             * * an object with a path property: path to the file to load the image from
+             * * an object with a base64 string: a base64 encoded image
+             */
+            static from(input:ImageData|NSImage|NSURL|MSImageData|string|{path:string}|{base64:string}):ImageData;
         }
         
         export interface ShapeProperties {
@@ -418,10 +487,18 @@ declare module "sketch/dom" {
             /**
              * The style of the Shape.
              */
-            style?: IStyle;
+            style?: Style|IStyle;
         }
         
-        export class Shape extends StyledLayer<MSShapePathLayer> {
+        export class Shape extends Group<MSShapeGroup> {
+            /**
+             * The group the Shape is in.
+             */
+            parent: Group;
+            constructor(properties?:ShapeProperties);
+        }
+        
+        export class ShapePath extends StyledLayer<MSShapePathLayer> {
             /**
              * The group the Shape is in.
              */
@@ -449,7 +526,7 @@ declare module "sketch/dom" {
             /**
              * The style of the Text.
              */
-            style?: IStyle;
+            style?: Style|IStyle;
             /**
              * The string value of the text layer.
              */
@@ -598,11 +675,11 @@ declare module "sketch/dom" {
              */
             getAllInstances():SymbolInstance[];
             /**
-             * @return The Library the symbol was defined in, or undefined if it is a local symbol.
+             * @return The Library the symbol was defined in, or null if it is a local symbol.
              */
-            getLibrary():Library|undefined;
+            getLibrary():Library|null;
             /**
-             * If a Library has some updates, you can synchronize the local Symbol Master with the Library’s version and bypass the panel where the user chooses the updated to bring.
+             * If a Library has some updates, you can synchronize the local Symbol Master with the Library’s version and bypass the panel where the user chooses the updates to bring.
              * @return true if it succeeded.
              */
             syncWithLibrary():boolean;
@@ -633,7 +710,7 @@ declare module "sketch/dom" {
             /**
              * The style of the SymbolInstance.
              */
-            style?: IStyle;
+            style?: Style|IStyle;
             /**
              * The unique ID of the Symbol that the instance and its master share.
              */
@@ -656,7 +733,7 @@ declare module "sketch/dom" {
             /**
              * The array of the overrides to modify the instance.
              */
-            overrides:SymbolOverride[];
+            overrides:Override[];
             constructor(properties:SymbolInstanceProperties);
             /**
              * Replaces a group that contains a copy of the Symbol this instance refers to. Returns null if the master contains no layers instead of inserting an empty group
@@ -668,14 +745,14 @@ declare module "sketch/dom" {
              * @param override The override to change.
              * @param value The value of override to set. Can be a string or an NSImage or a symbolId depending on the type of the override.
              */
-            setOverrideValue(override:SymbolOverride, value:string|NSImage):this;
+            setOverrideValue(override:Override, value:string|NSImage):this;
         }
         
         /**
          * A Symbol override. This component is not exposed, it is only returned when accessing the overrides of a Symbol Instance.
          * Can't be constructed - only returned from a SymbolInstance
          */
-        export abstract class SymbolOverride extends Component<MSSymbolOverride> {
+        export abstract class Override extends Component<MSAvailableOverride> {
             /**
              * The path to the override. It’s formed by the symbolId of the nested symbols separated by a /.
              */
@@ -691,7 +768,7 @@ declare module "sketch/dom" {
             /**
              * If the override is a nested symbol override.
              */
-            symbolOverride: boolean;
+            Override: boolean;
             /**
              * The value of the override which can be change.
              */
@@ -700,6 +777,10 @@ declare module "sketch/dom" {
              * If the override hasn’t been changed and is the default value.
              */
             isDefault: boolean;
+            /**
+             * The layer the override applies to. It will be an immutable version of the layer
+             */
+            affectedLayer: Text|Image|SymbolInstance;
         }
         
         /**
@@ -842,12 +923,25 @@ declare module "sketch/dom" {
              * @returns The Document that the Library references. It can throw an error if the Document cannot be accessed.
              */
             getDocument():Document;
+            getImportableReferencesForDocument(document:Document, objectType: ImportableObjectType):ImportableObject[];
             /**
              * To import a symbol from a Library, do not access its Document and look for the SymbolMaster directly. Instead, get the Symbol References of the Library and use those to import them.
              * Those references depends on the document you want to import them into. For example if a document has already imported a symbol, it will reference the local version to keep all the instances in sync.
              * @return An array of ImportableObject that represents the Symbols which you can import from the Library.
              */
-            getImportableSymbolReferncesForDocument(document:Document):ImportableObject[];
+            getImportableSymbolReferencesForDocument(document:Document):ImportableObject[];
+            /**
+             * To import a shared style from a Library, do not access its Document and look for the SharedStyle directly. Instead, get the Shared Layer Style References of the Library and use those to import them.
+             * Those references depends on the document you want to import them into. For example if a document has already imported a shared style, it will reference the local version to keep all the instances in sync.
+             * @return An array of ImportableObject that represents the shared Layer styles which you can import from the Library.
+             */
+            getImportableLayerStyleReferencesForDocument(document:Document):ImportableObject[];
+            /**
+             * To import a shared style from a Library, do not access its Document and look for the SharedStyle directly. Instead, get the Shared Text Style References of the Library and use those to import them.
+             * Those references depends on the document you want to import them into. For example if a document has already imported a shared style, it will reference the local version to keep all the instances in sync.
+             * @return An array of ImportableObject that represents the shared Text styles which you can import from the Library.
+             */
+            getImportableTextStyleReferencesForDocument(document:Document):ImportableObject[];
             /**
              * Enumeration of the types of Library.
              */
@@ -858,10 +952,12 @@ declare module "sketch/dom" {
             static ImportableObjectType: typeof ImportableObjectType;
         }
         
+        type ImportableNative = MSShareableObjectReference | MSSymbolMasterReference |
+            MSSharedStyleReference | MSSharedLayerReference | MSSharedTextReference;
         /**
          * An Object that can imported from a Library. All its properties are read-only.
          */
-        export interface ImportableObject {
+        export abstract class ImportableObject extends Component<ImportableNative> {
             /**
              * The unique ID of the Object.
              */
@@ -871,9 +967,9 @@ declare module "sketch/dom" {
              */
             readonly name: string;
             /**
-             * The type of the Object. Will only be Library.ImportableObjectType.Symbol for now.
+             * The type of the Object.
              */
-            readonly objectType :ImportableObjectType;
+            readonly objectType: ImportableObjectType;
             /**
              * The Library the Object is part of.
              */
@@ -886,7 +982,9 @@ declare module "sketch/dom" {
         }
         
         enum ImportableObjectType {
-            Symbol
+            Symbol,
+            LayerStyle,
+            TextStyle
         }
         
         enum LibraryType {
@@ -956,7 +1054,7 @@ declare module "sketch/dom" {
             scale(scaleWidth:number, scaleHeight:number):this;
             /**
              * Each layer defines its own system of coordinates (with its origin at the top left of the layer). You can change that basis from one layer to the other with changeBasis.
-             * Both from and to can be ommited (but not at the same time) to change the basis from/to the Page coordinates.
+             * Both from and to can be omitted (but not at the same time) to change the basis from/to the Page coordinates.
              */
             changeBasis(change:{from?:Layer, to?:Layer}):Rectangle;
             /**
@@ -1000,7 +1098,7 @@ declare module "sketch/dom" {
             /**
              * The inner shadows of a Layer.
              */
-            innerShaddows?: Shadow[];
+            innerShadows?: Shadow[];
         }
         
         /**
@@ -1173,6 +1271,48 @@ declare module "sketch/dom" {
             color: string;
         }
         
+        export class Style extends Component<MSStyle> {
+            /**
+             * The opacity of a Layer, between 0 (transparent) and 1 (opaque).
+             */
+            opacity?: number;
+            /**
+             * The opacity of a Layer, between 0 (transparent) and 1 (opaque).
+             */
+            blendingMode?: Style.BlendingMode;
+            /**
+             * The blur applied to the Layer.
+             */
+            blur?: Blur;
+            /**
+             * The fills of a Layer.
+             */
+            fills?: Fill[];
+            /**
+             * The borders of a Layer.
+             */
+            borders?: Border[];
+            /**
+             * The options that the borders share.
+             */
+            borderOptions?: BorderOptions;
+            /**
+             * The shadows of a Layer.
+             */
+            shadows?: Shadow[];
+            /**
+             * The inner shadows of a Layer.
+             */
+            innerShadows?: Shadow[];
+            /**
+             * @return Whether the Style has some differences with the Shared Style it is linked to. In case it isn't linked to any, returns false.
+             */
+            isOutOfSyncWithSharedStyle():boolean;
+            /**
+             * The style instance will be updated with the value of the Shared Style.
+             */
+            syncWithSharedStyle():void;
+        }
         export namespace Style {
             export enum BlendingMode {
                 Normal,
@@ -1282,19 +1422,77 @@ declare module "sketch/dom" {
             }
         }
         
+        export abstract class SharedStyle extends Component<MSSharedStyle> {
+            /**
+             * The unique ID of the Shared Style.
+             */
+            id: string;
+            /**
+             * The type of the Shared Style (Layer or Text).
+             */
+            styleType: StyleType;
+            /**
+             * The name of the Shared Style.
+             */
+            name: string;
+            /**
+             * The Style value that is shared.
+             */
+            style: Style;
+            static StyleType: typeof StyleType;
+            /**
+             * Create a new Shared Style with a specific name in a specific Document.
+             */
+            static fromStyle(options:{name:string, style:IStyle, document:Document}):SharedStyle;
+            /**
+             * Creates a new Style linked to this SharedStyle, ready for inserting in a layer.
+             */
+            createNewInstance():Style;
+            /**
+             * Returns an array of all instances of the Shared Style in the document, on all pages.
+             */
+            getAllInstances():Style[];
+            /**
+             * Returns an array of all layers with a Style which is an instance of the Shared Style in the document, on all pages.
+             */
+            getAllInstancesLayers():Layer[];
+            /**
+             * @return The Library the style was defined in, or undefined if it is a local style.
+             */
+            getLibrary():Library|undefined;
+            /**
+             * If a Library has some updates, you can synchronize the local Shared Style with the Library's version and bypass the panel where the user chooses the updates to bring.
+             * @return true if it succeeded.
+             */
+            syncWithLibrary():boolean;
+            /**
+             * You can unlink a Shared Style from the Library it comes from and make it a local Shared Style instead.
+             * @return true if it succeeded.
+             */
+            unlinkFromLibrary():boolean;
+        }
+        
+        enum StyleType {
+            Layer = "Layer",
+            Text = "Text"
+        }
+        
         export function fromNative(nativeObject:MSDocument):Document;
-        export function fromNative(nativeObject:MSLayer):Layer;
         export function fromNative(nativeObject:MSLayerGroup):Group;
         export function fromNative(nativeObject:MSPage):Page;
         export function fromNative(nativeObject:MSArtboardGroup):Artboard;
         export function fromNative(nativeObject:MSBitmapLayer):Image;
-        export function fromNative(nativeObject:MSShapePathLayer):Shape;
+        export function fromNative(nativeObject:MSShapeGroup):Shape;
+        export function fromNative(nativeObject:MSShapePathLayer):ShapePath;
         export function fromNative(nativeObject:MSTextLayer):Text;
         export function fromNative(nativeObject:MSSymbolMaster):SymbolMaster;
         export function fromNative(nativeObject:MSSymbolInstance):SymbolInstance;
-        export function fromNative(nativeObject:MSSymbolOverride):SymbolOverride;
+        export function fromNative(nativeObject:MSAvailableOverride):Override;
         export function fromNative(nativeObject:MSHotspotLayer):HotSpot;
         export function fromNative(nativeObject:MSAssetLibrary):Library;
+        export function fromNative(nativeObject:MSStyle):Style;
+        export function fromNative(nativeObject:MSSharedStyle):SharedStyle;
+        export function fromNative(nativeObject:ImportableNative):ImportableObject;
         /**
          * A utility function to get a wrapped object from a native Sketch model object.
          * @param nativeObject The native Sketch model object to wrap.
@@ -1380,7 +1578,7 @@ declare module "sketch/ui" {
          * Shows a simple input sheet which displays a message, and asks for a single string input.
          * @param message The prompt message to show.
          * @param initialValue The initial value of the input string.
-         * @return The string that the user input.
+         * @return The string that the user input, or "null" (String) if the user clicked 'Cancel'.
          */
         export function getStringFromUser(message:string, initialValue?:string):string;
         /**
@@ -1419,6 +1617,7 @@ declare module "sketch/async" {
 
 declare module "sketch/settings" {
     import dom = require("sketch/dom");
+    import data = require("sketch/data-supplier");
     /**
      * A set of functions to handle user settings. The settings are persisted when the user closes Sketch.
      */
@@ -1453,14 +1652,14 @@ declare module "sketch/settings" {
          * @param key The setting to look up.
          * @return The setting that was stored for the given key. undefined if there was nothing
          */
-        export function layerSettingForKey(layer:dom.Layer, key:string):any;
+        export function layerSettingForKey(layer:dom.Layer|dom.Override|data.DataOverride, key:string):any;
         /**
          * Store a value of a setting for a given key on a specific layer.
          * @param layer The layer on which the setting is set.
          * @param key The setting to set.
          * @param value The value to set it to.
          */
-        export function setLayerSettingForKey(layer:dom.Layer, key:string, value:any):void;
+        export function setLayerSettingForKey(layer:dom.Layer|dom.Override|data.DataOverride, key:string, value:any):void;
         /**
          * Return the value of a setting for a given key on a specific document
          * @param document The document on which a setting is stored.
@@ -1511,19 +1710,19 @@ declare module "sketch/data-supplier" {
         /**
          * A special object passed in the context of the action to supply data when the item is an Override.
          */
-        export interface DataOverride {
+        export abstract class DataOverride extends dom.Component<MSDataOverride> {
             /**
              * The name of the override.
              */
-            id: string;
+            readonly id: string;
             /**
              * The override whose value will replaced by the supplied data.
              */
-            override: dom.SymbolOverride;
+            readonly override: dom.Override;
             /**
              * The symbol instance that the override is on that will have the data replaced.
              */
-            symbolInstance: dom.SymbolInstance
+            readonly symbolInstance: dom.SymbolInstance
         }
         /**
          * When the plugin providing the dynamic data has finished generating the data (could be an asynchronous operation), it will call this function with the data key and the data.
@@ -1575,6 +1774,7 @@ declare module "sketch" {
         export import ImageData = dom.ImageData;
         export import ShapeProperties = dom.ShapeProperties;
         export import Shape = dom.Shape;
+        export import ShapePath = dom.ShapePath;
         export import TextProperties = dom.TextProperties;
         export import Text = dom.Text;
         export import TextFragment = dom.TextFragment;
@@ -1582,7 +1782,7 @@ declare module "sketch" {
         export import SymbolMaster = dom.SymbolMaster;
         export import SymbolInstanceProperties = dom.SymbolInstanceProperties;
         export import SymbolInstance = dom.SymbolInstance;
-        export import SymbolOverride = dom.SymbolOverride;
+        export import Override = dom.Override;
         export import FlowProperty = dom.FlowProperty;
         export import Flow = dom.Flow;
         export import HotSpotProperties = dom.HotSpotProperties;
@@ -1600,6 +1800,7 @@ declare module "sketch" {
         export import Gradient = dom.Gradient;
         export import GradientStop = dom.GradientStop;
         export import Style = dom.Style;
+        export import SharedStyle = dom.SharedStyle;
         export import fromNative = dom.fromNative;
         export import ExportOptions = dom.ExportOptions;
         
