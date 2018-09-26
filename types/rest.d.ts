@@ -227,6 +227,7 @@ declare class MSRenderer {}
 declare class MSProfilingRendererDelegate {}
 declare class CATextLayer {}
 declare class _NSRange {}
+declare class NSRange {}
 declare class NSValue {}
 declare class CGVector {
     dx: CGFloat;
