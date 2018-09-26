@@ -1,17 +1,16 @@
 /// <reference path="./sketch.d.ts" />
 declare module "sketch/dom" {
-    interface dom {
+    class dom {
         /**
          * Export an object, using the options supplied.
          * @param objectToExport The object to export.
          * @param options Options indicating which sizes and formats to use, etc..
          */
-        export(objectToExport:dom.Layer|dom.Layer[]|dom.Page|dom.Page[], options?:dom.ExportOptions):void;
+        static export(objectToExport:dom.Layer|dom.Layer[]|dom.Page|dom.Page[], options?:dom.ExportOptions):void;
     }
     namespace dom {
         class Component<NativeType = any> {
             static fromNative<NativeType>(nativeObject:NativeType):Component<NativeType>;
-            constructor(properties?:any);
             toJSON():any;
             /**
              * The native Sketch model object.
@@ -22,6 +21,23 @@ declare module "sketch/dom" {
              */
             type:string|undefined;
         }
+        
+        export enum Types {
+            Document = "Document",
+            Page = "Page",
+            Group = "Group",
+            Artboard = "Artboard",
+            Image = "Image",
+            Shape = "Shape",
+            Text = "Text",
+            SymbolMaster = "SymbolMaster",
+            SymbolInstance = "SymbolInstance",
+            Flow = "Flow",
+            HotSpot = "HotSpot",
+            Library = "Library",
+            ImportableObject = "ImportableObject",
+        }
+        
         /**
          * Access the selected Document
          * @return The selected Document or undefined if no document is open.
@@ -56,9 +72,15 @@ declare module "sketch/dom" {
              */
             static open(path:string, cb:(err:any, document?:Document|undefined)=>void):void;
             static SaveMode:typeof SaveMode;
+            /**
+             * The unique ID of the document.
+             */
             id: string;
+            /**
+             * The pages of the document.
+             */
             pages: Page[];
-            //TODO: constructor properties
+            constructor();
             /**
              * A read-only property to get the current page that the user has selected.
              */
@@ -134,7 +156,7 @@ declare module "sketch/dom" {
             SaveTo
         }
         
-        export class Layer<NativeType extends MSLayer = MSLayer> extends Component<NativeType> {
+        export abstract class Layer<NativeType extends MSLayer = MSLayer> extends Component<NativeType> {
             /**
              * The unique ID of the Layer. (not to be confused with symbolId on SymbolInstances)
              */
@@ -205,44 +227,166 @@ declare module "sketch/dom" {
             style: IStyle;
         }
         
+        export type LayerPropertyType = Layer |
+            (GroupProperties & {type:Types.Group}) |
+            (ImageProperties & {type:Types.Image}) |
+            (ShapeProperties & {type:Types.Shape}) |
+            (TextProperties & {type:Types.Text}) |
+            (SymbolInstanceProperties & {type:Types.SymbolInstance}) |
+            (HotSpotProperties & {type:Types.HotSpot});
+        
+        export type LayersPropertyType = LayerPropertyType[];
+        
+        
+        export interface GroupProperties {
+            /**
+             * The name of the Group
+             */
+            name?:string;
+            /**
+             * The group the Group is in.
+             */
+            parent?:Group;
+            /**
+             * The frame of the Group. This is given in coordinates that are local to the parent of the layer.
+             */
+            frame?:Rectangle;
+            /**
+             * The prototyping action associated with the Group.
+             */
+            flow?:FlowProperty;
+            /**
+             * The style of the Group.
+             */
+            style?: IStyle;
+            /**
+             * The layers that this Group has
+             */
+            layers?: LayersPropertyType;
+        }
+        
         export class Group<NativeType extends MSLayerGroup = MSLayerGroup> extends StyledLayer<NativeType> {
             /**
              * The layers that this component groups together.
              */
             layers:Layer[];
-            // TODO: type properties here - https://developer.sketchapp.com/reference/api/#create-a-new-group
-            constructor(properties?:any);
+            constructor(properties?:GroupProperties);
             /**
              * Adjust the group to fit its children.
              */
             adjustToFit():this;
         }
         
+        export interface PageProperties {
+            /**
+             * The name of the Page
+             */
+            name?:string;
+            /**
+             * The document the page is in.
+             */
+            parent?: Document;
+            /**
+             * The layers that this page has
+             */
+            layers?: LayersPropertyType;
+            /**
+             * The frame of the page
+             */
+            frame?: Rectangle;
+        }
+        
         export class Page extends Group<MSPage> {
-            //TODO: constructor properties
-            constructor();
+            /**
+             * The document the page is in.
+             */
+            parent: Document;
+            constructor(properties?:PageProperties);
             /**
              * A read-only property to get the layers that the user has selected in the page.
              */
             readonly selectedLayers:Selection;
         }
         
+        export interface ArtboardProperties {
+            /**
+             * The name of the Artboard
+             */
+            name?:string;
+            /**
+             * The document the Artboard is in.
+             */
+            parent?: Page;
+            /**
+             * The layers that this component groups together
+             */
+            layers?: LayersPropertyType;
+            /**
+             * The frame of the page
+             */
+            frame?: Rectangle;
+            /**
+             * A Start Point allows you to choose where to start your prototype from.
+             */
+            flowStartPoint?:boolean;
+        }
+        
         export class Artboard<NativeType extends MSArtboardGroup = MSArtboardGroup> extends Group<MSArtboardGroup> {
+            /**
+             * The page the Artboard is in.
+             */
+            parent: Page;
             /**
              * A Start Point allows you to choose where to start your prototype from.
              */
             flowStartPoint:boolean;
-            //TODO: constructor properties
-            constructor();
+            constructor(properties?:ArtboardProperties);
+        }
+        
+        export interface ImageProperties {
+            /**
+             * The name of the Image
+             */
+            name?:string;
+            /**
+             * The group the Image is in.
+             */
+            parent?:Group;
+            /**
+             * The frame of the Image. This is given in coordinates that are local to the parent of the layer.
+             */
+            frame?:Rectangle;
+            /**
+             * The prototyping action associated with the Image.
+             */
+            flow?:FlowProperty;
+            /**
+             * The style of the Image.
+             */
+            style?: IStyle;
+            /**
+             * The image property accept a wide range of input:
+             * * an ImageData
+             * * a native NSImage
+             * * a native NSURL
+             * * a native MSImageData
+             * * a string: path to the file to load the image from
+             * * an object with a path property: path to the file to load the image from
+             * * an object with a base64 string: a base64 encoded image
+             */
+            image?: ImageData|NSImage|NSURL|MSImageData|string|{path:string}|{base64:string};
         }
         
         export class Image extends StyledLayer<MSBitmapLayer> {
             /**
+             * The group the Image is in.
+             */
+            parent: Group;
+            /**
              * The actual image of the layer.
              */
             image: ImageData;
-            //TODO: constructor data
-            constructor();
+            constructor(properties?:ImageProperties);
         }
         
         /**
@@ -254,11 +398,81 @@ declare module "sketch/dom" {
             readonly nsdata: NSData;
         }
         
+        export interface ShapeProperties {
+            /**
+             * The name of the Shape
+             */
+            name?:string;
+            /**
+             * The group the Shape is in.
+             */
+            parent?:Group;
+            /**
+             * The frame of the Shape. This is given in coordinates that are local to the parent of the layer.
+             */
+            frame?:Rectangle;
+            /**
+             * The prototyping action associated with the Shape.
+             */
+            flow?:FlowProperty;
+            /**
+             * The style of the Shape.
+             */
+            style?: IStyle;
+        }
+        
         export class Shape extends StyledLayer<MSShapePathLayer> {
-            //TODO: constructors
+            /**
+             * The group the Shape is in.
+             */
+            parent: Group;
+            constructor(properties?:ShapeProperties);
+        }
+        
+        export interface TextProperties {
+            /**
+             * The name of the Text
+             */
+            name?:string;
+            /**
+             * The group the Text is in.
+             */
+            parent?:Group;
+            /**
+             * The frame of the Text. This is given in coordinates that are local to the parent of the layer.
+             */
+            frame?:Rectangle;
+            /**
+             * The prototyping action associated with the Text.
+             */
+            flow?:FlowProperty;
+            /**
+             * The style of the Text.
+             */
+            style?: IStyle;
+            /**
+             * The string value of the text layer.
+             */
+            text?:string;
+            /**
+             * The alignment of the layer.
+             */
+            alignment?:Alignment;
+            /**
+             * The line spacing of the layer.
+             */
+            lineSpacing?:LineSpacing;
+            /**
+             * Whether the layer should have a fixed width or a flexible width.
+             */
+            fixedWidth?:boolean;
         }
         
         export class Text extends StyledLayer<MSTextLayer> {
+            /**
+             * The group the Text is in.
+             */
+            parent: Group;
             /**
              * The string value of the text layer.
              */
@@ -283,7 +497,7 @@ declare module "sketch/dom" {
              * Enumeration of the line spacing behaviour for the text.
              */
             static LineSpacing:typeof LineSpacing;
-            //TODO: Constructor properties
+            constructor(properties?:TextProperties);
             /**
              * Adjust the Text to fit its value.
              */
@@ -342,9 +556,27 @@ declare module "sketch/dom" {
             range: NSRange;
         }
         
+        export interface SymbolMasterProperties {
+            /**
+             * The name of the SymbolMaster
+             */
+            name?:string;
+            /**
+             * The frame of the SymbolMaster. This is given in coordinates that are local to the parent of the layer.
+             */
+            frame?:Rectangle;
+            /**
+             * The prototyping action associated with the SymbolMaster.
+             */
+            flow?:FlowProperty;
+        }
+        
         export class SymbolMaster extends Artboard<MSSymbolMaster> {
+            /**
+             * The unique ID of the Symbol that the master and its instances share.
+             */
             symbolID:string;
-            //TODO constructor properties
+            constructor(properties?:SymbolMasterProperties);
             /**
              * Replace the artboard with a symbol master.
              * @param artboard The artboard to create the master from.
@@ -381,7 +613,38 @@ declare module "sketch/dom" {
             unlinkFromLibrary():boolean;
         }
         
+        export interface SymbolInstanceProperties {
+            /**
+             * The name of the SymbolInstance
+             */
+            name?:string;
+            /**
+             * The group the SymbolInstance is in.
+             */
+            parent?:Group;
+            /**
+             * The frame of the SymbolInstance. This is given in coordinates that are local to the parent of the layer.
+             */
+            frame?:Rectangle;
+            /**
+             * The prototyping action associated with the SymbolInstance.
+             */
+            flow?:FlowProperty;
+            /**
+             * The style of the SymbolInstance.
+             */
+            style?: IStyle;
+            /**
+             * The unique ID of the Symbol that the instance and its master share.
+             */
+            symbolID:string;
+        }
+        
         export class SymbolInstance extends StyledLayer<MSSymbolInstance> {
+            /**
+             * The group the SymbolInstance is in.
+             */
+            parent: Group;
             /**
              * The unique ID of the Symbol that the instance and its master share.
              */
@@ -394,6 +657,7 @@ declare module "sketch/dom" {
              * The array of the overrides to modify the instance.
              */
             overrides:SymbolOverride[];
+            constructor(properties:SymbolInstanceProperties);
             /**
              * Replaces a group that contains a copy of the Symbol this instance refers to. Returns null if the master contains no layers instead of inserting an empty group
              * @return A new Group or null
@@ -501,11 +765,30 @@ declare module "sketch/dom" {
             export const BackTarget: unique symbol;
         }
         
+        export interface HotSpotProperties {
+            /**
+             * The name of the HotSpot
+             */
+            name?:string;
+            /**
+             * The group the HotSpot is in.
+             */
+            parent?:Group;
+            /**
+             * The frame of the HotSpot. This is given in coordinates that are local to the parent of the layer.
+             */
+            frame?:Rectangle;
+            /**
+             * The prototyping action associated with the HotSpot.
+             */
+            flow?:FlowProperty;
+        }
+        
         /**
          * A Sketch hotspot. It is an instance of both Layer so all the methods defined there are available.
          */
         export class HotSpot extends Layer<MSHotspotLayer> {
-            //TODO: constructor properties
+            constructor(properties?:HotSpotProperties);
             static fromLayer(layer:Layer):HotSpot;
         }
         
@@ -1197,10 +1480,67 @@ declare module "sketch/settings" {
 }
 
 declare module "sketch/data-supplier" {
+    import dom = require("sketch/dom");
     namespace data {
+        /**
+         * Register some data with a name and a key.
+         * @param type The data type. Currently public.text or public.image are the only allowed values.
+         * @param name The data name, will be used as the menu item title for the data.
+         * @param action The name of the Action that will be dispatched when the user requests some data. See supplyData.
+         */
         export function registerDataSupplier(type:'public.text'|'public.image', name:string, action:string):void;
+        /**
+         * The argument of the function called when you need to supply some data contains some very important information.
+         */
+        export interface DataSupplierContext extends SketchContext {
+            data: {
+                /**
+                 * The number of data you need to supply
+                 */
+                count: number;
+                /**
+                 * A unique key to identify the supply request. You need to pass it to the supply method untouched.
+                 */
+                key: string;
+                /**
+                 * The array of native model objects for which we want some data. It can be either a native Text, a native Image or a native DataOverride (a special object when the data is for an Override)
+                 */
+                items: (dom.Text|dom.Image|DataOverride)[];
+            }
+        }
+        /**
+         * A special object passed in the context of the action to supply data when the item is an Override.
+         */
+        export interface DataOverride {
+            /**
+             * The name of the override.
+             */
+            id: string;
+            /**
+             * The override whose value will replaced by the supplied data.
+             */
+            override: dom.SymbolOverride;
+            /**
+             * The symbol instance that the override is on that will have the data replaced.
+             */
+            symbolInstance: dom.SymbolInstance
+        }
+        /**
+         * When the plugin providing the dynamic data has finished generating the data (could be an asynchronous operation), it will call this function with the data key and the data.
+         * @param key Should be equal to context.data.key
+         * @param data The list of values to provide. In case of public.image, the string is the path to the image. It needs to have a length equal to the context.data.count
+         */
         export function supplyData(key:string, data:string[]):void;
+        /**
+         * When the plugin providing the dynamic data has finished generating the datum (could be an asynchronous operation), it will call this function with the data key and the datum.
+         * @param key Should be equal to context.data.key
+         * @param datum The value to provide. In case of public.image, the string is the path to the image. It needs to have a length equal to the context.data.count
+         * @param index The index of the item you are providing a value for.
+         */
         export function supplyDataAtIndex(key:string, datum:string, index:number):void;
+        /**
+         * When registering something, it is good practice to clean up after it. This is especially useful if when your plugin will be updated: the Shutdown Action will be called before the Startup will. It gives you the opportunity to update your handler cleanly.
+         */
         export function deregisterDataSuppliers():void;
     }
     export = data;
@@ -1212,10 +1552,58 @@ declare module "sketch" {
     import settings = require("sketch/settings");
     import async = require("sketch/async");
     import data = require("sketch/data-supplier");
+    class sketch {
+        static export: typeof dom.export;
+    }
     namespace sketch {
         // it'd be really nice if we could export * from dom, but https://github.com/Microsoft/TypeScript/issues/4336
+        export import Types = dom.Types;
+        export import getSelectedDocument = dom.getSelectedDocument;
+        export import getDocuments = dom.getDocuments;
         export import Document = dom.Document;
+        export import Layer = dom.Layer;
+        export import LayerPropertyType = dom.LayerPropertyType;
+        export import LayersPropertyType = dom.LayersPropertyType;
+        export import GroupProperties = dom.GroupProperties;
+        export import Group = dom.Group;
+        export import PageProperties = dom.PageProperties;
+        export import Page = dom.Page;
+        export import ArtboardProperties = dom.ArtboardProperties;
+        export import Artboard = dom.Artboard;
+        export import ImageProperties = dom.ImageProperties;
+        export import Image = dom.Image;
+        export import ImageData = dom.ImageData;
+        export import ShapeProperties = dom.ShapeProperties;
+        export import Shape = dom.Shape;
+        export import TextProperties = dom.TextProperties;
+        export import Text = dom.Text;
+        export import TextFragment = dom.TextFragment;
+        export import SymbolMasterProperties = dom.SymbolMasterProperties;
+        export import SymbolMaster = dom.SymbolMaster;
+        export import SymbolInstanceProperties = dom.SymbolInstanceProperties;
+        export import SymbolInstance = dom.SymbolInstance;
+        export import SymbolOverride = dom.SymbolOverride;
+        export import FlowProperty = dom.FlowProperty;
+        export import Flow = dom.Flow;
+        export import HotSpotProperties = dom.HotSpotProperties;
+        export import HotSpot = dom.HotSpot;
+        export import Library = dom.Library;
+        export import ImportableObject = dom.ImportableObject;
+        export import Selection = dom.Selection;
+        export import Rectangle = dom.Rectangle;
+        export import IStyle = dom.IStyle;
+        export import Blur = dom.Blur;
+        export import Fill = dom.Fill;
+        export import Border = dom.Border;
+        export import BorderOptions = dom.BorderOptions;
+        export import Shadow = dom.Shadow;
+        export import Gradient = dom.Gradient;
+        export import GradientStop = dom.GradientStop;
+        export import Style = dom.Style;
+        export import fromNative = dom.fromNative;
+        export import ExportOptions = dom.ExportOptions;
         
+        // other modules that are exposed as sub-modules
         export import UI = ui;
         
         export import Settings = settings;
