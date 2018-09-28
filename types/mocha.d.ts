@@ -1,6 +1,7 @@
 declare class Mocha {
     static sharedRuntime(): Mocha;
     globalSymbolNames(): NSArray;
+    loadFrameworkWithName_inDirectory(name:string, dir:string): void;
     // there's more https://github.com/logancollins/Mocha/blob/master/Mocha/MochaRuntime.h
 }
 

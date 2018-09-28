@@ -2,7 +2,7 @@ declare interface SketchContext {
     api(): any;
     command: MSPluginCommand;
     document: MSDocument;
-    scriptPath: NSString;
+    scriptPath: string;
     scriptURL: NSURL;
     selection: NSArray;
 }
@@ -17,8 +17,23 @@ SCK*: More Sketch classes
 others are likely more Sketch things
 */
 
-declare const NSUTF8StringEncoding: number;
+/**
+ * Instance properties in Mocha are set up as setters for the value type directly, and a
+ * getter that returns a method that gets the value. We can't document this properly
+ * in TypeScript, so we'll have to settle for this, and type your getters.
+ */
+type MochaProperty<T> = T | (()=>T);
 
+declare const NSUTF8StringEncoding: number;
+declare const NSViewWidthSizable: number;
+declare const NSViewHeightSizable: number;
+declare const NSTitledWindowMask: number;
+declare const NSWindowStyleMaskClosable: number;
+declare const NSResizableWindowMask: number;
+declare const NSBackingStoreBuffered: number;
+
+declare function NSClassFromString(name:string):any;
+declare function NSMakeRect(x:number, y:number, w:number, h:number):NSRect;
 declare class AFAmazonS3Manager {}
 declare class BCCache {}
 declare class BCColorPickerBaseView {}
@@ -93,10 +108,10 @@ declare class MSTilePlacerDelegate {}
 declare class MSTileRenderOperationDelegate {}
 declare class MSVectorCanvasDelegate {}
 declare class NSAffineTransform {}
-declare class NSArray {
-    [index: number]: NSObject;
+declare class NSArray<T = NSObject> {
+    [index: number]: T;
     count(): number;
-    objectAtIndex(index: number): NSObject;
+    objectAtIndex(index: number): T;
 }
 declare class NSArrayController {}
 declare class NSATSTypesetter {}
@@ -118,7 +133,9 @@ declare class NSControl {}
 declare class NSCursor {}
 declare class NSData {}
 declare class NSDate {}
-declare class NSDictionary {}
+declare class NSDictionary {
+    [key:string]:any;
+}
 declare class NSDocument {}
 declare class NSDocumentController {}
 declare class NSEdgeInsets {}
@@ -148,7 +165,7 @@ declare class NSMutableDictionary {}
 declare class NSMutableSet {}
 declare class NSMutableString {}
 declare class NSNib {}
-declare class NSNumber {}
+declare class NSNumber extends Number {}
 declare class NSNumberFormatter {}
 declare class NSObject {
     class(): any;
@@ -174,7 +191,7 @@ declare class NSSlider {}
 declare class NSSplitView {}
 declare class NSStackView {}
 declare class NSStoryboard {}
-declare class NSString {
+declare class NSString extends String {
     static stringWithContentsOfFile_encoding_error(...args: any[]): any;
     static stringWithFormat(...args: any[]): any;
 }
@@ -192,11 +209,18 @@ declare class NSTouchBarItem {}
 declare class NSUndoManager {}
 declare class NSURL {
     static URLWithString(url: string): NSURL;
+    static fileURLWithPath(path:string): NSURL;
 }
 declare class NSURLSession {}
-declare class NSView {}
+declare class NSView {
+    adjustSubviews():void;
+    subviews: MochaProperty<NSArray<NSView>|NSView[]>;
+    identifier: MochaProperty<string>;
+}
 declare class NSViewController {}
-declare class NSWindow {}
+declare class NSWindow {
+    contentView(): NSView;
+}
 declare class NSWindowController {}
 declare class NSWorkspace {
     static sharedWorkspace(): NSWorkspace;
@@ -218,7 +242,9 @@ declare class _CHTransformStruct {}
 declare class SCKAvatar {}
 declare class SCKShareUploadOperation {}
 declare class NSProgress {}
-declare class NSPanel {}
+declare class NSPanel {
+    static alloc():any;
+}
 declare class BCSingleton {}
 declare class _MSImmutableOverrideValue {}
 declare class MSOverlayRenderingDelegate {}
@@ -233,7 +259,7 @@ declare class CGVector {
     dx: CGFloat;
     dy: CGFloat;
 }
-declare class CGFloat {}
+declare class CGFloat extends Number {}
 declare class NSCopying {}
 declare class NSFileWrapper {}
 declare class NSURLSessionDataTask {}
@@ -243,13 +269,18 @@ declare class NSMutableURLRequest {}
 declare class SCKAPIAuthentication {}
 declare class SCKAPISignable {}
 declare class SCKArtboardViewport {}
-declare class NSURLRequest {}
+declare class NSURLRequest {
+    static requestWithURL(url:NSURL):NSURLRequest;
+}
 declare class NSURLSessionDownloadTask {}
 declare class NSUUID {}
 declare class NSURLSessionUploadTask {}
 declare class SCKShareUploadDataSource {}
 declare class WKWebView extends NSView {
 	static alloc():any;
+    loadRequest(request:NSURLRequest):void;
+    setAutoresizingMask(mask:number):void;
+    evaluateJavaScript_completionHandler(js:string, cb:()=>void):void;
 }
 declare class WKWebViewConfiguration {
     static alloc():any;
@@ -315,3 +346,8 @@ declare class MSSymbolInstanceSectionDelegate {}
 declare class MSTextHeaderInspectorItemDelegate {}
 declare class MSGPURenderer {}
 declare class MSInspectorItemProvider {}
+declare class NSRect {}
+declare class NSThread {
+    static mainThread():NSThread;
+    threadDictionary():NSDictionary;
+}
