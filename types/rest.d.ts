@@ -6,7 +6,7 @@ declare interface SketchContext {
     scriptURL: NSURL;
     selection: NSArray;
 }
-declare function log(...any: any[]): any;
+declare function log(obj:any): void;
 
 /*
 ABOUT:
