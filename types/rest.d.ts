@@ -34,6 +34,11 @@ declare const NSBackingStoreBuffered: number;
 
 declare function NSClassFromString(name:string):any;
 declare function NSMakeRect(x:number, y:number, w:number, h:number):NSRect;
+declare function NSMakeSize(w:number, h:number):NSSize;
+declare class NSSize {
+    width: number;
+    height: number;
+}
 declare class AFAmazonS3Manager {}
 declare class BCCache {}
 declare class BCColorPickerBaseView {}
