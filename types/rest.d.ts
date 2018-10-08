@@ -31,6 +31,9 @@ declare const NSTitledWindowMask: number;
 declare const NSWindowStyleMaskClosable: number;
 declare const NSResizableWindowMask: number;
 declare const NSBackingStoreBuffered: number;
+declare const NSLayoutAttributeHeight: number;
+declare const NSLayoutRelationEqual: number;
+declare const NSLayoutAttributeTop: any;
 
 declare function NSClassFromString(name:string):any;
 declare function NSMakeRect(x:number, y:number, w:number, h:number):NSRect;
@@ -158,7 +161,9 @@ declare class NSIndexPath {}
 declare class NSIndexSet {}
 declare class NSKeyedArchiver {}
 declare class NSKeyedUnarchiver {}
-declare class NSLayoutConstraint {}
+declare class NSLayoutConstraint {
+    static constraintWithItem_attribute_relatedBy_toItem_attribute_multiplier_constant_(view1:NSView, attr1:number, relation:number, view2:NSView, attr2:number, multiplier:number, c:number):NSLayoutConstraint
+}
 declare class NSLayoutManager {}
 declare class NSMapTable {}
 declare class NSMenu {}
