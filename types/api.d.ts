@@ -115,6 +115,7 @@ declare module "sketch/dom" {
              * The pages of the document.
              */
             pages: Page[];
+            type: Types.Document;
             constructor();
             /**
              * A read-only property to get the current page that the user has selected.
@@ -323,16 +324,22 @@ declare module "sketch/dom" {
             layers?: LayersPropertyType;
         }
         
-        export class Group<NativeType extends MSLayerGroup = MSLayerGroup> extends StyledLayer<NativeType> {
+        export type ChildLayer = Group | Image | Shape | ShapePath | Text | SymbolInstance | HotSpot;
+        
+        class BaseGroup<NativeType extends MSLayerGroup = MSLayerGroup> extends StyledLayer<NativeType> {
             /**
              * The layers that this component groups together.
              */
-            layers:Layer[];
-            constructor(properties?:GroupProperties);
+            layers:ChildLayer[];
             /**
              * Adjust the group to fit its children.
              */
             adjustToFit():this;
+        }
+        
+        export class Group extends BaseGroup {
+            type: Types.Group;
+            constructor(properties?:GroupProperties);
         }
         
         export interface PageProperties {
@@ -354,11 +361,12 @@ declare module "sketch/dom" {
             frame?: Rectangle;
         }
         
-        export class Page extends Group<MSPage> {
+        export class Page extends BaseGroup<MSPage> {
             /**
              * The document the page is in.
              */
             parent: Document;
+            type: Types.Page;
             constructor(properties?:PageProperties);
             /**
              * A read-only property to get the layers that the user has selected in the page.
@@ -389,7 +397,7 @@ declare module "sketch/dom" {
             flowStartPoint?:boolean;
         }
         
-        export class Artboard<NativeType extends MSArtboardGroup = MSArtboardGroup> extends Group<MSArtboardGroup> {
+        class BaseArtboard<NativeType extends MSArtboardGroup = MSArtboardGroup> extends BaseGroup<MSArtboardGroup> {
             /**
              * The page the Artboard is in.
              */
@@ -398,6 +406,10 @@ declare module "sketch/dom" {
              * A Start Point allows you to choose where to start your prototype from.
              */
             flowStartPoint:boolean;
+        }
+        
+        export class Artboard extends BaseArtboard {
+            type: Types.Artboard;
             constructor(properties?:ArtboardProperties);
         }
         
@@ -436,6 +448,7 @@ declare module "sketch/dom" {
         }
         
         export class Image extends StyledLayer<MSBitmapLayer> {
+            type: Types.Image;
             /**
              * The group the Image is in.
              */
@@ -452,6 +465,7 @@ declare module "sketch/dom" {
          * You can access the native NSImage with nsimage or a native NSData representation of the image with nsdata.
          */
         export abstract class ImageData extends Component<MSImageData> {
+            type: Types.ImageData;
             readonly nsimage: NSImage;
             readonly nsdata: NSData;
             /**
@@ -490,7 +504,8 @@ declare module "sketch/dom" {
             style?: Style|IStyle;
         }
         
-        export class Shape extends Group<MSShapeGroup> {
+        export class Shape extends BaseGroup<MSShapeGroup> {
+            type: Types.Shape;
             /**
              * The group the Shape is in.
              */
@@ -499,6 +514,7 @@ declare module "sketch/dom" {
         }
         
         export class ShapePath extends StyledLayer<MSShapePathLayer> {
+            type: Types.ShapePath;
             /**
              * The group the Shape is in.
              */
@@ -546,6 +562,7 @@ declare module "sketch/dom" {
         }
         
         export class Text extends StyledLayer<MSTextLayer> {
+            type: Types.Text;
             /**
              * The group the Text is in.
              */
@@ -648,7 +665,8 @@ declare module "sketch/dom" {
             flow?:FlowProperty;
         }
         
-        export class SymbolMaster extends Artboard<MSSymbolMaster> {
+        export class SymbolMaster extends BaseArtboard<MSSymbolMaster> {
+            type: Types.SymbolMaster;
             /**
              * The unique ID of the Symbol that the master and its instances share.
              */
@@ -718,6 +736,7 @@ declare module "sketch/dom" {
         }
         
         export class SymbolInstance extends StyledLayer<MSSymbolInstance> {
+            type: Types.SymbolInstance;
             /**
              * The group the SymbolInstance is in.
              */
@@ -753,6 +772,7 @@ declare module "sketch/dom" {
          * Can't be constructed - only returned from a SymbolInstance
          */
         export abstract class Override extends Component<MSAvailableOverride> {
+            type: Types.Override;
             /**
              * The path to the override. It’s formed by the symbolId of the nested symbols separated by a /.
              */
@@ -869,6 +889,7 @@ declare module "sketch/dom" {
          * A Sketch hotspot. It is an instance of both Layer so all the methods defined there are available.
          */
         export class HotSpot extends Layer<MSHotspotLayer> {
+            type: Types.HotSpot;
             constructor(properties?:HotSpotProperties);
             static fromLayer(layer:Layer):HotSpot;
         }
@@ -877,6 +898,7 @@ declare module "sketch/dom" {
          * A Sketch Library.
          */
         export abstract class Library extends Component<MSAssetLibrary> {
+            type: Types.Library;
             /**
              * The unique ID of the Library.
              */
@@ -958,6 +980,7 @@ declare module "sketch/dom" {
          * An Object that can imported from a Library. All its properties are read-only.
          */
         export abstract class ImportableObject extends Component<ImportableNative> {
+            type: Types.ImportableObject;
             /**
              * The unique ID of the Object.
              */
@@ -1272,6 +1295,7 @@ declare module "sketch/dom" {
         }
         
         export class Style extends Component<MSStyle> {
+            type: Types.Style;
             /**
              * The opacity of a Layer, between 0 (transparent) and 1 (opaque).
              */
@@ -1423,6 +1447,7 @@ declare module "sketch/dom" {
         }
         
         export abstract class SharedStyle extends Component<MSSharedStyle> {
+            type: Types.SharedStyle;
             /**
              * The unique ID of the Shared Style.
              */
