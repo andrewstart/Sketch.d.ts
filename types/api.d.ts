@@ -788,7 +788,7 @@ declare module "sketch/dom" {
             /**
              * If the override is a nested symbol override.
              */
-            Override: boolean;
+            symbolOverride: boolean;
             /**
              * The value of the override which can be change.
              */
