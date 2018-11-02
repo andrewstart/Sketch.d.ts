@@ -6,6 +6,11 @@ declare interface SketchContext {
     scriptURL: NSURL;
     selection: NSArray;
 }
+declare interface SketchActionContext<T extends MSAction> {
+    document: MSDocument;
+    action?: T;
+    exports?: {path:string, request:MSExportRequest}[];
+}
 declare function log(obj:any): void;
 
 /*
@@ -34,6 +39,7 @@ declare const NSBackingStoreBuffered: number;
 declare const NSLayoutAttributeHeight: number;
 declare const NSLayoutRelationEqual: number;
 declare const NSLayoutAttributeTop: any;
+declare const NSPasteboardTypeString: unique symbol;
 
 declare function NSClassFromString(name:string):any;
 declare function NSMakeRect(x:number, y:number, w:number, h:number):NSRect;
@@ -360,4 +366,9 @@ declare class NSRect {}
 declare class NSThread {
     static mainThread():NSThread;
     threadDictionary():NSDictionary;
+}
+declare class NSPasteboard {
+    static generalPasteboard():NSPasteboard;
+    stringForType(t:typeof NSPasteboardTypeString):NSString;
+    setString_forType(data:string|NSString, t:typeof NSPasteboardTypeString):void;
 }
