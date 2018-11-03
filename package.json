@@ -6,7 +6,7 @@
   "homepage": "https://github.com/andrewstart/Sketch.d.ts#readme",
   "files": [
       "index.d.ts",
-      "types/*"
+      "types/*.d.ts"
   ],
   "keywords": [
     "sketch",
