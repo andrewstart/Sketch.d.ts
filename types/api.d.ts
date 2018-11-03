@@ -620,34 +620,34 @@ declare module "sketch/dom" {
             /**
              * Visually left aligned
              */
-            left,
+            left = 'left',
             /**
              * Visually right aligned
              */
-            right,
+            right = 'right',
             /**
              * Visually centered
              */
-            center,
+            center = 'center',
             /**
              * Fully-justified. The last line in a paragraph is natural-aligned.
              */
-            justify,
+            justify = 'justify',
             /**
              * Indicates the default alignment for script
              */
-            natural
+            natural = 'natural'
         }
         
         enum LineSpacing {
             /**
              * Uses min & max line height on paragraph style
              */
-            constantBaseline,
+            constantBaseline = 'constantBaseline',
             /**
              * Uses MSConstantBaselineTypesetter for fixed line height
              */
-            variable
+            variable = 'variable'
         }
         
         export interface TextFragment {
