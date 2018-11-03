@@ -130,13 +130,13 @@ declare module "sketch/dom" {
              * @param layerID The ID of the layer to find
              * @return Return a Layer object or undefined if it’s not found.
              */
-            getLayerWithID(layerID:string):Layer|undefined;
+            getLayerWithID(layerID:string):AllLayers|undefined;
             /**
              * A method to help find the layers in this document which have the given name.
              * @param name The name of the layers to find
              * @return Return an array of Layer.
              */
-            getLayersNamed(name:string):Layer[];
+            getLayersNamed(name:string):AllLayers[];
             /**
              * A method to get all shared layer styles defined in the document.
              * @return Return an array of the layer SharedStyle objects defined in the document.
@@ -325,6 +325,8 @@ declare module "sketch/dom" {
         }
         
         export type ChildLayer = Group | Image | Shape | ShapePath | Text | SymbolInstance | HotSpot;
+        
+        export type AllLayers = ChildLayer | Artboard | Page | SymbolMaster;
         
         class BaseGroup<NativeType extends MSLayerGroup = MSLayerGroup> extends StyledLayer<NativeType> {
             /**
@@ -1023,7 +1025,7 @@ declare module "sketch/dom" {
             /**
              * The Layers in the selection.
              */
-            readonly layers: Layer[];
+            readonly layers: AllLayers[];
             /**
              * The number of Layers in the selection.
              */
@@ -1032,9 +1034,9 @@ declare module "sketch/dom" {
              * Does the selection contain any layers?
              */
             readonly isEmpty: boolean;
-            map<T>(func:(layer:Layer)=>T):T[];
-            forEach(func:(layer:Layer)=>void):void;
-            reduce<T>(func:(initial: T, layer:Layer)=>T):T;
+            map<T>(func:(layer:AllLayers)=>T):T[];
+            forEach(func:(layer:AllLayers)=>void):void;
+            reduce<T>(func:(initial: T, layer:AllLayers)=>T):T;
             /**
              * Clear the selection.
              */
@@ -1480,7 +1482,7 @@ declare module "sketch/dom" {
             /**
              * Returns an array of all layers with a Style which is an instance of the Shared Style in the document, on all pages.
              */
-            getAllInstancesLayers():Layer[];
+            getAllInstancesLayers():AllLayers[];
             /**
              * @return The Library the style was defined in, or undefined if it is a local style.
              */
