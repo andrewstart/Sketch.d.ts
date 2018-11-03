@@ -570,6 +570,10 @@ declare module "sketch/dom" {
              */
             parent: Group;
             /**
+             * The frame of the Text. This is given in coordinates that are local to the parent of the layer.
+             */
+            frame?:Rectangle;
+            /**
              * The string value of the text layer.
              */
             text:string;
