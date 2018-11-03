@@ -1,9 +1,9 @@
 {
-  "name": "sketch.d.ts",
+  "name": "@andrewstart/sketch.d.ts",
   "version": "0.0.1",
   "productName": "Sketch.d.ts",
   "description": "TypeScript declaration files for Sketch",
-  "homepage": "https://github.com/pravdomil/Sketch.d.ts#readme",
+  "homepage": "https://github.com/andrewstart/Sketch.d.ts#readme",
   "keywords": [
     "sketch",
     "sketch-plugin",
@@ -11,11 +11,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/pravdomil/sketch.d.ts.git"
+    "url": "https://github.com/andrewstart/sketch.d.ts.git"
   },
-  "author": "pravdomil.com",
   "bugs": {
-    "url": "https://github.com/pravdomil/Sketch.d.ts/issues"
+    "url": "https://github.com/andrewstart/Sketch.d.ts/issues"
   },
   "skpm": {
     "name": "Generate Sketch.d.ts",
