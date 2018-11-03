@@ -6,10 +6,13 @@ declare interface SketchContext {
     scriptURL: NSURL;
     selection: NSArray;
 }
-declare interface SketchActionContext<T extends MSAction> {
-    document: MSDocument;
-    action?: T;
-    exports?: {path:string, request:MSExportRequest}[];
+declare interface SketchActionContext<T extends MSAction> extends SketchContext {
+    actionContext: {
+        document: MSDocument;
+        action?: T;
+        exports?: {path:string, request:MSExportRequest}[];
+    }
+    action: string;
 }
 declare function log(obj:any): void;
 
