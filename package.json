@@ -4,6 +4,10 @@
   "productName": "Sketch.d.ts",
   "description": "TypeScript declaration files for Sketch",
   "homepage": "https://github.com/andrewstart/Sketch.d.ts#readme",
+  "files": [
+      "index.d.ts",
+      "types/*"
+  ],
   "keywords": [
     "sketch",
     "sketch-plugin",
