@@ -226,7 +226,7 @@ declare module "sketch/dom" {
             /**
              * The group/document the layer is in.
              */
-            parent:Group|Document;
+            parent:Group|Document|Page;
             /**
              * If the layer is locked.
              */
@@ -278,7 +278,7 @@ declare module "sketch/dom" {
             moveBackward():this;
         }
         
-        class StyledLayer<NativeType extends MSStyledLayer> extends Component<NativeType> {
+        class StyledLayer<NativeType extends MSStyledLayer> extends Layer<NativeType> {
             /**
              * The style of the layer.
              */
@@ -572,7 +572,7 @@ declare module "sketch/dom" {
             /**
              * The frame of the Text. This is given in coordinates that are local to the parent of the layer.
              */
-            frame?:Rectangle;
+            frame:Rectangle;
             /**
              * The string value of the text layer.
              */
