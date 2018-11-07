@@ -1,6 +1,6 @@
 {
   "name": "@andrewstart/sketch.d.ts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "productName": "Sketch.d.ts",
   "description": "TypeScript declaration files for Sketch",
   "homepage": "https://github.com/andrewstart/Sketch.d.ts#readme",
