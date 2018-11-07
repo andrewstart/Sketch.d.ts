@@ -166,10 +166,10 @@ declare module "sketch/dom" {
             getSymbols():SymbolMaster[];
             /**
              * A method to help find a symbol master in the document.
-             * @param symbolID The symbol ID of the symbol master to find
+             * @param symbolId The symbol ID of the symbol master to find
              * @return Return a SymbolMaster object or undefined if it’s not found.
              */
-            getSymbolMasterWithID(symbolID:string):SymbolMaster|undefined;
+            getSymbolMasterWithID(symbolId:string):SymbolMaster|undefined;
             /**
              * A method to help center the view of the document window on a given layer.
              * @param layer The layer to center the view onto
@@ -676,7 +676,7 @@ declare module "sketch/dom" {
             /**
              * The unique ID of the Symbol that the master and its instances share.
              */
-            symbolID:string;
+            symbolId:string;
             constructor(properties?:SymbolMasterProperties);
             /**
              * Replace the artboard with a symbol master.
@@ -738,7 +738,7 @@ declare module "sketch/dom" {
             /**
              * The unique ID of the Symbol that the instance and its master share.
              */
-            symbolID:string;
+            symbolId:string;
         }
         
         export class SymbolInstance extends StyledLayer<MSSymbolInstance> {
@@ -750,7 +750,7 @@ declare module "sketch/dom" {
             /**
              * The unique ID of the Symbol that the instance and its master share.
              */
-            symbolID:string;
+            symbolId:string;
             /**
              * The Symbol master that the instance is linked to.
              */
@@ -784,9 +784,9 @@ declare module "sketch/dom" {
              */
             path: string;
             /**
-             * The property that this override controls. It can be "stringValue" for a text override, "symbolID" for a nested symbol, or "image" for an image override.
+             * The property that this override controls. It can be "stringValue" for a text override, "symbolId" for a nested symbol, or "image" for an image override.
              */
-            property: 'stringValue' | 'symbolID' | 'image';
+            property: 'stringValue' | 'symbolId' | 'image';
             /**
              * The unique ID of the override (${path}_${property}).
              */
