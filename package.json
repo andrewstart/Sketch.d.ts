@@ -1,12 +1,12 @@
 {
   "name": "@andrewstart/sketch.d.ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "productName": "Sketch.d.ts",
   "description": "TypeScript declaration files for Sketch",
   "homepage": "https://github.com/andrewstart/Sketch.d.ts#readme",
   "files": [
-      "index.d.ts",
-      "types/*.d.ts"
+    "index.d.ts",
+    "types/*.d.ts"
   ],
   "keywords": [
     "sketch",
