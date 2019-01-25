@@ -214,6 +214,29 @@ declare module "sketch/dom" {
             SaveTo
         }
         
+        /**
+         * An export format associated with a layer.
+         */
+        export interface ExportFormat {
+            type?: 'ExportFormat';
+            /**
+             * The file format of the export.
+             */
+            fileFormat: 'jpg'|'png'|'tiff'|'eps'|'pdf'|'webp'|'svg';
+            /**
+             * The prefix added to the file name.
+             */
+            prefix?: string;
+            /**
+             * The suffix added to the file name.
+             */
+            suffix?: string;
+            /**
+             * The size of the export. Valid values include `2x`, `100w`, `100width`, `100px`, `300h`, `300height`.
+             */
+            size: string;
+        }
+        
         export abstract class Layer<NativeType extends MSLayer = MSLayer> extends Component<NativeType> {
             /**
              * The unique ID of the Layer. (not to be confused with symbolId on SymbolInstances)
@@ -248,6 +271,10 @@ declare module "sketch/dom" {
              */
             flow:FlowProperty;
             /**
+             * The export formats of the Layer.
+             */
+            exportFormats:ExportFormat[];
+            /**
              * A new identical layer will be inserted into the parent of this layer.
              * @return A new copy of this layer.
              */
@@ -276,6 +303,22 @@ declare module "sketch/dom" {
              * Move this layer backward in its parent.
              */
             moveBackward():this;
+            /**
+             * Access the page the layer is in
+             */
+            getParentPage():Page|undefined;
+            /**
+             * Access the artboard the layer is in (if any)
+             */
+            getParentArtboard():Artboard|undefined;
+            /**
+             * Access the symbol master the layer is in (if any)
+             */
+            getParentSymbolMaster():SymbolMaster|undefined;
+            /**
+             * Access the shape the layer is in (if any)
+             */
+            getParentShape():Shape|undefined;
         }
         
         class StyledLayer<NativeType extends MSStyledLayer> extends Layer<NativeType> {
@@ -552,11 +595,11 @@ declare module "sketch/dom" {
             /**
              * The alignment of the layer.
              */
-            alignment?:Alignment;
+            alignment?:Text.Alignment;
             /**
              * The line spacing of the layer.
              */
-            lineSpacing?:LineSpacing;
+            lineSpacing?:Text.LineSpacing;
             /**
              * Whether the layer should have a fixed width or a flexible width.
              */
@@ -578,25 +621,18 @@ declare module "sketch/dom" {
              */
             text:string;
             /**
+             * @deprecated
              * The alignment of the layer.
              */
-            alignment:Alignment;
+            alignment:Text.Alignment;
             /**
              * The line spacing of the layer.
              */
-            lineSpacing:LineSpacing;
+            lineSpacing:Text.LineSpacing;
             /**
              * Whether the layer should have a fixed width or a flexible width.
              */
             fixedWidth:boolean;
-            /**
-             * Enumeration of the alignments of the text.
-             */
-            static Alignment:typeof Alignment;
-            /**
-             * Enumeration of the line spacing behaviour for the text.
-             */
-            static LineSpacing:typeof LineSpacing;
             constructor(properties?:TextProperties);
             /**
              * Adjust the Text to fit its value.
@@ -607,6 +643,7 @@ declare module "sketch/dom" {
              */
             font:NSFont;
             /**
+             * @deprecated
              * Set the font of the text layer as the system font of the given size.
              */
             systemFontSize:number;
@@ -616,38 +653,57 @@ declare module "sketch/dom" {
             fragments: TextFragment[];
         }
         
-        enum Alignment {
+        export namespace Text {
             /**
-             * Visually left aligned
+             * Enumeration of the alignments of the text.
              */
-            left = 'left',
+            export enum Alignment {
+                /**
+                 * Visually left aligned
+                 */
+                left = 'left',
+                /**
+                 * Visually right aligned
+                 */
+                right = 'right',
+                /**
+                 * Visually centered
+                 */
+                center = 'center',
+                /**
+                 * Fully-justified. The last line in a paragraph is natural-aligned.
+                 */
+                justify = 'justify',
+                /**
+                 * Indicates the default alignment for script
+                 */
+                natural = 'natural'
+            }
             /**
-             * Visually right aligned
+             * Enumeration of the vertical alignments of the text.
              */
-            right = 'right',
+            export enum VerticalAlignment {
+                /** Visually top aligned */
+                top = 'top',
+                /** Visually vertically centered */
+                center = 'center',
+                /** Visually bottom aligned */
+                bottom = 'bottom',
+            }
+            
             /**
-             * Visually centered
+             * Enumeration of the line spacing behaviour for the text.
              */
-            center = 'center',
-            /**
-             * Fully-justified. The last line in a paragraph is natural-aligned.
-             */
-            justify = 'justify',
-            /**
-             * Indicates the default alignment for script
-             */
-            natural = 'natural'
-        }
-        
-        enum LineSpacing {
-            /**
-             * Uses min & max line height on paragraph style
-             */
-            constantBaseline = 'constantBaseline',
-            /**
-             * Uses MSConstantBaselineTypesetter for fixed line height
-             */
-            variable = 'variable'
+            export enum LineSpacing {
+                /**
+                 * Uses min & max line height on paragraph style
+                 */
+                constantBaseline = 'constantBaseline',
+                /**
+                 * Uses MSConstantBaselineTypesetter for fixed line height
+                 */
+                variable = 'variable'
+            }
         }
         
         export interface TextFragment {
@@ -1128,6 +1184,76 @@ declare module "sketch/dom" {
              * The inner shadows of a Layer.
              */
             innerShadows?: Shadow[];
+            /**
+             * The horizontal alignment of the text of a Text Layer
+             */
+            alignment?:Text.Alignment;
+            /**
+             * The vertical alignment of the text of a Text Layer
+             */
+            verticalAlignment?:Text.VerticalAlignment;
+            /**
+             * The kerning between letters of a Text Layer. null means that the kerning will be the one defined by the font.
+             */
+            kerning?:number|null;
+            /**
+             * The height of a line of text in a Text Layer. null means "automatic".
+             */
+            lineHeight?:number|null;
+            /**
+             * The space between 2 paragraphs of text in a Text Layer.
+             */
+            paragraphSpacing?:number;
+            /**
+             * A rgba hex-string (#000000ff is opaque black) of the color of the text in a Text Layer.
+             */
+            textColor?:string;
+            /**
+             * The size of the font in a Text Layer.
+             */
+            fontSize?:number;
+            /**
+             * The transform applied to the text of a Text Layer.
+             */
+            textTransform?:'none'|'uppercase'|'lowercase';
+            /**
+             * The name of the font family of a Text Layer.
+             * 'system' means the font family of the OS ('.SF NS Text' on macOS 10.14).
+             */
+            fontFamily?:string;
+            /**
+             * The weight of the font of a Text Layer. Goes from 0 to 12, 0 being the thinest and
+             * 12 being the boldest. Not every weight are available for every fonts. When setting
+             * a font weight that does not exist for the current font family, the closest weight
+             * that exists will be set instead.
+             */
+            fontWeight?:number;
+            /**
+             * The style of the font of a Text Layer.
+             */
+            fontStyle?:'italic'|undefined;
+            /**
+             * The variant of the font of a Text Layer.
+             */
+            fontVariant?:'small-caps'|undefined;
+            /**
+             * The size variant of the font of a Text Layer.
+             */
+            fontStretch?:'compressed'|'condensed'|'narrow'|'expanded'|'poster'|undefined;
+            /**
+             * The underline decoration of a Text Layer.
+             * `<line-style> [<line-pattern>] ['by-word']` / `undefined` where `<line-style>` can
+             * be `single` / `thick` / `double` and `<line-pattern>` can be
+             * `dot` / `dash` / `dash-dot` / `dash-dot-dot`
+             */
+            textUnderline?:string|undefined;
+            /**
+             * The strikethrough decoration of a Text Layer.
+             * `<line-style> [<line-pattern>] ['by-word']` / undefined where `<line-style>` can be
+             * `single` / `thick` / `double` and `<line-pattern>` can be
+             * `dot` / `dash` / `dash-dot` / `dash-dot-dot`
+             */
+            textStrikethrough?:string|undefined;
         }
         
         /**
@@ -1334,6 +1460,76 @@ declare module "sketch/dom" {
              * The inner shadows of a Layer.
              */
             innerShadows?: Shadow[];
+            /**
+             * The horizontal alignment of the text of a Text Layer
+             */
+            alignment?:Text.Alignment;
+            /**
+             * The vertical alignment of the text of a Text Layer
+             */
+            verticalAlignment?:Text.VerticalAlignment;
+            /**
+             * The kerning between letters of a Text Layer. null means that the kerning will be the one defined by the font.
+             */
+            kerning?:number|null;
+            /**
+             * The height of a line of text in a Text Layer. null means "automatic".
+             */
+            lineHeight?:number|null;
+            /**
+             * The space between 2 paragraphs of text in a Text Layer.
+             */
+            paragraphSpacing?:number;
+            /**
+             * A rgba hex-string (#000000ff is opaque black) of the color of the text in a Text Layer.
+             */
+            textColor?:string;
+            /**
+             * The size of the font in a Text Layer.
+             */
+            fontSize?:number;
+            /**
+             * The transform applied to the text of a Text Layer.
+             */
+            textTransform?:'none'|'uppercase'|'lowercase';
+            /**
+             * The name of the font family of a Text Layer.
+             * 'system' means the font family of the OS ('.SF NS Text' on macOS 10.14).
+             */
+            fontFamily?:string;
+            /**
+             * The weight of the font of a Text Layer. Goes from 0 to 12, 0 being the thinest and
+             * 12 being the boldest. Not every weight are available for every fonts. When setting
+             * a font weight that does not exist for the current font family, the closest weight
+             * that exists will be set instead.
+             */
+            fontWeight?:number;
+            /**
+             * The style of the font of a Text Layer.
+             */
+            fontStyle?:'italic'|undefined;
+            /**
+             * The variant of the font of a Text Layer.
+             */
+            fontVariant?:'small-caps'|undefined;
+            /**
+             * The size variant of the font of a Text Layer.
+             */
+            fontStretch?:'compressed'|'condensed'|'narrow'|'expanded'|'poster'|undefined;
+            /**
+             * The underline decoration of a Text Layer.
+             * `<line-style> [<line-pattern>] ['by-word']` / `undefined` where `<line-style>` can
+             * be `single` / `thick` / `double` and `<line-pattern>` can be
+             * `dot` / `dash` / `dash-dot` / `dash-dot-dot`
+             */
+            textUnderline?:string|undefined;
+            /**
+             * The strikethrough decoration of a Text Layer.
+             * `<line-style> [<line-pattern>] ['by-word']` / undefined where `<line-style>` can be
+             * `single` / `thick` / `double` and `<line-pattern>` can be
+             * `dot` / `dash` / `dash-dot` / `dash-dot-dot`
+             */
+            textStrikethrough?:string|undefined;
             /**
              * @return Whether the Style has some differences with the Shared Style it is linked to. In case it isn't linked to any, returns false.
              */
@@ -1606,6 +1802,7 @@ declare module "sketch/ui" {
          */
         export function alert(title:string, text:string):void;
         /**
+         * @deprecated
          * Shows a simple input sheet which displays a message, and asks for a single string input.
          * @param message The prompt message to show.
          * @param initialValue The initial value of the input string.
@@ -1613,6 +1810,7 @@ declare module "sketch/ui" {
          */
         export function getStringFromUser(message:string, initialValue?:string):string;
         /**
+         * @deprecated
          * Shows an input sheet which displays a popup with a series of options, from which the user is asked to choose.
          * @param message The prompt message to show.
          * @param options An array of option items.
@@ -1620,6 +1818,49 @@ declare module "sketch/ui" {
          * @return An array with a response code, the selected index and ok. The code will be one of NSAlertFirstButtonReturn or NSAlertSecondButtonReturn. The selection will be the integer index of the selected item. ok is the boolean code === NSAlertFirstButtonReturn.
          */
         export function getSelectionFromUser(message:string, options:string[], selectedIndex?:number):[number, number, boolean];
+        /**
+         * The enumeration of the different input types for getInputFromUser().
+         */
+        export enum INPUT_TYPE {
+            string = 'string',
+            selection = 'selection'
+        }
+        export interface StringInputOptions<T extends string|number> {
+            /** A secondary text to describe with more details the input. */
+            description?:string;
+            /** The type of the input. */
+            type?:INPUT_TYPE.string;
+            /** The initial value of the input. */
+            initialValue?:T;
+        }
+        export interface SelectionInputOptions {
+            /** A secondary text to describe with more details the input. */
+            description?:string;
+            /** The type of the input. */
+            type:INPUT_TYPE.selection;
+            /** The initial value of the input. */
+            initialValue?:string;
+            /** The possible choices that the user can make. Only used for a selection input. */
+            possibleValues:string[];
+        }
+        /**
+         * Shows a simple input sheet which displays a message, and asks for an input from the user.
+         * @param message The prompt message to show.
+         * @param options Options to customize the input sheet. Most of the options depends on the type of the input.
+         * @param callback A function called after the user entered the input. It is called with an Error if the user canceled the input and a string or number depending on the input type (or undefined).
+         */
+        export function getInputFromUser<T extends string|number>(message:string, options:StringInputOptions<T>, callback:(err:any, value?:T)=>void):void;
+        /**
+         * Shows a simple input sheet which displays a message, and asks for an input from the user.
+         * @param message The prompt message to show.
+         * @param options Options to customize the input sheet. Most of the options depends on the type of the input.
+         * @param callback A function called after the user entered the input. It is called with an Error if the user canceled the input and a string or number depending on the input type (or undefined).
+         */
+        export function getInputFromUser(message:string, options:SelectionInputOptions, callback:(err:any, value?:string)=>void):void;
+        /**
+         * Sketch has 2 themes: `light` and `dark`. If your plugin has some custom UI, it should support both as well.
+         */
+        export function getTheme():'dark'|'light';
     }
     export = ui;
 }
@@ -1705,6 +1946,22 @@ declare module "sketch/settings" {
          * @param value The value to set it to.
          */
         export function setDocumentSettingForKey(document:dom.Document, key:string, value:any):void;
+        /**
+         * Return the value of a variable which is persisted when the plugin finishes to run but is
+         * not persisted when Sketch closes. It is useful when you want to keep a value between
+         * plugin's runs.
+         * @param key The variable to look up
+         * @return The variable that was saved.
+         */
+        export function sessionVariable(key:string):any;
+        /**
+         * Store a value of a variable which is persisted when the plugin finishes to run but is
+         * not persisted when Sketch closes. It is useful when you want to keep a value between
+         * plugin's runs.
+         * @param key The variable to set
+         * @param value The value to set it to
+         */
+        export function setSessionVariable(key:string, value:any):void;
     }
     export = settings;
 }
