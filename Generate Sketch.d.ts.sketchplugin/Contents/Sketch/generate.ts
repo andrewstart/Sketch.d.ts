@@ -33,12 +33,12 @@ const extraSymbols = ["_MSArtboardGroup", "_MSAssetCollection", "_MSBaseGrid",
     "_MSForeignLayerStyle", "_MSForeignObject", "_MSForeignStyle", "_MSForeignTextStyle",
     "_MSHotspotLayer", "_MSImmutableFlowConnection", "_MSImmutableForeignLayerStyle",
     "_MSImmutableForeignObject", "_MSImmutableForeignStyle", "_MSImmutableForeignTextStyle",
-    "_MSImmutableHotspotLayer"];
+    "_MSImmutableHotspotLayer", "_MSAssetContainer"];
 
 function generate(context: SketchContext) {
     try {
         const output = String(context.scriptPath).replace(/\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*$/, "/types/sketch.d.ts");
-        generateDo(context, /^MS/, output);
+        generateDo(context, /^_?MS/, output);
         
     } catch (e) {
         context.document.showMessage(e.message || String(e));

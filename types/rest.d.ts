@@ -375,3 +375,45 @@ declare class NSPasteboard {
     stringForType(t:typeof NSPasteboardTypeString):NSString;
     setString_forType(data:string|NSString, t:typeof NSPasteboardTypeString):void;
 }
+declare class NSCollectionViewFlowLayout {}
+declare class NSCollectionViewLayoutAttributes {}
+declare class MSAssetCollectionViewSourceDelegate {}
+declare class MSAsset {}
+declare class MSAssetCollectionViewSourceItemProvider {}
+declare class BCLine {}
+declare class BCLineSegment {}
+declare class MSAssetCollectionViewItemDelegate {}
+declare class MSAssetPickerControllerDelegate {}
+declare class MSAssetPickerScrubberControllerDelegate {}
+declare class NSScrubber {}
+declare class NSPointerArray {}
+declare class _MSColorAsset {}
+declare class MSColorComponentAdaptorDelegate {}
+declare class MSColorComponentsControllerDelegate {}
+declare class MSColorModePickerControllerDelegate {}
+declare class MSColorModelPickerDelegate {}
+declare class MSColorPickerViewControllerDelegate {}
+declare class MSFlowInfo {}
+declare class _MSFreeformGroupLayout {}
+declare class MSFrequentColorsControllerDelegate {}
+declare class MSFrequentImagesControllerDelegate {}
+declare class MSFrequentObjectsControllerDelegate {}
+declare class _MSGradientAsset {}
+declare class BCColorPickerSliderView {}
+declare class _MSGroupLayout {}
+declare class _MSImmutableAssetContainer {}
+declare class _MSImmutableColorAsset {}
+declare class _MSImmutableFreeformGroupLayout {}
+declare class _MSImmutableGradientAsset {}
+declare class _MSImmutableGroupLayout {}
+declare class _MSImmutableInferredGroupLayout {}
+declare class _MSImmutableOverrideProperty {}
+declare class _MSInferredGroupLayout {}
+declare class _TtC17SketchControllers12MSLayerMover {}
+declare class MSDragLayerToolUserInterface {}
+declare class MTLBuffer {}
+declare class MTLDepthStencilState {}
+declare class NSCountedSet {}
+declare class _MSOverrideProperty {}
+declare class BCAtomicStack {}
+declare class MSThemeImageViewDelegate {}
