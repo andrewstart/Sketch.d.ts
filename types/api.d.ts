@@ -45,32 +45,35 @@ declare module "sketch/dom" {
         }
         
         export enum Types {
-            Group = 'Group',
-            Page = 'Page',
             Artboard = 'Artboard',
-            Shape = 'Shape',
-            Style = 'Style',
             Blur = 'Blur',
             Border = 'Border',
             BorderOptions = 'BorderOptions',
+            CurvePoint = 'CurvePoint',
+            DataOverride = 'DataOverride',
+            Document = 'Document',
+            ExportFormat = 'ExportFormat',
             Fill = 'Fill',
+            Flow = 'Flow',
             Gradient = 'Gradient',
             GradientStop = 'GradientStop',
-            Shadow = 'Shadow',
-            Image = 'Image',
-            Text = 'Text',
-            Document = 'Document',
-            Library = 'Library',
-            SymbolMaster = 'SymbolMaster',
-            SymbolInstance = 'SymbolInstance',
-            Override = 'Override',
-            ImageData = 'ImageData',
-            Flow = 'Flow',
+            Group = 'Group',
             HotSpot = 'HotSpot',
+            Image = 'Image',
+            ImageData = 'ImageData',
             ImportableObject = 'ImportableObject',
-            SharedStyle = 'SharedStyle',
-            DataOverride = 'DataOverride',
+            Library = 'Library',
+            Override = 'Override',
+            Page = 'Page',
+            Shadow = 'Shadow',
+            Shape = 'Shape',
             ShapePath = 'ShapePath',
+            SharedStyle = 'SharedStyle',
+            Slice = 'Slice',
+            Style = 'Style',
+            SymbolInstance = 'SymbolInstance',
+            SymbolMaster = 'SymbolMaster',
+            Text = 'Text',
         }
         
         /**
@@ -237,6 +240,21 @@ declare module "sketch/dom" {
             size: string;
         }
         
+        export interface LayerTransform {
+            /**
+             * The rotation of the Layer in degrees, clock-wise.
+             */
+            rotation:number;
+            /**
+             * If the layer is horizontally flipped.
+             */
+            flippedHorizontally:boolean;
+            /**
+             * If the layer is vertically flipped.
+             */
+            flippedVertically:boolean;
+        }
+        
         export abstract class Layer<NativeType extends MSLayer = MSLayer> extends Component<NativeType> {
             /**
              * The unique ID of the Layer. (not to be confused with symbolId on SymbolInstances)
@@ -274,6 +292,10 @@ declare module "sketch/dom" {
              * The export formats of the Layer.
              */
             exportFormats:ExportFormat[];
+            /**
+             * The transformation applied to the Layer.
+             */
+            readonly transform:LayerTransform;
             /**
              * A new identical layer will be inserted into the parent of this layer.
              * @return A new copy of this layer.
@@ -451,6 +473,25 @@ declare module "sketch/dom" {
              * A Start Point allows you to choose where to start your prototype from.
              */
             flowStartPoint:boolean;
+            /**
+             * The background of the Artboard
+             */
+            background:ArtboardBackground;
+        }
+        
+        export interface ArtboardBackground {
+            /**
+             * If the background should be enabled, eg. shown or not
+             */
+            enabled:boolean;
+            /**
+             * If the background should be exported or if it should be transparent during the export
+             */
+            includedInExport:boolean;
+            /**
+             * The rgba representation of the color of the background
+             */
+            color:string;
         }
         
         export class Artboard extends BaseArtboard {
@@ -558,13 +599,137 @@ declare module "sketch/dom" {
             constructor(properties?:ShapeProperties);
         }
         
+        export interface ShapePathProperties {
+            /**
+             * The name of the Shape
+             */
+            name?:string;
+            /**
+             * The group the Shape is in.
+             */
+            parent?:Group;
+            /**
+             * The frame of the Shape. This is given in coordinates that are local to the parent of the layer.
+             */
+            frame?:Rectangle;
+            /**
+             * The prototyping action associated with the Shape.
+             */
+            flow?:FlowProperty;
+            /**
+             * The style of the Shape.
+             */
+            style?: Style|IStyle;
+            /**
+             * The points defining the Shape Path.
+             */
+            points:CurvePoint[];
+            /**
+             * The type of the Shape Path. It can only be set when creating a new ShapePath.
+             */
+            shapeType:ShapePath.ShapeType;
+            /**
+             * If the Path is closed.
+             */
+            closed:boolean;
+        }
+        
         export class ShapePath extends StyledLayer<MSShapePathLayer> {
             type: Types.ShapePath;
             /**
              * The group the Shape is in.
              */
             parent: Group;
-            constructor(properties?:ShapeProperties);
+            /**
+             * The points defining the Shape Path.
+             */
+            points:CurvePoint[];
+            /**
+             * The type of the Shape Path. It can only be set when creating a new ShapePath.
+             */
+            readonly shapeType:ShapePath.ShapeType;
+            /**
+             * If the Path is closed.
+             */
+            closed:boolean;
+            constructor(properties?:ShapePathProperties);
+            /**
+             * create a new ShapePath from an SVG path (the string that goes in the `d` attribute of a path tag in an SVG).
+             */
+            static fromSVGPath(svg:string):ShapePath;
+            /**
+             * Returns a string representing the SVG path of the ShapePath.
+             */
+            getSVGPath():string;
+        }
+        
+        export namespace ShapePath {
+            export enum ShapeType {
+                Rectangle,
+                Oval,
+                Triangle,
+                Polygon,
+                Star,
+                Custom,
+            }
+        }
+        
+        /**
+         * A utility class to represent a curve point (with handles to control the curve in a path).
+         */
+        export class CurvePoint extends Component<MSCurvePoint> {
+            /**
+             * The position of the point.
+             */
+            point:Point;
+            /**
+             * The position of the handle control point for the incoming path.
+             */
+            curveFrom:Point;
+            /**
+             * The position of the handle control point for the outgoing path.
+             */
+            curveTo:Point;
+            /**
+             * The corner radius of the point.
+             */
+            cornerRadius:number;
+            /**
+             * The type of the point.
+             */
+            pointType:CurvePoint.PointType;
+        }
+        
+        export namespace CurvePoint {
+            export enum PointType {
+                Undefined,
+                Straight,
+                Mirrored,
+                Asymmetric,
+                Disconnected
+            }
+        }
+        
+        /**
+         * A utility class to represent a point.
+         */
+        export class Point {
+            /**
+             * The x coordinate of the point.
+             */
+            x: number;
+            /**
+             * The y coordinate of the point.
+             */
+            y: number;
+            /**
+             * Return the Point as a CGPoint.
+             */
+            asCGPoint():CGPoint;
+            /**
+             * Return the Point as a NSPoint.
+             */
+            asNSPoint():CGPoint;
         }
         
         export interface TextProperties {
@@ -727,12 +892,27 @@ declare module "sketch/dom" {
             flow?:FlowProperty;
         }
         
+        export interface SymbolMasterBackground extends ArtboardBackground {
+            /**
+             * If the background should appear in the instances of the Symbol Master
+             */
+            includedInInstance:boolean;
+        }
+        
         export class SymbolMaster extends BaseArtboard<MSSymbolMaster> {
             type: Types.SymbolMaster;
             /**
              * The unique ID of the Symbol that the master and its instances share.
              */
             symbolId:string;
+            /**
+             * The background of the Symbol Master
+             */
+            readonly background: SymbolMasterBackground;
+            /**
+             * The array of the overrides that the instances of the Symbol Master will be able to change.
+             */
+            overrides:Override[];
             constructor(properties?:SymbolMasterProperties);
             /**
              * Replace the artboard with a symbol master.
@@ -818,9 +998,11 @@ declare module "sketch/dom" {
             constructor(properties:SymbolInstanceProperties);
             /**
              * Replaces a group that contains a copy of the Symbol this instance refers to. Returns null if the master contains no layers instead of inserting an empty group
+             * @param options The options to apply when detaching the instance.
+             * @param options.recursively If it should detach the nested symbols as well. Default to false.
              * @return A new Group or null
              */
-            detach():Group|null;
+            detach(options?:{recursively?:boolean}):Group|null;
             /**
              * Change the value of the override.
              * @param override The override to change.
@@ -863,6 +1045,10 @@ declare module "sketch/dom" {
              * The layer the override applies to. It will be an immutable version of the layer
              */
             affectedLayer: Text|Image|SymbolInstance;
+            /**
+             * If the value of the override can be changed.
+             */
+            editable:boolean;
         }
         
         /**
@@ -1657,7 +1843,7 @@ declare module "sketch/dom" {
             /**
              * The type of the Shared Style (Layer or Text).
              */
-            styleType: StyleType;
+            styleType: SharedStyle.StyleType;
             /**
              * The name of the Shared Style.
              */
@@ -1666,7 +1852,6 @@ declare module "sketch/dom" {
              * The Style value that is shared.
              */
             style: Style;
-            static StyleType: typeof StyleType;
             /**
              * Create a new Shared Style with a specific name in a specific Document.
              */
@@ -1699,9 +1884,43 @@ declare module "sketch/dom" {
             unlinkFromLibrary():boolean;
         }
         
-        enum StyleType {
-            Layer = "Layer",
-            Text = "Text"
+        export namespace SharedStyle {
+            enum StyleType {
+                Layer = "Layer",
+                Text = "Text"
+            }
+        }
+        
+        export interface SliceProperties {
+            /**
+             * The name of the Slice
+             */
+            name?: string;
+            /**
+             * The group the Slice is in.
+             */
+            parent?: Group;
+            /**
+             * The frame of the Slice. This is given in coordinates that are local to
+             * the parent of the layer.
+             */
+            frame?: Rectangle;
+            /**
+             * The export formats of the Slice.
+             */
+            exportFormats?: ExportFormat[];
+        }
+        
+        /**
+         * A Sketch hotspot. It is an instance of both Layer so all the methods defined there are available.
+         */
+        export class Slice extends Layer<MSSliceLayer> {
+            type: Types.Slice;
+            constructor(properties?:SliceProperties);
+            /**
+             * The group the Slice is in.
+             */
+            parent: Group;
         }
         
         export function fromNative(nativeObject:MSDocument):Document;
@@ -1719,6 +1938,7 @@ declare module "sketch/dom" {
         export function fromNative(nativeObject:MSAssetLibrary):Library;
         export function fromNative(nativeObject:MSStyle):Style;
         export function fromNative(nativeObject:MSSharedStyle):SharedStyle;
+        export function fromNative(nativeObject:MSSliceLayer):Slice;
         export function fromNative(nativeObject:ImportableNative):ImportableObject;
         /**
          * A utility function to get a wrapped object from a native Sketch model object.
@@ -1735,7 +1955,7 @@ declare module "sketch/dom" {
              */
             output?: string;
             /**
-             * Comma separated list of formats to export to (png, jpg, svg or pdf) (default to "png").
+             * Comma separated list of formats to export to (png, jpg, svg, json or pdf) (default to "png").
              */
             formats?: string;
             /**

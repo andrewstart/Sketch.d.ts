@@ -175,6 +175,12 @@ declare module "path" {
         function parse(p: string): ParsedPath;
         function format(pP: FormatInputPathObject): string;
     }
+    
+    /**
+     * Returns the path to a resource in the plugin bundle or undefined if it doesn't exist.
+     * Not a Node function.
+     */
+    function resourcePath(resourceName:string):string;
 }
 
 declare module "events" {
