@@ -2263,6 +2263,7 @@ declare module "sketch" {
         static export: typeof dom.export;
     }
     namespace sketch {
+        export const version:{readonly api:string, readonly sketch:string};
         // it'd be really nice if we could export * from dom, but https://github.com/Microsoft/TypeScript/issues/4336
         export import Types = dom.Types;
         export import getSelectedDocument = dom.getSelectedDocument;
